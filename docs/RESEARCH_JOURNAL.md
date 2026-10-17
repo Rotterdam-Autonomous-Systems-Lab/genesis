@@ -42,6 +42,12 @@ Expanded local evidence: 58 Solidity and 54 Python tests pass, retaining all ear
 
 The gate is CONDITIONAL PASS for the bounded local research fixture; requester-veto fairness, independent source/compiler/dependency review, and broader lifecycle/network/host-failure testing remain open. No Experiment 002 or final research report begins. Remote CI evidence is the Actions run attached to this entry's commit, not predeclared by the journal. Recommended next task: founder/security review of the conditions and explicit follow-up authorization.
 
+## 2026-10-17 — Experiment 001 research publication (Task 004)
+
+Published the [Experiment 001 report](../research/reports/EXPERIMENT_001_REPORT.md), covering question/hypothesis, architecture/trust assumptions, cryptographic authority, methods, reproduction, results, adversarial findings, all 18 invariants, threats to validity and open questions. The evidence anchor is [`f66cda9`](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/commit/f66cda91af5cb2f2da266fe11d90bc67c05cfc77) and [successful CI run 39057757966](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39057757966): 58 Solidity plus 54 Python tests, 112 total, and actual temporary-Anvil settlement/withdrawal with separate agent processes. Publication verification repeated the local setup/test/runner commands successfully.
+
+Experiment 001 is conditionally accepted and publicly documented, not production-ready, formally proven, independently audited, or evidence of new consensus/native blockchain/native asset feasibility. Requester-veto fairness and the existing acceptance conditions remain open. The publication discussion is created only after the report is verified on origin/main; its URL is recorded in the Task 004 completion report and the thread is discoverable by title “Experiment 001: Reproducible autonomous service exchange — results and limitations”. No implementation or architecture changed. Next proposed step: select the Experiment 002 research question through a separate design review; no Experiment 002 implementation is authorized here.
+
 ## Source boundary
 
 This journal does not infer events beyond the repository record. See [`SESSION_HANDOFF.md`](SESSION_HANDOFF.md) for current working context and the reusable handoff format.

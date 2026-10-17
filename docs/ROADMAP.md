@@ -43,3 +43,9 @@ Do not describe a specification as an executed result or this local Ethereum-com
 ## Task 003A escrow-only progress
 
 Task 003A separately authorizes the Solidity escrow implementation with requester veto preserved. [Dependency pins](../DEPENDENCIES.md), [contract evidence and invariant coverage](experiments/EXPERIMENT_001_ESCROW_COVERAGE.md), and a read-only GitHub Actions workflow now support offline build/tests after tool setup. ADR 0001 is accepted only for this local component. This does not close Stage 0, Stage 1, the full independent review gate, or end-to-end experiment acceptance. Python signer/verifier, discovery, transport/retry handling, local-only endpoint/key controls and full reproducibility evidence remain separate future tasks.
+
+## Experiment 001 publication milestone — Task 004
+
+The [published report](../research/reports/EXPERIMENT_001_REPORT.md) records a bounded Stage 1 service-exchange demonstration and project-assisted Stage 2 adversarial evidence with **CONDITIONAL PASS**, anchored to implementation commit `f66cda91af5cb2f2da266fe11d90bc67c05cfc77` and [passing CI run 39057757966](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39057757966). It reports 58 Solidity and 54 Python tests and preserves unresolved requester-veto fairness, independent review, supply-chain maintenance and fault-coverage conditions.
+
+Earlier escrow-only progress above is historical. Publication does not certify completion of all Stage 0, Stage 1 or Stage 2 gates, and does not narrow Stages 3–10 or the independent-network ambition. The next proposed step is selecting an Experiment 002 research question through a separate design review; no implementation, architecture change or automatic stage transition follows.

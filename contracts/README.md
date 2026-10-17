@@ -1,6 +1,6 @@
 # Experiment 001 escrow
 
-The only implementation is [Experiment001Escrow.sol](src/Experiment001Escrow.sol), a local research escrow matching the [architecture](../docs/architecture/EXPERIMENT_001_ARCHITECTURE.md). No agents, deployment scripts, tokens, or public-chain configuration are provided. Settlement requires both correct on-chain arithmetic and requester-signed Acceptance. A requester can withhold Acceptance after valid work; timeout refunds the requester. This deliberate fairness limitation is preserved.
+The Solidity component is [Experiment001Escrow.sol](src/Experiment001Escrow.sol), a local research escrow matching the [architecture](../docs/architecture/EXPERIMENT_001_ARCHITECTURE.md). Separate [Python agents and a temporary local deployment runner](../sdk/python/README.md) implement the bounded experiment. No token or public-chain configuration is provided. Settlement requires both correct on-chain arithmetic and requester-signed Acceptance. A requester can withhold Acceptance after valid work; timeout refunds the requester. This deliberate fairness limitation is preserved.
 
 ## Fresh checkout
 
@@ -24,8 +24,8 @@ Do not use `forge script --broadcast`, public RPC URLs, production wallets, or r
 
 ## Tests and limitations
 
-[Escrow coverage](../docs/experiments/EXPERIMENT_001_ESCROW_COVERAGE.md) maps all 18 requirements to contract evidence or pending integration work. Tests use synthetic in-memory signer fixtures derived by Foundry, not published Anvil keys or production credentials. Avoid verbose execution traces that could display fixture signing inputs. No Python signer/agent, RPC retry harness, fresh-key lifecycle, discovery transport, or end-to-end verification evidence is implemented yet.
+[Escrow coverage](../docs/experiments/EXPERIMENT_001_ESCROW_COVERAGE.md) maps all 18 requirements to contract evidence or pending integration work. Tests use synthetic in-memory signer fixtures derived by Foundry, not published Anvil keys or production credentials. Avoid verbose execution traces that could display fixture signing inputs. Task 003B adds separate Python signer/agent processes and local transport/runner integration; Task 003C adds adversarial validation. See the [published research report](../research/reports/EXPERIMENT_001_REPORT.md) for CONDITIONAL PASS, actual evidence and remaining limits.
 
-The compiler's selfdestruct deprecation warning is intentionally exercised only by a test adversary forcing surplus ETH into escrow. Production escrow contains no selfdestruct. Receiver tests install callback behavior at credited addresses through local test cheatcodes; unsupported smart-wallet signing is not enabled.
+The compiler's selfdestruct deprecation warning is intentionally exercised only by a test adversary forcing surplus ETH into escrow. The escrow contract contains no selfdestruct. Receiver tests install callback behavior at credited addresses through local test cheatcodes; unsupported smart-wallet signing is not enabled.
 
 No independent audit or production security claim is made. Ethereum tooling remains an experiment choice; Genesis's future network architecture is unresolved. See [dependency pins](../DEPENDENCIES.md).

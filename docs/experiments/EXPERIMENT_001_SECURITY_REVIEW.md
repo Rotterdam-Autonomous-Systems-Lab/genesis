@@ -99,3 +99,7 @@ Core experiment criteria are met in the tested local fixture: separate signer/pr
 3. Track remaining coverage gaps explicitly: broader reordered/dropped-message schedules, pending transaction replacement/rebroadcast, lifecycle-wide reorg/outage sequences, hard host termination/restart, systematic key-leak instrumentation, and OS resource limits. Current tests are bounded samples, not exhaustive adversarial assurance.
 
 Successful local EVM experimentation does not validate a Genesis consensus mechanism, native blockchain, permissionless identity/discovery, fair exchange, production readiness, or the ultimate independent-network ambition. No Experiment 002 or final research report is authorized by this assessment.
+
+## Task 004 publication
+
+The [Experiment 001 research report](../../research/reports/EXPERIMENT_001_REPORT.md) synthesizes this project-assisted review and the final passing validation milestone. The conditional acceptance, unresolved requester veto, and remaining independent-review/coverage conditions are preserved; publication is not additional security assurance.

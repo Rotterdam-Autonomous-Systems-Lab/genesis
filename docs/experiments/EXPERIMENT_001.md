@@ -118,3 +118,7 @@ No BLOCKING OPEN DECISION is left in this behavior. Task 003A separately authori
 ## Task 003C acceptance assessment
 
 The [security review](EXPERIMENT_001_SECURITY_REVIEW.md) assesses all 18 invariants and records CONDITIONAL PASS for the bounded local fixture, with explicit residual review/coverage conditions. It is not an independent audit, production approval, final research report, or authorization for Experiment 002. Requester-veto semantics and the long-term independent-network ambition are preserved.
+
+## Published research report — Task 004
+
+[Experiment 001 report](../../research/reports/EXPERIMENT_001_REPORT.md) publishes the methods, 112-test validation milestone, all 18 invariant assessments, confirmed findings, reproduction commands and CONDITIONAL PASS limitations. It is anchored to implementation commit `f66cda91af5cb2f2da266fe11d90bc67c05cfc77` and its passing CI run. Publication does not close independent-review conditions or approve Experiment 002 implementation.

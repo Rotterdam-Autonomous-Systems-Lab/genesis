@@ -16,6 +16,10 @@ No final independent network architecture, production blockchain, native token, 
 
 Development follows explicit research questions and scoped experiments. Prior art, assumptions, security limits, hypotheses, and negative results must be documented before making claims.
 
+## Research Results
+
+[Experiment 001 research report](research/reports/EXPERIMENT_001_REPORT.md) — **CONDITIONAL PASS** for a bounded local service exchange. Separate Python requester/provider processes independently verified a deterministic result and settled synthetic payment on Anvil; the final validation milestone recorded 112 passing tests (58 Solidity, 54 Python). The report includes reproduction commands, adversarial findings, all 18 invariant assessments, and limitations. Requester-veto fairness and independent auditing remain unresolved; this is not production assurance or validation of a Genesis consensus mechanism.
+
 ## Start here
 
 | Researcher's question | Documentation |
