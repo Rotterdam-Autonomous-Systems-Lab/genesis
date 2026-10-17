@@ -1,23 +1,25 @@
 # Genesis
 
-Genesis is an early-stage research initiative of the Rotterdam Autonomous Systems Lab (RASL). It explores foundations for permissionless infrastructure through which humans, AI agents, robots, machines, satellites, and future autonomous entities could establish cryptographic authority, coordinate, exchange resources, and transact without relying on a centralized operator.
+Genesis is the temporary codename for an open, research-first initiative from Rotterdam Autonomous Systems Lab (RASL). It explores foundations for a permissionless economy in which humans, AI agents, robots, machines, vehicles, satellites, sensors, distributed systems, and future autonomous entities could establish cryptographic authority, coordinate, exchange resources, and transact across organizational and technical boundaries.
 
-## Why research first
+The central question is whether autonomous participants that have never met, run on different hardware, operate under different owners, and pursue different objectives can establish verifiable agreements, exchange resources, and coordinate safely without trusting each other or a central platform. The guiding principle is: **the network must not need to trust the intelligence of its participants; it must only need to verify their actions.** This is a research challenge, not a proven guarantee.
 
-The hard questions are unresolved: how authority is represented, how actions are bounded, how services and contributions are verified, and how networks resist Sybil behavior and collusion. Genesis is investigating these questions before committing to a protocol or implementation. No new consensus protocol has been invented or validated by this project.
+Genesis is not only an AI-agent payment application. A small two-agent transaction is the first implementation milestone, but it is an early experiment toward the much larger ambition of foundational economic infrastructure for autonomous systems.
 
 ## Status
 
-Genesis is early-stage experimental research. This repository contains research questions, hypotheses, plans, and contribution guidance. It does not contain a production blockchain, deployed contracts, a token, or an operational network. There is no token because the project has not established a sound mechanism, governance model, or need for one. There is no production blockchain because core assumptions and security properties remain to be researched.
+Genesis is in early-stage experimental research. No independent network architecture, production blockchain, token, ticker, consensus algorithm, or new consensus protocol has been selected or validated. A future independent permissionless Layer 1 is one research possibility, alongside other decentralized architectures and integration with existing networks. No tokenomics, presale, or launch date is approved.
+
+Research proceeds before implementation. The project documents prior art, assumptions, security limits, hypotheses, and negative results before making claims. Read [`docs/PROJECT_CONTEXT.md`](docs/PROJECT_CONTEXT.md) for onboarding and [`MASTER_PLAN.md`](MASTER_PLAN.md) for the canonical charter.
+
+## Research tracks
+
+1. **Autonomous Economic Authority** — cryptographic identity, bounded authority, delegation, wallets, agreements, and settlement.
+2. **Verifiable Coordination** — discovery, negotiation, independently verifiable services and contributions, and offline coordination.
+3. **Autonomous Network Security** — Sybil resistance, collusion, consensus and network research, economic security, and protocol evolution.
 
 ## Participate
 
-Read [MASTER_PLAN.md](MASTER_PLAN.md) and [CONTRIBUTING.md](CONTRIBUTING.md), then open a focused research task or propose an experiment. Helpful contributions include prior-art references, threat analysis, formal models, reproducible simulations, and careful reviews. Label assumptions and speculative claims clearly; do not imply that an untested proposal is a result.
+Read [`CONTRIBUTING.md`](CONTRIBUTING.md), then propose a focused research task with prior art, assumptions, deliverables, and falsifiable acceptance criteria. Security concerns follow [`SECURITY.md`](SECURITY.md). Historical brainstorms in `research/history/` are public records, not approved architecture. Do not include secrets or private notes in public contributions.
 
-## Repository map
-
-- `docs/` — vision, research specification, threat model, hypotheses, roadmap, architecture notes, and ADRs.
-- `research/` — papers, experiments, and reproducible research artifacts.
-- `contracts/`, `sdk/`, `examples/`, and `tests/` — reserved for future, explicitly scoped work.
-
-See [docs/ROADMAP.md](docs/ROADMAP.md) for research milestones and [SECURITY.md](SECURITY.md) for responsible security reporting.
+See [`docs/ROADMAP.md`](docs/ROADMAP.md) for conditional research gates, [`docs/DECISION_REGISTER.md`](docs/DECISION_REGISTER.md) for established decisions, and [`docs/FUTURE_NETWORK_ARCHITECTURE.md`](docs/FUTURE_NETWORK_ARCHITECTURE.md) for the architecture research territory.

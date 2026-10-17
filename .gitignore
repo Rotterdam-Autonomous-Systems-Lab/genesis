@@ -18,6 +18,10 @@ id_ed25519
 credentials.json
 secrets.json
 
+# Local-only research notes
+/internal/
+/internal
+
 # Local/editor and operating system artifacts
 .DS_Store
 .idea/

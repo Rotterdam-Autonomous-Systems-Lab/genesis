@@ -1,0 +1,43 @@
+# Genesis Project Context
+
+## What Genesis is
+
+Genesis is RASL’s temporary-codename, open-source, research-first initiative exploring foundational infrastructure for economic coordination among autonomous intelligences and systems. The mission spans humans, software agents, robots, machines, vehicles, sensors, satellites, distributed systems, and future entities. The central question is whether unfamiliar, independently operated participants can establish verifiable agreements, exchange resources, and coordinate safely without trusting each other or a central platform.
+
+## What Genesis is not
+
+Genesis is not only an AI-agent payment application. It is not currently a production blockchain, token, wallet, smart-contract system, or autonomous network. No new consensus protocol or cryptographic primitive has been invented or validated here. A Bitcoin-scale foundational ambition is an aspiration, not an achievement or novelty claim.
+
+## Current research status and milestone
+
+Status: early-stage experimental research. Current milestone: project foundation and prior-art mapping, with a small, bounded two-agent independently verifiable economic transaction experiment identified as the first implementation milestone. It is a first step, not the long-term product definition. Any experiment requires a scoped task, synthetic actors/data, and explicit validation criteria.
+
+## Core principles
+
+“The network must not need to trust the intelligence of its participants. It must only need to verify their actions.” Treat this as a research principle, not a proven universal property. Prioritize bounded cryptographic authority, security, verifiability, interoperability, open participation, privacy, resilience, and honest reporting of uncertainty.
+
+## Major decisions
+
+RASL is the research organization; Genesis is temporary codename; development is open-source and research-first; the three tracks are Autonomous Economic Authority, Verifiable Coordination, and Autonomous Network Security; no premature token or consensus claims; no uncontrolled autonomous replication or unauthorized infrastructure use; and no permanent Ethereum commitment. There is no selected network name, ticker, consensus algorithm, tokenomics, or final architecture.
+
+See [`DECISION_REGISTER.md`](DECISION_REGISTER.md) for the canonical register.
+
+## Unresolved decisions
+
+Whether an independent L1 is justified; whether any native asset is necessary; which consensus or non-consensus architecture fits requirements; whether useful contribution can be measured and where it belongs; how authority, discovery, execution, governance, upgrades, and offline operation should work; and which permanent name is suitable. APoC is only an internal research hypothesis.
+
+## Canonical documents
+
+- [`MASTER_PLAN.md`](../MASTER_PLAN.md) — canonical project charter and boundaries.
+- [`DECISION_REGISTER.md`](DECISION_REGISTER.md) — established decisions and unresolved choices.
+- [`FUTURE_NETWORK_ARCHITECTURE.md`](FUTURE_NETWORK_ARCHITECTURE.md) — architecture research territory.
+- [`RESEARCH_SPEC.md`](RESEARCH_SPEC.md) and [`PROTOCOL_HYPOTHESES.md`](PROTOCOL_HYPOTHESES.md) — research methods and falsifiable hypotheses.
+- [`THREAT_MODEL.md`](THREAT_MODEL.md) — initial threat inventory.
+- [`ROADMAP.md`](ROADMAP.md) — conditional research gates.
+- [`research/history/ORIGINAL_BRAINSTORM.md`](../research/history/ORIGINAL_BRAINSTORM.md) — recovered brainstorm; not approved architecture.
+- [`research/history/CONTEXT_RECOVERY.md`](../research/history/CONTEXT_RECOVERY.md) — how to reconstruct project context.
+- [`research/history/NAMING_AND_IDENTITY.md`](../research/history/NAMING_AND_IDENTITY.md) — explored names and naming boundary.
+
+## Recover context in future sessions
+
+Read this guide, then read `MASTER_PLAN.md` and `docs/DECISION_REGISTER.md`. Use ADRs for accepted architectural decisions. Consult the history archive for origin and rejected or deferred ideas, but do not treat brainstorm entries as approvals. Check current `git status`, recent commits, and open research tasks before acting. Separate established techniques, project assumptions, hypotheses, and findings. Update all affected canonical documents when an approved decision changes. See `research/history/CONTEXT_RECOVERY.md` for details.

@@ -1,13 +1,28 @@
-# Protocol hypotheses
+# Protocol and Network Hypotheses
 
-This file records questions to investigate, not decisions or protocol claims. None of these hypotheses is validated, and no new consensus protocol has been invented by Genesis. Update entries with evidence, falsification criteria, and citations.
+These are research hypotheses and questions, not design decisions. No new consensus protocol or cryptographic primitive has been invented or validated by Genesis. APoC is an internal research hypothesis only. Each hypothesis requires comparison with prior art and an attempt to falsify it before it can be called supported.
 
-| ID | Hypothesis | Evidence needed | Status |
-| --- | --- | --- | --- |
-| H-01 | Capability-limited cryptographic authority may allow autonomous actions with bounded consequences. | Define capability semantics, compromise cases, enforcement assumptions, and measurable bounds; compare with prior art. | Open |
-| H-02 | Service agreements paired with independently checkable evidence may reduce reliance on a single trusted adjudicator for some classes of work. | Identify service classes, evidence forgery risks, dispute cases, and verification costs. | Open |
-| H-03 | Useful coordination may remain possible under intermittent or delayed communication if messages and obligations tolerate asynchronous delivery. | Specify liveness and safety goals under partitions; simulate delivery delay, reordering, and loss. | Open |
-| H-04 | Sybil resistance may require different mechanisms for different resources and threat environments. | Compare assumptions, attack cost, accessibility, collusion, and failure modes across settings. | Open |
-| H-05 | Protocol evolution can preserve verifiability while limiting upgrade authority. | Define compatibility and governance constraints; examine migration and malicious-upgrade cases. | Open |
+| ID | Research hypothesis | Candidate falsification or evaluation | Adversarial cases | Status |
+| --- | --- | --- | --- | --- |
+| H-01 | Cryptographic capabilities with explicit scope may bound autonomous actions and limit consequences of compromise. | Model amount, time, purpose, resource, and counterparty constraints; test bypass, revocation delay, and recovery against alternatives. | Key theft, confused deputy, replay, malicious agent, colluding counterparty. | Open; no design selected |
+| H-02 | Some service agreements can produce evidence that independent parties can verify without relying on one universally trusted adjudicator. | Select service classes; measure false acceptance/rejection, verification cost, dispute frequency, and external-data dependence. | Fake fulfillment, selective evidence, verifier collusion, ambiguous outcomes. | Open |
+| H-03 | Useful coordination can tolerate intermittent or delayed communication for some bounded classes of agreement. | Simulate delay, loss, reordering, partitions, and reconnect; define safety and liveness limits before testing. | Split brain, stale authority, double commitment, censorship, long partition. | Open |
+| H-04 | Discovery can be made useful without a single permission gatekeeper while controlling spam and Sybil capture. | Compare discovery methods under churn, poisoned records, targeted censorship, and varying participation cost. | Sybil swarm, eclipse, directory capture, spam, privacy leakage. | Open |
+| H-05 | Useful contributions may be measurable and independently verifiable for some resources. | Test narrow computation, storage, bandwidth, sensing, or verification tasks; measure false claims and verification overhead. | Fake work, duplicate work, colluding verifier, replay, manipulated measurement. | Open |
+| H-06 | Contribution-linked incentives may improve participation or security in some settings. | Compare against service-market and non-token baselines; model attack cost, concentration, reward gaming, and sustainability. | Reward manipulation, cartel formation, wash activity, resource concentration. | Open |
+| H-07 | Useful contribution may be safer in a service market or incentive layer than in consensus. | Compare consensus-coupled and decoupled designs for safety, liveness, complexity, attack surface, and verification cost. | Fake contribution, colluding participants, economic coercion, censorship. | Open |
+| H-08 | Sybil resistance requirements differ across resource classes and environments, so one mechanism may not fit all participation. | Compare mechanisms across low-resource and high-resource participants; measure inclusion, attack cost, and concentration. | Adaptive Sybils, identity capture, resource-rich cartel, exclusion. | Open |
+| H-09 | An independent chain may be justified only if demonstrated requirements cannot be met safely and adequately through existing networks or other architectures. | Define requirements and compare an independent L1, modular/layered options, and integrations using explicit criteria. | Bridge capture, base-layer censorship, governance and infrastructure concentration. | Open |
+| H-10 | A native asset may be necessary for some network functions, but non-token alternatives may satisfy the same requirements with fewer harms. | Identify required function; compare existing assets, fees, bonds, external settlement, and no-asset designs. | Speculative capture, concentration, bribery, regulatory and user harm. | Open |
+| H-11 | Protocol evolution can preserve independent verification while limiting upgrade authority. | Model version changes, compatibility, migration, downgrade, emergency authority, and client diversity. | Malicious upgrade, governance capture, incompatible fork, key compromise. | Open |
+| H-12 | Some delayed or offline economic interactions can settle safely without continuous connectivity. | Define bounded obligations and stale-state rules; evaluate offline duration, conflict resolution, and delayed settlement. | Double commitment, revocation lag, device compromise, replay after reconnect. | Open |
+| H-13 | A model-agnostic, hardware-independent interface can support diverse participants without hiding critical trust in adapters. | Implement independent mock participants and measure conformance, adapter authority, and interoperability failures. | Malicious adapter, semantic mismatch, vendor-specific claims, resource mismatch. | Open |
+| H-14 | Future cryptographic migration can be staged while maintaining verifiability across old and new participants. | Analyze algorithm agility, signatures, key rotation, downgrade attacks, post-quantum transitions, and long-lived records. | Forced downgrade, split ecosystem, weak legacy signatures, migration capture. | Open |
 
-Before claiming a hypothesis is supported, document relevant prior art, methods, results, limitations, and an attempt to falsify it. Do not claim originality without evidence.
+### APoC status
+
+**Autonomous Proof of Contribution (APoC)** is a name for an internal question: can verified useful contributions help provide security or incentives? It is not a finalized consensus mechanism, protocol, or claim of novelty. No protocol parameters, reward rules, or security properties are established. Research may conclude that contribution belongs outside consensus or is not feasible.
+
+### Reporting a result
+
+Before describing a hypothesis as supported or rejected, document prior art reviewed, the method and chosen falsification criteria, results, uncertainty, limitations, and independent review. Preserve inconclusive outcomes and failed approaches in the history records.
