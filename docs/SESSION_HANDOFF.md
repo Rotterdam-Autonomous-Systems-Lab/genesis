@@ -6,7 +6,7 @@ Use this document to carry concise project context between Codex sessions and co
 
 ### Current status
 
-Genesis is in early-stage experimental research. The current milestone is project foundation and prior-art mapping. A small, bounded two-agent independently verifiable economic transaction is the first implementation milestone, but remains an early step toward the broader permissionless economic network ambition. Task 003A implements and locally tests the Solidity escrow component with pinned dependencies and GitHub CI. Python agents and the full two-agent experiment remain unimplemented.
+Genesis is in early-stage experimental research. The current milestone is project foundation and prior-art mapping. A small, bounded two-agent independently verifiable economic transaction is the first implementation milestone, but remains an early step toward the broader permissionless economic network ambition. Task 003A implements and locally tests the Solidity escrow component with pinned dependencies and GitHub CI. Task 003B now implements separate Python requester/provider processes and a temporary Anvil end-to-end fixture; the original contract and requester-veto semantics are unchanged. Local Solidity and Python evidence is recorded in the coverage map. Independent review and explicitly pending fault/security cases remain open.
 
 ### Completed work
 
@@ -20,6 +20,8 @@ Genesis is in early-stage experimental research. The current milestone is projec
 
 - Organic discoverability: clarified the README introduction and researcher navigation; updated the GitHub description and eight research topics; enabled Discussions. Published a [welcome thread](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/discussions/1) and an [unresolved requester-veto fairness thread](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/discussions/2). No implementation, architectural decision, or research status changed. The documentation commit is recoverable from this file's Git history.
 
+- Task 003B: independent ephemeral process-owned signers, signed file discovery/agreement/result/Acceptance transport, actual local escrow transactions, and bounded runner cleanup. All 55 Solidity tests and 30 Python tests passed locally; a standalone run settled and withdrew exact synthetic principal. Hash-locked Python dependencies and pinned-action CI now cover integration. See [agent reproduction](../sdk/python/README.md) and [coverage/pending cases](experiments/EXPERIMENT_001_ESCROW_COVERAGE.md). The implementation commit is recoverable from this file's history; remote CI evidence belongs to that commit's Actions run.
+
 ### Open questions
 
 - Whether an independent permissionless Layer 1 is justified compared with existing networks or another architecture.
@@ -30,11 +32,11 @@ Genesis is in early-stage experimental research. The current milestone is projec
 
 ### Next task
 
-Recommended next task: review the escrow implementation and residual risk/coverage map; separately authorize a bounded Python signer/verifier and local transport integration task. Retain requester veto and cover pending domain interoperability, independent verification evidence, endpoint/key lifecycle, retry/reorg detection, and resource budgets. No Python implementation is authorized by Task 003A.
+Recommended next task: founder/security review of Task 003B evidence, requester-veto limitations, dependencies, and the explicit pending Task 003C candidate matrix. Any further implementation, fault-proxy expansion, or settlement redesign needs a separate task authorization. No Task 003C work has begun.
 
 ### Blockers
 
-No blocking specification contradiction was found. Contract test evidence is local and scoped. Independent audit/advisory review, Python/environment integration, and end-to-end experiment acceptance remain pending; these are not claimed complete by the escrow CI.
+No blocking specification contradiction was found. Contract test evidence is local and scoped. Independent audit/advisory review, the broader fault matrix, and review of full experiment acceptance remain pending; local integration tests do not complete those gates.
 
 ### Relevant commits
 

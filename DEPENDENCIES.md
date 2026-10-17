@@ -1,6 +1,6 @@
 # Experiment 001 dependency baseline
 
-Task 003A pins the escrow-only local build below. Installation needs ordinary HTTPS access to source/tool distribution; build and tests then run without public blockchain access, hosting, or credentials. No Python packages are introduced.
+Task 003A pins the escrow-only local build below. Installation needs ordinary HTTPS access to source/tool distribution; build and tests then run without public blockchain access, hosting, or credentials. Task 003B adds the hash-locked Python fixture below; no production dependency claim follows.
 
 | Component | Exact reference | Role |
 | --- | --- | --- |
@@ -27,3 +27,11 @@ These hashes were checked against the official platform manifests for 0.8.28; th
 Source archives were fetched by immutable commit. OpenZeppelin archive SHA-256 is `7ca6287b8a0d0db67b5923c047365025e612dbaf58a49cbe74d05aa5213e36f9`; forge-std archive SHA-256 is `eb94c3bd026342ae6955ce08f76aad648c586c003acebf5ee5d9b419a417076c`. See each dependency's PROVENANCE.md. Third-party licenses remain theirs; Genesis's project license remains undecided. First-party source is marked UNLICENSED rather than silently selecting a license.
 
 The consumed cryptography and guard code was inspected for the specified EIP-712 domain, 65-byte low-s/v validation, and non-transient reentrancy behavior. Exact pins and tests do not constitute an independent security audit, a comprehensive advisory review, or a guarantee that dependencies are vulnerability-free. Review the pinned release and advisory/audit scope before expanding use. Relevant primary references: [OpenZeppelin cryptography](https://docs.openzeppelin.com/contracts/5.x/api/utils/cryptography), [OpenZeppelin utilities](https://docs.openzeppelin.com/contracts/5.x/api/utils), and [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
+
+## Task 003B Python fixture
+
+CPython **3.12.1** is the exact local and CI runtime. Direct dependencies are Web3.py **7.14.0** and eth-account **0.13.7**, with all transitive versions and permitted distribution SHA-256 hashes in [requirements.lock](sdk/python/requirements.lock). Install with `pip --require-hashes`; [requirements.in](sdk/python/requirements.in) records intent. The lock was generated on Python 3.12 with pip-tools **7.5.1**, then installed and tested. Lock regeneration is a reviewed maintenance action, not part of execution. Package hashes verify distribution integrity against the recorded lock, not publisher trust or absence of vulnerabilities.
+
+CI uses actions/setup-python **v5.6.0**, immutable commit `a26af69be951a213d495a4c3e4e4022e16d87065`, verified against the upstream tag. Existing pinned actions and minimal read-only workflow permissions remain. No production credentials or public chain RPC are used. Initial tool/package installation needs HTTPS; runtime communicates only over literal loopback and local files.
+
+Standard APIs: [eth-account typed-data signing](https://eth-account.readthedocs.io/en/v0.13.7/eth_account.html) and [Web3.py transactions](https://web3py.readthedocs.io/en/v7.14.0/transactions.html). Exact pins are not a comprehensive advisory review; independent dependency/security review remains pending. The older pinned Python patch and toolchain should be reviewed before any expansion beyond this disposable local fixture.

@@ -10,7 +10,7 @@ A small two-agent transaction is the first engineering milestone toward this bro
 
 ## Status
 
-Genesis is in early-stage experimental research. The local Solidity escrow component of Experiment 001 has been implemented and tested; Python agents and the full two-agent interaction remain unimplemented. See the [experiment specification](docs/experiments/EXPERIMENT_001.md) and [coverage and limitations](docs/experiments/EXPERIMENT_001_ESCROW_COVERAGE.md). Local test results do not establish production security, fair exchange, or an independently audited system.
+Genesis is in early-stage experimental research. Experiment 001 now includes the local Solidity escrow and separate Python requester/provider processes, with bounded synthetic-fund Anvil integration tests. See the [experiment specification](docs/experiments/EXPERIMENT_001.md) and [coverage and limitations](docs/experiments/EXPERIMENT_001_ESCROW_COVERAGE.md). Local test results do not establish production security, fair exchange, or an independently audited system.
 
 No final independent network architecture, production blockchain, native token, ticker, or final consensus algorithm has been selected; no novel consensus protocol has been validated. A future independent permissionless Layer 1 is one research possibility, alongside other decentralized architectures and integration with existing networks. Ethereum-compatible local tooling is an experiment fixture, not a commitment to Ethereum as the final network. No tokenomics, presale, or launch date is approved.
 
@@ -25,7 +25,7 @@ Development follows explicit research questions and scoped experiments. Prior ar
 | What could the long-term network include? | [Future network architecture research](docs/FUTURE_NETWORK_ARCHITECTURE.md), [conditional roadmap](docs/ROADMAP.md) |
 | What does the first experiment specify and test? | [Experiment 001](docs/experiments/EXPERIMENT_001.md), [architecture](docs/architecture/EXPERIMENT_001_ARCHITECTURE.md), [coverage and limitations](docs/experiments/EXPERIMENT_001_ESCROW_COVERAGE.md) |
 | What are the security assumptions? | [Threat model](docs/THREAT_MODEL.md), [security invariants](docs/SECURITY_INVARIANTS.md) |
-| How can I reproduce the local escrow tests? | [Contract setup and tests](contracts/README.md), [dependency pins](DEPENDENCIES.md) |
+| How can I reproduce the local escrow tests? | [Contract setup and tests](contracts/README.md), [agent experiment instructions](sdk/python/README.md), [dependency pins](DEPENDENCIES.md) |
 | Where is project history and current work recorded? | [Reconstructed brainstorm](research/history/ORIGINAL_BRAINSTORM.md), [research journal](docs/RESEARCH_JOURNAL.md), [session handoff](docs/SESSION_HANDOFF.md) |
 
 ## Research tracks

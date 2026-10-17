@@ -1,6 +1,6 @@
 # Experiment 001 Security Invariants
 
-Status: **testable requirements, with scoped Task 003A contract evidence**. The [coverage map](experiments/EXPERIMENT_001_ESCROW_COVERAGE.md) distinguishes contract tests from pending environment and agent integration checks. Scope is the local [Experiment 001](experiments/EXPERIMENT_001.md) design in [the architecture specification](architecture/EXPERIMENT_001_ARCHITECTURE.md). Every positive and adversarial test below is required evidence for an eventual implementation; Task 002B supplied no code/results; Task 003A implements and tests only the escrow portions.
+Status: **testable requirements, with scoped Task 003A contract and Task 003B agent-integration evidence**. The [coverage map](experiments/EXPERIMENT_001_ESCROW_COVERAGE.md) distinguishes contract tests from pending environment and agent integration checks. Scope is the local [Experiment 001](experiments/EXPERIMENT_001.md) design in [the architecture specification](architecture/EXPERIMENT_001_ARCHITECTURE.md). Every positive and adversarial test below is required evidence for an eventual implementation; Task 002B supplied no code/results; Task 003A implements and tests only the escrow portions; Task 003B adds the bounded Python/local-chain fixture. Consult the coverage map for remaining cases.
 
 ## Guarantee boundary
 
@@ -134,7 +134,7 @@ Principal means the signed synthetic escrow price; gas is excluded. First-use au
 - **Enforcement:** loopback-literal RPC only, no fork URLs/proxy/redirect; expected chainId/runId/code hash; fresh ephemeral keys and synthetic balances; refuse public endpoints; no key logging/files. This is a process boundary, not a cryptographic guarantee.
 - **Positive test:** local preflight succeeds and all artifacts contain only public identifiers/digests.
 - **Adversarial test:** remote/public/DNS endpoint, proxy configuration, wrong chainId/runId/code, known/default key use, or secret-bearing log attempt causes refusal/redaction; inspect artifacts for private-key exposure before release.
-- **Limitations:** trusted host can spoof chain metadata or copy code to a public network; chain ID 31337 alone does not ensure locality. No implementation/deployment is authorized by this specification task.
+- **Limitations:** trusted host can spoof chain metadata or copy code to a public network; chain ID 31337 alone does not ensure locality. The original specification task authorized no implementation; Task 003B separately authorizes only temporary local synthetic-fund deployment.
 
 ## SI-17 — Retrying an ambiguous action does not duplicate economic intent
 

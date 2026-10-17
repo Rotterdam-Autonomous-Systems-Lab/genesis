@@ -26,6 +26,14 @@ CI follow-up: the first run for `db7da99` correctly rejected the tool pin before
 
 Next proposed task: review escrow code and residual risks, then separately authorize bounded Python signer/verifier and local transport integration for the remaining invariant coverage. The broader Genesis network ambition is unchanged.
 
+## 2026-10-17 — Independent-agent local integration (Task 003B)
+
+Implemented separate Python requester/provider OS processes with independently generated ephemeral keys and signed, bounded public JSON file transport. Added exact EIP-712 interoperability checks for all five schemas, independent requester arithmetic verification, local signed funding/settlement/refund/withdrawal, receipt/event/canonical-state checks, finite budgets, and cleanup. The Solidity contract and all existing contract tests are unchanged; requester veto is explicitly preserved.
+
+Local evidence: 55 Solidity tests and 30 Python unit/live-Anvil/process integration tests passed, including two clean success runs, maximum operands, invalid-result rejection without Acceptance, requester refusal, provider termination, cap/binding/replay/expiry rejection, exact refunds, client-boundary RPC failure/lost-response reconciliation, and reorg detection. A standalone local run settled result 18 and withdrew 10^12 synthetic wei; all children stopped. The coverage report preserves an initial bytes32 representation mismatch and explicitly pending broader fault/security cases. No fair-exchange, provider effort, production readiness, native blockchain, or Genesis consensus finding is claimed.
+
+Pinned CPython/Web3.py/eth-account and transitive hashes; extended the read-only pinned-action workflow to install locked dependencies, run the existing Solidity suite, Python tests, and an end-to-end temporary-Anvil experiment. The pushed commit's Actions run is the source for remote CI status; this entry does not predeclare CI success. Recommended next task: review evidence and residual risks, then separately authorize any Task 003C work.
+
 ## Source boundary
 
 This journal does not infer events beyond the repository record. See [`SESSION_HANDOFF.md`](SESSION_HANDOFF.md) for current working context and the reusable handoff format.

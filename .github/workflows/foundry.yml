@@ -1,4 +1,4 @@
-name: Foundry escrow
+name: Local Experiment 001
 on:
   push:
     branches: [main]
@@ -32,3 +32,18 @@ jobs:
         run: forge test --offline -v
       - name: Local Anvil smoke check (no transactions)
         run: scripts/check-anvil.sh
+      - name: Install pinned Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12.1'
+      - name: Install hash-locked Python dependencies
+        run: |
+          python -m venv internal/agent-venv
+          internal/agent-venv/bin/python -m pip install --require-hashes -r sdk/python/requirements.lock
+          internal/agent-venv/bin/python -m pip check
+      - name: Python unit and local Anvil integration tests
+        env:
+          PYTHONPATH: sdk/python
+        run: internal/agent-venv/bin/python -m unittest discover -s tests/python -v
+      - name: End-to-end independent-agent experiment (loopback synthetic funds only)
+        run: scripts/run-experiment-001.sh
