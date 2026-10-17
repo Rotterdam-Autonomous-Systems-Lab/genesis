@@ -4,7 +4,7 @@ Task 003A pins the escrow-only local build below. Installation needs ordinary HT
 
 | Component | Exact reference | Role |
 | --- | --- | --- |
-| Foundry (Forge and Anvil) | v1.0.0; commit `e144b82070619b6e10485c38734b4d4d45aebe04` | Local compiler driver, test VM, local node smoke check. |
+| Foundry (Forge and Anvil) | v1.0.0; commit `8692e926198056d0228c1e166b1b6c34a5bed66c` | Local compiler driver, test VM, local node smoke check. |
 | Solidity | `0.8.28+commit.7893614a` | Exact pragma; Cancun EVM, optimizer 200 runs, via IR. |
 | OpenZeppelin Contracts | v5.2.0; commit `acd4ff74de833399287ed6b31b4debf6b2b35527` | Non-upgradeable EIP712, ECDSA, ReentrancyGuard and required source closure. |
 | forge-std | v1.9.6; commit `3b20d60d14b343ee4f908cb8079495c07f5e8981` | Test helpers, assertions, local cheatcodes, stateful test targeting. |

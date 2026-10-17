@@ -4,7 +4,7 @@ The only implementation is [Experiment001Escrow.sol](src/Experiment001Escrow.sol
 
 ## Fresh checkout
 
-Prerequisites: Bash, curl, tar, jq, checksum utility, and exact Foundry v1.0.0 (`e144b82070619b6e10485c38734b4d4d45aebe04`). CI installs that release automatically on Ubuntu 24.04. To install locally without changing global settings, extract the official platform release into ignored `internal/tools/foundry` and add that directory to this shell's PATH; then verify the tool commits. The official x86_64 archives are [Linux](https://github.com/foundry-rs/foundry/releases/download/v1.0.0/foundry_v1.0.0_linux_amd64.tar.gz) and [macOS](https://github.com/foundry-rs/foundry/releases/download/v1.0.0/foundry_v1.0.0_darwin_amd64.tar.gz). Download only from the trusted release source; the commit check verifies version identity, not independent binary attestation.
+Prerequisites: Bash, curl, tar, jq, checksum utility, and exact Foundry v1.0.0 (`8692e926198056d0228c1e166b1b6c34a5bed66c`). CI installs that release automatically on Ubuntu 24.04. To install locally without changing global settings, extract the official platform release into ignored `internal/tools/foundry` and add that directory to this shell's PATH; then verify the tool commits. The official x86_64 archives are [Linux](https://github.com/foundry-rs/foundry/releases/download/v1.0.0/foundry_v1.0.0_linux_amd64.tar.gz) and [macOS](https://github.com/foundry-rs/foundry/releases/download/v1.0.0/foundry_v1.0.0_darwin_amd64.tar.gz). Download only from the trusted release source; the commit check verifies version identity, not independent binary attestation.
 
 From the repository root:
 

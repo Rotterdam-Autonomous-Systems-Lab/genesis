@@ -12,6 +12,8 @@ Local `forge fmt --check`, offline build/tests, dependency checks, Bash syntax c
 
 An initial run had 49 passing tests and one fixture failure: the zero-requester invalid-terms case lacked synthetic balance and could not reach contract validation. The fixture now funds the simulated sender before asserting rejection. No contract check or security assertion was weakened. Compilation emits one expected selfdestruct deprecation warning from the forced-ETH adversary only; the escrow has no selfdestruct.
 
+The [initial CI run](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39054100038) rejected the first pin check before build/tests: the preinstalled macOS `1.0.0-stable` snapshot (`e144b820…`) differs from official release `v1.0.0` (`8692e926…`). The correction pins the official Git tag commit and reruns locally with that release installed under ignored internal/. The strict commit check and security tests are retained.
+
 ## Invariant-to-evidence map
 
 “Contract tested” applies only to the stated contract property under the trusted local VM assumptions. No row asserts production security or complete enforcement of environmental/agent behavior.

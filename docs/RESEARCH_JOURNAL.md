@@ -22,6 +22,8 @@ Implemented the minimal local escrow and EIP-712 authorization/state rules, reta
 
 Local evidence: 55 tests passed (36 unit, 15 fuzz, four stateful invariants); each stateful property ran 128 x 64 calls with zero unexpected reverts. Formatting, offline build, workflow actionlint, shell syntax, and loopback zero-account Anvil smoke checks passed. One initial fixture-only failure was corrected without changing contract checks; the coverage report preserves it. No Python agents, production credentials, public blockchain access, or real-fund transactions were involved. Independent security audit and remaining integration checks are not complete. The pushed commit's Actions result is available through GitHub; this journal does not predeclare remote CI success.
 
+CI follow-up: the first run for `db7da99` correctly rejected the tool pin before compilation because the local preinstalled `1.0.0-stable` commit was not the official `v1.0.0` tag commit. Pins were corrected to official `8692e926198056d0228c1e166b1b6c34a5bed66c`; strict version verification and all security tests were retained and rerun with that exact release. This configuration correction does not change settlement semantics.
+
 Next proposed task: review escrow code and residual risks, then separately authorize bounded Python signer/verifier and local transport integration for the remaining invariant coverage. The broader Genesis network ambition is unchanged.
 
 ## Source boundary

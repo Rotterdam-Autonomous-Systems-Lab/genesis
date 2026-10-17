@@ -41,7 +41,8 @@ No blocking specification contradiction was found. Contract test evidence is loc
 - `e872efb` — routine `origin/main` push default.
 - `ed13296` — journal and handoff continuity hardening.
 - `5701aee` — Experiment 001 specification and invariants.
-- Task 003A — resolve the escrow implementation commit with `git log -- docs/SESSION_HANDOFF.md`; inspect its GitHub Actions run for remote CI evidence.
+- `db7da99` — initial escrow implementation. Its first CI run rejected the mismatched preinstalled stable-build pin before tests.
+- Task 003A follow-up pins official Foundry v1.0.0 commit `8692e926…`; resolve the correction commit with this file’s Git history and inspect its Actions run for remote evidence.
 
 ### Canonical documents
 
