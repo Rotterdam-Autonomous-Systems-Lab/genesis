@@ -13,3 +13,4 @@
 11. For routine repository tasks, inspect repository state, Git identity, diffs, and staged filenames; stage only files relevant to the requested task, create a commit, and push the ordinary commit to `origin/main` by default without asking again. Follow an explicit user request for local-only work, another branch or PR flow, or no publishing. Never force-push, rewrite history, delete branches or tags, or change credentials or organization permissions without explicit approval.
 12. Clearly identify assumptions, uncertainty, and evidence limits in reports and documentation.
 13. Ask for approval before irreversible architectural or economic decisions.
+14. After significant tasks, make a concise update to `docs/SESSION_HANDOFF.md` covering current status, completed work, open questions, next task, blockers, relevant commits, and links to canonical documents.
