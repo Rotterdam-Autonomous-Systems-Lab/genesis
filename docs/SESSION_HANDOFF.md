@@ -18,6 +18,8 @@ Genesis is in early-stage experimental research. The current milestone is projec
 
 - Task 003A: escrow component, 55 passing local tests (including fuzz/stateful properties), dependency pins, offline build and read-only pinned-action CI. See the coverage map for partial/integration invariants; no independent audit or end-to-end finding is claimed.
 
+- Organic discoverability: clarified the README introduction and researcher navigation; updated the GitHub description and eight research topics; enabled Discussions. Published a [welcome thread](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/discussions/1) and an [unresolved requester-veto fairness thread](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/discussions/2). No implementation, architectural decision, or research status changed. The documentation commit is recoverable from this file's Git history.
+
 ### Open questions
 
 - Whether an independent permissionless Layer 1 is justified compared with existing networks or another architecture.
@@ -42,7 +44,7 @@ No blocking specification contradiction was found. Contract test evidence is loc
 - `ed13296` — journal and handoff continuity hardening.
 - `5701aee` — Experiment 001 specification and invariants.
 - `db7da99` — initial escrow implementation. Its first CI run rejected the mismatched preinstalled stable-build pin before tests.
-- Task 003A follow-up pins official Foundry v1.0.0 commit `8692e926…`; resolve the correction commit with this file’s Git history and inspect its Actions run for remote evidence.
+- `cb64036` — Task 003A follow-up pins official Foundry v1.0.0 commit `8692e926…`; its [CI run passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39054332964).
 
 ### Canonical documents
 
