@@ -1,3 +1,5 @@
 # Architecture notes
 
-No system architecture has been selected. This directory is for reviewed diagrams and architecture analyses that support a specific research question. Each note should state scope, assumptions, alternatives, failure modes, evidence, and unresolved decisions. Record decisions separately in `docs/adr/`.
+Genesis's final network architecture remains unresolved. The [Experiment 001 architecture](EXPERIMENT_001_ARCHITECTURE.md) defines a bounded local research fixture; [ADR 0001](../adr/0001-experiment-001-architecture.md) is accepted only for its Task 003A escrow implementation.
+
+Architecture notes should state scope, assumptions, alternatives, failure modes, evidence, and unresolved decisions. Record major decisions separately in `docs/adr/`; do not promote an experiment into a final network commitment.

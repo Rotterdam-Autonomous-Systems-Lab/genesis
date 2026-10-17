@@ -33,7 +33,7 @@ Use synthetic keys and test data. Do not use real funds, production endpoints, o
 
 ## Experiment 001 boundary and severity
 
-The [proposed architecture](architecture/EXPERIMENT_001_ARCHITECTURE.md) and [security invariants](SECURITY_INVARIANTS.md) add a narrow two-agent, synthetic-fund escrow threat model. Neither is implemented or validated. Existing general network questions above remain open.
+The [proposed architecture](architecture/EXPERIMENT_001_ARCHITECTURE.md) and [security invariants](SECURITY_INVARIANTS.md) add a narrow two-agent, synthetic-fund escrow threat model. Task 003A implements and locally tests the escrow component only; [coverage and residual risks](experiments/EXPERIMENT_001_ESCROW_COVERAGE.md) distinguish that evidence from pending agent/environment work. Existing general network questions above remain open.
 
 Severity below reflects impact within the modeled experiment: **Critical** can defeat authority or arbitrarily corrupt the run; **High** can cause unauthorized principal movement, loss, or false results; **Medium** can prevent service/recovery or mislead discovery; **Low** affects diagnostics without principal/state impact. Synthetic ETH has no real value, but that does not reduce the importance of a potential design flaw. “Design coverage” describes intended mitigation and required tests, never a verified guarantee.
 
@@ -63,6 +63,6 @@ Trusted boundary: local host/operator, Anvil privileged RPC and canonical state/
 
 ## Security review and failure reporting
 
-Before implementation, review the requester-veto/provider-fairness trade-off, exact signature schemas, revocation scope, deadlines, state transitions, input bounds, retry handling, dependencies, and invariant coverage. Record changes in ADR 0001 and associated specifications. No BLOCKING OPEN DECISION is present in the proposed semantics, but this review and separate implementation authorization are incomplete gates.
+Before implementation, review the requester-veto/provider-fairness trade-off, exact signature schemas, revocation scope, deadlines, state transitions, input bounds, retry handling, dependencies, and invariant coverage. Record changes in ADR 0001 and associated specifications. No BLOCKING OPEN DECISION is present in the semantics. Task 003A separately authorizes the escrow component and preserves requester veto; independent security review and remaining integration gates are incomplete.
 
 After any future experiment, report attacks that succeeded or remained inconclusive, not only mitigated threats. Distinguish cryptographic assumptions, contract properties, off-chain behavior, and environmental controls. Do not describe the local fixture as a permissionless network or as evidence for a consensus hypothesis.

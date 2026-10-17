@@ -16,6 +16,14 @@ Added the proposed [Experiment 001 specification](experiments/EXPERIMENT_001.md)
 
 This is documentation only: no contracts, agent code, dependency installations, deployments, tests of an implementation, or experimental results are recorded. The ADR is Proposed. Next proposed task: review the specification and security gate, select exact dependency pins, and then separately authorize a small implementation task. Genesis's independent-network ambition, three research tracks, and unresolved native-asset/consensus questions are preserved.
 
+## 2026-10-17 — Escrow-only implementation and CI (Task 003A)
+
+Implemented the minimal local escrow and EIP-712 authorization/state rules, retaining requester veto and deterministic timeout refunds. Recorded exact Foundry/Solidity references, vendored immutable OpenZeppelin/forge-std source with licenses and checksums, added read-only pinned-action GitHub CI, and documented [invariant coverage](experiments/EXPERIMENT_001_ESCROW_COVERAGE.md).
+
+Local evidence: 55 tests passed (36 unit, 15 fuzz, four stateful invariants); each stateful property ran 128 x 64 calls with zero unexpected reverts. Formatting, offline build, workflow actionlint, shell syntax, and loopback zero-account Anvil smoke checks passed. One initial fixture-only failure was corrected without changing contract checks; the coverage report preserves it. No Python agents, production credentials, public blockchain access, or real-fund transactions were involved. Independent security audit and remaining integration checks are not complete. The pushed commit's Actions result is available through GitHub; this journal does not predeclare remote CI success.
+
+Next proposed task: review escrow code and residual risks, then separately authorize bounded Python signer/verifier and local transport integration for the remaining invariant coverage. The broader Genesis network ambition is unchanged.
+
 ## Source boundary
 
 This journal does not infer events beyond the repository record. See [`SESSION_HANDOFF.md`](SESSION_HANDOFF.md) for current working context and the reusable handoff format.

@@ -1,6 +1,6 @@
 # Experiment 001 Security Invariants
 
-Status: **proposed, testable requirements; not verified findings**. Scope is the local [Experiment 001](experiments/EXPERIMENT_001.md) design in [the architecture specification](architecture/EXPERIMENT_001_ARCHITECTURE.md). Every positive and adversarial test below is required evidence for an eventual implementation; no such code or test result is supplied by this task.
+Status: **testable requirements, with scoped Task 003A contract evidence**. The [coverage map](experiments/EXPERIMENT_001_ESCROW_COVERAGE.md) distinguishes contract tests from pending environment and agent integration checks. Scope is the local [Experiment 001](experiments/EXPERIMENT_001.md) design in [the architecture specification](architecture/EXPERIMENT_001_ARCHITECTURE.md). Every positive and adversarial test below is required evidence for an eventual implementation; Task 002B supplied no code/results; Task 003A implements and tests only the escrow portions.
 
 ## Guarantee boundary
 

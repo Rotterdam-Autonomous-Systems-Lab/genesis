@@ -1,6 +1,6 @@
 # ADR 0001 — Local Experiment 001 Architecture
 
-Status: **Proposed; documentation-only recommendation**. Scope: Experiment 001 only. Date: 2026-10-17. This task approves preparing a specification, not implementing or deploying it.
+Status: **Accepted for local escrow-only implementation by Task 003A**. Scope: Experiment 001 only. Date: 2026-10-17. Originally Proposed in Task 002B; Task 003A separately authorizes the Solidity component and explicitly preserves requester veto. Python agents, full experiment integration, public deployment, and final Genesis architecture are not authorized by this decision.
 
 ## Context
 
@@ -38,6 +38,6 @@ These are proposed, reversible choices for an isolated experiment. Future experi
 
 ## Review gates and open questions
 
-No BLOCKING OPEN DECISION remains in the defined security semantics. Before implementation, the founder/security review must accept or revise the documented provider-fairness limitation, complete dependency version/audit-scope selection, map all invariants to tests, and separately authorize the implementation task. These gates are incomplete; this ADR is not marked Accepted.
+No BLOCKING OPEN DECISION remains in the defined security semantics. Task 003A authorizes the escrow component with the documented fairness limitation preserved. Exact escrow tool/dependency pins are recorded in [DEPENDENCIES.md](../../DEPENDENCIES.md); [coverage](../experiments/EXPERIMENT_001_ESCROW_COVERAGE.md) records local tests and remaining integration requirements. This acceptance is scoped authorization, not an independent security audit or completion of the full experiment review gate. Python dependencies, independent review, and full integration remain pending.
 
 Broader research questions remain open: fair exchange without requester veto, verification of nontrivial or physical services, bounded delegation independent of the main key, secure key recovery, real permissionless discovery, and the role of future chain/native-asset/consensus designs. They are not blockers to specifying this bounded experiment.

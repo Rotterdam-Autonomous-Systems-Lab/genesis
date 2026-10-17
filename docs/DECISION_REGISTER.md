@@ -34,4 +34,6 @@ No final decision exists on chain architecture, consensus, native asset, economi
 
 ## Experiment-specific proposals
 
-Task 002B records [ADR 0001](adr/0001-experiment-001-architecture.md) as **Proposed**, with a local Anvil/Ethereum-compatible experiment, typed authorization, requester Acceptance plus on-chain arithmetic, and deterministic escrow/refund rules. This does not change D-006 or D-010 and is not an accepted production architecture. The [specification](experiments/EXPERIMENT_001.md) is documentation only; review and separate implementation authorization remain required.
+Task 002B originally recorded [ADR 0001](adr/0001-experiment-001-architecture.md) as **Proposed** at that time, with a local Anvil/Ethereum-compatible experiment, typed authorization, requester Acceptance plus on-chain arithmetic, and deterministic escrow/refund rules. This does not change D-006 or D-010 and is not an accepted production architecture. The original [specification](experiments/EXPERIMENT_001.md) authorized documentation only; Task 003A subsequently authorizes the component described below.
+
+Task 003A separately authorizes the local Solidity escrow implementation and explicitly preserves requester veto. ADR 0001 is now accepted for that component only; [escrow coverage](experiments/EXPERIMENT_001_ESCROW_COVERAGE.md) and [dependency pins](../DEPENDENCIES.md) record the boundary. No Python-agent, full network, token, consensus, or production decision follows.

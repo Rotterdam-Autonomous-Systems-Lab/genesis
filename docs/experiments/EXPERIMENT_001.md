@@ -1,6 +1,6 @@
 # Experiment 001 — Bounded Verifiable Economic Interaction
 
-Status: **specification only; proposed design, not executed or validated**. This experiment examines a narrow case of autonomous economic authority and verifiable coordination. It is an early engineering milestone toward Genesis's broader permissionless network research. [Architecture](../architecture/EXPERIMENT_001_ARCHITECTURE.md), [invariants](../SECURITY_INVARIANTS.md), and [ADR 0001](../adr/0001-experiment-001-architecture.md) define the proposed implementation contract.
+Status: **Solidity escrow implemented and locally tested under Task 003A; full two-agent experiment not implemented or executed**. See [escrow coverage](EXPERIMENT_001_ESCROW_COVERAGE.md) for evidence and limitations. This experiment examines a narrow case of autonomous economic authority and verifiable coordination. It is an early engineering milestone toward Genesis's broader permissionless network research. [Architecture](../architecture/EXPERIMENT_001_ARCHITECTURE.md), [invariants](../SECURITY_INVARIANTS.md), and [ADR 0001](../adr/0001-experiment-001-architecture.md) define the proposed implementation contract.
 
 ## Objectives and non-goals
 
@@ -107,10 +107,10 @@ Rejection fixtures must include forged/missing signatures, every mutated signed 
 
 A clean-clone procedure must record exact tool versions, dependency hashes, compiler/EVM settings, fixture inputs, local chain configuration, contract bytecode hash/address, runId, public addresses, typed-message digests, canonical receipt/block hashes, timestamps, state/credit snapshots, and invariant outcomes. Fresh private keys/runIds may change addresses and hashes; equivalent transitions and assertions, not identical signatures, are the reproducibility goal. Provide at least two independent clean runs and deterministic encoding golden vectors across Python and Solidity.
 
-Record negative and inconclusive results. Measure contract gas, verifier time, message count, rejection count, and time to settlement/refund, without claiming benchmarking generality. No results exist yet. Never include secret values, key exports, .env content, or private host details in published artifacts.
+Record negative and inconclusive results. Measure contract gas, verifier time, message count, rejection count, and time to settlement/refund, without claiming benchmarking generality. Local escrow results are recorded in the coverage document; no end-to-end agent experiment results exist yet. Never include secret values, key exports, .env content, or private host details in published artifacts.
 
 ## What a successful execution would and would not establish
 
 A successful future run would provide evidence that this specific local implementation can enforce a signed spending bound, immutable terms, replay protection, deterministic result validation, requester consent, and defined refunds under its tested assumptions. It would not establish a novel protocol, provider effort, efficient outsourcing, fair exchange, Sybil resistance, consensus safety, real-world identity, generalized computation verification, public-chain security, censorship resistance, production readiness, or the feasibility of the ultimate Genesis network.
 
-No BLOCKING OPEN DECISION is left in this proposed behavior. Review acceptance of the provider-fairness limitation, dependency pins, and security gates is still required before a separate implementation task.
+No BLOCKING OPEN DECISION is left in this behavior. Task 003A separately authorizes and tests only the escrow component, preserving requester veto and pinning its dependencies. Independent review and remaining integration gates still apply before separately authorized Python-agent work.

@@ -28,7 +28,7 @@ Before any implementation, define a separate bounded task, finish the focused pr
 
 ## Experiment 001 security-review gate
 
-Review must explicitly accept or revise the requester-veto/provider-fairness limitation, on-chain arithmetic plus requester-signed Acceptance, A-only funding/refund, B-only settlement, first-use nonce revocation, immutable funded obligations, strict expiry boundaries, deterministic full refund, retry reconciliation, accounting and withdrawal safeguards. The ADR remains Proposed until review records its outcome. No critical security behavior is left undefined; no BLOCKING OPEN DECISION is currently recorded in the proposed semantics.
+Review must explicitly accept or revise the requester-veto/provider-fairness limitation, on-chain arithmetic plus requester-signed Acceptance, A-only funding/refund, B-only settlement, first-use nonce revocation, immutable funded obligations, strict expiry boundaries, deterministic full refund, retry reconciliation, accounting and withdrawal safeguards. The original Task 002B ADR was Proposed; see the scoped Task 003A progress below for escrow-only acceptance. No critical security behavior is left undefined; no BLOCKING OPEN DECISION is currently recorded in the proposed semantics.
 
 Implementation is a separately authorized task after this gate. Before calling the experiment successful, require:
 
@@ -39,3 +39,7 @@ Implementation is a separately authorized task after this gate. Before calling t
 - A documented security review of the resulting code and test evidence before claiming the in-scope properties, plus negative/inconclusive results and residual-risk disclosure. A local demonstration does not close Stage 2's wider adversarial research program.
 
 Do not describe a specification as an executed result or this local Ethereum-compatible fixture as a final network choice. Stages 3–10 and all independent-network/consensus/native-asset research questions remain intact.
+
+## Task 003A escrow-only progress
+
+Task 003A separately authorizes the Solidity escrow implementation with requester veto preserved. [Dependency pins](../DEPENDENCIES.md), [contract evidence and invariant coverage](experiments/EXPERIMENT_001_ESCROW_COVERAGE.md), and a read-only GitHub Actions workflow now support offline build/tests after tool setup. ADR 0001 is accepted only for this local component. This does not close Stage 0, Stage 1, the full independent review gate, or end-to-end experiment acceptance. Python signer/verifier, discovery, transport/retry handling, local-only endpoint/key controls and full reproducibility evidence remain separate future tasks.

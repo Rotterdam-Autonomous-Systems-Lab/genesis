@@ -1,6 +1,6 @@
 # Experiment 001 Architecture
 
-Status: **PROPOSED, documentation only**. This is a reversible local experiment design under [ADR 0001](../adr/0001-experiment-001-architecture.md), not an approved production protocol or final Genesis architecture. Implementation requires a separate task and the [roadmap security gate](../ROADMAP.md#experiment-001-security-review-gate).
+Status: **escrow component implemented under Task 003A; full agent integration pending**. This remains the reversible local experiment design under [ADR 0001](../adr/0001-experiment-001-architecture.md), not a production protocol or final Genesis architecture. [Escrow evidence](../experiments/EXPERIMENT_001_ESCROW_COVERAGE.md) and [dependency pins](../../DEPENDENCIES.md) record the bounded implementation. The [roadmap security gate](../ROADMAP.md#experiment-001-security-review-gate) still applies to broader experiment work.
 
 ## 1. Components and boundaries
 
@@ -55,7 +55,7 @@ Require distinct, nonzero requester/provider addresses under the EOA fixture ass
 
 ## 5. Proposed contract interface and state
 
-This is a behavioral specification, not Solidity implementation. No proxy, upgrade admin, privileged payout, token, arbitrary target call, arbitrary function execution, or owner rescue mechanism exists.
+This is the behavioral specification implemented by the Task 003A Solidity component. No proxy, upgrade admin, privileged payout, token, arbitrary target call, arbitrary function execution, or owner rescue mechanism exists.
 
 | Operation | Allowed caller | Preconditions and atomic effect |
 | --- | --- | --- |
@@ -99,6 +99,6 @@ Budget each process at a finite number of agreements/transactions (standard run:
 
 ## 9. Dependencies, review, and unresolved matters
 
-Candidates: maintained Python 3, Web3.py/eth-account, Solidity 0.8.x, Foundry/Anvil, and OpenZeppelin Contracts 5.x. These are families, not approved floating dependency constraints. Before implementation, choose mutually compatible exact Python patch, compiler version, Foundry commit/release, library versions, lockfile hashes, and target EVM settings; record them in a run manifest and review known advisories and relevant audit scope. No auto-update, unpinned git dependency, or unaudited library assumption is acceptable. An audited library does not make the composed escrow audited. Version selection is a reproducibility/security gate in the next separately authorized task, not permission to install dependencies now.
+Candidates: maintained Python 3, Web3.py/eth-account, Solidity 0.8.x, Foundry/Anvil, and OpenZeppelin Contracts 5.x. These are families, not approved floating dependency constraints. Before implementation, choose mutually compatible exact Python patch, compiler version, Foundry commit/release, library versions, lockfile hashes, and target EVM settings; record them in a run manifest and review known advisories and relevant audit scope. No auto-update, unpinned git dependency, or unaudited library assumption is acceptable. An audited library does not make the composed escrow audited. Task 003A completes exact version selection for the escrow toolchain and vendored Solidity dependencies only; see DEPENDENCIES.md. Python dependency selection and agent implementation remain separately authorized future work.
 
-**BLOCKING OPEN DECISIONS: none in the specified experiment semantics.** All critical authority, verification, cancellation, revocation, deadline, replay, and refund behavior has a concrete proposal here. Founder/security review must accept or revise the deliberately limited provider-fairness model before implementation authorization. Exact dependency pins and independent security review remain required gates; they have not been completed. Broader fair exchange, real identities, key recovery, smart wallets, generalized computation, Sybil resistance, public-chain reorg tolerance, and consensus research remain out of scope.
+**BLOCKING OPEN DECISIONS: none in the specified experiment semantics.** All critical authority, verification, cancellation, revocation, deadline, replay, and refund behavior has a concrete proposal here. Task 003A authorizes only the escrow implementation and explicitly preserves the limited provider-fairness model. Exact escrow pins and local contract-test evidence now exist; independent security review and full agent integration remain incomplete gates. Broader fair exchange, real identities, key recovery, smart wallets, generalized computation, Sybil resistance, public-chain reorg tolerance, and consensus research remain out of scope.

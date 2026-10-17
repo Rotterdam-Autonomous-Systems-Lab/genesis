@@ -39,3 +39,9 @@ venv/
 build/
 dist/
 coverage/
+
+# Foundry compiler artifacts and local verification outputs
+/out/
+/cache/
+/broadcast/
+/lcov.info

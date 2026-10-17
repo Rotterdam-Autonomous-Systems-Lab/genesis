@@ -6,7 +6,7 @@ Use this document to carry concise project context between Codex sessions and co
 
 ### Current status
 
-Genesis is in early-stage experimental research. The current milestone is project foundation and prior-art mapping. A small, bounded two-agent independently verifiable economic transaction is the first implementation milestone, but remains an early step toward the broader permissionless economic network ambition. Task 002B has produced a proposed local experiment specification and security design; no implementation or experiment execution has begun.
+Genesis is in early-stage experimental research. The current milestone is project foundation and prior-art mapping. A small, bounded two-agent independently verifiable economic transaction is the first implementation milestone, but remains an early step toward the broader permissionless economic network ambition. Task 003A implements and locally tests the Solidity escrow component with pinned dependencies and GitHub CI. Python agents and the full two-agent experiment remain unimplemented.
 
 ### Completed work
 
@@ -15,6 +15,8 @@ Genesis is in early-stage experimental research. The current milestone is projec
 - Routine work now defaults to a reviewed commit and push to `origin/main`, as recorded in commit [`e872efb`](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/commit/e872efb93a0b8acb86db721fe293848eaa45a0cc).
 - Continuity hardening was committed as `ed13296`; the journal and reusable handoff preserve repository history.
 - Task 002B adds the Experiment 001 specification, architecture, 18 testable security invariants, proposed ADR 0001, expanded threat model, and implementation/security-review gates. Critical behavior is specified; requester veto and provider-fairness limitations are explicit. No implementation findings are claimed.
+
+- Task 003A: escrow component, 55 passing local tests (including fuzz/stateful properties), dependency pins, offline build and read-only pinned-action CI. See the coverage map for partial/integration invariants; no independent audit or end-to-end finding is claimed.
 
 ### Open questions
 
@@ -26,11 +28,11 @@ Genesis is in early-stage experimental research. The current milestone is projec
 
 ### Next task
 
-Recommended next task: review the proposed Experiment 001 specification against its security gate and focused prior art; accept or revise the requester-veto fairness model, record exact dependency pins, and map SI-01–SI-18 to tests. After that review, obtain a separate authorization for a bounded local implementation task. This documentation task does not authorize implementation.
+Recommended next task: review the escrow implementation and residual risk/coverage map; separately authorize a bounded Python signer/verifier and local transport integration task. Retain requester veto and cover pending domain interoperability, independent verification evidence, endpoint/key lifecycle, retry/reorg detection, and resource budgets. No Python implementation is authorized by Task 003A.
 
 ### Blockers
 
-No BLOCKING OPEN DECISION remains in the proposed experiment semantics. Required gates remain incomplete: security/fairness review, exact compatible dependency pins and audit/advisory checks, and separate implementation authorization. Broad network architecture, native asset and consensus questions remain unresolved research territory.
+No blocking specification contradiction was found. Contract test evidence is local and scoped. Independent audit/advisory review, Python/environment integration, and end-to-end experiment acceptance remain pending; these are not claimed complete by the escrow CI.
 
 ### Relevant commits
 
@@ -38,7 +40,8 @@ No BLOCKING OPEN DECISION remains in the proposed experiment semantics. Required
 - `606a52c` — vision and research-plan preservation.
 - `e872efb` — routine `origin/main` push default.
 - `ed13296` — journal and handoff continuity hardening.
-- The Task 002B specification commit is the commit containing this handoff update; resolve it with `git log -- docs/SESSION_HANDOFF.md`. No self-referential hash is embedded.
+- `5701aee` — Experiment 001 specification and invariants.
+- Task 003A — resolve the escrow implementation commit with `git log -- docs/SESSION_HANDOFF.md`; inspect its GitHub Actions run for remote CI evidence.
 
 ### Canonical documents
 
@@ -52,9 +55,12 @@ No BLOCKING OPEN DECISION remains in the proposed experiment semantics. Required
 - [`experiments/EXPERIMENT_001.md`](experiments/EXPERIMENT_001.md) — proposed experiment and evaluation.
 - [`architecture/EXPERIMENT_001_ARCHITECTURE.md`](architecture/EXPERIMENT_001_ARCHITECTURE.md) — exact schemas, authority, state and failure behavior.
 - [`SECURITY_INVARIANTS.md`](SECURITY_INVARIANTS.md) — 18 proposed invariants and required tests.
-- [`adr/0001-experiment-001-architecture.md`](adr/0001-experiment-001-architecture.md) — Proposed ADR; not final network architecture.
+- [`adr/0001-experiment-001-architecture.md`](adr/0001-experiment-001-architecture.md) — accepted for local escrow only; not final network architecture.
 - [`research/history/ORIGINAL_BRAINSTORM.md`](../research/history/ORIGINAL_BRAINSTORM.md) — reconstructed historical ideas, not an approved architecture or verbatim transcript.
 - [`research/history/CONTEXT_RECOVERY.md`](../research/history/CONTEXT_RECOVERY.md) — instructions for reconstructing context.
+
+- [EXPERIMENT_001_ESCROW_COVERAGE.md](experiments/EXPERIMENT_001_ESCROW_COVERAGE.md) — local results, invariant mapping and pending integration.
+- [DEPENDENCIES.md](../DEPENDENCIES.md) and [contracts/README.md](../contracts/README.md) — exact pins and fresh-checkout commands.
 
 ## Reusable handoff template
 
