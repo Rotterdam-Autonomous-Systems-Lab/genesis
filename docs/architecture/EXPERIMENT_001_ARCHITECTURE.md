@@ -1,0 +1,104 @@
+# Experiment 001 Architecture
+
+Status: **PROPOSED, documentation only**. This is a reversible local experiment design under [ADR 0001](../adr/0001-experiment-001-architecture.md), not an approved production protocol or final Genesis architecture. Implementation requires a separate task and the [roadmap security gate](../ROADMAP.md#experiment-001-security-review-gate).
+
+## 1. Components and boundaries
+
+| Component | Responsibility | Trust boundary |
+| --- | --- | --- |
+| Agent A (requester), Python process | Discover, validate offers, sign terms and spending authorization, fund, independently compute expected result, sign acceptance only on a match, request refund. | Own signer and policy; never receives B's private key. |
+| Agent B (provider), separate Python process | Publish signed offer, accept terms, compute, sign result, validate A's receipt, settle, withdraw its credit. | Own signer; never receives A's private key. |
+| Local discovery manifest and bounded message files | Exchange public offers, terms, signatures, and results. | Untrusted transport; not an authority or verifier. |
+| Experiment escrow, Solidity candidate | Enforce signatures, limits, nonce status, deterministic result predicate, state transitions, credits, deadlines. | Code and EVM correctness are assumptions until implementation and review. |
+| Foundry / Anvil | Contract tests and a reproducible local Ethereum-compatible chain. | Local operator controls mining, timestamps, RPC, resets, and privileged test methods. No decentralization claim. |
+| Local harness | Start processes, provide synthetic fixtures, check receipts/state and collect redacted evidence. | Trusted environment, not an oracle. Cannot substitute a “verified” flag for contract checks. |
+
+Python orchestration, narrowly scoped Solidity, Foundry and Anvil are the proposed stack. Ethereum tooling is an experiment dependency, not a permanent Genesis commitment. No AI model is required. Agents are independently controlled signers and processes, not adversarially isolated from the shared host administrator.
+
+## 2. Deterministic service and wire rules
+
+Only service `genesis.sum-u64.v1` is supported; `serviceId = keccak256(UTF-8("genesis.sum-u64.v1"))`. Inputs `x` and `y` are unsigned 64-bit integers, including zero. Output is the mathematical sum represented as `uint256`; maximum result is `2^65 - 2`. Python A and B use separate computation/verification paths; the contract recomputes `uint256(x) + uint256(y)`. This intentionally duplicates cheap work and proves no outsourcing efficiency or provider effort.
+
+Message transport uses UTF-8 JSON with integer fields encoded as canonical decimal strings: digits only, no signs, whitespace, leading zeros except `"0"`, floats, or exponent notation. Parse under the field's stated range before signing. Addresses are 20-byte values and bytes32 fields are exactly 32 bytes; display case is not signed semantics. Reject duplicate JSON keys, unknown/missing fields, invalid UTF-8, and messages over 16 KiB. Discovery holds at most 16 advertisements per run; attempts stop after 3 transport retries. The manifest is under ignored `internal/`, with no remote URL or executable payload. File paths are fixed by the harness, not chosen by advertisements. Signed-message envelopes contain the locally selected primary type, expected domain, typed message, and signature; the dual-signed Agreement envelope has requesterSignature and providerSignature instead of a single signature. The fixed type definitions come from this specification, never from an untrusted envelope. The computation request contains only agreementId; B loads inputs from the funded contract record and rejects an unknown/unfunded ID. Hash typed values, never raw JSON or `abi.encodePacked` concatenations.
+
+Example fixture: x=7, y=11, result=18; price=1,000,000,000,000 simulated wei; maxAmount=2,000,000,000,000 simulated wei. The deployment hard cap is `MAX_PRICE = 10^15` simulated wei per escrow. These are test bounds, not tokenomics. Gas is outside principal authorization and requires a separate local process budget. No global wallet spending cap is claimed: a compromised A key can create additional authorizations up to its remaining synthetic balance.
+
+## 3. Typed messages and signatures
+
+Use [EIP-712](https://eips.ethereum.org/EIPS/eip-712) typed-data signing, whose domain binds chain ID and verifying contract. EIP-712 does not itself provide replay protection. The proposal adds contract nonce state, unique agreements, and run separation.
+
+All messages use domain name `GenesisExperiment001`, version `1`, chainId `31337`, verifyingContract equal to the deployed escrow address. Constructor requires chainId 31337 and a nonzero immutable `runId`. Every payload below must match that runId. Both agents derive the expected domain from the trusted local deployment manifest and verify its code hash/runId through RPC; never accept a transport-supplied domain as authoritative. Generate a fresh nonzero random 32-byte runId on each fresh chain/reset; do not reuse old signatures. Chain ID alone cannot distinguish identical local resets or prevent use on a deliberately cloned network.
+
+Fields below are ordered normative EIP-712 schemas; there are no nested types or dynamic fields:
+
+| Primary type | Ordered fields | Signer and purpose |
+| --- | --- | --- |
+| Advertisement | `address provider, bytes32 serviceId, uint256 price, uint64 expiresAt, bytes32 runId` | B; authenticates offered service, fixed price, and local-run freshness. |
+| Agreement | `address requester, address provider, bytes32 serviceId, uint64 x, uint64 y, uint256 price, uint64 fundingDeadline, uint64 settlementDeadline, bytes32 salt, bytes32 runId` | A and B sign the exact same terms. |
+| Authorization | `address requester, address provider, bytes32 agreementId, uint256 nonce, uint256 maxAmount, uint64 validUntil, bytes32 runId` | A; single-use permission to lock this agreement's exact price. |
+| Result | `bytes32 agreementId, uint256 value, bytes32 runId` | B; evidence of the claimed result. |
+| Acceptance | `bytes32 agreementId, bytes32 resultDigest, uint256 authorizationNonce, bytes32 runId` | A; post-computation settlement authorization. |
+
+`agreementId` is the full domain-bound EIP-712 digest of Agreement, not a user-selected ID. `resultDigest` is the full domain-bound digest of Result. An Acceptance is valid only for the stored agreement and consumed authorizationNonce. Distinct primary types prevent treating one signature purpose as another. Immutable stored terms, not later transport messages, are used for settlement.
+
+Proposed library strategy: use OpenZeppelin's non-upgradeable EIP712 and ECDSA helpers, with exact 65-byte signatures, low-s and v=27/28 checks, nonzero expected signers, and exact recovered-address comparisons. Reject unsupported signature formats. Nonces/digests, not signature bytes, identify requests. [OpenZeppelin cryptography documentation](https://docs.openzeppelin.com/contracts/5.x/api/utils/cryptography) describes these helpers. Contract wallets, ERC-1271, delegated session keys, personal-sign fallbacks, and custom cryptography are deferred. Treat EOA-only control as an explicit experiment assumption; do not infer real-world identity from an address.
+
+Python signing/verification candidates are eth-account and an ABI encoder through Web3.py; require Python/Solidity golden vectors for all five types. A high-level library does not remove the need to test field order, widths, domain values, and encoding. The [eth-account documentation](https://eth-account.readthedocs.io/en/stable/eth_account.html) documents typed-data encoding/signing APIs; select a pinned compatible version before implementation.
+
+## 4. Discovery and agreement
+
+B publishes an Advertisement and signature in the untrusted local manifest. A checks schema, serviceId, runId, recovered provider address, offer expiry (`observed chain timestamp < expiresAt`), and local price policy. There is no authenticated global directory or Sybil defense. A known provider address in the fixture identifies the selected counterparty, not a trusted assertion of result quality.
+
+A proposes an Agreement and signs it. B independently validates all terms and either countersigns the identical digest or rejects. Changed terms require a new Agreement salt, digest, and both signatures. The signed agreement is normative; advertisement expiry is a discovery rule, not a contract predicate. No claim that the contract enforces an advertisement is made.
+
+Require distinct, nonzero requester/provider addresses under the EOA fixture assumption, supported serviceId, nonzero salt, price > 0 and <= MAX_PRICE. Require `fundingDeadline < settlementDeadline` and `settlementDeadline - fundingDeadline <= 3600` seconds. The standard fixture chooses fundingDeadline=initial block timestamp+60 and settlementDeadline=initial timestamp+120. The authorization validUntil must be <= fundingDeadline. At funding additionally require settlementDeadline <= block.timestamp + 3600, bounding actual principal lock time even if a proposed fundingDeadline is far in the future. Client checks do not replace contract checks.
+
+## 5. Proposed contract interface and state
+
+This is a behavioral specification, not Solidity implementation. No proxy, upgrade admin, privileged payout, token, arbitrary target call, arbitrary function execution, or owner rescue mechanism exists.
+
+| Operation | Allowed caller | Preconditions and atomic effect |
+| --- | --- | --- |
+| `fund(agreement, sigA, sigB, authorization, sigAuth)` payable | Exactly agreement.requester (A) | Check all schemas, domain/run, both term signatures, A's authorization, participant/ID equality, limits and deadlines; exact msg.value=price; unused agreementId and nonce. Store immutable terms and nonce, mark nonce Consumed, state Funded, increase locked principal. No external calls. |
+| `revokeUnused(nonce)` | A for A's nonce namespace | Unused -> Revoked only. Reject Consumed or already Revoked. No agreement mutation, refund, or external call. |
+| `settle(agreementId, result, sigResultB, acceptance, sigAcceptanceA)` | Stored provider (B) only | Funded, timestamp < settlementDeadline, correct domain/run/IDs/nonce, both result and acceptance signatures, resultDigest binding, result.value equals stored x+y. Atomically mark Settled, decrease locked principal, credit exactly price to stored B. No transfer callback. |
+| `refund(agreementId)` | Stored requester (A) only | Funded and timestamp >= settlementDeadline. Mark Refunded, decrease locked principal, credit exact price to stored A. No callback. |
+| `withdraw()` | Credit holder for its own balance only | Positive credit, zero it and decrease total credits before ETH call to msg.sender; guard against reentrancy, revert entire withdrawal if send fails. No alternate recipient argument. |
+
+Every failed validation reverts all state/value changes. Error categories should distinguish invalid signatures/bindings/terms, unavailable authorization, existing agreement, wrong caller/state, expiry/early refund, wrong value/result, no credit, and failed transfer. Tests isolate one violation at a time and must not depend on error precedence when multiple predicates fail. Reject ETH in receive/fallback; forcibly sent ETH is not credited and cannot authorize settlement. `withdraw()` is the only external value transfer. Apply checks-effects-interactions and a standard nonReentrant guard, including on all mutating entry points, to avoid cross-function callbacks. Evaluate the standard [OpenZeppelin ReentrancyGuard](https://docs.openzeppelin.com/contracts/5.x/api/utils) as a candidate; pin and review the applicable library version.
+
+Contract record states: None -> Funded -> Settled OR Refunded. Terminal records never reopen, even after withdrawal. Nonce status is keyed by (requester, nonce): Unused -> Consumed OR Revoked; neither terminal status resets. Distinct authorizations with the same requester nonce are mutually exclusive. Store principal, terms, and nonce independently of withdrawal credits. Public views expose records, nonce status, credits, and totals. Anyone can broadcast an unchanged signed raw transaction, but it still executes as its original sender with the original fixed intent; copying calldata into a different sender transaction grants no authority. Events: Funded(agreementId, requester, provider, nonce, price), NonceRevoked(requester, nonce), Settled(agreementId, resultDigest, price), Refunded(agreementId, price), Withdrawn(account, amount). Clients validate emitter address and state; logs alone are not authorization.
+
+Adversarial withdrawal tests must use a credited receiver that rejects or reenters, even though the ordinary fixture uses EOAs. The privileged local test harness can install receiver behavior at a credited signer address for these tests; EOA fixture selection is not a reentrancy defense.
+
+Accounting at every successful transition: totalLocked + totalCredits = totalDeposited - totalWithdrawn, and totalLocked + totalCredits <= contract balance. Count only accepted funding as deposited. Forced ETH may make the inequality strict. Withdraw credits across agreements without affecting their terminal states. Assert these properties with sequence/invariant tests, including failed and reentrant withdrawals.
+
+## 6. Critical timing, cancellation, and race decisions
+
+- Only A funds; no sponsors, relayers, alternate beneficiaries, fee deductions, top-ups, partial settlement, or partial refunds. Funding locks price, not maxAmount; unused authorization allowance does not become a balance.
+- A may abandon unsigned/unfunded terms or revoke an unused nonce. There is no on-chain cancellation of a funded agreement before its deadline, including mutual cancellation; this keeps the state machine small. Neither party can edit or unilaterally claw back funded terms.
+- Revocation becomes effective when its transaction executes in the canonical local chain, not when broadcast. Revocation before fund rejects funding. Fund before revoke consumes the nonce; later revocation fails and cannot cancel the funded obligation or invalidate its Acceptance. Funding authorization expiry also applies only to first use at funding. Settlement has its own signed deadline. Tests must exercise both ordering outcomes. Because both direct operations use A, account transaction nonces constrain executable order; vary assignment/submission/replacement order rather than simulating an impossible reorder of sequential transactions from one account.
+- A authorizes settlement only after its independent off-chain check. The contract does not trust that A ran Python correctly: it separately checks x+y and both signatures. Even an A-signed Acceptance for a wrong result cannot settle. Conversely a correct result without A's Acceptance cannot settle. A's signature is consent, not a proof that its verification program executed.
+- Provider disagreement, missing Acceptance, failed service, or message loss yields no payment before timeout. At timestamp >= settlementDeadline, only A may call refund and obtain a withdrawal credit. A can unfairly withhold Acceptance after valid work; B has no recourse and bears this risk. This experiment does not solve fair exchange, disputes, or compensation for provider cost.
+- All deadlines use `block.timestamp` seconds, not host clocks. Funding requires timestamp < fundingDeadline AND timestamp < authorization.validUntil; equality rejects. Settlement requires timestamp < settlementDeadline; equality rejects settlement and enables refund. Refund is not automatic; A must transact, and chain progress is an environment assumption.
+- Acceptance has no independent expiry or revocation operation: its only validity window is the immutable settlementDeadline and Funded state. It cannot change payment amount or recipient. A lost/compromised key does not trigger administrative recovery of escrow.
+
+## 7. Transaction lifecycle, retries, and recovery
+
+Agents locally sign raw transactions using their own keys; they never ask an unlocked RPC account to sign. Serialize transactions per signer using account transaction nonces. Transaction nonces and authorization nonces are different namespaces. Persist only public transaction hashes, message digests, and intended actions in a journal under ignored internal/; never private keys or raw signing secrets. Public receipts/signatures are not secret keys, but retain them locally for the run and redact logs to digests by default.
+
+For ambiguous RPC failure, check the transaction receipt, canonical block hash, and contract state before any retry. Pending transactions may be re-broadcast unchanged; replacement with the same transaction nonce must preserve semantic calldata/value and obey a local gas policy. Never choose a fresh authorization nonce merely to hide an ambiguous funding outcome. A reverted funding leaves its auth nonce Unused; retry with the same authorization only if its deadlines remain valid and state confirms no funding. If consumed or revoked, do not fund it again. A new agreement is a distinct economic action requiring fresh consent. Repeated settle/refund reverts without duplicate credit; a repeated successful withdrawal has zero credit and reverts. A failed transfer preserves credit and can be retried.
+
+Observe one mined receipt and verify its block hash/state in the controlled Anvil fixture; this is a local finality assumption. If a block is replaced or chain/runId changes, stop and mark the run inconclusive, reconcile canonical state, and do not claim success from stale receipts. Reorg tests must demonstrate detection/abort, not public-chain finality. Host restart/key loss ends the run; do not export keys for recovery. Any locked synthetic principal can be abandoned when resetting the local chain; reset starts a new run, not a refund guarantee.
+
+## 8. Local key and environment policy
+
+Run Anvil bound to literal 127.0.0.1 on a documented local port, chainId 31337, without public fork URLs. Harness refuses remote, DNS, proxy, or redirected RPC destinations. Do not accept a CLI bypass that enables public endpoints. Generate independent fresh ephemeral signing keys for A and B; no default published Anvil key or shared mnemonic is used for either agent. Harness may initialize synthetic balances using the trusted local fixture/RPC; that capability is outside the contract threat model. Keep signers in the owning process's memory; no keys in arguments, files, logs, committed fixtures, or .env. If the chosen Anvil startup prints funded default keys, suppress that output before capture; never publish it. Same-host privileged RPC/administrator access can impersonate participants or rewrite state, so it is explicitly trusted.
+
+Budget each process at a finite number of agreements/transactions (standard run: one agreement, at most 16 total transaction submissions, 60 seconds wall-time transport/orchestration budget excluding deliberate chain time advancement). Exhaustion stops new actions and records failure; cleanup uses only the signed refund rules, never privileged withdrawals. Chain timestamps are advanced explicitly by the test harness for boundary tests; wall time only bounds the runner.
+
+## 9. Dependencies, review, and unresolved matters
+
+Candidates: maintained Python 3, Web3.py/eth-account, Solidity 0.8.x, Foundry/Anvil, and OpenZeppelin Contracts 5.x. These are families, not approved floating dependency constraints. Before implementation, choose mutually compatible exact Python patch, compiler version, Foundry commit/release, library versions, lockfile hashes, and target EVM settings; record them in a run manifest and review known advisories and relevant audit scope. No auto-update, unpinned git dependency, or unaudited library assumption is acceptable. An audited library does not make the composed escrow audited. Version selection is a reproducibility/security gate in the next separately authorized task, not permission to install dependencies now.
+
+**BLOCKING OPEN DECISIONS: none in the specified experiment semantics.** All critical authority, verification, cancellation, revocation, deadline, replay, and refund behavior has a concrete proposal here. Founder/security review must accept or revise the deliberately limited provider-fairness model before implementation authorization. Exact dependency pins and independent security review remain required gates; they have not been completed. Broader fair exchange, real identities, key recovery, smart wallets, generalized computation, Sybil resistance, public-chain reorg tolerance, and consensus research remain out of scope.

@@ -19,3 +19,23 @@ These stages are conditional research gates, not release promises or a commitmen
 ## Stage transition rule
 
 A stage does not automatically authorize the next. Publish the evidence and limitations, review threats and prior art, update `docs/DECISION_REGISTER.md` and relevant ADRs, and obtain explicit authorization for implementation or external deployment when required. Stage 1 is an initial research experiment, not the project’s ultimate purpose.
+
+## Experiment 001 implementation prerequisites
+
+Task 002B supplies a proposed [experiment specification](experiments/EXPERIMENT_001.md), [architecture](architecture/EXPERIMENT_001_ARCHITECTURE.md), [security invariants](SECURITY_INVARIANTS.md), and [ADR 0001](adr/0001-experiment-001-architecture.md). This is specification progress within the early research gates, not completion of Stage 0, Stage 1, or the long-term network program.
+
+Before any implementation, define a separate bounded task, finish the focused prior-art comparison, review the proposal and threat assumptions, select exact compatible dependency/tool versions and hashes, and map SI-01 through SI-18 to positive/adversarial tests. Use independent ephemeral signers, synthetic ETH, loopback-only Anvil without a public fork, a fresh runId, and documented execution limits. No production or external infrastructure authorization follows from this roadmap.
+
+## Experiment 001 security-review gate
+
+Review must explicitly accept or revise the requester-veto/provider-fairness limitation, on-chain arithmetic plus requester-signed Acceptance, A-only funding/refund, B-only settlement, first-use nonce revocation, immutable funded obligations, strict expiry boundaries, deterministic full refund, retry reconciliation, accounting and withdrawal safeguards. The ADR remains Proposed until review records its outcome. No critical security behavior is left undefined; no BLOCKING OPEN DECISION is currently recorded in the proposed semantics.
+
+Implementation is a separately authorized task after this gate. Before calling the experiment successful, require:
+
+- At least two clean local runs with separate A/B keys, independently checked result, canonical receipt/state evidence, exact provider credit and successful withdrawal.
+- Reproducible deterministic refund runs for absent/invalid result, disagreement, and withheld Acceptance, with exact requester credit and withdrawal.
+- Positive and adversarial coverage of all 18 invariants, including signature-field mutation, wrong domain/run/participant, replay, revocation order, timestamp -1/equality/+1 boundaries, invalid result even with A signature, unauthorized callers, reentrancy/transfer failure, and retry ambiguity.
+- Identical Python/Solidity digest vectors, bounded inputs and runtime, conservation of principal/credits, and no secret-bearing artifacts.
+- A documented security review of the resulting code and test evidence before claiming the in-scope properties, plus negative/inconclusive results and residual-risk disclosure. A local demonstration does not close Stage 2's wider adversarial research program.
+
+Do not describe a specification as an executed result or this local Ethereum-compatible fixture as a final network choice. Stages 3–10 and all independent-network/consensus/native-asset research questions remain intact.

@@ -31,3 +31,7 @@ This register records project decisions and the boundaries around unresolved mat
 ## Open and deferred choices
 
 No final decision exists on chain architecture, consensus, native asset, economics, token issuance, execution model, governance, permanent name, launch, or production timeline. See `MASTER_PLAN.md`, `docs/FUTURE_NETWORK_ARCHITECTURE.md`, and `docs/ROADMAP.md`.
+
+## Experiment-specific proposals
+
+Task 002B records [ADR 0001](adr/0001-experiment-001-architecture.md) as **Proposed**, with a local Anvil/Ethereum-compatible experiment, typed authorization, requester Acceptance plus on-chain arithmetic, and deterministic escrow/refund rules. This does not change D-006 or D-010 and is not an accepted production architecture. The [specification](experiments/EXPERIMENT_001.md) is documentation only; review and separate implementation authorization remain required.

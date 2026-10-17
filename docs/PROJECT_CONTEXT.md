@@ -10,7 +10,7 @@ Genesis is not only an AI-agent payment application. It is not currently a produ
 
 ## Current research status and milestone
 
-Status: early-stage experimental research. Current milestone: project foundation and prior-art mapping, with a small, bounded two-agent independently verifiable economic transaction experiment identified as the first implementation milestone. It is a first step, not the long-term product definition. Any experiment requires a scoped task, synthetic actors/data, and explicit validation criteria.
+Status: early-stage experimental research. Current milestone: project foundation and prior-art mapping, with a small, bounded two-agent independently verifiable economic transaction experiment identified as the first implementation milestone. It is a first step, not the long-term product definition. Any experiment requires a scoped task, synthetic actors/data, and explicit validation criteria. Task 002B now provides a proposed, implementation-oriented [Experiment 001 specification](experiments/EXPERIMENT_001.md), [architecture](architecture/EXPERIMENT_001_ARCHITECTURE.md), and [security invariants](SECURITY_INVARIANTS.md). No implementation or executed result exists; [ADR 0001](adr/0001-experiment-001-architecture.md) remains Proposed pending the roadmap security-review gate and separate implementation authorization.
 
 ## Core principles
 
