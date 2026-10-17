@@ -10,6 +10,6 @@
 8. Use small, testable implementation tasks tied to a research question. Do not implement protocols, contracts, agents, consensus, or token systems unless a task explicitly authorizes it.
 9. Never expose, read into output, stage, or commit secrets, private keys, wallet material, credentials, or `.env` files. Keep `.env.example` placeholder-only. Keep `internal/` ignored and uncommitted.
 10. Never use real funds, production deployments, uncontrolled autonomous replication, or unauthorized infrastructure, compute, or external services.
-11. Inspect repository state, Git identity, and staged filenames before committing. Never force-push, rewrite history, delete branches or tags, or change credentials or organization permissions without explicit approval.
+11. For routine repository tasks, inspect repository state, Git identity, diffs, and staged filenames; stage only files relevant to the requested task, create a commit, and push the ordinary commit to `origin/main` by default without asking again. Follow an explicit user request for local-only work, another branch or PR flow, or no publishing. Never force-push, rewrite history, delete branches or tags, or change credentials or organization permissions without explicit approval.
 12. Clearly identify assumptions, uncertainty, and evidence limits in reports and documentation.
 13. Ask for approval before irreversible architectural or economic decisions.
