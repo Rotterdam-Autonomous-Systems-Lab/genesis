@@ -1,0 +1,37 @@
+# Environment files (the example template is safe to track)
+.env
+.env.*
+!.env.example
+
+# Private keys, wallet material, and credential exports
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+*.wallet
+*.mnemonic
+*.seed
+id_rsa
+id_ed25519
+credentials.json
+secrets.json
+
+# Local/editor and operating system artifacts
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Build and coverage outputs
+build/
+dist/
+coverage/
