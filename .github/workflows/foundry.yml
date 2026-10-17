@@ -39,7 +39,7 @@ jobs:
       - name: Install hash-locked Python dependencies
         run: |
           python -m venv internal/agent-venv
-          internal/agent-venv/bin/python -m pip install --require-hashes -r sdk/python/requirements.lock
+          internal/agent-venv/bin/python -m pip install --only-binary=:all: --require-hashes -r sdk/python/requirements.lock
           internal/agent-venv/bin/python -m pip check
       - name: Python unit and local Anvil integration tests
         env:

@@ -14,7 +14,7 @@ scripts/check-toolchain.sh
 scripts/check-dependencies.sh
 forge build --offline
 python3.12 -m venv internal/agent-venv
-internal/agent-venv/bin/python -m pip install --require-hashes -r sdk/python/requirements.lock
+internal/agent-venv/bin/python -m pip install --only-binary=:all: --require-hashes -r sdk/python/requirements.lock
 internal/agent-venv/bin/python -m pip check
 PYTHONPATH=sdk/python internal/agent-venv/bin/python -m unittest discover -s tests/python -v
 scripts/run-experiment-001.sh
@@ -42,3 +42,11 @@ These must end in a requester refund, with no Acceptance file and no provider cr
 - The provider loads inputs from the funded immutable record. The requester recomputes independently and constructs Acceptance only after valid signature, binding, and arithmetic checks. The contract also recomputes. Requester veto remains: correct work without Acceptance cannot settle, and the requester may refund at timeout. No provider-cost compensation or fair-exchange guarantee exists.
 
 See [coverage](../../docs/experiments/EXPERIMENT_001_ESCROW_COVERAGE.md) for tested cases and explicitly pending Task 003C candidates. No EVM experiment validates a future Genesis consensus mechanism or native blockchain. Independent review and broader security gates remain incomplete.
+
+## Task 003C adversarial review
+
+[Security review and acceptance gate](../../docs/experiments/EXPERIMENT_001_SECURITY_REVIEW.md) records fixes, tested attacks, remaining gaps, and dependency findings. The transport now opens only regular files without following symlinks, rejects FIFOs without blocking, and publishes without overwriting an existing message. Unresolved transaction delivery latches the client against further submissions; canonical transaction identity, status, block membership, and events are checked. The requester requires separate canonical settlement and withdrawal evidence, not an untrusted provider status flag. CCIP Read is disabled because this fixture has no off-chain lookup service.
+
+Additional controlled fixtures include malformed/oversized/truncated/unexpected evidence, deadline expiry during computation, requester term tampering, provider crash after computation, and requester crash before Acceptance. Crash/tampering fixtures intentionally fail with an inconclusive outcome and nonzero exit; they must not be interpreted as successful refund runs. Their tests verify no payment and resource cleanup. Lost ephemeral keys terminate the run; synthetic locked principal is abandoned on fixture reset, not recovered by a privileged contract escape hatch.
+
+There are no HTTP agent endpoints: unauthorized-message tests target signed file messages and escrow caller checks. A temporary loopback RPC fault proxy exists only in `tests/python/rpc_faults.py`; it is not a hosted service or production relay. The optional runner observer is trusted in-process test code, never a wire-supplied callback. Local-only transport does not isolate malicious same-user processes from each other or the host administrator.

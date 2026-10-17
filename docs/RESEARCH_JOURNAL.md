@@ -34,6 +34,14 @@ Local evidence: 55 Solidity tests and 30 Python unit/live-Anvil/process integrat
 
 Pinned CPython/Web3.py/eth-account and transitive hashes; extended the read-only pinned-action workflow to install locked dependencies, run the existing Solidity suite, Python tests, and an end-to-end temporary-Anvil experiment. The pushed commit's Actions run is the source for remote CI status; this entry does not predeclare CI success. Recommended next task: review evidence and residual risks, then separately authorize any Task 003C work.
 
+## 2026-10-17 — Adversarial validation and security review (Task 003C)
+
+Reviewed the complete Experiment 001 lifecycle against all 18 invariants and added [security findings and conditional acceptance](experiments/EXPERIMENT_001_SECURITY_REVIEW.md). Fixed nonregular-file blocking, publication overwrite races, incomplete requester-side payment evidence, unresolved-client reuse, swallowed chain-uncertainty classification, and interrupted-startup cleanup. Disabled unused CCIP Read after an upstream advisory match for the pinned Web3.py version. No Solidity protocol logic, signature schema, deadline, spending cap, or requester-veto semantics changed.
+
+Expanded local evidence: 58 Solidity and 54 Python tests pass, retaining all earlier tests and unchanged fuzz/stateful budgets. Tests include real loopback RPC faults, all-type signature mutations, process crashes, malformed evidence, exact timing, concurrent accounting, snapshot/revert before Acceptance, and resource cleanup. Initial new transport regressions failed on the baseline and passed after fixes. The review preserves fault coverage and supply-chain limits rather than claiming independent audit or formal assurance.
+
+The gate is CONDITIONAL PASS for the bounded local research fixture; requester-veto fairness, independent source/compiler/dependency review, and broader lifecycle/network/host-failure testing remain open. No Experiment 002 or final research report begins. Remote CI evidence is the Actions run attached to this entry's commit, not predeclared by the journal. Recommended next task: founder/security review of the conditions and explicit follow-up authorization.
+
 ## Source boundary
 
 This journal does not infer events beyond the repository record. See [`SESSION_HANDOFF.md`](SESSION_HANDOFF.md) for current working context and the reusable handoff format.

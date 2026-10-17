@@ -6,7 +6,7 @@ Use this document to carry concise project context between Codex sessions and co
 
 ### Current status
 
-Genesis is in early-stage experimental research. The current milestone is project foundation and prior-art mapping. A small, bounded two-agent independently verifiable economic transaction is the first implementation milestone, but remains an early step toward the broader permissionless economic network ambition. Task 003A implements and locally tests the Solidity escrow component with pinned dependencies and GitHub CI. Task 003B now implements separate Python requester/provider processes and a temporary Anvil end-to-end fixture; the original contract and requester-veto semantics are unchanged. Local Solidity and Python evidence is recorded in the coverage map. Independent review and explicitly pending fault/security cases remain open.
+Genesis is in early-stage experimental research. The current milestone is project foundation and prior-art mapping. A small, bounded two-agent independently verifiable economic transaction is the first implementation milestone, but remains an early step toward the broader permissionless economic network ambition. Task 003A implements and locally tests the Solidity escrow component with pinned dependencies and GitHub CI. Task 003B now implements separate Python requester/provider processes and a temporary Anvil end-to-end fixture; the original contract and requester-veto semantics are unchanged. Local Solidity and Python evidence is recorded in the coverage map. Task 003C adds adversarial tests and a project-assisted security review with CONDITIONAL PASS for the bounded experiment. Independent review and the explicit remaining coverage/supply-chain conditions remain open.
 
 ### Completed work
 
@@ -22,6 +22,8 @@ Genesis is in early-stage experimental research. The current milestone is projec
 
 - Task 003B: independent ephemeral process-owned signers, signed file discovery/agreement/result/Acceptance transport, actual local escrow transactions, and bounded runner cleanup. All 55 Solidity tests and 30 Python tests passed locally; a standalone run settled and withdrew exact synthetic principal. Hash-locked Python dependencies and pinned-action CI now cover integration. See [agent reproduction](../sdk/python/README.md) and [coverage/pending cases](experiments/EXPERIMENT_001_ESCROW_COVERAGE.md). The implementation commit is recoverable from this file's history; remote CI evidence belongs to that commit's Actions run.
 
+- Task 003C: [adversarial security review](experiments/EXPERIMENT_001_SECURITY_REVIEW.md), transport/receipt/lifecycle fixes, disabled unused CCIP Read, and expanded fault/process/concurrent-accounting coverage. Local evidence: 58 Solidity and 54 Python tests, with original fuzz/stateful budgets retained. Conditional acceptance preserves requester veto, key-loss/inconclusive-run limits, and independent review requirements. Resolve this task's commit and Actions evidence through this file's Git history.
+
 ### Open questions
 
 - Whether an independent permissionless Layer 1 is justified compared with existing networks or another architecture.
@@ -32,11 +34,11 @@ Genesis is in early-stage experimental research. The current milestone is projec
 
 ### Next task
 
-Recommended next task: founder/security review of Task 003B evidence, requester-veto limitations, dependencies, and the explicit pending Task 003C candidate matrix. Any further implementation, fault-proxy expansion, or settlement redesign needs a separate task authorization. No Task 003C work has begun.
+Recommended next task: founder/security reviewer evaluates the Task 003C conditional acceptance, dependency/runtime/compiler maintenance, and explicit residual test gaps. Any follow-up implementation, Experiment 002, settlement redesign, or final research report needs separate authorization. None has begun.
 
 ### Blockers
 
-No blocking specification contradiction was found. Contract test evidence is local and scoped. Independent audit/advisory review, the broader fault matrix, and review of full experiment acceptance remain pending; local integration tests do not complete those gates.
+No blocking specification contradiction was found. Contract test evidence is local and scoped. The bounded project-assisted review is complete with CONDITIONAL PASS; independent audit/source review, remaining advisory/compiler maintenance, and broader fault/host-failure conditions remain open. No critical protocol-semantic flaw requiring redesign was confirmed.
 
 ### Relevant commits
 
@@ -47,6 +49,8 @@ No blocking specification contradiction was found. Contract test evidence is loc
 - `5701aee` — Experiment 001 specification and invariants.
 - `db7da99` — initial escrow implementation. Its first CI run rejected the mismatched preinstalled stable-build pin before tests.
 - `cb64036` — Task 003A follow-up pins official Foundry v1.0.0 commit `8692e926…`; its [CI run passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39054332964).
+
+- `59375be` — Task 003B agent integration; [CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39056715409).
 
 ### Canonical documents
 
@@ -66,6 +70,8 @@ No blocking specification contradiction was found. Contract test evidence is loc
 
 - [EXPERIMENT_001_ESCROW_COVERAGE.md](experiments/EXPERIMENT_001_ESCROW_COVERAGE.md) — local results, invariant mapping and pending integration.
 - [DEPENDENCIES.md](../DEPENDENCIES.md) and [contracts/README.md](../contracts/README.md) — exact pins and fresh-checkout commands.
+
+- [EXPERIMENT_001_SECURITY_REVIEW.md](experiments/EXPERIMENT_001_SECURITY_REVIEW.md) — Task 003C findings, all-invariant assessment and conditional acceptance.
 
 ## Reusable handoff template
 

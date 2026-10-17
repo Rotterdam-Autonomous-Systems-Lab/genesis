@@ -1,4 +1,5 @@
 """Two separate process entry points. Each creates and retains only its own signer."""
+
 import json
 import os
 import secrets
@@ -10,13 +11,29 @@ from eth_account import Account
 from web3 import Web3
 
 from .chain import Chain
-from .protocol import (Inconclusive, PRICE, Rejected, SERVICE, check_terms, exact,
-                       hex_value, integer, normalize, read, tuple_for, wait, wire, write)
+from .protocol import (
+    Inconclusive,
+    PRICE,
+    Rejected,
+    SERVICE,
+    check_terms,
+    exact,
+    hex_value,
+    integer,
+    tuple_for,
+    wait,
+    wire,
+    write,
+)
 
 
 def agreement_envelope(signing, message, sig_a, sig_b=None):
-    result = {"primaryType": "Agreement", "domain": signing.domain, "message": message,
-              "requesterSignature": sig_a}
+    result = {
+        "primaryType": "Agreement",
+        "domain": signing.domain,
+        "message": message,
+        "requesterSignature": sig_a,
+    }
     if sig_b is not None:
         result["providerSignature"] = sig_b
     return result
@@ -30,9 +47,13 @@ def open_agreement(signing, envelope, requester, provider, now, dual=False):
     if envelope["primaryType"] != "Agreement" or envelope["domain"] != signing.domain:
         raise Rejected("agreement domain")
     terms = check_terms(envelope["message"], requester, provider, now)
-    signing.verify("Agreement", envelope["message"], envelope["requesterSignature"], requester)
+    signing.verify(
+        "Agreement", envelope["message"], envelope["requesterSignature"], requester
+    )
     if dual:
-        signing.verify("Agreement", envelope["message"], envelope["providerSignature"], provider)
+        signing.verify(
+            "Agreement", envelope["message"], envelope["providerSignature"], provider
+        )
     return terms
 
 
@@ -45,25 +66,97 @@ def result_acceptance(chain, result_envelope, terms, agreement_id, nonce):
     expected = terms["x"] + terms["y"]
     if result["value"] != expected:
         raise Rejected("invalid computation")
-    return wire("Acceptance", agreementId=agreement_id,
-                resultDigest=chain.signing.digest("Result", result_envelope["message"]),
-                authorizationNonce=nonce, runId=chain.manifest["runId"])
+    return wire(
+        "Acceptance",
+        agreementId=agreement_id,
+        resultDigest=chain.signing.digest("Result", result_envelope["message"]),
+        authorizationNonce=nonce,
+        runId=chain.manifest["runId"],
+    )
+
+
+def verify_provider_report(
+    chain, report, provider_address, agreement_id, result_digest
+):
+    exact(
+        report, ("outcome", "agreementId", "settlementTx", "address", "pid", "receipts")
+    )
+    receipts = report["receipts"]
+    if (
+        report["outcome"] != "settled"
+        or report["agreementId"] != agreement_id
+        or report["address"] != provider_address
+        or not isinstance(receipts, list)
+        or len(receipts) != 2
+    ):
+        raise Inconclusive("incomplete provider evidence")
+    if report["settlementTx"] != receipts[0]["hash"]:
+        raise Inconclusive("settlement hash binding")
+    expected = (
+        (
+            "Settled",
+            {
+                "agreementId": agreement_id,
+                "resultDigest": result_digest,
+                "price": PRICE,
+            },
+        ),
+        ("Withdrawn", {"account": provider_address, "amount": PRICE}),
+    )
+    for r, (event, fields) in zip(receipts, expected):
+        exact(r, ("hash", "blockHash", "block", "timestamp", "gasUsed", "status"))
+        digest = Web3.to_bytes(hexstr=hex_value(r["hash"], 32))
+        receipt = chain.w3.eth.get_transaction_receipt(digest)
+        chain.canonical_receipt(receipt, digest)
+        if (
+            receipt["status"] != 1
+            or Web3.to_hex(receipt["blockHash"]) != r["blockHash"]
+            or str(receipt["blockNumber"]) != r["block"]
+            or r["status"] != "1"
+            or str(receipt["gasUsed"]) != r["gasUsed"]
+            or str(chain.w3.eth.get_block(receipt["blockNumber"])["timestamp"])
+            != r["timestamp"]
+        ):
+            raise Inconclusive("provider receipt mismatch")
+        chain.check_event(receipt, event, fields)
+    if (
+        chain.record(agreement_id)[2] != 2
+        or chain.contract.functions.credits(provider_address).call() != 0
+    ):
+        raise Inconclusive("provider terminal state mismatch")
 
 
 def provider(chain, folder, config, end):
     s = chain.signing
     requester = wait(folder / "requester-ready.json", end)["address"]
     requester = Web3.to_checksum_address(hex_value(requester, 20))
-    advertisement = wire("Advertisement", provider=chain.account.address, serviceId=SERVICE,
-                         price=PRICE, expiresAt=chain.w3.eth.get_block("latest")["timestamp"] + 60,
-                         runId=s.run_id)
-    write(folder / "discovery.json", {"offers": [s.envelope(chain.account, "Advertisement", advertisement)]})
+    advertisement = wire(
+        "Advertisement",
+        provider=chain.account.address,
+        serviceId=SERVICE,
+        price=PRICE,
+        expiresAt=chain.w3.eth.get_block("latest")["timestamp"] + 60,
+        runId=s.run_id,
+    )
+    write(
+        folder / "discovery.json",
+        {"offers": [s.envelope(chain.account, "Advertisement", advertisement)]},
+    )
     proposal = wait(folder / "proposal.json", end)
-    terms = open_agreement(s, proposal, requester, chain.account.address,
-                           chain.w3.eth.get_block("latest")["timestamp"])
+    terms = open_agreement(
+        s,
+        proposal,
+        requester,
+        chain.account.address,
+        chain.w3.eth.get_block("latest")["timestamp"],
+    )
     agreement_id = s.digest("Agreement", proposal["message"])
-    signed = agreement_envelope(s, proposal["message"], proposal["requesterSignature"],
-                                s.sign(chain.account, "Agreement", proposal["message"]))
+    signed = agreement_envelope(
+        s,
+        proposal["message"],
+        proposal["requesterSignature"],
+        s.sign(chain.account, "Agreement", proposal["message"]),
+    )
     write(folder / "agreement.json", signed)
     request = wait(folder / "compute.json", end)
     exact(request, ("agreementId",))
@@ -71,33 +164,79 @@ def provider(chain, folder, config, end):
         raise Rejected("unknown request")
     chain.preflight()
     record = chain.record(agreement_id)
-    if record[2] != 1 or tuple(Web3.to_hex(v) if isinstance(v, bytes) else v for v in record[0]) != tuple_for("Agreement", proposal["message"]):
+    if record[2] != 1 or tuple(
+        Web3.to_hex(v) if isinstance(v, bytes) else v for v in record[0]
+    ) != tuple_for("Agreement", proposal["message"]):
         raise Rejected("unfunded/altered computation")
     if config["scenario"] == "provider_killed":
-        wait(folder / "never.json", end)  # harness terminates this process after funding
+        wait(
+            folder / "never.json", end
+        )  # harness terminates this process after funding
+    if config["scenario"] == "deadline_during_work":
+        write(folder / "provider-paused.json", {"agreementId": agreement_id})
+        wait(folder / "resume-provider.json", end)
     value = sum((terms["x"], terms["y"]))
     if config["scenario"] == "invalid_result":
         value += 1  # explicit adversarial fixture, never selected by a wire message
     result = wire("Result", agreementId=agreement_id, value=value, runId=s.run_id)
     evidence = s.envelope(chain.account, "Result", result)
-    write(folder / "result.json", evidence)
+    # Controlled adversarial fixtures selected by the trusted harness, never by a peer.
+    scenario = config["scenario"]
+    if scenario == "malformed_evidence":
+        evidence["signature"] = "0x00"
+    if scenario == "unexpected_evidence":
+        evidence["verified"] = True
+    if scenario in ("oversized_evidence", "truncated_evidence"):
+        payload = b" " * 16385 if scenario == "oversized_evidence" else b'{"message":'
+        (folder / "result.json").write_bytes(payload)
+    else:
+        write(folder / "result.json", evidence)
+    if scenario == "provider_crash_after_result":
+        write(folder / "provider-paused.json", {"agreementId": agreement_id})
+        wait(folder / "never.json", end)
     try:
         acceptance = wait(folder / "acceptance.json", min(end, time.monotonic() + 3))
     except Inconclusive:
         return {"outcome": "no_acceptance", "agreementId": agreement_id}
     a = s.open(acceptance, "Acceptance", requester)
-    if (a["agreementId"] != agreement_id or a["authorizationNonce"] != record[1]
-            or a["resultDigest"] != s.digest("Result", result)):
+    if (
+        a["agreementId"] != agreement_id
+        or a["authorizationNonce"] != record[1]
+        or a["resultDigest"] != s.digest("Result", result)
+    ):
         raise Rejected("acceptance binding")
-    receipt = chain.transact(chain.contract.functions.settle(agreement_id, tuple_for("Result", result),
-        evidence["signature"], tuple_for("Acceptance", acceptance["message"]), acceptance["signature"]),
-        "Settled", {"agreementId": agreement_id, "resultDigest": a["resultDigest"], "price": PRICE})
-    if chain.record(agreement_id)[2] != 2 or chain.contract.functions.credits(chain.account.address).call() != PRICE:
+    receipt = chain.transact(
+        chain.contract.functions.settle(
+            agreement_id,
+            tuple_for("Result", result),
+            evidence["signature"],
+            tuple_for("Acceptance", acceptance["message"]),
+            acceptance["signature"],
+        ),
+        "Settled",
+        {
+            "agreementId": agreement_id,
+            "resultDigest": a["resultDigest"],
+            "price": PRICE,
+        },
+    )
+    if (
+        chain.record(agreement_id)[2] != 2
+        or chain.contract.functions.credits(chain.account.address).call() != PRICE
+    ):
         raise Inconclusive("settlement state")
-    chain.transact(chain.contract.functions.withdraw(), "Withdrawn", {"account": chain.account.address, "amount": PRICE})
+    chain.transact(
+        chain.contract.functions.withdraw(),
+        "Withdrawn",
+        {"account": chain.account.address, "amount": PRICE},
+    )
     if chain.contract.functions.credits(chain.account.address).call() != 0:
         raise Inconclusive("withdrawal state")
-    return {"outcome": "settled", "agreementId": agreement_id, "settlementTx": Web3.to_hex(receipt["transactionHash"])}
+    return {
+        "outcome": "settled",
+        "agreementId": agreement_id,
+        "settlementTx": Web3.to_hex(receipt["transactionHash"]),
+    }
 
 
 def discover(chain, discovery, provider_address):
@@ -108,8 +247,12 @@ def discover(chain, discovery, provider_address):
     selected = None
     for offer in offers:
         a = chain.signing.open(offer, "Advertisement", provider_address)
-        if (a["provider"] != provider_address or a["serviceId"] != SERVICE or a["price"] != PRICE
-                or chain.w3.eth.get_block("latest")["timestamp"] >= a["expiresAt"]):
+        if (
+            a["provider"] != provider_address
+            or a["serviceId"] != SERVICE
+            or a["price"] != PRICE
+            or chain.w3.eth.get_block("latest")["timestamp"] >= a["expiresAt"]
+        ):
             raise Rejected("offer policy")
         selected = a
     return selected
@@ -117,76 +260,170 @@ def discover(chain, discovery, provider_address):
 
 def requester(chain, folder, config, end):
     s = chain.signing
-    provider_address = Web3.to_checksum_address(hex_value(wait(folder / "provider-ready.json", end)["address"], 20))
+    provider_address = Web3.to_checksum_address(
+        hex_value(wait(folder / "provider-ready.json", end)["address"], 20)
+    )
     discover(chain, wait(folder / "discovery.json", end), provider_address)
     now = chain.w3.eth.get_block("latest")["timestamp"]
-    message = wire("Agreement", requester=chain.account.address, provider=provider_address,
-        serviceId=SERVICE, x=integer(config["x"], 64), y=integer(config["y"], 64), price=PRICE,
-        fundingDeadline=now + 60, settlementDeadline=now + 120,
-        salt="0x" + secrets.token_hex(32), runId=s.run_id)
-    write(folder / "proposal.json", agreement_envelope(s, message, s.sign(chain.account, "Agreement", message)))
+    message = wire(
+        "Agreement",
+        requester=chain.account.address,
+        provider=provider_address,
+        serviceId=SERVICE,
+        x=integer(config["x"], 64),
+        y=integer(config["y"], 64),
+        price=PRICE,
+        fundingDeadline=now + 60,
+        settlementDeadline=now + 120,
+        salt="0x" + secrets.token_hex(32),
+        runId=s.run_id,
+    )
+    proposal = agreement_envelope(
+        s, message, s.sign(chain.account, "Agreement", message)
+    )
+    if config["scenario"] == "requester_tampers_terms":
+        proposal["message"] = {**message, "x": str(int(message["x"]) + 1)}
+    write(folder / "proposal.json", proposal)
     agreed = wait(folder / "agreement.json", end)
     if agreed["message"] != message:
         raise Rejected("counterparty altered terms")
-    terms = open_agreement(s, agreed, chain.account.address, provider_address,
-                           chain.w3.eth.get_block("latest")["timestamp"], dual=True)
+    terms = open_agreement(
+        s,
+        agreed,
+        chain.account.address,
+        provider_address,
+        chain.w3.eth.get_block("latest")["timestamp"],
+        dual=True,
+    )
     agreement_id = s.digest("Agreement", message)
-    auth = wire("Authorization", requester=chain.account.address, provider=provider_address,
-                agreementId=agreement_id, nonce=0, maxAmount=2 * PRICE,
-                validUntil=terms["fundingDeadline"], runId=s.run_id)
-    chain.transact(chain.contract.functions.fund(tuple_for("Agreement", message), agreed["requesterSignature"],
-        agreed["providerSignature"], tuple_for("Authorization", auth), s.sign(chain.account, "Authorization", auth)),
-        "Funded", {"agreementId": agreement_id, "requester": chain.account.address,
-                   "provider": provider_address, "nonce": 0, "price": PRICE}, value=PRICE)
+    auth = wire(
+        "Authorization",
+        requester=chain.account.address,
+        provider=provider_address,
+        agreementId=agreement_id,
+        nonce=0,
+        maxAmount=2 * PRICE,
+        validUntil=terms["fundingDeadline"],
+        runId=s.run_id,
+    )
+    chain.transact(
+        chain.contract.functions.fund(
+            tuple_for("Agreement", message),
+            agreed["requesterSignature"],
+            agreed["providerSignature"],
+            tuple_for("Authorization", auth),
+            s.sign(chain.account, "Authorization", auth),
+        ),
+        "Funded",
+        {
+            "agreementId": agreement_id,
+            "requester": chain.account.address,
+            "provider": provider_address,
+            "nonce": 0,
+            "price": PRICE,
+        },
+        value=PRICE,
+    )
     record = chain.record(agreement_id)
-    if (record[2] != 1 or tuple(Web3.to_hex(v) if isinstance(v, bytes) else v for v in record[0]) != tuple_for("Agreement", message) or record[1] != 0
-            or chain.contract.functions.nonceStatus(chain.account.address, 0).call() != 1):
+    if (
+        record[2] != 1
+        or tuple(Web3.to_hex(v) if isinstance(v, bytes) else v for v in record[0])
+        != tuple_for("Agreement", message)
+        or record[1] != 0
+        or chain.contract.functions.nonceStatus(chain.account.address, 0).call() != 1
+    ):
         raise Inconclusive("funding state")
-    write(folder / "funded.json", {"agreementId": agreement_id, "deadline": str(terms["settlementDeadline"])})
+    write(
+        folder / "funded.json",
+        {"agreementId": agreement_id, "deadline": str(terms["settlementDeadline"])},
+    )
     write(folder / "compute.json", {"agreementId": agreement_id})
     accepted = False
     reason = "requester_refusal"
     verifier_ms = "0"
     try:
         result = wait(folder / "result.json", min(end, time.monotonic() + 3))
-        verify_started = time.monotonic()
-        acceptance = result_acceptance(chain, result, terms, agreement_id, 0)
-        verifier_ms = str(round((time.monotonic() - verify_started) * 1000, 3))
-        if config["scenario"] != "requester_refusal":
-            chain.preflight()
-            if chain.w3.eth.get_block("latest")["timestamp"] >= terms["settlementDeadline"]:
-                raise Rejected("late result")
-            write(folder / "acceptance.json", s.envelope(chain.account, "Acceptance", acceptance))
-            accepted = True
-    except Rejected:
-        reason = "invalid_result"
     except Inconclusive:
+        result = None
         reason = "provider_timeout"
+    except Rejected:
+        result = None
+        reason = "invalid_result"
+    if result is not None:
+        try:
+            verify_started = time.monotonic()
+            acceptance = result_acceptance(chain, result, terms, agreement_id, 0)
+            verifier_ms = str(round((time.monotonic() - verify_started) * 1000, 3))
+        except Rejected:
+            reason = "invalid_result"
+        else:
+            if config["scenario"] != "requester_refusal":
+                if config["scenario"] == "chain_reorg_before_acceptance":
+                    write(
+                        folder / "requester-paused.json", {"agreementId": agreement_id}
+                    )
+                    wait(folder / "resume-requester.json", end)
+                # Chain uncertainty must abort, never be relabeled as a service timeout.
+                chain.preflight()
+                if (
+                    chain.w3.eth.get_block("latest")["timestamp"]
+                    >= terms["settlementDeadline"]
+                ):
+                    reason = "late_result"
+                else:
+                    if config["scenario"] == "requester_crash_before_acceptance":
+                        write(
+                            folder / "requester-paused.json",
+                            {"agreementId": agreement_id},
+                        )
+                        wait(folder / "never.json", end)
+                    write(
+                        folder / "acceptance.json",
+                        s.envelope(chain.account, "Acceptance", acceptance),
+                    )
+                    accepted = True
     if accepted:
         report = wait(folder / "provider-report.json", end)
-        if report["outcome"] != "settled" or chain.record(agreement_id)[2] != 2:
-            raise Inconclusive("provider settlement missing")
-        # Independently reconcile B's public receipts, not only its status string.
-        for r in report["receipts"]:
-            receipt = chain.w3.eth.get_transaction_receipt(r["hash"])
-            if receipt["status"] != 1 or Web3.to_hex(receipt["blockHash"]) != r["blockHash"]:
-                raise Inconclusive("provider receipt mismatch")
-            if chain.w3.eth.get_block(receipt["blockNumber"])["hash"] != receipt["blockHash"]:
-                raise Inconclusive("provider reorg")
-        return {"outcome": "settled", "agreementId": agreement_id, "acceptanceSigned": True,
-                "verifierMs": verifier_ms}
-    write(folder / "refund-wait.json", {"deadline": str(terms["settlementDeadline"]), "reason": reason})
+        verify_provider_report(
+            chain, report, provider_address, agreement_id, acceptance["resultDigest"]
+        )
+        return {
+            "outcome": "settled",
+            "agreementId": agreement_id,
+            "acceptanceSigned": True,
+            "verifierMs": verifier_ms,
+        }
+    write(
+        folder / "refund-wait.json",
+        {"deadline": str(terms["settlementDeadline"]), "reason": reason},
+    )
     # Only the trusted test harness advances chain time. An agent cannot cancel early.
     while chain.w3.eth.get_block("latest")["timestamp"] < terms["settlementDeadline"]:
         if time.monotonic() >= end:
             raise Inconclusive("refund deadline not reached")
         time.sleep(0.025)
-    chain.transact(chain.contract.functions.refund(agreement_id), "Refunded", {"agreementId": agreement_id, "price": PRICE})
-    if chain.record(agreement_id)[2] != 3 or chain.contract.functions.credits(chain.account.address).call() != PRICE:
+    chain.transact(
+        chain.contract.functions.refund(agreement_id),
+        "Refunded",
+        {"agreementId": agreement_id, "price": PRICE},
+    )
+    if (
+        chain.record(agreement_id)[2] != 3
+        or chain.contract.functions.credits(chain.account.address).call() != PRICE
+    ):
         raise Inconclusive("refund state")
-    chain.transact(chain.contract.functions.withdraw(), "Withdrawn", {"account": chain.account.address, "amount": PRICE})
-    return {"outcome": "refunded", "agreementId": agreement_id, "acceptanceSigned": False,
-            "reason": reason, "verifierMs": verifier_ms}
+    chain.transact(
+        chain.contract.functions.withdraw(),
+        "Withdrawn",
+        {"account": chain.account.address, "amount": PRICE},
+    )
+    return {
+        "outcome": "refunded",
+        "agreementId": agreement_id,
+        "acceptanceSigned": False,
+        "reason": reason,
+        "verifierMs": verifier_ms,
+    }
 
 
 def main():
@@ -194,21 +431,50 @@ def main():
     if role not in ("requester", "provider"):
         raise SystemExit(2)
     folder = Path(directory)
-    account = Account.create()  # never supplied by harness, argv, environment, or the other agent
-    write(folder / (role + "-ready.json"), {"address": account.address, "pid": str(os.getpid())})
+    account = (
+        Account.create()
+    )  # never supplied by harness, argv, environment, or the other agent
+    write(
+        folder / (role + "-ready.json"),
+        {"address": account.address, "pid": str(os.getpid())},
+    )
     try:
         end = time.monotonic() + 45
         config = wait(folder / "config.json", end)
         artifact = json.loads(Path(config["artifact"]).read_text())
-        chain = Chain(config["rpc"], account, artifact, config["manifest"],
-                      journal=folder / (role + "-transactions.jsonl"))
+        chain = Chain(
+            config["rpc"],
+            account,
+            artifact,
+            config["manifest"],
+            journal=folder / (role + "-transactions.jsonl"),
+        )
         wait(folder / "go.json", end)
-        result = {"requester": requester, "provider": provider}[role](chain, folder, config, end)
-        result.update({"address": account.address, "pid": str(os.getpid()), "receipts": chain.evidence()})
+        result = {"requester": requester, "provider": provider}[role](
+            chain, folder, config, end
+        )
+        result.update(
+            {
+                "address": account.address,
+                "pid": str(os.getpid()),
+                "receipts": chain.evidence(),
+            }
+        )
         write(folder / (role + "-report.json"), result)
     except Exception as exc:
         # Never serialize exceptions/locals: signing library errors may contain raw transactions.
-        write(folder / (role + "-error.json"), {"error": type(exc).__name__, "reason": str(exc) if isinstance(exc, (Inconclusive, Rejected)) else "unavailable", "outcome": "inconclusive"})
+        write(
+            folder / (role + "-error.json"),
+            {
+                "error": type(exc).__name__,
+                "reason": (
+                    str(exc)
+                    if isinstance(exc, (Inconclusive, Rejected))
+                    else "unavailable"
+                ),
+                "outcome": "inconclusive",
+            },
+        )
         raise SystemExit(1)
 
 

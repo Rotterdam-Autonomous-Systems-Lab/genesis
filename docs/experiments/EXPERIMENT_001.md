@@ -1,6 +1,6 @@
 # Experiment 001 — Bounded Verifiable Economic Interaction
 
-Status: **local escrow (Task 003A) and separate-process Python integration (Task 003B) implemented and locally tested; independent review pending**. See [escrow coverage](EXPERIMENT_001_ESCROW_COVERAGE.md) for evidence and limitations. This experiment examines a narrow case of autonomous economic authority and verifiable coordination. It is an early engineering milestone toward Genesis's broader permissionless network research. [Architecture](../architecture/EXPERIMENT_001_ARCHITECTURE.md), [invariants](../SECURITY_INVARIANTS.md), and [ADR 0001](../adr/0001-experiment-001-architecture.md) define the proposed implementation contract.
+Status: **local escrow (Task 003A) and separate-process Python integration (Task 003B) implemented and locally tested; Task 003C conditional experimental acceptance, independent review pending**. See [escrow coverage](EXPERIMENT_001_ESCROW_COVERAGE.md) for evidence and limitations. This experiment examines a narrow case of autonomous economic authority and verifiable coordination. It is an early engineering milestone toward Genesis's broader permissionless network research. [Architecture](../architecture/EXPERIMENT_001_ARCHITECTURE.md), [invariants](../SECURITY_INVARIANTS.md), and [ADR 0001](../adr/0001-experiment-001-architecture.md) define the proposed implementation contract.
 
 ## Objectives and non-goals
 
@@ -114,3 +114,7 @@ Record negative and inconclusive results. Measure contract gas, verifier time, m
 A successful future run would provide evidence that this specific local implementation can enforce a signed spending bound, immutable terms, replay protection, deterministic result validation, requester consent, and defined refunds under its tested assumptions. It would not establish a novel protocol, provider effort, efficient outsourcing, fair exchange, Sybil resistance, consensus safety, real-world identity, generalized computation verification, public-chain security, censorship resistance, production readiness, or the feasibility of the ultimate Genesis network.
 
 No BLOCKING OPEN DECISION is left in this behavior. Task 003A separately authorizes and tests only the escrow component, preserving requester veto and pinning its dependencies. Task 003B separately authorizes the bounded Python integration; independent review and the pending cases in the coverage map remain open.
+
+## Task 003C acceptance assessment
+
+The [security review](EXPERIMENT_001_SECURITY_REVIEW.md) assesses all 18 invariants and records CONDITIONAL PASS for the bounded local fixture, with explicit residual review/coverage conditions. It is not an independent audit, production approval, final research report, or authorization for Experiment 002. Requester-veto semantics and the long-term independent-network ambition are preserved.

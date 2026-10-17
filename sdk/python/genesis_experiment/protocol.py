@@ -1,8 +1,10 @@
 """Fixed EIP-712 schemas and strict public-message codec. No private-key I/O."""
+
 import json
+import os
+import stat
 import re
 import time
-from pathlib import Path
 
 from eth_account import Account
 from eth_account.messages import encode_typed_data
@@ -19,8 +21,10 @@ SCHEMAS = {
     "Result": "bytes32 agreementId,uint256 value,bytes32 runId",
     "Acceptance": "bytes32 agreementId,bytes32 resultDigest,uint256 authorizationNonce,bytes32 runId",
 }
-TYPES = {name: [dict(zip(("type", "name"), field.split())) for field in fields.split(",")]
-         for name, fields in SCHEMAS.items()}
+TYPES = {
+    name: [dict(zip(("type", "name"), field.split())) for field in fields.split(",")]
+    for name, fields in SCHEMAS.items()
+}
 
 
 class Rejected(Exception):
@@ -38,7 +42,11 @@ def exact(value, fields):
 
 
 def integer(value, bits=256):
-    if not isinstance(value, str) or len(value) > 78 or not re.fullmatch(r"0|[1-9][0-9]*", value):
+    if (
+        not isinstance(value, str)
+        or len(value) > 78
+        or not re.fullmatch(r"0|[1-9][0-9]*", value)
+    ):
         raise Rejected("noncanonical integer")
     result = int(value)
     if result >= 2**bits:
@@ -47,7 +55,9 @@ def integer(value, bits=256):
 
 
 def hex_value(value, length):
-    if not isinstance(value, str) or not re.fullmatch(r"0x[0-9a-fA-F]{" + str(length * 2) + "}", value):
+    if not isinstance(value, str) or not re.fullmatch(
+        r"0x[0-9a-fA-F]{" + str(length * 2) + "}", value
+    ):
         raise Rejected("invalid hex width")
     return value.lower()
 
@@ -65,8 +75,11 @@ def decode(raw):
     if len(raw) > LIMIT:
         raise Rejected("message too large")
     try:
-        return json.loads(raw.decode("utf-8"), object_pairs_hook=duplicate_check,
-                          parse_constant=lambda _: (_ for _ in ()).throw(Rejected("constant")))
+        return json.loads(
+            raw.decode("utf-8"),
+            object_pairs_hook=duplicate_check,
+            parse_constant=lambda _: (_ for _ in ()).throw(Rejected("constant")),
+        )
     except (ValueError, UnicodeError, RecursionError) as exc:
         raise Rejected("invalid JSON") from exc
 
@@ -79,20 +92,36 @@ def encode(value):
 
 
 def read(path):
-    if path.is_symlink():
-        raise Rejected("symlink transport")
-    with path.open("rb") as stream:
-        return decode(stream.read(LIMIT + 1))
+    # Check the opened descriptor, not an earlier pathname lookup. O_NONBLOCK
+    # prevents an untrusted FIFO from defeating the agent timeout.
+    try:
+        descriptor = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)
+        with os.fdopen(descriptor, "rb") as stream:
+            info = os.fstat(stream.fileno())
+            if not stat.S_ISREG(info.st_mode) or info.st_size > LIMIT:
+                raise Rejected("nonregular/oversized transport")
+            return decode(stream.read(LIMIT + 1))
+    except OSError as exc:
+        raise Rejected("unreadable transport") from exc
 
 
 def write(path, value):
-    # Harness supplies all fixed paths; advertisements cannot choose a path.
+    # Atomic no-clobber publication. A competing writer may deny availability,
+    # but cannot cause a previously published message to be silently replaced.
     if path.exists() or path.is_symlink():
         raise Rejected("message already exists")
     temp = path.with_suffix(".tmp")
-    with temp.open("xb") as stream:
-        stream.write(encode(value))
-    temp.replace(path)
+    owned = False
+    try:
+        with temp.open("xb") as stream:
+            owned = True
+            stream.write(encode(value))
+        os.link(temp, path)
+    except OSError as exc:
+        raise Rejected("transport publication failed") from exc
+    finally:
+        if owned:
+            temp.unlink(missing_ok=True)
 
 
 def wait(path, end):
@@ -119,27 +148,43 @@ def normalize(kind, message):
 
 
 def wire(kind, **values):
-    result = {field["name"]: str(values[field["name"]]) if field["type"].startswith("uint")
-              else values[field["name"]] for field in TYPES[kind]}
+    result = {
+        field["name"]: (
+            str(values[field["name"]])
+            if field["type"].startswith("uint")
+            else values[field["name"]]
+        )
+        for field in TYPES[kind]
+    }
     normalize(kind, result)
     return result
 
 
 class Signing:
     def __init__(self, contract, run_id):
-        self.domain = {"name": "GenesisExperiment001", "version": "1", "chainId": "31337",
-                       "verifyingContract": Web3.to_checksum_address(hex_value(contract, 20))}
+        self.domain = {
+            "name": "GenesisExperiment001",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": Web3.to_checksum_address(hex_value(contract, 20)),
+        }
         self.run_id = hex_value(run_id, 32)
 
     def typed(self, kind, message):
         parsed = normalize(kind, message)
         if parsed["runId"] != self.run_id:
             raise Rejected("wrong run")
-        return encode_typed_data(domain_data=self.domain, message_types={kind: TYPES[kind]}, message_data=parsed)
+        return encode_typed_data(
+            domain_data=self.domain,
+            message_types={kind: TYPES[kind]},
+            message_data=parsed,
+        )
 
     def digest(self, kind, message):
         typed = self.typed(kind, message)
-        return Web3.to_hex(Web3.keccak(b"\x19" + typed.version + typed.header + typed.body))
+        return Web3.to_hex(
+            Web3.keccak(b"\x19" + typed.version + typed.header + typed.body)
+        )
 
     def sign(self, account, kind, message):
         return Web3.to_hex(account.sign_message(self.typed(kind, message)).signature)
@@ -147,19 +192,28 @@ class Signing:
     def verify(self, kind, message, signature, signer):
         data = bytes.fromhex(hex_value(signature, 65)[2:])
         # Match OpenZeppelin's supported Ethereum encoding (not custom crypto).
-        if data[64] not in (27, 28) or not 0 < int.from_bytes(data[32:64], "big") <= int(
-                "7fffffffffffffffffffffffffffffff5d576e7357a4501ddfe92f46681b20a0", 16):
+        if data[64] not in (27, 28) or not 0 < int.from_bytes(
+            data[32:64], "big"
+        ) <= int(
+            "7fffffffffffffffffffffffffffffff5d576e7357a4501ddfe92f46681b20a0", 16
+        ):
             raise Rejected("unsupported signature")
         try:
-            recovered = Account.recover_message(self.typed(kind, message), signature=signature)
+            recovered = Account.recover_message(
+                self.typed(kind, message), signature=signature
+            )
         except (ValueError, TypeError) as exc:
             raise Rejected("bad signature") from exc
         if recovered.lower() != hex_value(signer, 20):
             raise Rejected("wrong signer")
 
     def envelope(self, account, kind, message):
-        return {"primaryType": kind, "domain": self.domain, "message": message,
-                "signature": self.sign(account, kind, message)}
+        return {
+            "primaryType": kind,
+            "domain": self.domain,
+            "message": message,
+            "signature": self.sign(account, kind, message),
+        }
 
     def open(self, envelope, kind, signer):
         exact(envelope, ("primaryType", "domain", "message", "signature"))
@@ -176,11 +230,18 @@ def tuple_for(kind, message):
 
 def check_terms(message, requester, provider, now):
     a = normalize("Agreement", message)
-    if (a["requester"] != requester or a["provider"] != provider or requester == provider
-            or int(requester, 16) == 0 or int(provider, 16) == 0
-            or a["serviceId"] != SERVICE or int(a["salt"], 16) == 0
-            or a["price"] != PRICE or not now < a["fundingDeadline"] < a["settlementDeadline"]
-            or a["settlementDeadline"] - a["fundingDeadline"] > 3600
-            or a["settlementDeadline"] > now + 3600):
+    if (
+        a["requester"] != requester
+        or a["provider"] != provider
+        or requester == provider
+        or int(requester, 16) == 0
+        or int(provider, 16) == 0
+        or a["serviceId"] != SERVICE
+        or int(a["salt"], 16) == 0
+        or a["price"] != PRICE
+        or not now < a["fundingDeadline"] < a["settlementDeadline"]
+        or a["settlementDeadline"] - a["fundingDeadline"] > 3600
+        or a["settlementDeadline"] > now + 3600
+    ):
         raise Rejected("agreement policy")
     return a
