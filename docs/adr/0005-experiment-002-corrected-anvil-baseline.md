@@ -32,3 +32,7 @@ The node version/feature graph differs from v1.0.0; Cancun is fixed explicitly t
 ## Gate and follow-up
 
 Local decision: PASS for scoped compatibility. Required Ubuntu CI must run original 86 Solidity/54 Python controls, old fee characterization/signatures/arithmetic, nine candidate integrity/fee tests, candidate signatures and unchanged 54 Python controls plus success/refusal. A failing CI, integrity mismatch or new incompatibility retains/reopens BLOCKED; do not weaken tests to accept it. When CI passes, B-ANVIL-FEE-EVIDENCE is resolved for this profile, allowing a subsequent authorized Task 009 continuation. Task 011 itself does not resume agents or confer Experiment 002 PASS.
+
+## Task 012 execution follow-up
+
+Task 011 publication [Ubuntu CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39136054716), closing this infrastructure gate for the pinned profile. Separately authorized [agent integration](../experiments/EXPERIMENT_002_AGENT_ACCEPTANCE.md) now explicitly verifies/uses it and reports conditional experimental acceptance subject to its own CI. All original pin/budget/scope restrictions remain; this is no new dependency or architecture decision.

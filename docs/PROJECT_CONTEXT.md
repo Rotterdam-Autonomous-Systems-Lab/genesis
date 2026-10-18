@@ -1,5 +1,9 @@
 # Genesis Project Context
 
+## Task 012 current status — local integration completed
+
+[Experiment 002 integration assessment](experiments/EXPERIMENT_002_AGENT_ACCEPTANCE.md) records **CONDITIONAL PASS**, subject to the publication commit CI: separate requester/provider processes settle objectively correct, timely included work without a second requester authorization. The exact ADR 0005 Anvil/Cancun profile, existing contract, signatures and principal/fee/wallet/run limits remain unchanged. Experiment 001 remains unchanged and conditionally accepted. Public disclosure, censorship/deadlines, absent callers, rollback, trusted host/RPC and supply-chain limitations remain. Earlier milestone statuses below are historical, superseded in sequence; no native-chain/token/consensus/adoption result follows. Next recommendation: independent review and separately selected research question, not automatic implementation expansion.
+
 ## What Genesis is
 
 Genesis is RASL’s temporary-codename, open-source, research-first initiative exploring foundational infrastructure for economic coordination among autonomous intelligences and systems. Task 006 explicitly sets an independent permissionless AI-first Layer 1 blockchain economy with a native asset as the long-term research goal. Investigate AI mining/earning through independently verified contributions and meaningful human-to-human, human-to-machine and machine-to-machine utility for the same network/asset. The mission spans humans, software agents, robots, machines, vehicles, sensors, satellites, distributed systems, and future entities. This is research direction, not a validated chain or native-token implementation. The central question is whether unfamiliar, independently operated participants can establish verifiable agreements, exchange resources, and coordinate safely without trusting each other or a central platform.

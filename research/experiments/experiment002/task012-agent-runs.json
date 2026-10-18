@@ -1,0 +1,4851 @@
+[
+  {
+    "agents": {
+      "provider": {
+        "address": "0x75fd32f99E54952796472C7Ac8062cD392e5f8e7",
+        "pid": 86127
+      },
+      "requester": {
+        "address": "0xDB877ad3B7B1741769EA598da25692c586a27547",
+        "pid": 86128
+      }
+    },
+    "agreementId": "0xa82d18645e1111b719e5b7bc863efc4896e83911e02b21a4fbe486b421c2618b",
+    "childCPUSeconds": 3.5434049999999995,
+    "childExitStatus": [
+      0,
+      0,
+      0
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.0038750460371375084,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0xfe66a020f678483faaa6bc6b618ac53b66fb693b1d20c7e7c2a007fe98aaf5c3",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265246000000000",
+        "gasUsed": "1632623",
+        "hash": "0x697b422eff1f2a7351c51deba4c552e42e2dc8ed7641fbe93b93a2a9c3e485af",
+        "status": "1",
+        "timestamp": "1792334344"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334344,
+        "gas": 2000000,
+        "hash": "0x697b422eff1f2a7351c51deba4c552e42e2dc8ed7641fbe93b93a2a9c3e485af",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633646.94073295,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 3.209,
+    "expectedValue": "18",
+    "fundingSlack": 2,
+    "ledger": {
+      "attempts": {
+        "deployer": 1,
+        "provider": 1,
+        "requester": 3
+      },
+      "balances": {
+        "deployer": 2734754000000000,
+        "provider": 47940870463749760,
+        "requester": 47246506222740953
+      },
+      "fees": {
+        "deployer": 3265246000000000,
+        "provider": 59129536250240,
+        "requester": 754493777259047
+      },
+      "gasUsed": {
+        "claim": [
+          37022
+        ],
+        "constructor": [
+          1632623
+        ],
+        "fund": [
+          326284
+        ],
+        "refund": [
+          85221
+        ],
+        "withdraw": [
+          35928
+        ]
+      },
+      "inclusion": {
+        "claim": [
+          {
+            "claimSlack": 0,
+            "hash": "0x27f42e7cdec3a12243fad868cdbf9f7b1a135cfb4ae35b8a8e71a465de318142",
+            "status": 0,
+            "timestamp": 1792334465
+          }
+        ],
+        "constructor": [
+          {
+            "claimSlack": 121,
+            "hash": "0x697b422eff1f2a7351c51deba4c552e42e2dc8ed7641fbe93b93a2a9c3e485af",
+            "status": 1,
+            "timestamp": 1792334344
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 2,
+            "hash": "0xf995e8f7c0924f2089081abbb0c91a91862c2b43a568915badc7b49a101007ec",
+            "status": 1,
+            "timestamp": 1792334463
+          }
+        ],
+        "refund": [
+          {
+            "claimSlack": -2,
+            "hash": "0xd282a3ff6dbaac6af3d7819ba72d2e61c5275a8b3d7443ac751dd7daf5b2baab",
+            "status": 1,
+            "timestamp": 1792334467
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": -2,
+            "hash": "0x2ea1b9094805346f3dda3bcf818e83ba8fe9d2b08fbdbe5048104fd867e421c5",
+            "status": 1,
+            "timestamp": 1792334467
+          }
+        ]
+      },
+      "principalFundings": 1,
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 6000000000000000,
+        "requester": 18000000000000000
+      }
+    },
+    "lockedPrincipal": 0,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0x776ab311809383ac4c6113f4b39410e9fca05519980ecca599ba4148642e9434",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0xec14a6ce55d0A9d1302E9c14f42EFE1A97713dD9",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0x3c532d1695ba51300c5b9058756bb807e29cae665012cea1cb786aba29d48242",
+      "wallSeconds": 120
+    },
+    "operatorHash": "637f92118345a9fe7accd07dc5efe9475abeea97d568cab9c3ef98bfc139d552",
+    "outcome": "refunded",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "claim-attempted.json": 17,
+      "claim-go.json": 2,
+      "claim.json": 500,
+      "compute-go.json": 2,
+      "finish-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "observe-go.json": 2,
+      "observed.json": 56,
+      "operator.json": 1386,
+      "proposal.json": 719,
+      "provider-done.json": 935,
+      "provider-ready.json": 68,
+      "refund-go.json": 2,
+      "requester-done.json": 1728,
+      "requester-ready.json": 68,
+      "terms.json": 857
+    },
+    "peakRSSBytes": 235667456,
+    "principal": 1000000000000,
+    "providerCredit": 0,
+    "reports": {
+      "provider": {
+        "budget": 6000000000000000,
+        "fundingObservedMonotonic": 633648.631179206,
+        "intents": [
+          {
+            "chainTimestamp": 1792334465,
+            "gas": 2000000,
+            "hash": "0x27f42e7cdec3a12243fad868cdbf9f7b1a135cfb4ae35b8a8e71a465de318142",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "claim",
+            "monotonicSeconds": 633648.755553019,
+            "nonce": 0,
+            "value": "0"
+          }
+        ],
+        "receipts": [
+          {
+            "block": "3",
+            "blockHash": "0x803c8927f777ee4fd2d9762b0b6c7caf710ba54c2ebc8dd645643de00e61ed55",
+            "effectiveGasPrice": "1777529543",
+            "fee": "579979449408212",
+            "gasUsed": "326284",
+            "hash": "0xf995e8f7c0924f2089081abbb0c91a91862c2b43a568915badc7b49a101007ec",
+            "status": "1",
+            "timestamp": "1792334463"
+          },
+          {
+            "block": "5",
+            "blockHash": "0x21c9e03e4ae5009b6924f15dfc3469ab3a143acef21c309f3d1638e4572b7042",
+            "effectiveGasPrice": "1597145920",
+            "fee": "59129536250240",
+            "gasUsed": "37022",
+            "hash": "0x27f42e7cdec3a12243fad868cdbf9f7b1a135cfb4ae35b8a8e71a465de318142",
+            "status": "0",
+            "timestamp": "1792334465"
+          }
+        ],
+        "rejected": true
+      },
+      "requester": {
+        "budget": 18000000000000000,
+        "intents": [
+          {
+            "chainTimestamp": 1792334463,
+            "gas": 2000000,
+            "hash": "0xf995e8f7c0924f2089081abbb0c91a91862c2b43a568915badc7b49a101007ec",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "fund",
+            "monotonicSeconds": 633648.469460748,
+            "nonce": 0,
+            "value": "1000000000000"
+          },
+          {
+            "chainTimestamp": 1792334467,
+            "gas": 2000000,
+            "hash": "0xd282a3ff6dbaac6af3d7819ba72d2e61c5275a8b3d7443ac751dd7daf5b2baab",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "refund",
+            "monotonicSeconds": 633648.980359252,
+            "nonce": 1,
+            "value": "0"
+          },
+          {
+            "chainTimestamp": 1792334467,
+            "gas": 2000000,
+            "hash": "0x2ea1b9094805346f3dda3bcf818e83ba8fe9d2b08fbdbe5048104fd867e421c5",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "withdraw",
+            "monotonicSeconds": 633649.193402685,
+            "nonce": 2,
+            "value": "0"
+          }
+        ],
+        "postFundingSignatures": 0,
+        "receipts": [
+          {
+            "block": "3",
+            "blockHash": "0x803c8927f777ee4fd2d9762b0b6c7caf710ba54c2ebc8dd645643de00e61ed55",
+            "effectiveGasPrice": "1777529543",
+            "fee": "579979449408212",
+            "gasUsed": "326284",
+            "hash": "0xf995e8f7c0924f2089081abbb0c91a91862c2b43a568915badc7b49a101007ec",
+            "status": "1",
+            "timestamp": "1792334463"
+          },
+          {
+            "block": "7",
+            "blockHash": "0x1cbb9ea4d68fa7fbd5acc571ef1d47f22054acdcccd9e9b6852a469d66e2166f",
+            "effectiveGasPrice": "1457351047",
+            "fee": "124196913576387",
+            "gasUsed": "85221",
+            "hash": "0xd282a3ff6dbaac6af3d7819ba72d2e61c5275a8b3d7443ac751dd7daf5b2baab",
+            "status": "1",
+            "timestamp": "1792334467"
+          },
+          {
+            "block": "8",
+            "blockHash": "0x9530b16f2559e8a15a3e23c2c8f58b1ca87ec7dce1afa54c6a25f4cf79a29319",
+            "effectiveGasPrice": "1400506966",
+            "fee": "50317414274448",
+            "gasUsed": "35928",
+            "hash": "0x2ea1b9094805346f3dda3bcf818e83ba8fe9d2b08fbdbe5048104fd867e421c5",
+            "status": "1",
+            "timestamp": "1792334467"
+          }
+        ],
+        "verified": false
+      }
+    },
+    "resultObserved": {
+      "postFundingSignatures": 0,
+      "value": "18",
+      "verified": true
+    },
+    "scenario": "late_funding",
+    "state": 3,
+    "supervisorCPUSeconds": 1.0112970000000008,
+    "timeAdjustments": [
+      1792334465,
+      1792334467
+    ],
+    "totalCredits": 0,
+    "transactions": [
+      {
+        "block": "3",
+        "blockHash": "0x803c8927f777ee4fd2d9762b0b6c7caf710ba54c2ebc8dd645643de00e61ed55",
+        "effectiveGasPrice": "1777529543",
+        "fee": "579979449408212",
+        "gasUsed": "326284",
+        "hash": "0xf995e8f7c0924f2089081abbb0c91a91862c2b43a568915badc7b49a101007ec",
+        "status": "1",
+        "timestamp": "1792334463"
+      },
+      {
+        "block": "5",
+        "blockHash": "0x21c9e03e4ae5009b6924f15dfc3469ab3a143acef21c309f3d1638e4572b7042",
+        "effectiveGasPrice": "1597145920",
+        "fee": "59129536250240",
+        "gasUsed": "37022",
+        "hash": "0x27f42e7cdec3a12243fad868cdbf9f7b1a135cfb4ae35b8a8e71a465de318142",
+        "status": "0",
+        "timestamp": "1792334465"
+      },
+      {
+        "block": "7",
+        "blockHash": "0x1cbb9ea4d68fa7fbd5acc571ef1d47f22054acdcccd9e9b6852a469d66e2166f",
+        "effectiveGasPrice": "1457351047",
+        "fee": "124196913576387",
+        "gasUsed": "85221",
+        "hash": "0xd282a3ff6dbaac6af3d7819ba72d2e61c5275a8b3d7443ac751dd7daf5b2baab",
+        "status": "1",
+        "timestamp": "1792334467"
+      },
+      {
+        "block": "8",
+        "blockHash": "0x9530b16f2559e8a15a3e23c2c8f58b1ca87ec7dce1afa54c6a25f4cf79a29319",
+        "effectiveGasPrice": "1400506966",
+        "fee": "50317414274448",
+        "gasUsed": "35928",
+        "hash": "0x2ea1b9094805346f3dda3bcf818e83ba8fe9d2b08fbdbe5048104fd867e421c5",
+        "status": "1",
+        "timestamp": "1792334467"
+      }
+    ],
+    "value": "0"
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0x7801EE41994AEceC523D07ee9A1D6152a8B4F4b2",
+        "pid": 86218
+      },
+      "requester": {
+        "address": "0x8E090dB4138Ff282192aCCb072bd62b235DBF9Ed",
+        "pid": 86219
+      }
+    },
+    "agreementId": "0x8191e75f2bd802c45518ac02fecbaf95f631a3ce5ad81277cf213608a5e93859",
+    "childCPUSeconds": 2.931231,
+    "childExitStatus": [
+      0,
+      -15,
+      0
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.003671786980703473,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0x5dccbb6046e7d59c85e63a6348c70c1133363cec93985e4b40b4cd94fa3c8d6a",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265246000000000",
+        "gasUsed": "1632623",
+        "hash": "0x9c3bd9b4f7bb46e8519ae01c290b797102fa243a8fdbe0fbf229328ab9ffdfca",
+        "status": "1",
+        "timestamp": "1792334347"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334347,
+        "gas": 2000000,
+        "hash": "0x9c3bd9b4f7bb46e8519ae01c290b797102fa243a8fdbe0fbf229328ab9ffdfca",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633650.122329533,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 2.553,
+    "expectedValue": "18",
+    "fundingSlack": 299,
+    "ledger": {
+      "attempts": {
+        "deployer": 1,
+        "provider": 0,
+        "requester": 3
+      },
+      "balances": {
+        "deployer": 2734754000000000,
+        "provider": 48000000000000000,
+        "requester": 47193997600877896
+      },
+      "fees": {
+        "deployer": 3265246000000000,
+        "provider": 0,
+        "requester": 807002399122104
+      },
+      "gasUsed": {
+        "constructor": [
+          1632623
+        ],
+        "fund": [
+          326260
+        ],
+        "refund": [
+          85221
+        ],
+        "withdraw": [
+          35928
+        ]
+      },
+      "inclusion": {
+        "constructor": [
+          {
+            "claimSlack": 300,
+            "hash": "0x9c3bd9b4f7bb46e8519ae01c290b797102fa243a8fdbe0fbf229328ab9ffdfca",
+            "status": 1,
+            "timestamp": 1792334347
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 299,
+            "hash": "0x3230c79718af713efc392d9dddb0e7309a56c69d6285d2a325d4d1c27b13a843",
+            "status": 1,
+            "timestamp": 1792334348
+          }
+        ],
+        "refund": [
+          {
+            "claimSlack": -2,
+            "hash": "0xa654633c5674e788d7c496f8e982238b38e8c79819ce28305fe5214ae66d05d3",
+            "status": 1,
+            "timestamp": 1792334649
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": -2,
+            "hash": "0xbf7bf1a619b4282b1316b8e5123a3df3e1a709cf3aa9181a6e7cab0091c6d3af",
+            "status": 1,
+            "timestamp": 1792334649
+          }
+        ]
+      },
+      "principalFundings": 1,
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 0,
+        "requester": 18000000000000000
+      }
+    },
+    "lockedPrincipal": 0,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0xdb80c456c7a56e2164b6166a0178cae0cef33407838e0604d7e77024582b9011",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0x4B18D1d72227483493EA259CA47929Ad299C899E",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0x4d90f6c8bd306467d2596a4da1ff302213d72df9b920639e446310d5491a5da2",
+      "wallSeconds": 120
+    },
+    "operatorHash": "84eb020fad4ee89eda7f40bb49dcf4bf3a294eddcf08e69b1b26144a8518b0b0",
+    "outcome": "refunded",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "claim.json": 500,
+      "compute-go.json": 2,
+      "finish-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "observe-go.json": 2,
+      "observed.json": 56,
+      "operator.json": 1383,
+      "proposal.json": 719,
+      "provider-ready.json": 68,
+      "refund-go.json": 2,
+      "requester-done.json": 1728,
+      "requester-ready.json": 68,
+      "terms.json": 857
+    },
+    "peakRSSBytes": 234156032,
+    "principal": 1000000000000,
+    "providerCredit": 0,
+    "reports": {
+      "requester": {
+        "budget": 18000000000000000,
+        "intents": [
+          {
+            "chainTimestamp": 1792334347,
+            "gas": 2000000,
+            "hash": "0x3230c79718af713efc392d9dddb0e7309a56c69d6285d2a325d4d1c27b13a843",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "fund",
+            "monotonicSeconds": 633651.467333598,
+            "nonce": 0,
+            "value": "1000000000000"
+          },
+          {
+            "chainTimestamp": 1792334649,
+            "gas": 2000000,
+            "hash": "0xa654633c5674e788d7c496f8e982238b38e8c79819ce28305fe5214ae66d05d3",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "refund",
+            "monotonicSeconds": 633651.758878548,
+            "nonce": 1,
+            "value": "0"
+          },
+          {
+            "chainTimestamp": 1792334649,
+            "gas": 2000000,
+            "hash": "0xbf7bf1a619b4282b1316b8e5123a3df3e1a709cf3aa9181a6e7cab0091c6d3af",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "withdraw",
+            "monotonicSeconds": 633651.879697299,
+            "nonce": 2,
+            "value": "0"
+          }
+        ],
+        "postFundingSignatures": 0,
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0xa28f9066883d230989587f1324afe38a2b6348e988f0399ae11d1ff304e98756",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616176329941920",
+            "gasUsed": "326260",
+            "hash": "0x3230c79718af713efc392d9dddb0e7309a56c69d6285d2a325d4d1c27b13a843",
+            "status": "1",
+            "timestamp": "1792334348"
+          },
+          {
+            "block": "5",
+            "blockHash": "0x90ef7ec51f924ac0215d32aafcc7eed07b533662ab5ac1db2d1b46f788a7843c",
+            "effectiveGasPrice": "1597145784",
+            "fee": "136110360858264",
+            "gasUsed": "85221",
+            "hash": "0xa654633c5674e788d7c496f8e982238b38e8c79819ce28305fe5214ae66d05d3",
+            "status": "1",
+            "timestamp": "1792334649"
+          },
+          {
+            "block": "6",
+            "blockHash": "0x5906a7728be0c4532b279b8b107d6d34de32496125975527b74ff2f95f997a76",
+            "effectiveGasPrice": "1522926640",
+            "fee": "54715708321920",
+            "gasUsed": "35928",
+            "hash": "0xbf7bf1a619b4282b1316b8e5123a3df3e1a709cf3aa9181a6e7cab0091c6d3af",
+            "status": "1",
+            "timestamp": "1792334649"
+          }
+        ],
+        "verified": false
+      }
+    },
+    "resultObserved": {
+      "postFundingSignatures": 0,
+      "value": "18",
+      "verified": true
+    },
+    "scenario": "no_actor",
+    "state": 3,
+    "supervisorCPUSeconds": 0.856484,
+    "timeAdjustments": [
+      1792334648,
+      1792334649
+    ],
+    "totalCredits": 0,
+    "transactions": [
+      {
+        "block": "2",
+        "blockHash": "0xa28f9066883d230989587f1324afe38a2b6348e988f0399ae11d1ff304e98756",
+        "effectiveGasPrice": "1888605192",
+        "fee": "616176329941920",
+        "gasUsed": "326260",
+        "hash": "0x3230c79718af713efc392d9dddb0e7309a56c69d6285d2a325d4d1c27b13a843",
+        "status": "1",
+        "timestamp": "1792334348"
+      },
+      {
+        "block": "5",
+        "blockHash": "0x90ef7ec51f924ac0215d32aafcc7eed07b533662ab5ac1db2d1b46f788a7843c",
+        "effectiveGasPrice": "1597145784",
+        "fee": "136110360858264",
+        "gasUsed": "85221",
+        "hash": "0xa654633c5674e788d7c496f8e982238b38e8c79819ce28305fe5214ae66d05d3",
+        "status": "1",
+        "timestamp": "1792334649"
+      },
+      {
+        "block": "6",
+        "blockHash": "0x5906a7728be0c4532b279b8b107d6d34de32496125975527b74ff2f95f997a76",
+        "effectiveGasPrice": "1522926640",
+        "fee": "54715708321920",
+        "gasUsed": "35928",
+        "hash": "0xbf7bf1a619b4282b1316b8e5123a3df3e1a709cf3aa9181a6e7cab0091c6d3af",
+        "status": "1",
+        "timestamp": "1792334649"
+      }
+    ],
+    "value": "0"
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0x91dD4748d679C811cCAB00a26D4F976f26C9FE28",
+        "pid": 86301
+      },
+      "requester": {
+        "address": "0x221656BDC4dA8c485498Fe9A43f8dA67dB3fE144",
+        "pid": 86302
+      }
+    },
+    "agreementId": "0x8a41ba18271bf2fd9db2a4f5ed19cfad2f938d012ec16a97246100f007231475",
+    "childCPUSeconds": 2.44476,
+    "childExitStatus": [
+      0,
+      -15,
+      0
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.0033340189838781953,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0xe4b7cc36769f91e253f7a330e2d63955e6462099a733b03a561d08b4c0aa2db7",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265246000000000",
+        "gasUsed": "1632623",
+        "hash": "0x925241bfc0a403ad452c0e230ca4539e46dc316af160584988295d24ecba815b",
+        "status": "1",
+        "timestamp": "1792334350"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334349,
+        "gas": 2000000,
+        "hash": "0x925241bfc0a403ad452c0e230ca4539e46dc316af160584988295d24ecba815b",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633652.679340583,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 2.164,
+    "expectedValue": "18",
+    "fundingSlack": 299,
+    "ledger": {
+      "attempts": {
+        "deployer": 1,
+        "provider": 1,
+        "requester": 1
+      },
+      "balances": {
+        "deployer": 2734754000000000,
+        "provider": 47784656862768208,
+        "requester": 47383846333320384
+      },
+      "fees": {
+        "deployer": 3265246000000000,
+        "provider": 215343137231792,
+        "requester": 616153666679616
+      },
+      "gasUsed": {
+        "claim": [
+          120983
+        ],
+        "constructor": [
+          1632623
+        ],
+        "fund": [
+          326248
+        ]
+      },
+      "inclusion": {
+        "claim": [
+          {
+            "claimSlack": 299,
+            "hash": "0x55dd031e41075c116b7aff68c3af3ea658c15e0c48d2bb12fcef53668555d0ed",
+            "status": 1,
+            "timestamp": 1792334351
+          }
+        ],
+        "constructor": [
+          {
+            "claimSlack": 300,
+            "hash": "0x925241bfc0a403ad452c0e230ca4539e46dc316af160584988295d24ecba815b",
+            "status": 1,
+            "timestamp": 1792334350
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 299,
+            "hash": "0x86ba2a57a82253b991aafa29544fd45c6c5a7e3814fd45482d531ad9e864e71d",
+            "status": 1,
+            "timestamp": 1792334351
+          }
+        ]
+      },
+      "principalFundings": 1,
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 6000000000000000,
+        "requester": 6000000000000000
+      }
+    },
+    "lockedPrincipal": 0,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0x799fc6458a54b919c9707b686c55e830bde525ae39fbbc47b11d62584b0f7183",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0xFC056B2684DfCeD3ed40f7E530e2df32934FC444",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0x62787ced92591e5c0b632a5267d3f74bc7e9123e678552cb9990369661f7dd18",
+      "wallSeconds": 120
+    },
+    "operatorHash": "c2329ee527166520abdcb9b813663967a70cbc742125e0b2ebcdc18860c0630e",
+    "outcome": "settled",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "claim-attempted.json": 18,
+      "claim-go.json": 2,
+      "claim.json": 500,
+      "compute-go.json": 2,
+      "finish-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "observe-go.json": 2,
+      "observed.json": 56,
+      "operator.json": 1401,
+      "proposal.json": 719,
+      "provider-ready.json": 68,
+      "requester-done.json": 644,
+      "requester-ready.json": 68,
+      "terms.json": 857
+    },
+    "peakRSSBytes": 236396544,
+    "principal": 1000000000000,
+    "providerCredit": 1000000000000,
+    "reports": {
+      "requester": {
+        "budget": 6000000000000000,
+        "intents": [
+          {
+            "chainTimestamp": 1792334350,
+            "gas": 2000000,
+            "hash": "0x86ba2a57a82253b991aafa29544fd45c6c5a7e3814fd45482d531ad9e864e71d",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "fund",
+            "monotonicSeconds": 633653.97642051,
+            "nonce": 0,
+            "value": "1000000000000"
+          }
+        ],
+        "postFundingSignatures": 0,
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0xd80ac2f7c3208c8e02b659a01d3dfb91b5f4fe7b3797c0108dd97d33a5a234c7",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616153666679616",
+            "gasUsed": "326248",
+            "hash": "0x86ba2a57a82253b991aafa29544fd45c6c5a7e3814fd45482d531ad9e864e71d",
+            "status": "1",
+            "timestamp": "1792334351"
+          }
+        ],
+        "verified": true
+      }
+    },
+    "resultObserved": {
+      "postFundingSignatures": 0,
+      "value": "18",
+      "verified": true
+    },
+    "scenario": "provider_crash_after_claim",
+    "state": 2,
+    "supervisorCPUSeconds": 0.6588270000000005,
+    "timeAdjustments": [],
+    "totalCredits": 1000000000000,
+    "transactions": [
+      {
+        "block": "2",
+        "blockHash": "0xd80ac2f7c3208c8e02b659a01d3dfb91b5f4fe7b3797c0108dd97d33a5a234c7",
+        "effectiveGasPrice": "1888605192",
+        "fee": "616153666679616",
+        "gasUsed": "326248",
+        "hash": "0x86ba2a57a82253b991aafa29544fd45c6c5a7e3814fd45482d531ad9e864e71d",
+        "status": "1",
+        "timestamp": "1792334351"
+      }
+    ],
+    "value": "18"
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0x21e6564A08fb7B2603aF400e99e68FaB97187Bd9",
+        "pid": 86365
+      },
+      "requester": {
+        "address": "0x9FAE27cE90B1B1fcAcdaA4eC7F01f72f90DA21BC",
+        "pid": 86366
+      }
+    },
+    "agreementId": "0x11d161e7b14f1705811a5b9d621e5f1c15a3b9a5c2be96096e1891cc73c93358",
+    "childCPUSeconds": 2.732888999999998,
+    "childExitStatus": [
+      0,
+      -15,
+      0
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.0034304220462217927,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0x2768ae1a67e9b64f8e076b607cbbb24d3b5bdfe6fd9b2cb7fad88eb80cef2820",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265222000000000",
+        "gasUsed": "1632611",
+        "hash": "0xb2bf7ea608bcebfa21ac4fe90bc76294b1005a1708166b4c24345bef76c2949a",
+        "status": "1",
+        "timestamp": "1792334352"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334352,
+        "gas": 2000000,
+        "hash": "0xb2bf7ea608bcebfa21ac4fe90bc76294b1005a1708166b4c24345bef76c2949a",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633654.851974346,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 2.423,
+    "expectedValue": "18",
+    "fundingSlack": 299,
+    "ledger": {
+      "attempts": {
+        "deployer": 1,
+        "provider": 0,
+        "requester": 3
+      },
+      "balances": {
+        "deployer": 2734778000000000,
+        "provider": 48000000000000000,
+        "requester": 47184089120175308
+      },
+      "fees": {
+        "deployer": 3265222000000000,
+        "provider": 0,
+        "requester": 816910879824692
+      },
+      "gasUsed": {
+        "constructor": [
+          1632611
+        ],
+        "fund": [
+          326236
+        ],
+        "refund": [
+          85221
+        ],
+        "withdraw": [
+          35928
+        ]
+      },
+      "inclusion": {
+        "constructor": [
+          {
+            "claimSlack": 300,
+            "hash": "0xb2bf7ea608bcebfa21ac4fe90bc76294b1005a1708166b4c24345bef76c2949a",
+            "status": 1,
+            "timestamp": 1792334352
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 299,
+            "hash": "0xe3ceeca94d5e33a9d4e6d55de5b8954e360cbe729d2768c78fe1453e8f10c07a",
+            "status": 1,
+            "timestamp": 1792334353
+          }
+        ],
+        "refund": [
+          {
+            "claimSlack": -2,
+            "hash": "0x572e12202ac8cfc014256f979707f9a4a57bb5ceb0d5930b8a339e8c8765e1a9",
+            "status": 1,
+            "timestamp": 1792334654
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": -2,
+            "hash": "0xb8f8cbef92497ac12745a3fbd4363680830eb5ac7d2c320039255159483bc370",
+            "status": 1,
+            "timestamp": 1792334654
+          }
+        ]
+      },
+      "principalFundings": 1,
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 0,
+        "requester": 18000000000000000
+      }
+    },
+    "lockedPrincipal": 0,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0xd5ec15e43088cfc0b0eaf9578eb5639546333c48411cc8edbb68637d8132a9f0",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0x1564511Dbc0D100697a36F1E22Ce82d4813A48CD",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0xbf3e2a668a44b2d734e984835935002c4ab660ad6ab0b9a5bc8dac22b95641f1",
+      "wallSeconds": 120
+    },
+    "operatorHash": "4b87e366fc3d562589566d44ae36828e36b12ed6990870e2deb22a812a2a3b4a",
+    "outcome": "refunded",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "claim.json": 500,
+      "compute-go.json": 2,
+      "finish-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "observe-go.json": 2,
+      "observed.json": 56,
+      "operator.json": 1395,
+      "proposal.json": 719,
+      "provider-ready.json": 68,
+      "refund-go.json": 2,
+      "requester-done.json": 1728,
+      "requester-ready.json": 68,
+      "terms.json": 857
+    },
+    "peakRSSBytes": 236138496,
+    "principal": 1000000000000,
+    "providerCredit": 0,
+    "reports": {
+      "requester": {
+        "budget": 18000000000000000,
+        "intents": [
+          {
+            "chainTimestamp": 1792334352,
+            "gas": 2000000,
+            "hash": "0xe3ceeca94d5e33a9d4e6d55de5b8954e360cbe729d2768c78fe1453e8f10c07a",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "fund",
+            "monotonicSeconds": 633656.100642021,
+            "nonce": 0,
+            "value": "1000000000000"
+          },
+          {
+            "chainTimestamp": 1792334654,
+            "gas": 2000000,
+            "hash": "0x572e12202ac8cfc014256f979707f9a4a57bb5ceb0d5930b8a339e8c8765e1a9",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "refund",
+            "monotonicSeconds": 633656.377628877,
+            "nonce": 1,
+            "value": "0"
+          },
+          {
+            "chainTimestamp": 1792334654,
+            "gas": 2000000,
+            "hash": "0xb8f8cbef92497ac12745a3fbd4363680830eb5ac7d2c320039255159483bc370",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "withdraw",
+            "monotonicSeconds": 633656.483076922,
+            "nonce": 2,
+            "value": "0"
+          }
+        ],
+        "postFundingSignatures": 0,
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0x55bb5105db6004b40d6393a7d7109754d783131b8511262d0ebab33c4326a788",
+            "effectiveGasPrice": "1888605092",
+            "fee": "616130970793712",
+            "gasUsed": "326236",
+            "hash": "0xe3ceeca94d5e33a9d4e6d55de5b8954e360cbe729d2768c78fe1453e8f10c07a",
+            "status": "1",
+            "timestamp": "1792334353"
+          },
+          {
+            "block": "4",
+            "blockHash": "0xc526c15a01c1aa5bc3d7481070893028242b933a54a2c902814b2a98268f1e17",
+            "effectiveGasPrice": "1682452092",
+            "fee": "143380249732332",
+            "gasUsed": "85221",
+            "hash": "0x572e12202ac8cfc014256f979707f9a4a57bb5ceb0d5930b8a339e8c8765e1a9",
+            "status": "1",
+            "timestamp": "1792334654"
+          },
+          {
+            "block": "5",
+            "blockHash": "0x80fea58b2410acca7bf6ef471dd07899a92c9e3ddcaa1d6de1c6aa2c957c67e3",
+            "effectiveGasPrice": "1597630241",
+            "fee": "57399659298648",
+            "gasUsed": "35928",
+            "hash": "0xb8f8cbef92497ac12745a3fbd4363680830eb5ac7d2c320039255159483bc370",
+            "status": "1",
+            "timestamp": "1792334654"
+          }
+        ],
+        "verified": false
+      }
+    },
+    "resultObserved": {
+      "postFundingSignatures": 0,
+      "value": "18",
+      "verified": true
+    },
+    "scenario": "provider_crash_after",
+    "state": 3,
+    "supervisorCPUSeconds": 0.8301609999999988,
+    "timeAdjustments": [
+      1792334654
+    ],
+    "totalCredits": 0,
+    "transactions": [
+      {
+        "block": "2",
+        "blockHash": "0x55bb5105db6004b40d6393a7d7109754d783131b8511262d0ebab33c4326a788",
+        "effectiveGasPrice": "1888605092",
+        "fee": "616130970793712",
+        "gasUsed": "326236",
+        "hash": "0xe3ceeca94d5e33a9d4e6d55de5b8954e360cbe729d2768c78fe1453e8f10c07a",
+        "status": "1",
+        "timestamp": "1792334353"
+      },
+      {
+        "block": "4",
+        "blockHash": "0xc526c15a01c1aa5bc3d7481070893028242b933a54a2c902814b2a98268f1e17",
+        "effectiveGasPrice": "1682452092",
+        "fee": "143380249732332",
+        "gasUsed": "85221",
+        "hash": "0x572e12202ac8cfc014256f979707f9a4a57bb5ceb0d5930b8a339e8c8765e1a9",
+        "status": "1",
+        "timestamp": "1792334654"
+      },
+      {
+        "block": "5",
+        "blockHash": "0x80fea58b2410acca7bf6ef471dd07899a92c9e3ddcaa1d6de1c6aa2c957c67e3",
+        "effectiveGasPrice": "1597630241",
+        "fee": "57399659298648",
+        "gasUsed": "35928",
+        "hash": "0xb8f8cbef92497ac12745a3fbd4363680830eb5ac7d2c320039255159483bc370",
+        "status": "1",
+        "timestamp": "1792334654"
+      }
+    ],
+    "value": "0"
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0xC93eA1351868CDa1A2A97A7F622518296A684936",
+        "pid": 86460
+      },
+      "requester": {
+        "address": "0x02eDcb73a8d60C82c3a6c2CF4E3BD47174DaBFd7",
+        "pid": 86461
+      }
+    },
+    "agreementId": "0xbc3c402a80c7784afc79416a013847f5ec319b4d987d9c60efccb8cff6def073",
+    "childCPUSeconds": 2.725073000000001,
+    "childExitStatus": [
+      0,
+      -15,
+      0
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.003907767939381301,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0x829b5f40ef9c1ef5404f2c2b1f6a92722627e2ade59984dcf6be797cb8dd7a12",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265246000000000",
+        "gasUsed": "1632623",
+        "hash": "0xba1295eee2347492af29f3fbc1077c628ed2f406a71d92d42cd744c8ada1deb4",
+        "status": "1",
+        "timestamp": "1792334354"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334354,
+        "gas": 2000000,
+        "hash": "0xba1295eee2347492af29f3fbc1077c628ed2f406a71d92d42cd744c8ada1deb4",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633657.288986255,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 2.52,
+    "expectedValue": "18",
+    "fundingSlack": 298,
+    "ledger": {
+      "attempts": {
+        "deployer": 1,
+        "provider": 0,
+        "requester": 3
+      },
+      "balances": {
+        "deployer": 2734754000000000,
+        "provider": 48000000000000000,
+        "requester": 47184021061573870
+      },
+      "fees": {
+        "deployer": 3265246000000000,
+        "provider": 0,
+        "requester": 816978938426130
+      },
+      "gasUsed": {
+        "constructor": [
+          1632623
+        ],
+        "fund": [
+          326272
+        ],
+        "refund": [
+          85221
+        ],
+        "withdraw": [
+          35928
+        ]
+      },
+      "inclusion": {
+        "constructor": [
+          {
+            "claimSlack": 300,
+            "hash": "0xba1295eee2347492af29f3fbc1077c628ed2f406a71d92d42cd744c8ada1deb4",
+            "status": 1,
+            "timestamp": 1792334354
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 298,
+            "hash": "0x27fb7390b62f92de25e54cad4a8c744ad7a4f0c8b4a43ef318c6c236ff24a680",
+            "status": 1,
+            "timestamp": 1792334356
+          }
+        ],
+        "refund": [
+          {
+            "claimSlack": -2,
+            "hash": "0x18456108bbf2b6945df2b28cda8a846cad5d937be7f5e63d72fc297cc1ff1532",
+            "status": 1,
+            "timestamp": 1792334656
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": -2,
+            "hash": "0x465c9e8ba448c563227578b17592ebeac11c56ad778d028aa6a4368e442ea61f",
+            "status": 1,
+            "timestamp": 1792334656
+          }
+        ]
+      },
+      "principalFundings": 1,
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 0,
+        "requester": 18000000000000000
+      }
+    },
+    "lockedPrincipal": 0,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0x77030c67e9da3bcad0c81319aa3fd487d4f4cab65a6b85713037b5e7805f5d45",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0x0D1A8cc9383035FaCbEC663B12269B9D2448a9e1",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0x0268e37ca6aacfaa6dee196e8256414413ec0ae15a02f777c09e3d564463f928",
+      "wallSeconds": 120
+    },
+    "operatorHash": "b0859043dc94a41bbb943638c53553a5dbf67ac03056f01a29d8065a136eac49",
+    "outcome": "refunded",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "finish-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "operator.json": 1396,
+      "proposal.json": 719,
+      "provider-ready.json": 68,
+      "refund-go.json": 2,
+      "requester-done.json": 1728,
+      "requester-ready.json": 68,
+      "terms.json": 857
+    },
+    "peakRSSBytes": 235982848,
+    "principal": 1000000000000,
+    "providerCredit": 0,
+    "reports": {
+      "requester": {
+        "budget": 18000000000000000,
+        "intents": [
+          {
+            "chainTimestamp": 1792334354,
+            "gas": 2000000,
+            "hash": "0x27fb7390b62f92de25e54cad4a8c744ad7a4f0c8b4a43ef318c6c236ff24a680",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "fund",
+            "monotonicSeconds": 633658.613628593,
+            "nonce": 0,
+            "value": "1000000000000"
+          },
+          {
+            "chainTimestamp": 1792334656,
+            "gas": 2000000,
+            "hash": "0x18456108bbf2b6945df2b28cda8a846cad5d937be7f5e63d72fc297cc1ff1532",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "refund",
+            "monotonicSeconds": 633658.850822823,
+            "nonce": 1,
+            "value": "0"
+          },
+          {
+            "chainTimestamp": 1792334656,
+            "gas": 2000000,
+            "hash": "0x465c9e8ba448c563227578b17592ebeac11c56ad778d028aa6a4368e442ea61f",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "withdraw",
+            "monotonicSeconds": 633658.964160614,
+            "nonce": 2,
+            "value": "0"
+          }
+        ],
+        "postFundingSignatures": 0,
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0x0972bfedb8f395a6cec63e3c26e759945efe04e9aaaa9a287161fcc546336eda",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616198993204224",
+            "gasUsed": "326272",
+            "hash": "0x27fb7390b62f92de25e54cad4a8c744ad7a4f0c8b4a43ef318c6c236ff24a680",
+            "status": "1",
+            "timestamp": "1792334356"
+          },
+          {
+            "block": "4",
+            "blockHash": "0xd763947c8579f1fe88a2969830f1ba4bc4a966e184446e74f8d85431c1e2e64f",
+            "effectiveGasPrice": "1682452402",
+            "fee": "143380276150842",
+            "gasUsed": "85221",
+            "hash": "0x18456108bbf2b6945df2b28cda8a846cad5d937be7f5e63d72fc297cc1ff1532",
+            "status": "1",
+            "timestamp": "1792334656"
+          },
+          {
+            "block": "5",
+            "blockHash": "0x999a5e08ef4bad19eeacef6a810dfc35bbf5834842c6adf015c33e564fdfd7db",
+            "effectiveGasPrice": "1597630513",
+            "fee": "57399669071064",
+            "gasUsed": "35928",
+            "hash": "0x465c9e8ba448c563227578b17592ebeac11c56ad778d028aa6a4368e442ea61f",
+            "status": "1",
+            "timestamp": "1792334656"
+          }
+        ],
+        "verified": false
+      }
+    },
+    "resultObserved": null,
+    "scenario": "provider_crash_before",
+    "state": 3,
+    "supervisorCPUSeconds": 0.8431940000000009,
+    "timeAdjustments": [
+      1792334656
+    ],
+    "totalCredits": 0,
+    "transactions": [
+      {
+        "block": "2",
+        "blockHash": "0x0972bfedb8f395a6cec63e3c26e759945efe04e9aaaa9a287161fcc546336eda",
+        "effectiveGasPrice": "1888605192",
+        "fee": "616198993204224",
+        "gasUsed": "326272",
+        "hash": "0x27fb7390b62f92de25e54cad4a8c744ad7a4f0c8b4a43ef318c6c236ff24a680",
+        "status": "1",
+        "timestamp": "1792334356"
+      },
+      {
+        "block": "4",
+        "blockHash": "0xd763947c8579f1fe88a2969830f1ba4bc4a966e184446e74f8d85431c1e2e64f",
+        "effectiveGasPrice": "1682452402",
+        "fee": "143380276150842",
+        "gasUsed": "85221",
+        "hash": "0x18456108bbf2b6945df2b28cda8a846cad5d937be7f5e63d72fc297cc1ff1532",
+        "status": "1",
+        "timestamp": "1792334656"
+      },
+      {
+        "block": "5",
+        "blockHash": "0x999a5e08ef4bad19eeacef6a810dfc35bbf5834842c6adf015c33e564fdfd7db",
+        "effectiveGasPrice": "1597630513",
+        "fee": "57399669071064",
+        "gasUsed": "35928",
+        "hash": "0x465c9e8ba448c563227578b17592ebeac11c56ad778d028aa6a4368e442ea61f",
+        "status": "1",
+        "timestamp": "1792334656"
+      }
+    ],
+    "value": "0"
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0x3b955E916d2C0ec6A5795069d343d13E964E3355",
+        "pid": 86529
+      },
+      "requester": {
+        "address": "0xa26da367C7984a0D5bC198E03363657477Bbcd2A",
+        "pid": 86530
+      }
+    },
+    "agreementId": "0x18d51904393b870b9f0469904f037fca51752589ca98d49a632d81d894c38cda",
+    "childCPUSeconds": 3.324603,
+    "childExitStatus": [
+      0,
+      -15,
+      0
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.003434784011915326,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0x482f880bdc1636364e53ca9a6e46ca4706a298003ad1fd02bb3f896e3a563c4a",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265246000000000",
+        "gasUsed": "1632623",
+        "hash": "0x41c9100f079994ab9d16b574cfbcc5445c2024b7c04921e1a750833efb5e384d",
+        "status": "1",
+        "timestamp": "1792334357"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334357,
+        "gas": 2000000,
+        "hash": "0x41c9100f079994ab9d16b574cfbcc5445c2024b7c04921e1a750833efb5e384d",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633659.845392621,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 2.987,
+    "expectedValue": "18",
+    "fundingSlack": 299,
+    "ledger": {
+      "attempts": {
+        "deployer": 1,
+        "provider": 0,
+        "requester": 3
+      },
+      "balances": {
+        "deployer": 2734754000000000,
+        "provider": 48000000000000000,
+        "requester": 47184021061573870
+      },
+      "fees": {
+        "deployer": 3265246000000000,
+        "provider": 0,
+        "requester": 816978938426130
+      },
+      "gasUsed": {
+        "constructor": [
+          1632623
+        ],
+        "fund": [
+          326272
+        ],
+        "refund": [
+          85221
+        ],
+        "withdraw": [
+          35928
+        ]
+      },
+      "inclusion": {
+        "constructor": [
+          {
+            "claimSlack": 300,
+            "hash": "0x41c9100f079994ab9d16b574cfbcc5445c2024b7c04921e1a750833efb5e384d",
+            "status": 1,
+            "timestamp": 1792334357
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 299,
+            "hash": "0xe38c9c1ac61c20d88d50495b3f972a1a574376cdf68a427ce5093f77fc244406",
+            "status": 1,
+            "timestamp": 1792334358
+          }
+        ],
+        "refund": [
+          {
+            "claimSlack": -3,
+            "hash": "0x02876f68fb2a207649b558675581be7c11bc8baeb97f921447202d3083166885",
+            "status": 1,
+            "timestamp": 1792334660
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": -3,
+            "hash": "0xc37cf97bfa06e7f880585e5cd658ebfdb3a6ee6e27b4fe15c1843d901de2ff81",
+            "status": 1,
+            "timestamp": 1792334660
+          }
+        ]
+      },
+      "principalFundings": 1,
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 0,
+        "requester": 18000000000000000
+      }
+    },
+    "lockedPrincipal": 0,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0x5241e343b1a93544ea7dbfed6606fa98f308e8f9e20c7aa02191052eef73440c",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0xd746D4aE56B25Cd67daA3Cb7ad94808f382e5AF7",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0x2e58042bcee4d89d1a422191cd0d73ff852c89b7ae275b1bf4ef3914e93fdf7e",
+      "wallSeconds": 120
+    },
+    "operatorHash": "09b058c452a9b3574b50e7779ca636ef5946468e2409090bc533081cbec9c7ff",
+    "outcome": "refunded",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "claim.json": 500,
+      "compute-go.json": 2,
+      "finish-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "observe-go.json": 2,
+      "observed.json": 56,
+      "operator.json": 1391,
+      "proposal.json": 719,
+      "provider-ready.json": 68,
+      "refund-go.json": 2,
+      "requester-done.json": 1727,
+      "requester-ready.json": 68,
+      "terms.json": 857
+    },
+    "peakRSSBytes": 236834816,
+    "principal": 1000000000000,
+    "providerCredit": 0,
+    "reports": {
+      "requester": {
+        "budget": 18000000000000000,
+        "intents": [
+          {
+            "chainTimestamp": 1792334357,
+            "gas": 2000000,
+            "hash": "0xe38c9c1ac61c20d88d50495b3f972a1a574376cdf68a427ce5093f77fc244406",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "fund",
+            "monotonicSeconds": 633661.39223663,
+            "nonce": 0,
+            "value": "1000000000000"
+          },
+          {
+            "chainTimestamp": 1792334659,
+            "gas": 2000000,
+            "hash": "0x02876f68fb2a207649b558675581be7c11bc8baeb97f921447202d3083166885",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "refund",
+            "monotonicSeconds": 633661.679309098,
+            "nonce": 1,
+            "value": "0"
+          },
+          {
+            "chainTimestamp": 1792334660,
+            "gas": 2000000,
+            "hash": "0xc37cf97bfa06e7f880585e5cd658ebfdb3a6ee6e27b4fe15c1843d901de2ff81",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "withdraw",
+            "monotonicSeconds": 633661.889498779,
+            "nonce": 2,
+            "value": "0"
+          }
+        ],
+        "postFundingSignatures": 0,
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0x129c52f0453e01deebb47af803891a3b6b78f61d50e6cc2c426487c097c788fd",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616198993204224",
+            "gasUsed": "326272",
+            "hash": "0xe38c9c1ac61c20d88d50495b3f972a1a574376cdf68a427ce5093f77fc244406",
+            "status": "1",
+            "timestamp": "1792334358"
+          },
+          {
+            "block": "4",
+            "blockHash": "0x514f9578ee8627c46a02419d9f616e9f4d1c0f6eebb062934d11790813127d67",
+            "effectiveGasPrice": "1682452402",
+            "fee": "143380276150842",
+            "gasUsed": "85221",
+            "hash": "0x02876f68fb2a207649b558675581be7c11bc8baeb97f921447202d3083166885",
+            "status": "1",
+            "timestamp": "1792334660"
+          },
+          {
+            "block": "5",
+            "blockHash": "0x0e043a52f9806da015c61b7cf654cf06066057583ec2f88cab115649137a407b",
+            "effectiveGasPrice": "1597630513",
+            "fee": "57399669071064",
+            "gasUsed": "35928",
+            "hash": "0xc37cf97bfa06e7f880585e5cd658ebfdb3a6ee6e27b4fe15c1843d901de2ff81",
+            "status": "1",
+            "timestamp": "1792334660"
+          }
+        ],
+        "verified": false
+      }
+    },
+    "resultObserved": {
+      "postFundingSignatures": 0,
+      "value": "18",
+      "verified": true
+    },
+    "scenario": "early_disclosure",
+    "state": 3,
+    "supervisorCPUSeconds": 1.00305,
+    "timeAdjustments": [
+      1792334659
+    ],
+    "totalCredits": 0,
+    "transactions": [
+      {
+        "block": "2",
+        "blockHash": "0x129c52f0453e01deebb47af803891a3b6b78f61d50e6cc2c426487c097c788fd",
+        "effectiveGasPrice": "1888605192",
+        "fee": "616198993204224",
+        "gasUsed": "326272",
+        "hash": "0xe38c9c1ac61c20d88d50495b3f972a1a574376cdf68a427ce5093f77fc244406",
+        "status": "1",
+        "timestamp": "1792334358"
+      },
+      {
+        "block": "4",
+        "blockHash": "0x514f9578ee8627c46a02419d9f616e9f4d1c0f6eebb062934d11790813127d67",
+        "effectiveGasPrice": "1682452402",
+        "fee": "143380276150842",
+        "gasUsed": "85221",
+        "hash": "0x02876f68fb2a207649b558675581be7c11bc8baeb97f921447202d3083166885",
+        "status": "1",
+        "timestamp": "1792334660"
+      },
+      {
+        "block": "5",
+        "blockHash": "0x0e043a52f9806da015c61b7cf654cf06066057583ec2f88cab115649137a407b",
+        "effectiveGasPrice": "1597630513",
+        "fee": "57399669071064",
+        "gasUsed": "35928",
+        "hash": "0xc37cf97bfa06e7f880585e5cd658ebfdb3a6ee6e27b4fe15c1843d901de2ff81",
+        "status": "1",
+        "timestamp": "1792334660"
+      }
+    ],
+    "value": "0"
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0x7199A13933bB08E70F3dDA31A48d6a91EFc85FBa",
+        "pid": 86623
+      },
+      "requester": {
+        "address": "0xBdb5D2022B5B7826012DaEca0f1E6477FADba953",
+        "pid": 86624
+      }
+    },
+    "agreementId": "0x2e806927317369fb830b14aa519db8ea09992ca3d1a39e931384868985a0ad74",
+    "attempted": 0,
+    "childCPUSeconds": 2.225864999999998,
+    "childExitStatus": [
+      0,
+      -15,
+      -15
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.01242923189420253,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0xd70f1821a1c84216625ff4dda3ff638bca84838761a1be670087265e4c2b1529",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265246000000000",
+        "gasUsed": "1632623",
+        "hash": "0x87b77d633da15e5131b4bd4b76b7355a4d9c73e6b7aabfac260b367bf03d9480",
+        "status": "1",
+        "timestamp": "1792334360"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334360,
+        "gas": 2000000,
+        "hash": "0x87b77d633da15e5131b4bd4b76b7355a4d9c73e6b7aabfac260b367bf03d9480",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633662.89183138,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 1.652,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0x20e39ff8eb95e1ce54e7896a1e05224cf3c0bd5c4d19ad7447bec938e512e46b",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0x3EB95A1D0aD5fb930ad726B7924B0F20CAdf47eA",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0x1cb0114a7c952b196873abdbf016a430e55398fb3ffb822b6d3ce98858ff6712",
+      "wallSeconds": 120
+    },
+    "operatorHash": "6e6f73c03f01fc24cd0521ff6dd1b31714c900018c88bde8e8b91fabf4f90425",
+    "outcome": "unfunded",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "operator.json": 1396,
+      "proposal.json": 719,
+      "provider-ready.json": 68,
+      "requester-ready.json": 68,
+      "terms.json": 857
+    },
+    "peakRSSBytes": 234844160,
+    "scenario": "requester_crash_before",
+    "state": 0,
+    "supervisorCPUSeconds": 0.48008699999999926
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0x87d7B7d29BE76E1c0B1b74D5DC31409Ed6F3E271",
+        "pid": 86675
+      },
+      "requester": {
+        "address": "0x9976FEF3C0f5727E57249b52D95518Db11A94D90",
+        "pid": 86676
+      }
+    },
+    "agreementId": "0xcba2fd1650d5b681906847d1e650235f2e908d8ffe9bf8ee2a38f00092462bf0",
+    "childCPUSeconds": 2.737509,
+    "childExitStatus": [
+      0,
+      0,
+      0
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.0038184409495443106,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0x9cb8cf454104acbb6edbe4c528cf42947d5b2172f19cfd83f7dbf99eb2aa8b98",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265246000000000",
+        "gasUsed": "1632623",
+        "hash": "0x49df1651e38dfcd157dcf98a4e2bf9a845bfd5f9e5f7c4979b78c26068c4fb5d",
+        "status": "1",
+        "timestamp": "1792334361"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334361,
+        "gas": 2000000,
+        "hash": "0x49df1651e38dfcd157dcf98a4e2bf9a845bfd5f9e5f7c4979b78c26068c4fb5d",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633664.476424511,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 2.411,
+    "expectedValue": "18",
+    "fundingSlack": 298,
+    "ledger": {
+      "attempts": {
+        "deployer": 1,
+        "provider": 2,
+        "requester": 1
+      },
+      "balances": {
+        "deployer": 2734754000000000,
+        "provider": 47725160077740690,
+        "requester": 47383801006795776
+      },
+      "fees": {
+        "deployer": 3265246000000000,
+        "provider": 275839922259310,
+        "requester": 616198993204224
+      },
+      "gasUsed": {
+        "claim": [
+          120995
+        ],
+        "constructor": [
+          1632623
+        ],
+        "fund": [
+          326272
+        ],
+        "withdraw": [
+          35928
+        ]
+      },
+      "inclusion": {
+        "claim": [
+          {
+            "claimSlack": 298,
+            "hash": "0x056046136e5f671d1047e3c59a5cdff720c3e46ba2b1045fa097f9eb2ab93ceb",
+            "status": 1,
+            "timestamp": 1792334363
+          }
+        ],
+        "constructor": [
+          {
+            "claimSlack": 300,
+            "hash": "0x49df1651e38dfcd157dcf98a4e2bf9a845bfd5f9e5f7c4979b78c26068c4fb5d",
+            "status": 1,
+            "timestamp": 1792334361
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 298,
+            "hash": "0x7f1fbe57685fa43c2c7c2b25e4e29b30aadf8b343396d5768a9f7fd6ba10efd5",
+            "status": 1,
+            "timestamp": 1792334363
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": 298,
+            "hash": "0x46fbbcdd706df9d3f0d38a28841b0f8c450c67ac91a4b72c1c2b867cdab6611c",
+            "status": 1,
+            "timestamp": 1792334363
+          }
+        ]
+      },
+      "principalFundings": 1,
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 12000000000000000,
+        "requester": 6000000000000000
+      }
+    },
+    "lockedPrincipal": 0,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0xf1bff539d44d6d88276b24ec4d2365f301f6c08f9ea2d667e134750cae589895",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0xB151528b4f2E30a723736C3E532F4d68f2af62AD",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0x17a061b54deaef40c501d7d6bb74dbc5119207403a82f041fe75d0beba469a77",
+      "wallSeconds": 120
+    },
+    "operatorHash": "68a47dba60561cf7aab448f17659defe35ecb7a1bbb3b60718dfa8a7814484b3",
+    "outcome": "settled",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "claim-attempted.json": 18,
+      "claim-go.json": 2,
+      "claim.json": 500,
+      "compute-go.json": 2,
+      "finish-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "observe-go.json": 2,
+      "operator.json": 1392,
+      "proposal.json": 719,
+      "provider-done.json": 1480,
+      "provider-ready.json": 68,
+      "requester-ready.json": 68,
+      "terms.json": 857,
+      "withdraw-go.json": 2
+    },
+    "peakRSSBytes": 236929024,
+    "principal": 1000000000000,
+    "providerCredit": 0,
+    "reports": {
+      "provider": {
+        "budget": 12000000000000000,
+        "fundingObservedMonotonic": 633665.771303109,
+        "intents": [
+          {
+            "chainTimestamp": 1792334363,
+            "gas": 2000000,
+            "hash": "0x056046136e5f671d1047e3c59a5cdff720c3e46ba2b1045fa097f9eb2ab93ceb",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "claim",
+            "monotonicSeconds": 633665.941019838,
+            "nonce": 0,
+            "value": "0"
+          },
+          {
+            "chainTimestamp": 1792334363,
+            "gas": 2000000,
+            "hash": "0x46fbbcdd706df9d3f0d38a28841b0f8c450c67ac91a4b72c1c2b867cdab6611c",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "withdraw",
+            "monotonicSeconds": 633666.103757978,
+            "nonce": 1,
+            "value": "0"
+          }
+        ],
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0x0656b498bd7027c04b3d1a96d6e0c3b957ce7d91756fe36c573a6b57916d3a53",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616198993204224",
+            "gasUsed": "326272",
+            "hash": "0x7f1fbe57685fa43c2c7c2b25e4e29b30aadf8b343396d5768a9f7fd6ba10efd5",
+            "status": "1",
+            "timestamp": "1792334363"
+          },
+          {
+            "block": "3",
+            "blockHash": "0xe4760f902f60814ff5e0a86d442fcba446920a5cb030bf58e57eb17f2e2214ed",
+            "effectiveGasPrice": "1779945602",
+            "fee": "215364518113990",
+            "gasUsed": "120995",
+            "hash": "0x056046136e5f671d1047e3c59a5cdff720c3e46ba2b1045fa097f9eb2ab93ceb",
+            "status": "1",
+            "timestamp": "1792334363"
+          },
+          {
+            "block": "4",
+            "blockHash": "0x58154018731de226a29cf42b8fdc36287725fb8d73cfaff2b6d3a84c52bcb670",
+            "effectiveGasPrice": "1683238815",
+            "fee": "60475404145320",
+            "gasUsed": "35928",
+            "hash": "0x46fbbcdd706df9d3f0d38a28841b0f8c450c67ac91a4b72c1c2b867cdab6611c",
+            "status": "1",
+            "timestamp": "1792334363"
+          }
+        ],
+        "rejected": false
+      }
+    },
+    "resultObserved": null,
+    "scenario": "requester_offline",
+    "state": 2,
+    "supervisorCPUSeconds": 0.8144720000000008,
+    "timeAdjustments": [],
+    "totalCredits": 0,
+    "transactions": [
+      {
+        "block": "2",
+        "blockHash": "0x0656b498bd7027c04b3d1a96d6e0c3b957ce7d91756fe36c573a6b57916d3a53",
+        "effectiveGasPrice": "1888605192",
+        "fee": "616198993204224",
+        "gasUsed": "326272",
+        "hash": "0x7f1fbe57685fa43c2c7c2b25e4e29b30aadf8b343396d5768a9f7fd6ba10efd5",
+        "status": "1",
+        "timestamp": "1792334363"
+      },
+      {
+        "block": "3",
+        "blockHash": "0xe4760f902f60814ff5e0a86d442fcba446920a5cb030bf58e57eb17f2e2214ed",
+        "effectiveGasPrice": "1779945602",
+        "fee": "215364518113990",
+        "gasUsed": "120995",
+        "hash": "0x056046136e5f671d1047e3c59a5cdff720c3e46ba2b1045fa097f9eb2ab93ceb",
+        "status": "1",
+        "timestamp": "1792334363"
+      },
+      {
+        "block": "4",
+        "blockHash": "0x58154018731de226a29cf42b8fdc36287725fb8d73cfaff2b6d3a84c52bcb670",
+        "effectiveGasPrice": "1683238815",
+        "fee": "60475404145320",
+        "gasUsed": "35928",
+        "hash": "0x46fbbcdd706df9d3f0d38a28841b0f8c450c67ac91a4b72c1c2b867cdab6611c",
+        "status": "1",
+        "timestamp": "1792334363"
+      }
+    ],
+    "value": "18"
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0xDde841fbEe676CA4eBD53B2b397B550F0317E335",
+        "pid": 86744
+      },
+      "requester": {
+        "address": "0xCB7136Aa47228bcD29e4d3111afc1B9998924533",
+        "pid": 86745
+      }
+    },
+    "agreementId": "0x243af7c5c84dc1412aba6d1392bca89723a6864a9d45b9c6449031a63ac88253",
+    "childCPUSeconds": 2.820133000000002,
+    "childExitStatus": [
+      0,
+      0,
+      0
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.004055057070218027,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0xb0b081c94b7c0f3f6085cb1c7fa15aafaaf27339464fe2d3869d0830e3cd05cf",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265246000000000",
+        "gasUsed": "1632623",
+        "hash": "0xcef08ea318f40632f6ae279900a7e61a228e526e3df1b67f269c27a7c8679734",
+        "status": "1",
+        "timestamp": "1792334364"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334364,
+        "gas": 2000000,
+        "hash": "0xcef08ea318f40632f6ae279900a7e61a228e526e3df1b67f269c27a7c8679734",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633666.887106896,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 2.434,
+    "expectedValue": "18",
+    "fundingSlack": 299,
+    "ledger": {
+      "attempts": {
+        "deployer": 1,
+        "provider": 2,
+        "requester": 1
+      },
+      "balances": {
+        "deployer": 2734754000000000,
+        "provider": 47725138715591082,
+        "requester": 47383801006795776
+      },
+      "fees": {
+        "deployer": 3265246000000000,
+        "provider": 275861284408918,
+        "requester": 616198993204224
+      },
+      "gasUsed": {
+        "claim": [
+          121007
+        ],
+        "constructor": [
+          1632623
+        ],
+        "fund": [
+          326272
+        ],
+        "withdraw": [
+          35928
+        ]
+      },
+      "inclusion": {
+        "claim": [
+          {
+            "claimSlack": 299,
+            "hash": "0x95a293dd0959cdf2114a70e255d674d4f06b9c86e99259f6ea41263d82fe3afe",
+            "status": 1,
+            "timestamp": 1792334365
+          }
+        ],
+        "constructor": [
+          {
+            "claimSlack": 300,
+            "hash": "0xcef08ea318f40632f6ae279900a7e61a228e526e3df1b67f269c27a7c8679734",
+            "status": 1,
+            "timestamp": 1792334364
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 299,
+            "hash": "0xdeb7c4ed6e5c37ea79f89df7abbff2da352e1f532d4d2d56ea4285cbf17c6b9d",
+            "status": 1,
+            "timestamp": 1792334365
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": 299,
+            "hash": "0x920be457698eef366bb7fa5863117200d22cfff1cdd2dc239bfbb1ca2c170af0",
+            "status": 1,
+            "timestamp": 1792334365
+          }
+        ]
+      },
+      "principalFundings": 1,
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 12000000000000000,
+        "requester": 6000000000000000
+      }
+    },
+    "lockedPrincipal": 0,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0xe09f273e5743ce5433c8d9bb01f84928ef9e1a24a4c0ab92802f6e667ff201d5",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0x3a94a730F309f6DEf7bF74E63032cE536a73cfd1",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0xad6072b267a5a329d96138b2cabc7680adccfc1d2850f1f3acb2402f578ffd0a",
+      "wallSeconds": 120
+    },
+    "operatorHash": "c896539362218df2042b069181fead24019c3ca59d3f3672b0bfa1dfb992e802",
+    "outcome": "settled",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "claim-attempted.json": 18,
+      "claim-go.json": 2,
+      "claim.json": 500,
+      "compute-go.json": 2,
+      "finish-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "observe-go.json": 2,
+      "observed.json": 56,
+      "operator.json": 1392,
+      "proposal.json": 719,
+      "provider-done.json": 1480,
+      "provider-ready.json": 68,
+      "requester-done.json": 645,
+      "requester-ready.json": 68,
+      "terms.json": 857,
+      "withdraw-go.json": 2
+    },
+    "peakRSSBytes": 238055424,
+    "principal": 1000000000000,
+    "providerCredit": 0,
+    "reports": {
+      "provider": {
+        "budget": 12000000000000000,
+        "fundingObservedMonotonic": 633668.198878316,
+        "intents": [
+          {
+            "chainTimestamp": 1792334365,
+            "gas": 2000000,
+            "hash": "0x95a293dd0959cdf2114a70e255d674d4f06b9c86e99259f6ea41263d82fe3afe",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "claim",
+            "monotonicSeconds": 633668.302806985,
+            "nonce": 0,
+            "value": "0"
+          },
+          {
+            "chainTimestamp": 1792334365,
+            "gas": 2000000,
+            "hash": "0x920be457698eef366bb7fa5863117200d22cfff1cdd2dc239bfbb1ca2c170af0",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "withdraw",
+            "monotonicSeconds": 633668.434690421,
+            "nonce": 1,
+            "value": "0"
+          }
+        ],
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0x2b53e7835c6933d0bf3775ec37fa323a3f704eea89fbdd14fda3d673ae6acb97",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616198993204224",
+            "gasUsed": "326272",
+            "hash": "0xdeb7c4ed6e5c37ea79f89df7abbff2da352e1f532d4d2d56ea4285cbf17c6b9d",
+            "status": "1",
+            "timestamp": "1792334365"
+          },
+          {
+            "block": "3",
+            "blockHash": "0x3ada22253ff17433945bf3f15f62d3cc41c29421938eb004f6c27e3eb106609c",
+            "effectiveGasPrice": "1779945602",
+            "fee": "215385877461214",
+            "gasUsed": "121007",
+            "hash": "0x95a293dd0959cdf2114a70e255d674d4f06b9c86e99259f6ea41263d82fe3afe",
+            "status": "1",
+            "timestamp": "1792334365"
+          },
+          {
+            "block": "4",
+            "blockHash": "0xf5433676475dd8ec5cb092932213f7658b779302984f1cecb9300fef03f2457d",
+            "effectiveGasPrice": "1683238893",
+            "fee": "60475406947704",
+            "gasUsed": "35928",
+            "hash": "0x920be457698eef366bb7fa5863117200d22cfff1cdd2dc239bfbb1ca2c170af0",
+            "status": "1",
+            "timestamp": "1792334365"
+          }
+        ],
+        "rejected": false
+      },
+      "requester": {
+        "budget": 6000000000000000,
+        "intents": [
+          {
+            "chainTimestamp": 1792334364,
+            "gas": 2000000,
+            "hash": "0xdeb7c4ed6e5c37ea79f89df7abbff2da352e1f532d4d2d56ea4285cbf17c6b9d",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "fund",
+            "monotonicSeconds": 633668.084506662,
+            "nonce": 0,
+            "value": "1000000000000"
+          }
+        ],
+        "postFundingSignatures": 0,
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0x2b53e7835c6933d0bf3775ec37fa323a3f704eea89fbdd14fda3d673ae6acb97",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616198993204224",
+            "gasUsed": "326272",
+            "hash": "0xdeb7c4ed6e5c37ea79f89df7abbff2da352e1f532d4d2d56ea4285cbf17c6b9d",
+            "status": "1",
+            "timestamp": "1792334365"
+          }
+        ],
+        "verified": true
+      }
+    },
+    "resultObserved": {
+      "postFundingSignatures": 0,
+      "value": "18",
+      "verified": true
+    },
+    "scenario": "requester_refusal",
+    "state": 2,
+    "supervisorCPUSeconds": 0.831233000000001,
+    "timeAdjustments": [],
+    "totalCredits": 0,
+    "transactions": [
+      {
+        "block": "2",
+        "blockHash": "0x2b53e7835c6933d0bf3775ec37fa323a3f704eea89fbdd14fda3d673ae6acb97",
+        "effectiveGasPrice": "1888605192",
+        "fee": "616198993204224",
+        "gasUsed": "326272",
+        "hash": "0xdeb7c4ed6e5c37ea79f89df7abbff2da352e1f532d4d2d56ea4285cbf17c6b9d",
+        "status": "1",
+        "timestamp": "1792334365"
+      },
+      {
+        "block": "3",
+        "blockHash": "0x3ada22253ff17433945bf3f15f62d3cc41c29421938eb004f6c27e3eb106609c",
+        "effectiveGasPrice": "1779945602",
+        "fee": "215385877461214",
+        "gasUsed": "121007",
+        "hash": "0x95a293dd0959cdf2114a70e255d674d4f06b9c86e99259f6ea41263d82fe3afe",
+        "status": "1",
+        "timestamp": "1792334365"
+      },
+      {
+        "block": "4",
+        "blockHash": "0xf5433676475dd8ec5cb092932213f7658b779302984f1cecb9300fef03f2457d",
+        "effectiveGasPrice": "1683238893",
+        "fee": "60475406947704",
+        "gasUsed": "35928",
+        "hash": "0x920be457698eef366bb7fa5863117200d22cfff1cdd2dc239bfbb1ca2c170af0",
+        "status": "1",
+        "timestamp": "1792334365"
+      }
+    ],
+    "value": "18"
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0x7b0BbdC3A6b5ccb4E35d0E50dFf22e0a76aa760F",
+        "pid": 86820
+      },
+      "requester": {
+        "address": "0xD950F3DB3d175123e605fd95B548a81283387D89",
+        "pid": 86821
+      }
+    },
+    "agreementId": "0x2ed98c885aebb02f2d41761b45b82e32710500e4e3d83f4afc67270b6c329252",
+    "childCPUSeconds": 2.3398070000000013,
+    "childExitStatus": [
+      0,
+      -15,
+      -15
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.02037770301103592,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0xdf47dd8fbbaed5af4ed960712aad79e99806e4da5f073c4c96b8ce153c8285bd",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265246000000000",
+        "gasUsed": "1632623",
+        "hash": "0xbb7af754f10f59e0b56a1da40634e1f2ee7685b957c576db2c3ce2040216ccca",
+        "status": "1",
+        "timestamp": "1792334366"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334366,
+        "gas": 2000000,
+        "hash": "0xbb7af754f10f59e0b56a1da40634e1f2ee7685b957c576db2c3ce2040216ccca",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633669.331236295,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 1.828,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0x75ff981e6d882d721bb3a0ffdb0e79192e35a925847886fe4ec27c2dbdfbc076",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0x1F4c8810D4aC0e93bAB851DAe2f6745c1587cBca",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0x60982323c2b1f2559e1168b7727178651eb63819618d9515340257401aac56e6",
+      "wallSeconds": 120
+    },
+    "operatorHash": "9913dfc138f0c58197060708f9c89622b6b47f8df066336ddf10ae0f06be9cfc",
+    "outcome": "inconclusive",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "claim-attempted.json": 18,
+      "claim-go.json": 2,
+      "claim.json": 500,
+      "compute-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "observe-go.json": 2,
+      "observed.json": 56,
+      "operator.json": 1380,
+      "proposal.json": 719,
+      "provider-error.json": 65,
+      "provider-ready.json": 68,
+      "requester-ready.json": 68,
+      "terms.json": 857,
+      "withdraw-go.json": 2
+    },
+    "peakRSSBytes": 237334528,
+    "scenario": "reorg",
+    "state": 1,
+    "supervisorCPUSeconds": 0.4608380000000012
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0xE7A1cE87Fc3649E19e2B9Cee42f6Aa88b0b8424b",
+        "pid": 86883
+      },
+      "requester": {
+        "address": "0xA1bdFf0B70c17326602bBF8DAaaDa9DC8e790898",
+        "pid": 86884
+      }
+    },
+    "agreementId": "0xa24ce473a420ab9070b93bf363db55840dad62b362d1985300b3d20188100a59",
+    "childCPUSeconds": 2.78299,
+    "childExitStatus": [
+      0,
+      0,
+      0
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.003921999013982713,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0x45a19a2d0d241a6a2a0a363cd6b968d794fe6d179c9afe01d69720fc19e7ec4a",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265246000000000",
+        "gasUsed": "1632623",
+        "hash": "0x642d80c3ed3976b269dae7408c5fe97b337943ce79e793f443638d2e68d5790a",
+        "status": "1",
+        "timestamp": "1792334368"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334368,
+        "gas": 2000000,
+        "hash": "0x642d80c3ed3976b269dae7408c5fe97b337943ce79e793f443638d2e68d5790a",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633671.180017042,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 2.308,
+    "expectedValue": "18",
+    "fundingSlack": 299,
+    "ledger": {
+      "attempts": {
+        "deployer": 1,
+        "provider": 2,
+        "requester": 1
+      },
+      "balances": {
+        "deployer": 2734754000000000,
+        "provider": 47725181453460169,
+        "requester": 47383823670058080
+      },
+      "fees": {
+        "deployer": 3265246000000000,
+        "provider": 275818546539831,
+        "requester": 616176329941920
+      },
+      "gasUsed": {
+        "claim": [
+          120983
+        ],
+        "constructor": [
+          1632623
+        ],
+        "fund": [
+          326260
+        ],
+        "withdraw": [
+          35928
+        ]
+      },
+      "inclusion": {
+        "claim": [
+          {
+            "claimSlack": 299,
+            "hash": "0xb75696d418fa4646ff33f32d2305f8c912da87c61f9c8722065b891e7e283745",
+            "status": 1,
+            "timestamp": 1792334369
+          }
+        ],
+        "constructor": [
+          {
+            "claimSlack": 300,
+            "hash": "0x642d80c3ed3976b269dae7408c5fe97b337943ce79e793f443638d2e68d5790a",
+            "status": 1,
+            "timestamp": 1792334368
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 299,
+            "hash": "0xe6c3a531bb5b9003ad2ef717d634d8094c554cde9a83d5ad218f63b23936cf41",
+            "status": 1,
+            "timestamp": 1792334369
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": 298,
+            "hash": "0x46a618d0f8dc0bff3ee667c7bcf0ce294ce080885a74a86a939476d974a530cf",
+            "status": 1,
+            "timestamp": 1792334370
+          }
+        ]
+      },
+      "principalFundings": 1,
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 12000000000000000,
+        "requester": 6000000000000000
+      }
+    },
+    "lockedPrincipal": 0,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0x1ba4d42da90378cc2e350288da5ad481c740f0cea566f26fec643259eb1b032d",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0xa28281832FAEb1c0688ca39AB39519082d8596B4",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0x95501f87dc6765e9bb1f28a74491f94140b13c1cec13e5334ae94d4e2307c1df",
+      "wallSeconds": 120
+    },
+    "operatorHash": "d20b7976d0732652e3923dd4744cbd661633184e9ec8a8fc0fc888b035614fce",
+    "outcome": "settled",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "claim-attempted.json": 18,
+      "claim-go.json": 2,
+      "claim.json": 500,
+      "compute-go.json": 2,
+      "finish-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "observe-go.json": 2,
+      "observed.json": 56,
+      "operator.json": 1382,
+      "proposal.json": 719,
+      "provider-done.json": 1480,
+      "provider-ready.json": 68,
+      "requester-done.json": 645,
+      "requester-ready.json": 68,
+      "terms.json": 857,
+      "withdraw-go.json": 2
+    },
+    "peakRSSBytes": 238297088,
+    "principal": 1000000000000,
+    "providerCredit": 0,
+    "reports": {
+      "provider": {
+        "budget": 12000000000000000,
+        "fundingObservedMonotonic": 633672.423603038,
+        "intents": [
+          {
+            "chainTimestamp": 1792334369,
+            "gas": 2000000,
+            "hash": "0xb75696d418fa4646ff33f32d2305f8c912da87c61f9c8722065b891e7e283745",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "claim",
+            "monotonicSeconds": 633672.527975704,
+            "nonce": 0,
+            "value": "0"
+          },
+          {
+            "chainTimestamp": 1792334369,
+            "gas": 2000000,
+            "hash": "0x46a618d0f8dc0bff3ee667c7bcf0ce294ce080885a74a86a939476d974a530cf",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "withdraw",
+            "monotonicSeconds": 633672.663176384,
+            "nonce": 1,
+            "value": "0"
+          }
+        ],
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0x201fa5d77726d874e6e2b09e5bf43891981172cc0ed64ca3d69d01f49b9f42cf",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616176329941920",
+            "gasUsed": "326260",
+            "hash": "0xe6c3a531bb5b9003ad2ef717d634d8094c554cde9a83d5ad218f63b23936cf41",
+            "status": "1",
+            "timestamp": "1792334369"
+          },
+          {
+            "block": "3",
+            "blockHash": "0xe0f02c189512e3c739d4d93c78aa2cb63f89f9254691d0cc2492d6243d913582",
+            "effectiveGasPrice": "1779945513",
+            "fee": "215343147999279",
+            "gasUsed": "120983",
+            "hash": "0xb75696d418fa4646ff33f32d2305f8c912da87c61f9c8722065b891e7e283745",
+            "status": "1",
+            "timestamp": "1792334369"
+          },
+          {
+            "block": "4",
+            "blockHash": "0x8c247f9e2066f1461bda953dbbdd2253dd1fcbcd2c51df441ba4d9cdd2384661",
+            "effectiveGasPrice": "1683238659",
+            "fee": "60475398540552",
+            "gasUsed": "35928",
+            "hash": "0x46a618d0f8dc0bff3ee667c7bcf0ce294ce080885a74a86a939476d974a530cf",
+            "status": "1",
+            "timestamp": "1792334370"
+          }
+        ],
+        "rejected": false
+      },
+      "requester": {
+        "budget": 6000000000000000,
+        "intents": [
+          {
+            "chainTimestamp": 1792334368,
+            "gas": 2000000,
+            "hash": "0xe6c3a531bb5b9003ad2ef717d634d8094c554cde9a83d5ad218f63b23936cf41",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "fund",
+            "monotonicSeconds": 633672.343283173,
+            "nonce": 0,
+            "value": "1000000000000"
+          }
+        ],
+        "postFundingSignatures": 0,
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0x201fa5d77726d874e6e2b09e5bf43891981172cc0ed64ca3d69d01f49b9f42cf",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616176329941920",
+            "gasUsed": "326260",
+            "hash": "0xe6c3a531bb5b9003ad2ef717d634d8094c554cde9a83d5ad218f63b23936cf41",
+            "status": "1",
+            "timestamp": "1792334369"
+          }
+        ],
+        "verified": true
+      }
+    },
+    "resultObserved": {
+      "postFundingSignatures": 0,
+      "value": "18",
+      "verified": true
+    },
+    "scenario": "success",
+    "state": 2,
+    "supervisorCPUSeconds": 0.8107680000000004,
+    "timeAdjustments": [],
+    "totalCredits": 0,
+    "transactions": [
+      {
+        "block": "2",
+        "blockHash": "0x201fa5d77726d874e6e2b09e5bf43891981172cc0ed64ca3d69d01f49b9f42cf",
+        "effectiveGasPrice": "1888605192",
+        "fee": "616176329941920",
+        "gasUsed": "326260",
+        "hash": "0xe6c3a531bb5b9003ad2ef717d634d8094c554cde9a83d5ad218f63b23936cf41",
+        "status": "1",
+        "timestamp": "1792334369"
+      },
+      {
+        "block": "3",
+        "blockHash": "0xe0f02c189512e3c739d4d93c78aa2cb63f89f9254691d0cc2492d6243d913582",
+        "effectiveGasPrice": "1779945513",
+        "fee": "215343147999279",
+        "gasUsed": "120983",
+        "hash": "0xb75696d418fa4646ff33f32d2305f8c912da87c61f9c8722065b891e7e283745",
+        "status": "1",
+        "timestamp": "1792334369"
+      },
+      {
+        "block": "4",
+        "blockHash": "0x8c247f9e2066f1461bda953dbbdd2253dd1fcbcd2c51df441ba4d9cdd2384661",
+        "effectiveGasPrice": "1683238659",
+        "fee": "60475398540552",
+        "gasUsed": "35928",
+        "hash": "0x46a618d0f8dc0bff3ee667c7bcf0ce294ce080885a74a86a939476d974a530cf",
+        "status": "1",
+        "timestamp": "1792334370"
+      }
+    ],
+    "value": "18"
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0xF8C534216F15b19CD95274F820d980b5bd7B4eDd",
+        "pid": 86954
+      },
+      "requester": {
+        "address": "0xB58D6b2EbDA15733e72DD902AfBc1a045EA912b8",
+        "pid": 86955
+      }
+    },
+    "agreementId": "0x7601cb2c281350712ebf1f3848f7bc14947cae46037e10dc5b69bad739d11129",
+    "childCPUSeconds": 2.788414000000002,
+    "childExitStatus": [
+      0,
+      0,
+      0
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.0036304270615801215,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0xe937083fc70e92f92ad342151f2439bf88fbd00f277f6ded12e6c47329f34648",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265246000000000",
+        "gasUsed": "1632623",
+        "hash": "0x4eee919bd76c7107ed1326468d59adba9ec5652a2c2e76370a1afcc267d8ed90",
+        "status": "1",
+        "timestamp": "1792334370"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334370,
+        "gas": 2000000,
+        "hash": "0x4eee919bd76c7107ed1326468d59adba9ec5652a2c2e76370a1afcc267d8ed90",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633673.494997512,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 2.525,
+    "expectedValue": "36893488147419103230",
+    "fundingSlack": 298,
+    "ledger": {
+      "attempts": {
+        "deployer": 1,
+        "provider": 2,
+        "requester": 1
+      },
+      "balances": {
+        "deployer": 2734754000000000,
+        "provider": 47724967642161117,
+        "requester": 47383506384385824
+      },
+      "fees": {
+        "deployer": 3265246000000000,
+        "provider": 276032357838883,
+        "requester": 616493615614176
+      },
+      "gasUsed": {
+        "claim": [
+          121103
+        ],
+        "constructor": [
+          1632623
+        ],
+        "fund": [
+          326428
+        ],
+        "withdraw": [
+          35928
+        ]
+      },
+      "inclusion": {
+        "claim": [
+          {
+            "claimSlack": 298,
+            "hash": "0xb1b0d18144a3dc8c194604fb91181b1730e38a8b4bdd8aa3d35cbfb305a29f55",
+            "status": 1,
+            "timestamp": 1792334372
+          }
+        ],
+        "constructor": [
+          {
+            "claimSlack": 300,
+            "hash": "0x4eee919bd76c7107ed1326468d59adba9ec5652a2c2e76370a1afcc267d8ed90",
+            "status": 1,
+            "timestamp": 1792334370
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 298,
+            "hash": "0x825d1dadd7d108225df59fae0dab2a8d8f947e68cf20a6d1df331ef4f9e6eb2b",
+            "status": 1,
+            "timestamp": 1792334372
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": 298,
+            "hash": "0x0960b0734b1de795a69f93bf454adfeaa17a6171ffc5c6c04e16f910d434cbfb",
+            "status": 1,
+            "timestamp": 1792334372
+          }
+        ]
+      },
+      "principalFundings": 1,
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 12000000000000000,
+        "requester": 6000000000000000
+      }
+    },
+    "lockedPrincipal": 0,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0x05651da825493189aa375b7f81f2a299a33131ca08fb968a2c0d7a42fe32df46",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0x0F5C2aC3Cd15Ea53bD9912f88E25C62e58F5F878",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0x266899f4447182c4707e4c292a40f8c3c49fe99af9c4a78c838bee44fd5a87bd",
+      "wallSeconds": 120
+    },
+    "operatorHash": "cb3fbee0636e360636cb8100debfc60e3a7ca02e7920737dda77b5e3db65db96",
+    "outcome": "settled",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "claim-attempted.json": 18,
+      "claim-go.json": 2,
+      "claim.json": 518,
+      "compute-go.json": 2,
+      "finish-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "observe-go.json": 2,
+      "observed.json": 74,
+      "operator.json": 1419,
+      "proposal.json": 756,
+      "provider-done.json": 1479,
+      "provider-ready.json": 68,
+      "requester-done.json": 644,
+      "requester-ready.json": 68,
+      "terms.json": 894,
+      "withdraw-go.json": 2
+    },
+    "peakRSSBytes": 238002176,
+    "principal": 1000000000000,
+    "providerCredit": 0,
+    "reports": {
+      "provider": {
+        "budget": 12000000000000000,
+        "fundingObservedMonotonic": 633674.796004003,
+        "intents": [
+          {
+            "chainTimestamp": 1792334372,
+            "gas": 2000000,
+            "hash": "0xb1b0d18144a3dc8c194604fb91181b1730e38a8b4bdd8aa3d35cbfb305a29f55",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "claim",
+            "monotonicSeconds": 633674.91885642,
+            "nonce": 0,
+            "value": "0"
+          },
+          {
+            "chainTimestamp": 1792334372,
+            "gas": 2000000,
+            "hash": "0x0960b0734b1de795a69f93bf454adfeaa17a6171ffc5c6c04e16f910d434cbfb",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "withdraw",
+            "monotonicSeconds": 633675.198263952,
+            "nonce": 1,
+            "value": "0"
+          }
+        ],
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0x3fdff5b948083f339fff76356baf53b186088e89f3e6342f8187d8f7ddc98d2a",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616493615614176",
+            "gasUsed": "326428",
+            "hash": "0x825d1dadd7d108225df59fae0dab2a8d8f947e68cf20a6d1df331ef4f9e6eb2b",
+            "status": "1",
+            "timestamp": "1792334372"
+          },
+          {
+            "block": "3",
+            "blockHash": "0xc5e7f5bbc04da4bc8972b20413134d38e8d2ce84a14ab423b460827d8709dfd1",
+            "effectiveGasPrice": "1779946757",
+            "fee": "215556892112971",
+            "gasUsed": "121103",
+            "hash": "0xb1b0d18144a3dc8c194604fb91181b1730e38a8b4bdd8aa3d35cbfb305a29f55",
+            "status": "1",
+            "timestamp": "1792334372"
+          },
+          {
+            "block": "4",
+            "blockHash": "0x7aa8b4a4cbdeebad1efec51a5f7167422f2733494dea9555818b0605c97d8313",
+            "effectiveGasPrice": "1683240529",
+            "fee": "60475465725912",
+            "gasUsed": "35928",
+            "hash": "0x0960b0734b1de795a69f93bf454adfeaa17a6171ffc5c6c04e16f910d434cbfb",
+            "status": "1",
+            "timestamp": "1792334372"
+          }
+        ],
+        "rejected": false
+      },
+      "requester": {
+        "budget": 6000000000000000,
+        "intents": [
+          {
+            "chainTimestamp": 1792334370,
+            "gas": 2000000,
+            "hash": "0x825d1dadd7d108225df59fae0dab2a8d8f947e68cf20a6d1df331ef4f9e6eb2b",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "fund",
+            "monotonicSeconds": 633674.68255714,
+            "nonce": 0,
+            "value": "1000000000000"
+          }
+        ],
+        "postFundingSignatures": 0,
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0x3fdff5b948083f339fff76356baf53b186088e89f3e6342f8187d8f7ddc98d2a",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616493615614176",
+            "gasUsed": "326428",
+            "hash": "0x825d1dadd7d108225df59fae0dab2a8d8f947e68cf20a6d1df331ef4f9e6eb2b",
+            "status": "1",
+            "timestamp": "1792334372"
+          }
+        ],
+        "verified": true
+      }
+    },
+    "resultObserved": {
+      "postFundingSignatures": 0,
+      "value": "36893488147419103230",
+      "verified": true
+    },
+    "scenario": "success",
+    "state": 2,
+    "supervisorCPUSeconds": 0.8180539999999996,
+    "timeAdjustments": [],
+    "totalCredits": 0,
+    "transactions": [
+      {
+        "block": "2",
+        "blockHash": "0x3fdff5b948083f339fff76356baf53b186088e89f3e6342f8187d8f7ddc98d2a",
+        "effectiveGasPrice": "1888605192",
+        "fee": "616493615614176",
+        "gasUsed": "326428",
+        "hash": "0x825d1dadd7d108225df59fae0dab2a8d8f947e68cf20a6d1df331ef4f9e6eb2b",
+        "status": "1",
+        "timestamp": "1792334372"
+      },
+      {
+        "block": "3",
+        "blockHash": "0xc5e7f5bbc04da4bc8972b20413134d38e8d2ce84a14ab423b460827d8709dfd1",
+        "effectiveGasPrice": "1779946757",
+        "fee": "215556892112971",
+        "gasUsed": "121103",
+        "hash": "0xb1b0d18144a3dc8c194604fb91181b1730e38a8b4bdd8aa3d35cbfb305a29f55",
+        "status": "1",
+        "timestamp": "1792334372"
+      },
+      {
+        "block": "4",
+        "blockHash": "0x7aa8b4a4cbdeebad1efec51a5f7167422f2733494dea9555818b0605c97d8313",
+        "effectiveGasPrice": "1683240529",
+        "fee": "60475465725912",
+        "gasUsed": "35928",
+        "hash": "0x0960b0734b1de795a69f93bf454adfeaa17a6171ffc5c6c04e16f910d434cbfb",
+        "status": "1",
+        "timestamp": "1792334372"
+      }
+    ],
+    "value": "36893488147419103230"
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0x9E1fb8cc2419458519EAaDac36C54458eF761b1C",
+        "pid": 87027
+      },
+      "requester": {
+        "address": "0x8A830A4572E139ce076A1F98852F2De83C31ef41",
+        "pid": 87028
+      }
+    },
+    "agreementId": "0xd67e348b1405a01bc30505ab7b4ce5b78e68bbb44043fcd5bb09c29ab1a0490d",
+    "childCPUSeconds": 2.5783720000000034,
+    "childExitStatus": [
+      0,
+      -15,
+      0
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.003397286986000836,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0x05154e1604880d631f41994126a4b5685b319084311c10d42a8811cc14a2cc23",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265246000000000",
+        "gasUsed": "1632623",
+        "hash": "0x68f5aef11fdcf8c9875a903967030a9c181f4e333492f5ddd9e4860a48765e1a",
+        "status": "1",
+        "timestamp": "1792334373"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334373,
+        "gas": 2000000,
+        "hash": "0x68f5aef11fdcf8c9875a903967030a9c181f4e333492f5ddd9e4860a48765e1a",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633676.037231603,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 2.362,
+    "expectedValue": "18",
+    "fundingSlack": 299,
+    "ledger": {
+      "attempts": {
+        "deployer": 1,
+        "provider": 0,
+        "requester": 3
+      },
+      "balances": {
+        "deployer": 2734754000000000,
+        "provider": 48000000000000000,
+        "requester": 47184043733926516
+      },
+      "fees": {
+        "deployer": 3265246000000000,
+        "provider": 0,
+        "requester": 816956266073484
+      },
+      "gasUsed": {
+        "constructor": [
+          1632623
+        ],
+        "fund": [
+          326260
+        ],
+        "refund": [
+          85221
+        ],
+        "withdraw": [
+          35928
+        ]
+      },
+      "inclusion": {
+        "constructor": [
+          {
+            "claimSlack": 300,
+            "hash": "0x68f5aef11fdcf8c9875a903967030a9c181f4e333492f5ddd9e4860a48765e1a",
+            "status": 1,
+            "timestamp": 1792334373
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 299,
+            "hash": "0x537edd665d73bbc0b7c2e75112ff8d3e67a46cee49466fb6997539388f55aea0",
+            "status": 1,
+            "timestamp": 1792334374
+          }
+        ],
+        "refund": [
+          {
+            "claimSlack": -2,
+            "hash": "0xcb39730223a99230f1831b780b85ab1302795de15e03c7dba84d39a36d61b824",
+            "status": 1,
+            "timestamp": 1792334675
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": -3,
+            "hash": "0xd3a10107bee3361e7b1e2bb014300a1f4b4518400a68625a3a42207735cca765",
+            "status": 1,
+            "timestamp": 1792334676
+          }
+        ]
+      },
+      "principalFundings": 1,
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 0,
+        "requester": 18000000000000000
+      }
+    },
+    "lockedPrincipal": 0,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0x0d5434cd19989799b944285a37310101e0d54506b47295802368e58a102f4fa6",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0x9134A08E8097f93b81D2fb091029185B1DB84f81",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0xaea4261a064dbfc73c64820313782b1eef79493597a6410b1969eb5906251016",
+      "wallSeconds": 120
+    },
+    "operatorHash": "ccb97e9a363bb4829121e22f36f81367869ecbc642b500723d6d02a87e8a89cf",
+    "outcome": "refunded",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "claim.json": 518,
+      "compute-go.json": 2,
+      "finish-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "observe-go.json": 2,
+      "observed.json": 68,
+      "operator.json": 1393,
+      "proposal.json": 719,
+      "provider-ready.json": 68,
+      "refund-go.json": 2,
+      "requester-done.json": 1726,
+      "requester-ready.json": 68,
+      "terms.json": 857
+    },
+    "peakRSSBytes": 237252608,
+    "principal": 1000000000000,
+    "providerCredit": 0,
+    "reports": {
+      "requester": {
+        "budget": 18000000000000000,
+        "intents": [
+          {
+            "chainTimestamp": 1792334373,
+            "gas": 2000000,
+            "hash": "0x537edd665d73bbc0b7c2e75112ff8d3e67a46cee49466fb6997539388f55aea0",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "fund",
+            "monotonicSeconds": 633677.216975379,
+            "nonce": 0,
+            "value": "1000000000000"
+          },
+          {
+            "chainTimestamp": 1792334675,
+            "gas": 2000000,
+            "hash": "0xcb39730223a99230f1831b780b85ab1302795de15e03c7dba84d39a36d61b824",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "refund",
+            "monotonicSeconds": 633677.5031069,
+            "nonce": 1,
+            "value": "0"
+          },
+          {
+            "chainTimestamp": 1792334675,
+            "gas": 2000000,
+            "hash": "0xd3a10107bee3361e7b1e2bb014300a1f4b4518400a68625a3a42207735cca765",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "withdraw",
+            "monotonicSeconds": 633677.613851509,
+            "nonce": 2,
+            "value": "0"
+          }
+        ],
+        "postFundingSignatures": 0,
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0x3677f09bb39aac64ef378f65f7ef138a17cf112d2c6113604e95facd209b8300",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616176329941920",
+            "gasUsed": "326260",
+            "hash": "0x537edd665d73bbc0b7c2e75112ff8d3e67a46cee49466fb6997539388f55aea0",
+            "status": "1",
+            "timestamp": "1792334374"
+          },
+          {
+            "block": "4",
+            "blockHash": "0xabed3100d6e67ad557f8fab14dfce280a9dc61872136bb0ed9529687bfeaeb36",
+            "effectiveGasPrice": "1682452324",
+            "fee": "143380269503604",
+            "gasUsed": "85221",
+            "hash": "0xcb39730223a99230f1831b780b85ab1302795de15e03c7dba84d39a36d61b824",
+            "status": "1",
+            "timestamp": "1792334675"
+          },
+          {
+            "block": "5",
+            "blockHash": "0x23a8272244cfe89c0e98a8f8599cfbfe6899457d73c033ff2bb22acb01e1b5d7",
+            "effectiveGasPrice": "1597630445",
+            "fee": "57399666627960",
+            "gasUsed": "35928",
+            "hash": "0xd3a10107bee3361e7b1e2bb014300a1f4b4518400a68625a3a42207735cca765",
+            "status": "1",
+            "timestamp": "1792334676"
+          }
+        ],
+        "verified": false
+      }
+    },
+    "resultObserved": {
+      "postFundingSignatures": 0,
+      "rejectedEvidence": true,
+      "verified": false
+    },
+    "scenario": "malformed_evidence",
+    "state": 3,
+    "supervisorCPUSeconds": 0.8112150000000007,
+    "timeAdjustments": [
+      1792334675
+    ],
+    "totalCredits": 0,
+    "transactions": [
+      {
+        "block": "2",
+        "blockHash": "0x3677f09bb39aac64ef378f65f7ef138a17cf112d2c6113604e95facd209b8300",
+        "effectiveGasPrice": "1888605192",
+        "fee": "616176329941920",
+        "gasUsed": "326260",
+        "hash": "0x537edd665d73bbc0b7c2e75112ff8d3e67a46cee49466fb6997539388f55aea0",
+        "status": "1",
+        "timestamp": "1792334374"
+      },
+      {
+        "block": "4",
+        "blockHash": "0xabed3100d6e67ad557f8fab14dfce280a9dc61872136bb0ed9529687bfeaeb36",
+        "effectiveGasPrice": "1682452324",
+        "fee": "143380269503604",
+        "gasUsed": "85221",
+        "hash": "0xcb39730223a99230f1831b780b85ab1302795de15e03c7dba84d39a36d61b824",
+        "status": "1",
+        "timestamp": "1792334675"
+      },
+      {
+        "block": "5",
+        "blockHash": "0x23a8272244cfe89c0e98a8f8599cfbfe6899457d73c033ff2bb22acb01e1b5d7",
+        "effectiveGasPrice": "1597630445",
+        "fee": "57399666627960",
+        "gasUsed": "35928",
+        "hash": "0xd3a10107bee3361e7b1e2bb014300a1f4b4518400a68625a3a42207735cca765",
+        "status": "1",
+        "timestamp": "1792334676"
+      }
+    ],
+    "value": "0"
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0x2A81a630EcB9Ede01b3BF33b0728bFF428AB7c5D",
+        "pid": 87099
+      },
+      "requester": {
+        "address": "0x9f9a8B7Af8c104353425d48F9a7F846f5ca9e530",
+        "pid": 87100
+      }
+    },
+    "agreementId": "0xa522bd60782c93400de5f77669b1c274334cb9e0c2c7638c0d555689a29c3162",
+    "childCPUSeconds": 2.551202,
+    "childExitStatus": [
+      0,
+      -15,
+      0
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.004023839952424169,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0xa188479aedacd7a4c251ccc83569a8d30146d39d31dc9db262ab7a706efe20c8",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265222000000000",
+        "gasUsed": "1632611",
+        "hash": "0x656319ac6db90834b3f93e6d9c3f3222c46c40bff76266f2d5466b8dbeed08dd",
+        "status": "1",
+        "timestamp": "1792334375"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334375,
+        "gas": 2000000,
+        "hash": "0x656319ac6db90834b3f93e6d9c3f3222c46c40bff76266f2d5466b8dbeed08dd",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633678.411768386,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 2.335,
+    "expectedValue": "18",
+    "fundingSlack": 299,
+    "ledger": {
+      "attempts": {
+        "deployer": 1,
+        "provider": 0,
+        "requester": 3
+      },
+      "balances": {
+        "deployer": 2734778000000000,
+        "provider": 48000000000000000,
+        "requester": 47184066447909083
+      },
+      "fees": {
+        "deployer": 3265222000000000,
+        "provider": 0,
+        "requester": 816933552090917
+      },
+      "gasUsed": {
+        "constructor": [
+          1632611
+        ],
+        "fund": [
+          326248
+        ],
+        "refund": [
+          85221
+        ],
+        "withdraw": [
+          35928
+        ]
+      },
+      "inclusion": {
+        "constructor": [
+          {
+            "claimSlack": 300,
+            "hash": "0x656319ac6db90834b3f93e6d9c3f3222c46c40bff76266f2d5466b8dbeed08dd",
+            "status": 1,
+            "timestamp": 1792334375
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 299,
+            "hash": "0xc071d4bc22717097f44e51d0fe7f710a19537a6b59590cd504f35add2eac78ce",
+            "status": 1,
+            "timestamp": 1792334376
+          }
+        ],
+        "refund": [
+          {
+            "claimSlack": -2,
+            "hash": "0xccef2b65fda7c92dd44ee776a8b69f92ecf7979c0f4425dd009b4c8b84d46014",
+            "status": 1,
+            "timestamp": 1792334677
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": -2,
+            "hash": "0x153892700d05091974b65c755c05386509b82c43369ffdd16a267d259ef7de11",
+            "status": 1,
+            "timestamp": 1792334677
+          }
+        ]
+      },
+      "principalFundings": 1,
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 0,
+        "requester": 18000000000000000
+      }
+    },
+    "lockedPrincipal": 0,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0x3e84bbe389c09d3685c6a064da107199463853195c00ce26b5e098b96ea258f9",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0x95305b0B4A1d9327a5034D922345aCa8cf83F2Fb",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0x81717f81d874fe8133f0034d600e2e01bd28f14d5a6200c2227b55b98ed5bc87",
+      "wallSeconds": 120
+    },
+    "operatorHash": "a9907466e94f953b95a8e2612aeae90e53942ff8e3e3d517936fc0507a9ba1c3",
+    "outcome": "refunded",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "claim.json": 16385,
+      "compute-go.json": 2,
+      "finish-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "observe-go.json": 2,
+      "observed.json": 68,
+      "operator.json": 1393,
+      "proposal.json": 719,
+      "provider-ready.json": 68,
+      "refund-go.json": 2,
+      "requester-done.json": 1728,
+      "requester-ready.json": 68,
+      "terms.json": 857
+    },
+    "peakRSSBytes": 237047808,
+    "principal": 1000000000000,
+    "providerCredit": 0,
+    "reports": {
+      "requester": {
+        "budget": 18000000000000000,
+        "intents": [
+          {
+            "chainTimestamp": 1792334375,
+            "gas": 2000000,
+            "hash": "0xc071d4bc22717097f44e51d0fe7f710a19537a6b59590cd504f35add2eac78ce",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "fund",
+            "monotonicSeconds": 633679.604055833,
+            "nonce": 0,
+            "value": "1000000000000"
+          },
+          {
+            "chainTimestamp": 1792334677,
+            "gas": 2000000,
+            "hash": "0xccef2b65fda7c92dd44ee776a8b69f92ecf7979c0f4425dd009b4c8b84d46014",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "refund",
+            "monotonicSeconds": 633679.859359807,
+            "nonce": 1,
+            "value": "0"
+          },
+          {
+            "chainTimestamp": 1792334677,
+            "gas": 2000000,
+            "hash": "0x153892700d05091974b65c755c05386509b82c43369ffdd16a267d259ef7de11",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "withdraw",
+            "monotonicSeconds": 633679.972867574,
+            "nonce": 2,
+            "value": "0"
+          }
+        ],
+        "postFundingSignatures": 0,
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0x7529e85cdbf2b6761acadb9f4d4a4c59c30085802825fd94fa51e331d7b2a93b",
+            "effectiveGasPrice": "1888605092",
+            "fee": "616153634054816",
+            "gasUsed": "326248",
+            "hash": "0xc071d4bc22717097f44e51d0fe7f710a19537a6b59590cd504f35add2eac78ce",
+            "status": "1",
+            "timestamp": "1792334376"
+          },
+          {
+            "block": "4",
+            "blockHash": "0x858317f212936fe0fa8ac334a8a1cbc55b0f0d12f6f1e21b17cae88a76bf89f9",
+            "effectiveGasPrice": "1682452169",
+            "fee": "143380256294349",
+            "gasUsed": "85221",
+            "hash": "0xccef2b65fda7c92dd44ee776a8b69f92ecf7979c0f4425dd009b4c8b84d46014",
+            "status": "1",
+            "timestamp": "1792334677"
+          },
+          {
+            "block": "5",
+            "blockHash": "0xbe281b49b0fe4412bade9755cb672e06c06a67b1e682c96ccf7a23feadfd3c0f",
+            "effectiveGasPrice": "1597630309",
+            "fee": "57399661741752",
+            "gasUsed": "35928",
+            "hash": "0x153892700d05091974b65c755c05386509b82c43369ffdd16a267d259ef7de11",
+            "status": "1",
+            "timestamp": "1792334677"
+          }
+        ],
+        "verified": false
+      }
+    },
+    "resultObserved": {
+      "postFundingSignatures": 0,
+      "rejectedEvidence": true,
+      "verified": false
+    },
+    "scenario": "oversized_evidence",
+    "state": 3,
+    "supervisorCPUSeconds": 0.8016059999999996,
+    "timeAdjustments": [
+      1792334677
+    ],
+    "totalCredits": 0,
+    "transactions": [
+      {
+        "block": "2",
+        "blockHash": "0x7529e85cdbf2b6761acadb9f4d4a4c59c30085802825fd94fa51e331d7b2a93b",
+        "effectiveGasPrice": "1888605092",
+        "fee": "616153634054816",
+        "gasUsed": "326248",
+        "hash": "0xc071d4bc22717097f44e51d0fe7f710a19537a6b59590cd504f35add2eac78ce",
+        "status": "1",
+        "timestamp": "1792334376"
+      },
+      {
+        "block": "4",
+        "blockHash": "0x858317f212936fe0fa8ac334a8a1cbc55b0f0d12f6f1e21b17cae88a76bf89f9",
+        "effectiveGasPrice": "1682452169",
+        "fee": "143380256294349",
+        "gasUsed": "85221",
+        "hash": "0xccef2b65fda7c92dd44ee776a8b69f92ecf7979c0f4425dd009b4c8b84d46014",
+        "status": "1",
+        "timestamp": "1792334677"
+      },
+      {
+        "block": "5",
+        "blockHash": "0xbe281b49b0fe4412bade9755cb672e06c06a67b1e682c96ccf7a23feadfd3c0f",
+        "effectiveGasPrice": "1597630309",
+        "fee": "57399661741752",
+        "gasUsed": "35928",
+        "hash": "0x153892700d05091974b65c755c05386509b82c43369ffdd16a267d259ef7de11",
+        "status": "1",
+        "timestamp": "1792334677"
+      }
+    ],
+    "value": "0"
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0x46bbca3aB9232929C4d2FEb29727Bc96Fc38ceEb",
+        "pid": 87181
+      },
+      "requester": {
+        "address": "0xf3EE3622BbC9c0919C669f8681C3C740D45E9077",
+        "pid": 87182
+      }
+    },
+    "agreementId": "0x844a125b87e4f54ee52a34b13b27d495291102f713994a7292e64c9b3a1b5a19",
+    "childCPUSeconds": 2.4627710000000045,
+    "childExitStatus": [
+      0,
+      -15,
+      0
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.004008787916973233,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0x64b9e5cec7979b32319ae0e0bd6d8144d41cfc5274b3ce65bfc7f067776c61db",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265246000000000",
+        "gasUsed": "1632623",
+        "hash": "0x5249c2acd14d85fab8b6edb093a8eda9cd89388cc350729a2de76a3e7e951c81",
+        "status": "1",
+        "timestamp": "1792334378"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334378,
+        "gas": 2000000,
+        "hash": "0x5249c2acd14d85fab8b6edb093a8eda9cd89388cc350729a2de76a3e7e951c81",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633680.812988717,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 2.325,
+    "expectedValue": "18",
+    "fundingSlack": 299,
+    "ledger": {
+      "attempts": {
+        "deployer": 1,
+        "provider": 0,
+        "requester": 3
+      },
+      "balances": {
+        "deployer": 2734754000000000,
+        "provider": 48000000000000000,
+        "requester": 47184043733926516
+      },
+      "fees": {
+        "deployer": 3265246000000000,
+        "provider": 0,
+        "requester": 816956266073484
+      },
+      "gasUsed": {
+        "constructor": [
+          1632623
+        ],
+        "fund": [
+          326260
+        ],
+        "refund": [
+          85221
+        ],
+        "withdraw": [
+          35928
+        ]
+      },
+      "inclusion": {
+        "constructor": [
+          {
+            "claimSlack": 300,
+            "hash": "0x5249c2acd14d85fab8b6edb093a8eda9cd89388cc350729a2de76a3e7e951c81",
+            "status": 1,
+            "timestamp": 1792334378
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 299,
+            "hash": "0x84f8785fb5cb7b845854cb7b1860d8390890b398d7575c50b1315139811147af",
+            "status": 1,
+            "timestamp": 1792334379
+          }
+        ],
+        "refund": [
+          {
+            "claimSlack": -2,
+            "hash": "0xe5d1fe54a24e0516bcb52a3b252d5ea48ef2d6dce12c02c491b0771ff7c8c164",
+            "status": 1,
+            "timestamp": 1792334680
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": -2,
+            "hash": "0x9c19e408fe61ac9805083c7bce02f7e8d612da146b729c9e4076ef8aaae7747a",
+            "status": 1,
+            "timestamp": 1792334680
+          }
+        ]
+      },
+      "principalFundings": 1,
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 0,
+        "requester": 18000000000000000
+      }
+    },
+    "lockedPrincipal": 0,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0x4dc91a20a98323b9ee71b344e7e9a3413e1f5cf53da57718bcf96226485087e0",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0x65B9c392EAF62a1F23e0c81d5119783ED9110774",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0xfdb0e93e3fd96e93f98f20401a12d83aaa066d0b2a81528e4b0a9222eea982a0",
+      "wallSeconds": 120
+    },
+    "operatorHash": "1d105b8730c2aa51926b5c413bfaf6fb159408a17aa3fb9407bd62bf5fac6c52",
+    "outcome": "refunded",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "claim.json": 8,
+      "compute-go.json": 2,
+      "finish-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "observe-go.json": 2,
+      "observed.json": 68,
+      "operator.json": 1393,
+      "proposal.json": 719,
+      "provider-ready.json": 68,
+      "refund-go.json": 2,
+      "requester-done.json": 1728,
+      "requester-ready.json": 68,
+      "terms.json": 857
+    },
+    "peakRSSBytes": 236638208,
+    "principal": 1000000000000,
+    "providerCredit": 0,
+    "reports": {
+      "requester": {
+        "budget": 18000000000000000,
+        "intents": [
+          {
+            "chainTimestamp": 1792334378,
+            "gas": 2000000,
+            "hash": "0x84f8785fb5cb7b845854cb7b1860d8390890b398d7575c50b1315139811147af",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "fund",
+            "monotonicSeconds": 633681.937505327,
+            "nonce": 0,
+            "value": "1000000000000"
+          },
+          {
+            "chainTimestamp": 1792334680,
+            "gas": 2000000,
+            "hash": "0xe5d1fe54a24e0516bcb52a3b252d5ea48ef2d6dce12c02c491b0771ff7c8c164",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "refund",
+            "monotonicSeconds": 633682.199892559,
+            "nonce": 1,
+            "value": "0"
+          },
+          {
+            "chainTimestamp": 1792334680,
+            "gas": 2000000,
+            "hash": "0x9c19e408fe61ac9805083c7bce02f7e8d612da146b729c9e4076ef8aaae7747a",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "withdraw",
+            "monotonicSeconds": 633682.309339978,
+            "nonce": 2,
+            "value": "0"
+          }
+        ],
+        "postFundingSignatures": 0,
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0xde296081686a98ffc09629b2c9b88b4e1e3b12a257ea97176ce6b3482377e3cb",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616176329941920",
+            "gasUsed": "326260",
+            "hash": "0x84f8785fb5cb7b845854cb7b1860d8390890b398d7575c50b1315139811147af",
+            "status": "1",
+            "timestamp": "1792334379"
+          },
+          {
+            "block": "4",
+            "blockHash": "0x96b7eb4aab3d28db1b7d9c3aa6711f207695c48ad7420b8f663b70552a119a5e",
+            "effectiveGasPrice": "1682452324",
+            "fee": "143380269503604",
+            "gasUsed": "85221",
+            "hash": "0xe5d1fe54a24e0516bcb52a3b252d5ea48ef2d6dce12c02c491b0771ff7c8c164",
+            "status": "1",
+            "timestamp": "1792334680"
+          },
+          {
+            "block": "5",
+            "blockHash": "0x7201ed0529410d66031ce9ca56f557485924dc074eff2d90ae7f263be506e91b",
+            "effectiveGasPrice": "1597630445",
+            "fee": "57399666627960",
+            "gasUsed": "35928",
+            "hash": "0x9c19e408fe61ac9805083c7bce02f7e8d612da146b729c9e4076ef8aaae7747a",
+            "status": "1",
+            "timestamp": "1792334680"
+          }
+        ],
+        "verified": false
+      }
+    },
+    "resultObserved": {
+      "postFundingSignatures": 0,
+      "rejectedEvidence": true,
+      "verified": false
+    },
+    "scenario": "truncated_evidence",
+    "state": 3,
+    "supervisorCPUSeconds": 0.7979579999999977,
+    "timeAdjustments": [
+      1792334680
+    ],
+    "totalCredits": 0,
+    "transactions": [
+      {
+        "block": "2",
+        "blockHash": "0xde296081686a98ffc09629b2c9b88b4e1e3b12a257ea97176ce6b3482377e3cb",
+        "effectiveGasPrice": "1888605192",
+        "fee": "616176329941920",
+        "gasUsed": "326260",
+        "hash": "0x84f8785fb5cb7b845854cb7b1860d8390890b398d7575c50b1315139811147af",
+        "status": "1",
+        "timestamp": "1792334379"
+      },
+      {
+        "block": "4",
+        "blockHash": "0x96b7eb4aab3d28db1b7d9c3aa6711f207695c48ad7420b8f663b70552a119a5e",
+        "effectiveGasPrice": "1682452324",
+        "fee": "143380269503604",
+        "gasUsed": "85221",
+        "hash": "0xe5d1fe54a24e0516bcb52a3b252d5ea48ef2d6dce12c02c491b0771ff7c8c164",
+        "status": "1",
+        "timestamp": "1792334680"
+      },
+      {
+        "block": "5",
+        "blockHash": "0x7201ed0529410d66031ce9ca56f557485924dc074eff2d90ae7f263be506e91b",
+        "effectiveGasPrice": "1597630445",
+        "fee": "57399666627960",
+        "gasUsed": "35928",
+        "hash": "0x9c19e408fe61ac9805083c7bce02f7e8d612da146b729c9e4076ef8aaae7747a",
+        "status": "1",
+        "timestamp": "1792334680"
+      }
+    ],
+    "value": "0"
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0x09cf73B1E5B0E5BE5DCBF97D9Df290faCf24298a",
+        "pid": 87250
+      },
+      "requester": {
+        "address": "0x82387A1d57253fD70456D4CfbDD44dbd929b6699",
+        "pid": 87251
+      }
+    },
+    "agreementId": "0x31abec72a4c70f4509a497581562040e355dfce94812cae27ce8c82b3f88f100",
+    "childCPUSeconds": 2.509065999999998,
+    "childExitStatus": [
+      0,
+      -15,
+      0
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.003915515961125493,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0x46ae0b42f708dc7b89a03b97f5bb09b200eb3390fb743addf1ff38c8c5798fc7",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265246000000000",
+        "gasUsed": "1632623",
+        "hash": "0x3fdbffd61e01216b01dc9eb850a04f80e3ac511f6fc41dd9e82acc933f7b04f6",
+        "status": "1",
+        "timestamp": "1792334380"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334380,
+        "gas": 2000000,
+        "hash": "0x3fdbffd61e01216b01dc9eb850a04f80e3ac511f6fc41dd9e82acc933f7b04f6",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633683.086620164,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 2.294,
+    "expectedValue": "18",
+    "fundingSlack": 299,
+    "ledger": {
+      "attempts": {
+        "deployer": 1,
+        "provider": 0,
+        "requester": 3
+      },
+      "balances": {
+        "deployer": 2734754000000000,
+        "provider": 48000000000000000,
+        "requester": 47184041253445798
+      },
+      "fees": {
+        "deployer": 3265246000000000,
+        "provider": 0,
+        "requester": 816958746554202
+      },
+      "gasUsed": {
+        "constructor": [
+          1632623
+        ],
+        "fund": [
+          326272
+        ],
+        "refund": [
+          85209
+        ],
+        "withdraw": [
+          35928
+        ]
+      },
+      "inclusion": {
+        "constructor": [
+          {
+            "claimSlack": 300,
+            "hash": "0x3fdbffd61e01216b01dc9eb850a04f80e3ac511f6fc41dd9e82acc933f7b04f6",
+            "status": 1,
+            "timestamp": 1792334380
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 299,
+            "hash": "0x101995875e87e1e854f96dafd4b3380a12c993f81152e91d2c0ffa029804d3f3",
+            "status": 1,
+            "timestamp": 1792334381
+          }
+        ],
+        "refund": [
+          {
+            "claimSlack": -2,
+            "hash": "0x994de20898c5557536f681563376b5e403a2376c4ac761250d023a7e1402fae8",
+            "status": 1,
+            "timestamp": 1792334682
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": -3,
+            "hash": "0x7435d260274da5ae54269dab3093d3a7893c6cdb9db760a1cba6696d9e005d6b",
+            "status": 1,
+            "timestamp": 1792334683
+          }
+        ]
+      },
+      "principalFundings": 1,
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 0,
+        "requester": 18000000000000000
+      }
+    },
+    "lockedPrincipal": 0,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0xd2bf2ac1465346de2cb5fa8b8773d87dc44d9dcc259cff5e39bf71920958aa46",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0xBBf492fb7Dc8DBD846277bb8d154384c5CD2F87D",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0xc30cfd287de0c83b152ca0ed8e1bf56f6ef37e8c22647d7128f32e0f6846f578",
+      "wallSeconds": 120
+    },
+    "operatorHash": "d629cf6eada6fc511b69d1392d7708cae0fee9b753aedb5aa07e1e2840579448",
+    "outcome": "refunded",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "claim.json": 500,
+      "compute-go.json": 2,
+      "finish-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "observe-go.json": 2,
+      "observed.json": 68,
+      "operator.json": 1392,
+      "proposal.json": 719,
+      "provider-ready.json": 68,
+      "refund-go.json": 2,
+      "requester-done.json": 1727,
+      "requester-ready.json": 68,
+      "terms.json": 857
+    },
+    "peakRSSBytes": 236326912,
+    "principal": 1000000000000,
+    "providerCredit": 0,
+    "reports": {
+      "requester": {
+        "budget": 18000000000000000,
+        "intents": [
+          {
+            "chainTimestamp": 1792334380,
+            "gas": 2000000,
+            "hash": "0x101995875e87e1e854f96dafd4b3380a12c993f81152e91d2c0ffa029804d3f3",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "fund",
+            "monotonicSeconds": 633684.256499614,
+            "nonce": 0,
+            "value": "1000000000000"
+          },
+          {
+            "chainTimestamp": 1792334682,
+            "gas": 2000000,
+            "hash": "0x994de20898c5557536f681563376b5e403a2376c4ac761250d023a7e1402fae8",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "refund",
+            "monotonicSeconds": 633684.514221831,
+            "nonce": 1,
+            "value": "0"
+          },
+          {
+            "chainTimestamp": 1792334682,
+            "gas": 2000000,
+            "hash": "0x7435d260274da5ae54269dab3093d3a7893c6cdb9db760a1cba6696d9e005d6b",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "withdraw",
+            "monotonicSeconds": 633684.62473882,
+            "nonce": 2,
+            "value": "0"
+          }
+        ],
+        "postFundingSignatures": 0,
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0x717b1db89529cf53f81f158992a40824d2c0ed303a3f9de166542824e169990a",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616198993204224",
+            "gasUsed": "326272",
+            "hash": "0x101995875e87e1e854f96dafd4b3380a12c993f81152e91d2c0ffa029804d3f3",
+            "status": "1",
+            "timestamp": "1792334381"
+          },
+          {
+            "block": "4",
+            "blockHash": "0x23ab10a6e78c79726a1fcd0f3f4d97ce97067cbcb96d4c3a1ac2ab3abe79f1d9",
+            "effectiveGasPrice": "1682452402",
+            "fee": "143360086722018",
+            "gasUsed": "85209",
+            "hash": "0x994de20898c5557536f681563376b5e403a2376c4ac761250d023a7e1402fae8",
+            "status": "1",
+            "timestamp": "1792334682"
+          },
+          {
+            "block": "5",
+            "blockHash": "0xa2465a2420edf7780776784f35e304e72dc70acb946c5cdc1bbdc586980e9b90",
+            "effectiveGasPrice": "1597630445",
+            "fee": "57399666627960",
+            "gasUsed": "35928",
+            "hash": "0x7435d260274da5ae54269dab3093d3a7893c6cdb9db760a1cba6696d9e005d6b",
+            "status": "1",
+            "timestamp": "1792334683"
+          }
+        ],
+        "verified": false
+      }
+    },
+    "resultObserved": {
+      "postFundingSignatures": 0,
+      "rejectedEvidence": true,
+      "verified": false
+    },
+    "scenario": "outsider_evidence",
+    "state": 3,
+    "supervisorCPUSeconds": 0.8020639999999997,
+    "timeAdjustments": [
+      1792334682
+    ],
+    "totalCredits": 0,
+    "transactions": [
+      {
+        "block": "2",
+        "blockHash": "0x717b1db89529cf53f81f158992a40824d2c0ed303a3f9de166542824e169990a",
+        "effectiveGasPrice": "1888605192",
+        "fee": "616198993204224",
+        "gasUsed": "326272",
+        "hash": "0x101995875e87e1e854f96dafd4b3380a12c993f81152e91d2c0ffa029804d3f3",
+        "status": "1",
+        "timestamp": "1792334381"
+      },
+      {
+        "block": "4",
+        "blockHash": "0x23ab10a6e78c79726a1fcd0f3f4d97ce97067cbcb96d4c3a1ac2ab3abe79f1d9",
+        "effectiveGasPrice": "1682452402",
+        "fee": "143360086722018",
+        "gasUsed": "85209",
+        "hash": "0x994de20898c5557536f681563376b5e403a2376c4ac761250d023a7e1402fae8",
+        "status": "1",
+        "timestamp": "1792334682"
+      },
+      {
+        "block": "5",
+        "blockHash": "0xa2465a2420edf7780776784f35e304e72dc70acb946c5cdc1bbdc586980e9b90",
+        "effectiveGasPrice": "1597630445",
+        "fee": "57399666627960",
+        "gasUsed": "35928",
+        "hash": "0x7435d260274da5ae54269dab3093d3a7893c6cdb9db760a1cba6696d9e005d6b",
+        "status": "1",
+        "timestamp": "1792334683"
+      }
+    ],
+    "value": "0"
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0x8B165931ED87e9C07Ab71664C3A020bF407FD5C3",
+        "pid": 87316
+      },
+      "requester": {
+        "address": "0x6297d8f6805E94C07dFb6C70D05092A7eB7fe5bF",
+        "pid": 87317
+      }
+    },
+    "agreementId": "0x5fce56b5cbbef6a3e18ca9cb4e48329d2eecb739254d8923505c3c1d39ec419f",
+    "childCPUSeconds": 2.5103659999999994,
+    "childExitStatus": [
+      0,
+      -15,
+      0
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.003967108903452754,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0x065312f7702a00d74a1c799d31fb43e72bbdc6e8f706d783625d1fb13c581923",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265246000000000",
+        "gasUsed": "1632623",
+        "hash": "0xf9f6ee5d96df05ed14a392388cdde88b9df17690624c177522a9bdc9ef9d1136",
+        "status": "1",
+        "timestamp": "1792334382"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334382,
+        "gas": 2000000,
+        "hash": "0xf9f6ee5d96df05ed14a392388cdde88b9df17690624c177522a9bdc9ef9d1136",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633685.378398078,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 2.314,
+    "expectedValue": "18",
+    "fundingSlack": 299,
+    "ledger": {
+      "attempts": {
+        "deployer": 1,
+        "provider": 0,
+        "requester": 3
+      },
+      "balances": {
+        "deployer": 2734754000000000,
+        "provider": 48000000000000000,
+        "requester": 47183998389221224
+      },
+      "fees": {
+        "deployer": 3265246000000000,
+        "provider": 0,
+        "requester": 817001610778776
+      },
+      "gasUsed": {
+        "constructor": [
+          1632623
+        ],
+        "fund": [
+          326284
+        ],
+        "refund": [
+          85221
+        ],
+        "withdraw": [
+          35928
+        ]
+      },
+      "inclusion": {
+        "constructor": [
+          {
+            "claimSlack": 300,
+            "hash": "0xf9f6ee5d96df05ed14a392388cdde88b9df17690624c177522a9bdc9ef9d1136",
+            "status": 1,
+            "timestamp": 1792334382
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 299,
+            "hash": "0x09d312a969397064ad79459978af319a0fa6e6bd356119154e6456d7bb6529ce",
+            "status": 1,
+            "timestamp": 1792334383
+          }
+        ],
+        "refund": [
+          {
+            "claimSlack": -2,
+            "hash": "0xa204c0756e6940658cea5a289311a619be9136a41ede7e81107b5010caa68bc5",
+            "status": 1,
+            "timestamp": 1792334684
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": -2,
+            "hash": "0x338e627908b8c66739ccb0af159bb7f7b1bf86f413e2b38fe4f0cac09983a7dd",
+            "status": 1,
+            "timestamp": 1792334684
+          }
+        ]
+      },
+      "principalFundings": 1,
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 0,
+        "requester": 18000000000000000
+      }
+    },
+    "lockedPrincipal": 0,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0x837edaa78da41a3a96433db2dafae34acbd1235dd50c7dd7a2374b7403042c33",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0x3F5f5200DD143aa82d7Fc3477c4Ec4cF2e08c0CF",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0x9f1674d06fbbc6cc8e63c0a772dc149def45ade824b37dc4720b7d140b3b9080",
+      "wallSeconds": 120
+    },
+    "operatorHash": "b62f79c6fd547fe3732768402550ea15529234605751ae842531f795497e4a0b",
+    "outcome": "refunded",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "claim.json": 31,
+      "compute-go.json": 2,
+      "finish-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "observe-go.json": 2,
+      "observed.json": 68,
+      "operator.json": 1393,
+      "proposal.json": 719,
+      "provider-ready.json": 68,
+      "refund-go.json": 2,
+      "requester-done.json": 1728,
+      "requester-ready.json": 68,
+      "terms.json": 857
+    },
+    "peakRSSBytes": 236670976,
+    "principal": 1000000000000,
+    "providerCredit": 0,
+    "reports": {
+      "requester": {
+        "budget": 18000000000000000,
+        "intents": [
+          {
+            "chainTimestamp": 1792334382,
+            "gas": 2000000,
+            "hash": "0x09d312a969397064ad79459978af319a0fa6e6bd356119154e6456d7bb6529ce",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "fund",
+            "monotonicSeconds": 633686.564990718,
+            "nonce": 0,
+            "value": "1000000000000"
+          },
+          {
+            "chainTimestamp": 1792334684,
+            "gas": 2000000,
+            "hash": "0xa204c0756e6940658cea5a289311a619be9136a41ede7e81107b5010caa68bc5",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "refund",
+            "monotonicSeconds": 633686.825150983,
+            "nonce": 1,
+            "value": "0"
+          },
+          {
+            "chainTimestamp": 1792334684,
+            "gas": 2000000,
+            "hash": "0x338e627908b8c66739ccb0af159bb7f7b1bf86f413e2b38fe4f0cac09983a7dd",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "withdraw",
+            "monotonicSeconds": 633686.935818166,
+            "nonce": 2,
+            "value": "0"
+          }
+        ],
+        "postFundingSignatures": 0,
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0x721769ab248b73a0cfc0bf146dfa65cd3ce41ec20ba05766e9037e09f1b13388",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616221656466528",
+            "gasUsed": "326284",
+            "hash": "0x09d312a969397064ad79459978af319a0fa6e6bd356119154e6456d7bb6529ce",
+            "status": "1",
+            "timestamp": "1792334383"
+          },
+          {
+            "block": "4",
+            "blockHash": "0x62aa7c84783dc6106da6ebc1696d77c67676144daaf0888c4f41cb5be0c49b70",
+            "effectiveGasPrice": "1682452480",
+            "fee": "143380282798080",
+            "gasUsed": "85221",
+            "hash": "0xa204c0756e6940658cea5a289311a619be9136a41ede7e81107b5010caa68bc5",
+            "status": "1",
+            "timestamp": "1792334684"
+          },
+          {
+            "block": "5",
+            "blockHash": "0xa742135f2817cf3a53d529f8851c56bcdf082aa0bef0f7336e5f9f9963772aa3",
+            "effectiveGasPrice": "1597630581",
+            "fee": "57399671514168",
+            "gasUsed": "35928",
+            "hash": "0x338e627908b8c66739ccb0af159bb7f7b1bf86f413e2b38fe4f0cac09983a7dd",
+            "status": "1",
+            "timestamp": "1792334684"
+          }
+        ],
+        "verified": false
+      }
+    },
+    "resultObserved": {
+      "postFundingSignatures": 0,
+      "rejectedEvidence": true,
+      "verified": false
+    },
+    "scenario": "duplicate_evidence",
+    "state": 3,
+    "supervisorCPUSeconds": 0.7979260000000004,
+    "timeAdjustments": [
+      1792334684
+    ],
+    "totalCredits": 0,
+    "transactions": [
+      {
+        "block": "2",
+        "blockHash": "0x721769ab248b73a0cfc0bf146dfa65cd3ce41ec20ba05766e9037e09f1b13388",
+        "effectiveGasPrice": "1888605192",
+        "fee": "616221656466528",
+        "gasUsed": "326284",
+        "hash": "0x09d312a969397064ad79459978af319a0fa6e6bd356119154e6456d7bb6529ce",
+        "status": "1",
+        "timestamp": "1792334383"
+      },
+      {
+        "block": "4",
+        "blockHash": "0x62aa7c84783dc6106da6ebc1696d77c67676144daaf0888c4f41cb5be0c49b70",
+        "effectiveGasPrice": "1682452480",
+        "fee": "143380282798080",
+        "gasUsed": "85221",
+        "hash": "0xa204c0756e6940658cea5a289311a619be9136a41ede7e81107b5010caa68bc5",
+        "status": "1",
+        "timestamp": "1792334684"
+      },
+      {
+        "block": "5",
+        "blockHash": "0xa742135f2817cf3a53d529f8851c56bcdf082aa0bef0f7336e5f9f9963772aa3",
+        "effectiveGasPrice": "1597630581",
+        "fee": "57399671514168",
+        "gasUsed": "35928",
+        "hash": "0x338e627908b8c66739ccb0af159bb7f7b1bf86f413e2b38fe4f0cac09983a7dd",
+        "status": "1",
+        "timestamp": "1792334684"
+      }
+    ],
+    "value": "0"
+  },
+  {
+    "agents": {
+      "provider": {
+        "address": "0x9448000aC3aF4Aa0f31E7d90A4962deD44975120",
+        "pid": 87384
+      },
+      "requester": {
+        "address": "0x6583712fB2cAC7E4A12008E9EEc1a79D96e3Ec83",
+        "pid": 87385
+      }
+    },
+    "agreementId": "0xbcc4bd41bd876f906edb5d573f92ce4af703ae155db6acef1bd1430cab240796",
+    "childCPUSeconds": 2.8373489999999943,
+    "childExitStatus": [
+      0,
+      0,
+      0
+    ],
+    "childrenStopped": true,
+    "cleanupSeconds": 0.004268796066753566,
+    "deployment": [
+      {
+        "block": "1",
+        "blockHash": "0xdd071d8ffc36fa02492edf4e58fcaebc31f93455887154b5b84215eb81ce297c",
+        "effectiveGasPrice": "2000000000",
+        "fee": "3265246000000000",
+        "gasUsed": "1632623",
+        "hash": "0x7822348cf7ccd7dd5a58796640a179ae86d84581bab0cdcd8ca1d58030ee01cd",
+        "status": "1",
+        "timestamp": "1792334385"
+      }
+    ],
+    "deploymentIntents": [
+      {
+        "chainTimestamp": 1792334385,
+        "gas": 2000000,
+        "hash": "0x7822348cf7ccd7dd5a58796640a179ae86d84581bab0cdcd8ca1d58030ee01cd",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "method": "constructor",
+        "monotonicSeconds": 633687.698600781,
+        "nonce": 0,
+        "value": "0"
+      }
+    ],
+    "elapsedSeconds": 2.532,
+    "expectedValue": "18",
+    "fundingSlack": 299,
+    "ledger": {
+      "attempts": {
+        "deployer": 1,
+        "provider": 1,
+        "requester": 3
+      },
+      "balances": {
+        "deployer": 2734754000000000,
+        "provider": 47921924470017768,
+        "requester": 47193968493153073
+      },
+      "fees": {
+        "deployer": 3265246000000000,
+        "provider": 78075529982232,
+        "requester": 807031506846927
+      },
+      "gasUsed": {
+        "claim": [
+          43864
+        ],
+        "constructor": [
+          1632623
+        ],
+        "fund": [
+          326260
+        ],
+        "refund": [
+          85221
+        ],
+        "withdraw": [
+          35928
+        ]
+      },
+      "inclusion": {
+        "claim": [
+          {
+            "claimSlack": 299,
+            "hash": "0x81f4b5889e0f103fb27b8b2ae69b245187a071d956f8d2e1faa291b5b7dbe56e",
+            "status": 0,
+            "timestamp": 1792334386
+          }
+        ],
+        "constructor": [
+          {
+            "claimSlack": 300,
+            "hash": "0x7822348cf7ccd7dd5a58796640a179ae86d84581bab0cdcd8ca1d58030ee01cd",
+            "status": 1,
+            "timestamp": 1792334385
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 299,
+            "hash": "0x55894a540832239893515aefa069d438d7db6f03fd71ab4f9ba7cfe1ff54a92c",
+            "status": 1,
+            "timestamp": 1792334386
+          }
+        ],
+        "refund": [
+          {
+            "claimSlack": -2,
+            "hash": "0x30efef0501c7fe0771f15a2d1c482dcb0c5dec637766c0de6c78b7722a0e2ba2",
+            "status": 1,
+            "timestamp": 1792334687
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": -2,
+            "hash": "0x13cad620213cfd080d695e8d442a2bc093cb7c0efdf502a13c3d29eaadc4ff15",
+            "status": 1,
+            "timestamp": 1792334687
+          }
+        ]
+      },
+      "principalFundings": 1,
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 6000000000000000,
+        "requester": 18000000000000000
+      }
+    },
+    "lockedPrincipal": 0,
+    "logicalCPUs": 8,
+    "manifest": {
+      "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+      "attempts": {
+        "deployer": 1,
+        "provider": 8,
+        "requester": 8
+      },
+      "chainId": 31337,
+      "cleanupSeconds": 15,
+      "codeHash": "0x35f463ba00280c958a6f99dfb9a4dce7d2a41373fa3ef0ca63465f4f0f5ceb74",
+      "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+      "contract": "0xC68685c566ec3ed071FFB2022E3148878e9dCcE2",
+      "gas": 2000000,
+      "hardfork": "cancun",
+      "maxFeePerGas": 3000000000,
+      "maxPriorityFeePerGas": 1000000000,
+      "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "principal": 1000000000000,
+      "rpcTimeout": 1,
+      "runId": "0xac9dd81eef4551e31c54c26d609035da894a987a8dc7d5ec2c2a83f6cb6486c4",
+      "wallSeconds": 120
+    },
+    "operatorHash": "162089fc3098f6487bdc40f250d01b83f6577b50e7008cbbbd7d4fe4ed19bb3b",
+    "outcome": "refunded",
+    "payloadBytes": {
+      "advertisement.json": 545,
+      "authorization.json": 536,
+      "claim-attempted.json": 17,
+      "claim-go.json": 2,
+      "claim.json": 500,
+      "compute-go.json": 2,
+      "finish-go.json": 2,
+      "fund-go.json": 2,
+      "funded.json": 160,
+      "observe-go.json": 2,
+      "observed.json": 57,
+      "operator.json": 1389,
+      "proposal.json": 719,
+      "provider-done.json": 934,
+      "provider-ready.json": 68,
+      "refund-go.json": 2,
+      "requester-done.json": 1727,
+      "requester-ready.json": 68,
+      "terms.json": 857
+    },
+    "peakRSSBytes": 238301184,
+    "principal": 1000000000000,
+    "providerCredit": 0,
+    "reports": {
+      "provider": {
+        "budget": 6000000000000000,
+        "fundingObservedMonotonic": 633688.98090616,
+        "intents": [
+          {
+            "chainTimestamp": 1792334386,
+            "gas": 2000000,
+            "hash": "0x81f4b5889e0f103fb27b8b2ae69b245187a071d956f8d2e1faa291b5b7dbe56e",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "claim",
+            "monotonicSeconds": 633689.106720069,
+            "nonce": 0,
+            "value": "0"
+          }
+        ],
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0xcdb19e043ca4a3b25ec03761cf3edfd4457a03ed8b4b1dbdd32f95fae86809a4",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616176329941920",
+            "gasUsed": "326260",
+            "hash": "0x55894a540832239893515aefa069d438d7db6f03fd71ab4f9ba7cfe1ff54a92c",
+            "status": "1",
+            "timestamp": "1792334386"
+          },
+          {
+            "block": "3",
+            "blockHash": "0xa62cb4c5b731dd49563430e21c2d594e319d822dfa7935ec00f5bd5a5907371d",
+            "effectiveGasPrice": "1779945513",
+            "fee": "78075529982232",
+            "gasUsed": "43864",
+            "hash": "0x81f4b5889e0f103fb27b8b2ae69b245187a071d956f8d2e1faa291b5b7dbe56e",
+            "status": "0",
+            "timestamp": "1792334386"
+          }
+        ],
+        "rejected": true
+      },
+      "requester": {
+        "budget": 18000000000000000,
+        "intents": [
+          {
+            "chainTimestamp": 1792334385,
+            "gas": 2000000,
+            "hash": "0x55894a540832239893515aefa069d438d7db6f03fd71ab4f9ba7cfe1ff54a92c",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "fund",
+            "monotonicSeconds": 633688.88983575,
+            "nonce": 0,
+            "value": "1000000000000"
+          },
+          {
+            "chainTimestamp": 1792334687,
+            "gas": 2000000,
+            "hash": "0x30efef0501c7fe0771f15a2d1c482dcb0c5dec637766c0de6c78b7722a0e2ba2",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "refund",
+            "monotonicSeconds": 633689.282619603,
+            "nonce": 1,
+            "value": "0"
+          },
+          {
+            "chainTimestamp": 1792334687,
+            "gas": 2000000,
+            "hash": "0x13cad620213cfd080d695e8d442a2bc093cb7c0efdf502a13c3d29eaadc4ff15",
+            "maxFeePerGas": 3000000000,
+            "maxPriorityFeePerGas": 1000000000,
+            "method": "withdraw",
+            "monotonicSeconds": 633689.400841452,
+            "nonce": 2,
+            "value": "0"
+          }
+        ],
+        "postFundingSignatures": 0,
+        "receipts": [
+          {
+            "block": "2",
+            "blockHash": "0xcdb19e043ca4a3b25ec03761cf3edfd4457a03ed8b4b1dbdd32f95fae86809a4",
+            "effectiveGasPrice": "1888605192",
+            "fee": "616176329941920",
+            "gasUsed": "326260",
+            "hash": "0x55894a540832239893515aefa069d438d7db6f03fd71ab4f9ba7cfe1ff54a92c",
+            "status": "1",
+            "timestamp": "1792334386"
+          },
+          {
+            "block": "5",
+            "blockHash": "0x5c7fa1031aafac95b26b9b706b06076e2010731e44095a5783ef17c3ffc01d74",
+            "effectiveGasPrice": "1597395243",
+            "fee": "136131620003703",
+            "gasUsed": "85221",
+            "hash": "0x30efef0501c7fe0771f15a2d1c482dcb0c5dec637766c0de6c78b7722a0e2ba2",
+            "status": "1",
+            "timestamp": "1792334687"
+          },
+          {
+            "block": "6",
+            "blockHash": "0x954e3f1402bee628b0b51cc14904335cf8b064f77a813ae0db812405d56e47f5",
+            "effectiveGasPrice": "1523145093",
+            "fee": "54723556901304",
+            "gasUsed": "35928",
+            "hash": "0x13cad620213cfd080d695e8d442a2bc093cb7c0efdf502a13c3d29eaadc4ff15",
+            "status": "1",
+            "timestamp": "1792334687"
+          }
+        ],
+        "verified": false
+      }
+    },
+    "resultObserved": {
+      "postFundingSignatures": 0,
+      "value": "19",
+      "verified": false
+    },
+    "scenario": "invalid_result",
+    "state": 3,
+    "supervisorCPUSeconds": 0.8823860000000003,
+    "timeAdjustments": [
+      1792334687
+    ],
+    "totalCredits": 0,
+    "transactions": [
+      {
+        "block": "2",
+        "blockHash": "0xcdb19e043ca4a3b25ec03761cf3edfd4457a03ed8b4b1dbdd32f95fae86809a4",
+        "effectiveGasPrice": "1888605192",
+        "fee": "616176329941920",
+        "gasUsed": "326260",
+        "hash": "0x55894a540832239893515aefa069d438d7db6f03fd71ab4f9ba7cfe1ff54a92c",
+        "status": "1",
+        "timestamp": "1792334386"
+      },
+      {
+        "block": "3",
+        "blockHash": "0xa62cb4c5b731dd49563430e21c2d594e319d822dfa7935ec00f5bd5a5907371d",
+        "effectiveGasPrice": "1779945513",
+        "fee": "78075529982232",
+        "gasUsed": "43864",
+        "hash": "0x81f4b5889e0f103fb27b8b2ae69b245187a071d956f8d2e1faa291b5b7dbe56e",
+        "status": "0",
+        "timestamp": "1792334386"
+      },
+      {
+        "block": "5",
+        "blockHash": "0x5c7fa1031aafac95b26b9b706b06076e2010731e44095a5783ef17c3ffc01d74",
+        "effectiveGasPrice": "1597395243",
+        "fee": "136131620003703",
+        "gasUsed": "85221",
+        "hash": "0x30efef0501c7fe0771f15a2d1c482dcb0c5dec637766c0de6c78b7722a0e2ba2",
+        "status": "1",
+        "timestamp": "1792334687"
+      },
+      {
+        "block": "6",
+        "blockHash": "0x954e3f1402bee628b0b51cc14904335cf8b064f77a813ae0db812405d56e47f5",
+        "effectiveGasPrice": "1523145093",
+        "fee": "54723556901304",
+        "gasUsed": "35928",
+        "hash": "0x13cad620213cfd080d695e8d442a2bc093cb7c0efdf502a13c3d29eaadc4ff15",
+        "status": "1",
+        "timestamp": "1792334687"
+      }
+    ],
+    "value": "0"
+  }
+]

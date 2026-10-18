@@ -1,5 +1,7 @@
 # Experiment 002 — Task 009 Partial Implementation and Blocking Review
 
+**Task 012 current status:** [Agent integration and security acceptance](EXPERIMENT_002_AGENT_ACCEPTANCE.md) records the completed bounded local workflow and CONDITIONAL PASS, subject to publication CI. Historical readiness/failure statements below retain their milestone meaning. No consent, principal/fee budget or Experiment 001 behavior changed.
+
 **Task 010 follow-up:** [root-cause investigation](EXPERIMENT_002_FEE_INVESTIGATION.md) diagnoses pinned-Anvil RPC fee reporting, with no excess debit observed. Status remains STILL BLOCKED; the strict check and all Task 009 evidence below are preserved. No corrected binary or complete agent workflow is adopted.
 
 **2026-10-18 — Acceptance gate: FAIL / implementation BLOCKED.** The accepted design remains unchanged. Task 009 separately authorized local implementation, but a required fee-evidence assumption failed on the pinned Anvil baseline. Implementation stopped rather than changing dependencies, trusting contradictory receipts, increasing caps or weakening tests. This is a project-assisted review, not an independent audit or formal security assurance.

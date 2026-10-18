@@ -1,4 +1,4 @@
-name: Local Experiment 001
+name: Local Experiments 001 and 002
 on:
   push:
     branches: [main]
@@ -66,3 +66,9 @@ jobs:
           internal/agent-venv/bin/python research/compatibility/experiment002/compare_anvil_baselines.py > internal/task011/ci-fee-comparison.json
       - name: Unchanged Experiment 001 controls on verified corrected node
         run: internal/agent-venv/bin/python research/compatibility/experiment002/candidate_regressions.py > internal/task011/ci-candidate-regressions.json
+      - name: Experiment 002 independent agents and adversarial integration
+        env:
+          PYTHONPATH: sdk/python
+        run: internal/agent-venv/bin/python -m unittest discover -s tests/experiment002 -v
+      - name: Experiment 002 standalone canonical settlement
+        run: scripts/run-experiment-002.sh

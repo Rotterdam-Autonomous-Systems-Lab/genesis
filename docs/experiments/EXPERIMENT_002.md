@@ -1,5 +1,7 @@
 # Experiment 002 Proposal: Removing Requester Veto for a Directly Verifiable Service
 
+**Task 012 current status:** [Agent integration and security acceptance](EXPERIMENT_002_AGENT_ACCEPTANCE.md) records the completed bounded local workflow and CONDITIONAL PASS, subject to publication CI. Historical readiness/failure statements below retain their milestone meaning. No consent, principal/fee budget or Experiment 001 behavior changed.
+
 **Task 009 current status: partial escrow published; acceptance FAIL / implementation BLOCKED.** See [implementation review](EXPERIMENT_002_IMPLEMENTATION_REVIEW.md) for the pinned-Anvil fee-evidence contradiction and pending integration gates. Earlier design/readiness statements below are historical; design semantics remain unchanged.
 
 **2026-10-18 — Accepted bounded local design after Task 008 review; READY for separate implementation authorization. No Experiment 002 implementation or results.**

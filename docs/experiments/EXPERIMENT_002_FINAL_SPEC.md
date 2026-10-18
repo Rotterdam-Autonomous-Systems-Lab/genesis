@@ -1,5 +1,7 @@
 # Experiment 002 Final Technical Specification
 
+**Task 012 current status:** [Agent integration and security acceptance](EXPERIMENT_002_AGENT_ACCEPTANCE.md) records the completed bounded local workflow and CONDITIONAL PASS, subject to publication CI. Historical readiness/failure statements below retain their milestone meaning. No consent, principal/fee budget or Experiment 001 behavior changed.
+
 **Task 011 current profile:** [corrected-node validation](EXPERIMENT_002_ANVIL_VALIDATION.md) and [ADR 0005](../adr/0005-experiment-002-corrected-anvil-baseline.md) replace only the Experiment 002 Anvil selection with v1.6.0-rc1 / b272ce3366987406406e9eb1b82596653a3ad628, explicit Cancun, conditional on publication Ubuntu CI. Forge/Cast/compiler/libraries/Python, source restrictions, signed types and all economic/security limits remain unchanged. Old blocker evidence below is historical. This is infrastructure PASS, not complete agent implementation or experiment acceptance.
 
 **Task 009 current disposition: partial contract implementation; acceptance FAIL / implementation BLOCKED.** [Fee-evidence review](EXPERIMENT_002_IMPLEMENTATION_REVIEW.md) supersedes earlier READY status without changing the frozen design or budgets. Pinned Anvil receipt effectiveGasPrice conflicts with the actual capped wallet debit; dependency/fee-evidence compatibility is reopened. ADR 0002 remains accepted design only.

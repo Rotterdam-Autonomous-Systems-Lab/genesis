@@ -52,3 +52,7 @@ Additional controlled fixtures include malformed/oversized/truncated/unexpected 
 There are no HTTP agent endpoints: unauthorized-message tests target signed file messages and escrow caller checks. A temporary loopback RPC fault proxy exists only in `tests/python/rpc_faults.py`; it is not a hosted service or production relay. The optional runner observer is trusted in-process test code, never a wire-supplied callback. Local-only transport does not isolate malicious same-user processes from each other or the host administrator.
 
 The [Experiment 001 research report](../../research/reports/EXPERIMENT_001_REPORT.md) publishes the conditionally accepted result with immutable source/CI references and verified reproduction commands. It does not authorize Experiment 002 implementation.
+
+## Separate Experiment 002 integration
+
+[Experiment 002 agents](genesis_experiment002/README.md) use the separately hash-verified ADR 0005 Anvil/Cancun profile and their own schemas, signer policy and test directory. Experiment 001's implementation, default node, signing/Acceptance semantics and published evidence remain unchanged. See the [Experiment 002 acceptance assessment](../../docs/experiments/EXPERIMENT_002_AGENT_ACCEPTANCE.md).

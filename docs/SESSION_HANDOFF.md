@@ -2,30 +2,30 @@
 
 Use this document to carry concise project context between Codex sessions and contributors. Update the current handoff after significant work; preserve prior handoffs in Git history where useful. Do not put secrets, credentials, or local-only notes here.
 
-## Current handoff — 2026-10-18
+## Current handoff — 2026-10-18 (Task 012)
 
 ### Current status
 
-Genesis retains the independent permissionless AI-first L1/native human-and-machine economy and bootstrapping research direction; no chain/consensus/token/adoption result is claimed. Experiment 001 remains published CONDITIONAL PASS and unchanged. **Task 011 infrastructure compatibility PASS for ADR 0005's corrected Anvil profile, subject to publication Ubuntu CI.** When CI passes, the fee-reporting blocker is resolved for that profile. Experiment 002 still lacks accepted full agent integration; agents stayed paused throughout Task 011.
+Experiment 002 **CONDITIONAL PASS for bounded local conditional collectability, subject to publication CI**; separate processes settle/withdraw correct timely included work without a second requester authorization. [Assessment](experiments/EXPERIMENT_002_AGENT_ACCEPTANCE.md) is the current outcome; historical Task 009 FAIL and Task 010 BLOCKED remain preserved. Task 011 [Ubuntu CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39136054716). Genesis's independent permissionless AI-first L1/native human-and-machine economy remains an aspiration; MASTER_PLAN and Experiment 001 code/evidence/limitations are unchanged.
 
 ### Completed work
 
-- [Validation](experiments/EXPERIMENT_002_ANVIL_VALIDATION.md)/[ADR 0005](adr/0005-experiment-002-corrected-anvil-baseline.md): isolated Anvil v1.6.0-rc1 / b272ce3366987406406e9eb1b82596653a3ad628, explicit Cancun. [Manifest/installer](../research/compatibility/experiment002/anvil-candidate.json) verify source/archive/binary hashes before execution; no global/PATH or old-tool replacement. Existing Forge/Cast/compiler/library/Python pins and limits remain.
-- [44-case comparison](../research/compatibility/experiment002/task011-comparison.json): old 12 reconciled/eight contradictory/two unincluded; corrected 20 reconciled/zero contradictory/two unincluded. Same strict oracle and original escrow probe, no normalization/cap increase. Corrected probe deployment remains 1,632,623 gas.
-- 86 Solidity tests, unchanged 54 Python tests on each node, 14 old research and nine candidate tests pass locally (217 executions). Both signature probes match 25 digests/34 signatures; 20 fee cases pass. Candidate success/refusal controls preserve requester veto. [Actual-node regression metadata](../research/compatibility/experiment002/task011-regressions.json) distinguishes the old fixture's historical version label.
-- CI adds verified Linux candidate installation and identical matrix/signature/original-control gates. Inspect the publication commit's Actions run; failure retains/reopens BLOCKED. [Provenance](../research/compatibility/experiment002/task011-provenance.json) preserves setup failures, hash/source identities and attestation 404; no crypto-attestation, reproducible-build or comprehensive audit claim.
+- New isolated `genesis_experiment002` requester/provider/signing/chain/runner package and [commands](../sdk/python/genesis_experiment002/README.md); exact hash-verified Anvil v1.6.0-rc1 b272ce3366987406406e9eb1b82596653a3ad628, explicit Cancun, no replacement of original tools.
+- Exact schemas/caps/nonce/deadline/refund rules; per-role fee reservation/closing slots, one principal intent and no top-ups/escalation; strict canonical prices and principal-adjusted wallet/whole-ledger audit. Supervisor never receives agent keys.
+- 86 Solidity, 54 unchanged original Python, 52 new Python tests pass locally; [18 process-scenario records](../research/experiments/experiment002/task012-agent-runs.json), including two successes, refusal/offline, crashes, malformed messages, disclosure, two-second slack, no actor and rollback. Existing fee/candidate CI gates retained and workflow extended for new tests/standalone settlement.
+- [T01–T20/P2-01–16 assessment](experiments/EXPERIMENT_002_AGENT_ACCEPTANCE.md), reproducibility, setup errors, observations and residual risks recorded. No formal assurance/independent audit.
 
 ### Open questions
 
-Full Experiment 002 T01–T20/P2/fee/resource and fault-recovery evidence; verified accounting with principal flows; general fairness/disclosure/inclusion/deadlines/finality, host/key and supply-chain risks. Future useful-work/Sybil/security/native economics/adoption remain unresolved. A new platform/node feature, integrity mismatch or CI failure reopens compatibility.
+Strong fair exchange after disclosure/non-inclusion, censorship/deadline/finality, absent callers/key loss, trusted host/RPC and supply chain. Fixed addition validates neither effort/unique useful work nor AI/physical-world correctness. Independent-network/security/native-economic/bootstrapping questions remain research.
 
 ### Next task
 
-After required CI passes, recommend Task 009 continuation using only ADR 0005's explicit verified node. Review the ignored partial draft before integrating; complete all tests/gas budgets/security assessment without changing consent rules. Task 011 does not itself authorize resuming agents or starting another experiment/token/bootstrapping implementation.
+Recommended: independent review of Experiment 002 implementation/evidence, then separately select and authorize the next research question. Do not automatically start another experiment, token, L1 or autonomous public bootstrapping.
 
 ### Blockers
 
-No known local infrastructure blocker on the verified macOS profile. Ubuntu CI is mandatory before final cross-platform readiness; then B-ANVIL-FEE-EVIDENCE is resolved for the manifest profile. Experiment 002 acceptance remains pending complete implementation/security evidence. Never use the old node as if its fee check passed or weaken the check for either node.
+No known local implementation blocker within the exact verified profile. Required publication CI must pass; a failure reopens acceptance. No production/fairness guarantee follows from a green run. Check Actions for this file's publication commit before relying on cross-platform acceptance.
 
 ### Relevant commits
 
