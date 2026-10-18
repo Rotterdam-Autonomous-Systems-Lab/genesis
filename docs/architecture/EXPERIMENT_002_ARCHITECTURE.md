@@ -51,7 +51,7 @@ Persist the accepted public value keyed by agreement, with an event binding agre
 
 ## Recovery, bounds and keys
 
-Keys are ephemeral and generated within each agent process; no shared private key, production wallet, environment-secret file or stored key artifact. Local shared host/RPC administrator remains trusted. Transactions are locally signed; do not use RPC-unlocked participant accounts. No production endpoints, proxy/redirect/CCIP fallback, shell execution or model/API calls.
+Keys are ephemeral and generated within each agent process; no shared private key, production wallet, environment-secret file or stored key artifact. Local shared host/RPC administrator remains trusted. Transactions are locally signed; do not use RPC-unlocked participant accounts. No production endpoints, proxy/redirect/CCIP fallback, unrestricted shell execution or model/API calls.
 
 Reuse the reviewed bounded-transport pattern only after checking its applicability; proposed maximum message size 16 KiB, per-call timeout 5 seconds, run wall-clock budget 120 seconds, finite polling. Fresh run identity, code hash, chain ID and loopback destination checked before signing/sending. Never silently accept different terms or re-sign an altered result after a retry.
 
@@ -62,3 +62,9 @@ Provider crash before claim leads to refund after deadline; crash after claim re
 ## Review gates and open decisions
 
 The proposed safety behavior above is concrete. **Implementation gate:** founder/design review must accept upfront predicate consent instead of a second Acceptance and explicitly accept public-output leakage, trusted local ledger and strict deadlines. This is a reversible experimental proposal, not a blocking contradiction in Experiment 001. The proposed schemas, dependency/security-maintenance review, tested installation commands and complete digest vectors must be reviewed/frozen in the implementation specification before code is authorized. No cryptographic or economic choices for a future Genesis network are made.
+
+## Task 006 review disposition
+
+[Design review](../experiments/EXPERIMENT_002_DESIGN_REVIEW.md): amend claims and retain **Proposed**, pending R1–R3. Refund and withdrawal are explicit transactions; deadline passage alone does not transition state or deliver funds. Late funding can leave insufficient provider time even when the signed times pass validation. Record observed funding-to-deadline slack, and report refused or incomplete work without bypassing deadlines. No minimum slack, grace period or funded early-cancel path is silently added.
+
+A future independent L1 must supply its own secure authentication/domain rules, deterministic verification/resource accounting, canonical ordering, data availability and timing/finality assumptions. The requirements may transfer; EIP-712, addresses, EVM execution and Anvil clock/finality behavior are not selected for that L1. Repeated valid arithmetic is not unique useful work, a scarce security resource or a native-token reward criterion.

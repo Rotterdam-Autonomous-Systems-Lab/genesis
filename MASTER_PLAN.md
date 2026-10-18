@@ -6,7 +6,7 @@ This document preserves the project's mission, scope, research program, decision
 
 ## Status and evidence labels
 
-**Current status: early-stage experimental research.** Genesis has no selected independent network design, production protocol, token, finalized consensus algorithm, or validated new consensus mechanism. The first implementation milestone is a small, bounded two-agent experiment, subject to research gates. This is a first step in investigating a much larger decentralized economic network; Genesis must not be reduced to an agent-payment application.
+**Current status: early-stage experimental research.** Genesis has no selected independent network design, production protocol, token, finalized consensus algorithm, or validated new consensus mechanism. Experiment 001 is published with CONDITIONAL PASS for a small, bounded two-agent fixture; Experiment 002 remains Proposed after Task 006 review. Both are subject to scoped research gates. This is a first step in investigating a much larger decentralized economic network; Genesis must not be reduced to an agent-payment application.
 
 Use these labels consistently:
 
@@ -41,11 +41,15 @@ Research whether open, verifiable infrastructure can let autonomous participants
 5. Support diverse operators, hardware, models, jurisdictions, and connectivity conditions where feasible.
 6. Treat privacy, accessibility, resilience, abuse resistance, and interoperability as research requirements.
 7. Preserve negative results, rejected ideas, and uncertainty.
-8. Do not presume a chain, token, consensus design, governance system, or launch.
+8. Preserve the independent-L1/native-economy research goal without presuming a validated chain design, asset necessity, consensus mechanism, governance system, token parameters or launch.
 
 ## Long-term network ambition
 
-**LONG-TERM ASPIRATION:** Explore a permissionless, model-agnostic and hardware-independent economic network in which independent participants can establish cryptographic identities or capabilities, advertise services, negotiate machine-readable agreements, exchange resources, and produce evidence that parties can verify independently. A future architecture might be an independent permissionless Layer 1, a different decentralized architecture, a combination of networks, or no new chain at all.
+**CONFIRMED RESEARCH DIRECTION / LONG-TERM ASPIRATION:** Task 006 explicitly clarifies the architectural research goal as an **independent, permissionless Layer 1 blockchain economy with a native asset**, serving humans and autonomous systems. Investigate whether AI systems can mine or earn native tokens through independently verifiable contributions, subject to useful-work measurement, consensus, Sybil resistance and economic-security research. This is a goal to investigate, not approval of a chain implementation, token launch or evidence that such a system is viable. See [ADR 0003](docs/adr/0003-independent-l1-research-direction.md).
+
+The same network and native asset should offer meaningful human utility through human-to-human, human-to-machine and machine-to-machine economic activity. Candidate utility includes exchange for compute, storage or bandwidth, payment for services and human-directed resource coordination. These are hypotheses about demand, not adoption forecasts or promises of value. Participants should be able to establish cryptographic authority, discover services, sign bounded agreements and verify actions across owners, models and hardware. A claimed AI identity or unverified output must not be treated as a scarce security resource, contribution proof or voting weight.
+
+Existing chains, layered designs, existing assets and non-chain systems remain necessary comparison baselines. Negative evidence may require revising or stopping the independent-L1/native-asset research program through explicit review; alternatives must not silently replace the stated goal. Research direction is now explicit; final protocol architecture, economic rules and production decisions remain unselected.
 
 Potential functions include permissionless discovery and routing; cryptographic authority and scoped delegation; service and contribution verification; resource markets; programmable settlement; resilient peer-to-peer communication; and long-lived protocol evolution. Offline and delayed communication, satellite links, and eventually interplanetary constraints are research environments, not current capabilities.
 
@@ -69,7 +73,17 @@ These examples describe research scenarios. They do not authorize autonomous spe
 
 ## Research program
 
-Three foundational tracks are maintained:
+### Connected research pillars
+
+Task 006 organizes the research program and roadmap around three connected pillars:
+
+1. **Verifiable Autonomous Work:** how can autonomous participants contribute objectively verifiable work and earn value? Separate proof of a valid result, useful demand, unique contribution and payment; investigate fake/duplicate work, verifier costs and collusion.
+2. **Independent Network Security:** how can an independent permissionless network secure consensus and resist Sybil attacks, including large AI-agent swarms under common control? Study scarce-resource assumptions, safety/liveness/finality, censorship, concentration and independent validation. Many agent addresses do not imply many independent operators.
+3. **Human and Machine Economy:** why would humans and machines repeatedly use the same network and native token? Investigate actual service demand, bounded authority, affordability, fees, incentives, issuance, security budgets, distribution and sustainability under low demand and adverse conditions. Token price or subsidized transaction volume alone cannot demonstrate utility.
+
+Work verification, reward eligibility and consensus validity are separate questions until evidence justifies connecting them. An economic reward is not necessarily newly issued currency; fees, market payments and protocol issuance have different accounting/security implications. No parameters are approved.
+
+The original three foundational **technical tracks** remain cross-cutting methods, not competing roadmap pillars:
 
 ### 1. Autonomous Economic Authority
 
@@ -87,7 +101,9 @@ Prior-art comparisons are ongoing. Existing systems such as Bitcoin and other Pr
 
 ## Economic architecture ambitions
 
-**RESEARCH HYPOTHESIS:** A future network may need a native asset for some combination of fees, security bonds, settlement, validator incentives, or permissionless resource exchange. A native asset may also be unnecessary, harmful, or inferior to other mechanisms. Research must justify any asset against alternatives and examine issuance, distribution, concentration, capture, sustainability, legal and operational constraints, and user harm.
+**LONG-TERM ASPIRATION:** Research a native asset used by humans and machines in the independent blockchain economy. **RESEARCH HYPOTHESIS:** fees, security bonds, settlement, validator incentives and permissionless resource exchange may justify its role. AI systems may mine or earn it for independently verified contributions, without assuming that AI computation or useful work is itself a sound consensus mechanism. Human-to-human utility is part of the goal, alongside human-to-machine and machine-to-machine exchange.
+
+Research must test necessity and sustainable demand against existing-asset/non-token alternatives and examine issuance, distribution, concentration, capture, sustainability, legal/operational constraints and user harm. It may find the asset unjustified or unsafe; such findings must be preserved and trigger explicit direction review rather than invented economic claims.
 
 Mining, contribution-linked issuance, fees, validator rewards, treasury mechanisms, and resource marketplaces are candidate research areas. No tokenomics parameters, ticker, presale, launch date, allocation, or issuance schedule is approved. There is no token.
 
@@ -99,7 +115,7 @@ Autonomous Proof of Contribution (APoC) is an **internal RESEARCH HYPOTHESIS**: 
 
 ## Network architecture research
 
-The project will investigate peer-to-peer communication, discovery and routing, synchronization, data availability, transaction propagation, storage and archival strategies, execution models, verification, light clients, partition resilience, and interoperability. Candidate structures include an independent permissionless L1, modular or layered designs, application-specific networks, and integrations with existing networks. No architecture is selected, and Ethereum is not a permanent commitment.
+The project will investigate peer-to-peer communication, discovery and routing, synchronization, data availability, transaction propagation, storage and archival strategies, execution models, verification, light clients, partition resilience, and interoperability. The target research architecture is an independent permissionless L1; modular designs, application-specific networks and integrations are comparison options or possible components subject to justification. No concrete architecture is selected, and Ethereum is not a permanent commitment.
 
 ## Developer ecosystem
 
@@ -107,13 +123,13 @@ A mature ecosystem could include full nodes, validators, light clients, wallets,
 
 ## Governance and evolution
 
-No governance model is finalized. Research should examine proposal rights, upgrade authority, client diversity, emergency powers, key rotation, standards processes, forks, and capture risks. Protocol evolution should be transparent, reviewable, and compatible with independent verification where possible. Any upgrade mechanism creates authority and attack surface; no mechanism guarantees conflict-free or universally accepted change.
+No governance model is finalized. Research should examine proposal rights, upgrade authority, client diversity, emergency powers, key rotation, standards processes, forks, and capture risks. Protocol evolution should be transparent, reviewable, and compatible with independent verification where possible. Any upgrade mechanism creates authority and attack surface; no mechanism guarantees conflict-free or universally accepted change. Long-term adaptability must address future AI, computing hardware, robotics, cryptography and communications through versioned interfaces, migration research, resource profiles and adversarial compatibility tests. These are research methods, not a guarantee of complete future-proofing.
 
 ## Security and threat assumptions
 
 Assume participants may be malicious, compromised, self-interested, offline, colluding, or operating under conflicting goals. Examine Sybil identities, censorship, equivocation, replay, fake work, denial of service, resource exhaustion, key loss, dishonest service claims, network partitions, delayed messages, malicious upgrades, and concentrated control. State assumptions about cryptography, hardware, time, identity claims, external data, dispute resolution, connectivity, and participant resources in each proposal.
 
-All experiments use synthetic identities and data. No real funds, production credentials, production deployment, unauthorized infrastructure, external compute, or external services. See `docs/THREAT_MODEL.md` and `SECURITY.md`.
+All experiments use synthetic identities and data. No real funds, production credentials, production deployment, unauthorized infrastructure, external compute, or external services. See `docs/THREAT_MODEL.md` and `SECURITY.md`. The [Experiment 002 review](docs/experiments/EXPERIMENT_002_DESIGN_REVIEW.md) distinguishes direct-predicate settlement, conditional payment progress and strong fairness; none supplies consensus or native-economy security evidence.
 
 ## Conditional milestone roadmap
 

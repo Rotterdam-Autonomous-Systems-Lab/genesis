@@ -111,3 +111,7 @@ These immutable snapshots are research references, **not adopted dependencies**.
 - Can a future independent network meet these requirements more effectively than existing or non-chain systems? This experiment cannot answer that.
 
 Before implementation, review the proposed consent change and bounded claim, exact schemas, test budget, dependency maintenance and ledger assumptions. A separate authorization is required; this task selects no production or irreversible architecture.
+
+## Task 006 review note
+
+This comparison preserves Task 005's prior-art scope and source-access limits. The founder has since clarified the independent permissionless L1/native human-and-machine economy as the explicit research goal; see [ADR 0003](../../docs/adr/0003-independent-l1-research-direction.md). The [Task 006 design review](../../docs/experiments/EXPERIMENT_002_DESIGN_REVIEW.md) amends the proposal and keeps ADR 0002 Proposed, pending scope acceptance and specification/dependency gates. The mechanism recommendation is a bounded service-settlement baseline, not a mining, native-demand, consensus or strong-fairness result.

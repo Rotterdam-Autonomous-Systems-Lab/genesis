@@ -1,8 +1,16 @@
 # Future Network Architecture Research Territory
 
-This document maps the research space for a possible independent permissionless Layer 1 (L1) or another decentralized architecture. It is not a selected design or implementation specification. Candidate approaches below are starting points for comparison; Genesis has not completed a comprehensive literature review or selected an architecture.
+This document maps the research space for the founder-defined goal of an independent permissionless Layer 1 (L1) blockchain economy with a native asset for humans and machines. Task 006 and [ADR 0003](adr/0003-independent-l1-research-direction.md) clarify the goal; other architectures remain comparison baselines. It is not a selected design or implementation specification. Candidate approaches below are starting points for comparison; Genesis has not completed a comprehensive literature review or selected an architecture.
 
 For every area, selection requires relevant prior art, explicit trust and threat assumptions, measurable requirements, comparative evidence, and review. Dependencies connect network operation, consensus, execution, economics, and participant tooling; choices cannot be made in isolation.
+
+## Research-goal requirements
+
+Map each candidate to Verifiable Autonomous Work, Independent Network Security, and Human and Machine Economy. Investigate AI mining/earning through independently verified contributions without equating useful work, reward eligibility and consensus. Include AI Sybil swarms, shared operator control, fabricated/duplicated work and colluding verifiers; address scarce-resource assumptions and accessible independent validation.
+
+The same native asset should support human-to-human, human-to-machine and machine-to-machine economic utility. Candidate services include compute, storage, bandwidth and human-directed coordination; real demand, sustainable fee/security budgets and fair access remain hypotheses. Compare issuance-funded rewards with service payments and existing-asset/no-token alternatives. No supply, ticker, issuance schedule, consensus algorithm or adoption/economic outcome is approved.
+
+Future AI, computing, robotics, cryptography and communications developments motivate modular interfaces, cryptographic migration, version compatibility and diverse resource/latency profiles. Avoid claiming guaranteed future-proofing. Experiment 002's public sum checker could inform settlement requirements but provides no mining, useful-work, native-economy or consensus result.
 
 ## 1. Network foundations
 
@@ -51,7 +59,7 @@ Before deciding whether contributions belong in consensus, incentives, or servic
 
 | Area | Candidate approaches | Main risks and dependencies | Evidence needed before choosing |
 | --- | --- | --- | --- |
-| Native asset justification | No native asset; existing assets; fee token; security asset; settlement medium; multiple specialized assets. | A token creates speculation, legal, governance, custody, volatility, and capture risks; it may not solve a real requirement. | Show a requirement that alternatives cannot satisfy; analyze user impact, attack surfaces, and legal/operational questions. |
+| Native asset justification | No native asset; existing assets; fee token; security asset; settlement medium; multiple specialized assets. | A token creates speculation, legal, governance, custody, volatility, and capture risks; it may not solve a real requirement. | Test the target native asset's role against alternatives; analyze human/machine utility, recurring demand, user impact, attack surfaces, and legal/operational questions. |
 | Distribution and issuance | No issuance; fair-launch options; mining- or contribution-linked issuance; fixed or adaptive schedules. | Premine perceptions, bot capture, concentration, sybil farming, incentive distortion, unfair access. | Simulate distribution under realistic adoption and adversarial behavior; publish assumptions and concentration outcomes. |
 | Fees and validator incentives | Fee markets, fixed or dynamic fees, rewards, external subsidy, or combinations. | Congestion pricing, censorship, volatile security budget, rent-seeking, exclusion of small transactions. | Model demand, costs, attacks, and participation under low/high usage; measure affordability and sustainability. |
 | Programmable settlement | Native execution, constrained agreement engine, or settlement through other networks. | Complex execution bugs, state bloat, cross-network bridges, dependence on privileged components. | Demonstrate necessity, deterministic behavior, bounded resources, and security under adversarial contracts or messages. |

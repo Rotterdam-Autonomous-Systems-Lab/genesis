@@ -40,3 +40,9 @@ These are **proposed properties**, not a new assessment of Experiment 001's 18 i
 ## Why fairness remains unresolved
 
 A provider can publish a usable result, lose inclusion until the deadline, and receive nothing while A refunds. An honest computation finishing too late is also unpaid. An incorrectly specified but faithfully executed predicate can pay for useless work. Physical inputs or subjective quality require additional trust. This proposal removes one peer-controlled approval gate; it does not remove ledger, time, specification, key or data-availability assumptions. Adding bonds, challengers, encryption or computation proofs changes those assumptions and must be evaluated separately.
+
+## Task 006 review additions
+
+[Design review](EXPERIMENT_002_DESIGN_REVIEW.md) retains the proposal with amended claims. **Late funding / High liveness limitation:** signed valid deadlines can still leave B insufficient time; T18 records slack and non-inclusion without promising compensation. **Absent actors / High availability limitation:** after expiry the record remains Funded until a valid refund transaction is included; T19 must distinguish enabled refund, credit and successful withdrawal. **Repeated/collusive work / High future-reward risk:** identical valid results across distinct authorized agreements are not a proof of useful or scarce contribution; T20 records this boundary, not a mining/Sybil defense.
+
+P2-11 specifies exclusive outcomes and deterministic refund rules, not automatic progress. P2-13 remains conditional collectability; P2-14 must report all attempted runs and stages, not only timely inclusions. A future native reward or consensus mechanism cannot reuse per-agreement validity as evidence of unique work or independent operators without separate research.

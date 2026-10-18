@@ -2,7 +2,21 @@
 
 ## Purpose and boundaries
 
-Translate the Genesis mission into research questions, assumptions, falsifiable hypotheses, and reproducible evaluations. The program spans autonomous economic authority, verifiable coordination, and autonomous network security. This is not a completed literature review or a protocol specification. Compare existing technologies and academic or engineering work before claiming a gap or novelty.
+Translate the Genesis mission into research questions, assumptions, falsifiable hypotheses, and reproducible evaluations. The founder-defined target is an independent permissionless L1 economy with a native asset, verifiable AI contribution/mining or reward participation, and genuine human and machine utility. The connected planning pillars are Verifiable Autonomous Work, Independent Network Security, and Human and Machine Economy. Autonomous Economic Authority, Verifiable Coordination and Autonomous Network Security remain cross-cutting technical tracks. This is not a completed literature review or a protocol specification. Compare existing technologies and academic or engineering work before claiming a gap or novelty.
+
+## Three connected research pillars
+
+| Pillar | Questions and candidate methods | Evidence limits / falsification |
+| --- | --- | --- |
+| Verifiable Autonomous Work | Define useful compute/storage/bandwidth/verification tasks; compare verification versus production costs, objective correctness, uniqueness and demand. Investigate AI earning native tokens via service payment, mining or contribution rewards without selecting a mechanism. | Fake/duplicate/padded work and colluding verifiers can invalidate reward claims. Correct arithmetic alone is not useful/scarce work; distinguish service fees from protocol issuance and consensus. |
+| Independent Network Security | Compare scarce-resource/consensus assumptions under adversarial operators creating many AI agents; model safety, liveness, censorship, concentration and independent validation costs. | Agent identity counts are not operator independence or scarce resources. A single-node prototype cannot establish secure permissionless consensus or Sybil resistance. |
+| Human and Machine Economy | Investigate recurring human-to-human, human-to-machine and machine-to-machine demand for the same network/asset; evaluate affordability, operator consent, fee/security budgets, issuance incentives and distribution under adverse demand/cost scenarios. | Subsidized volume, wash exchange or token appreciation does not establish utility or sustainability. Preserve no-demand, concentration and unsustainable-budget outcomes; no economic parameters selected. |
+
+Use existing networks/assets/non-token systems as comparative controls capable of challenging the target architecture, not silently replacing the goal. Adaptability research covers future AI, computing/robotics hardware, cryptographic migrations and communication delays; measure compatibility and authority trade-offs rather than guarantee future-proofing.
+
+## Experiment-to-pillar boundary
+
+[Experiment 001](../research/reports/EXPERIMENT_001_REPORT.md) contributes narrow authority/result-verification/settlement evidence with CONDITIONAL PASS. [Experiment 002 review](experiments/EXPERIMENT_002_DESIGN_REVIEW.md) proposes a veto-isolation test with explicit upfront consent and conditional inclusion, not a result. Both principally inform Verifiable Autonomous Work's agreement layer; they expose settlement safety/timing requirements relevant to Independent Network Security and bounded consent relevant to Human and Machine Economy. Neither supplies mining, useful-work uniqueness, consensus/Sybil resistance, native-token demand or sustainability evidence. Physical truth and subjective AI output remain distinct verification problems.
 
 ## Track 1: Autonomous Economic Authority
 

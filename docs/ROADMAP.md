@@ -2,6 +2,34 @@
 
 These stages are conditional research gates, not release promises or a commitment to ship a blockchain. Each stage can be delayed, changed, or stopped. A negative result is a valid outcome. No stage authorizes production use, real funds, or unauthorized infrastructure.
 
+## Three connected pillars
+
+The founder's Task 006 instruction makes an **independent permissionless L1 blockchain economy with a native asset** the architectural research goal; [ADR 0003](adr/0003-independent-l1-research-direction.md) records the boundary. AI systems may mine or earn through independently verified contributions only if verification, useful-work, consensus, Sybil and economic research justify a mechanism. Human utility for that same network/asset is central, including human-to-human, human-to-machine and machine-to-machine exchange. No token parameters, launch or economic outcome are approved.
+
+| Pillar | Central question | Required evidence / dependencies |
+| --- | --- | --- |
+| **1. Verifiable Autonomous Work** | How can autonomous participants make verifiable contributions and earn value? | Objective task/result criteria, independent verification cost, usefulness/uniqueness and demand; collusion/fake-work tests. Separate valid service payments, reward eligibility and consensus weight. |
+| **2. Independent Network Security** | How can a permissionless L1 secure consensus and resist Sybil attacks, including large AI-agent swarms? | Scarce-resource/operator threat models, safety/liveness/finality and censorship analysis, attack cost, concentration, accessible independent validation. Identity count alone is insufficient. |
+| **3. Human and Machine Economy** | Why would humans and machines repeatedly use the native token, and could fees, incentives, issuance and activity remain sustainable? | Concrete human/machine utility, affordability and consent; compare existing assets/non-token systems; adverse demand, security-budget and distribution analysis. No demand/adoption guarantee. |
+
+The original authority, coordination and network-security tracks remain technical methods across these pillars. Long-term adaptability across AI, computing, robotics, cryptography and communications is cross-cutting; test interfaces, migration, client diversity and delay assumptions rather than promise future-proofing.
+
+## Stage-to-pillar evidence map
+
+All three pillars must remain visible as stages progress; service-exchange success cannot substitute for network or economic evidence. This map organizes the unchanged conditional stages below.
+
+| Stages | Verifiable Autonomous Work | Independent Network Security | Human and Machine Economy |
+| --- | --- | --- | --- |
+| 0 | Prior art, objective contribution classes and verifier assumptions. | Independent-L1 requirements, consensus baselines and AI-Sybil attacker budgets. | Candidate human/machine needs, native-asset rationale and non-token controls. |
+| 1–2 | Bounded agreements/result checking, refusal and failure evidence. | Settlement/replay/accounting requirements only; no consensus or Sybil result. | Operator consent and synthetic settlement only; no adoption, issuance or demand result. |
+| 3 | Discovery, negotiation and coordination evidence. | Discovery poisoning, AI swarms, open access and operator concentration. | Matching/access/friction for human and machine roles. |
+| 4 | Useful contribution, uniqueness, verification/production cost and fake-work tests. | Determine whether contribution belongs in consensus, rewards or a market. | Compare service fees and issuance/subsidy costs; real usefulness remains to be demonstrated. |
+| 5–6 | Specify task/verifier interfaces from evidence. | Analyze consensus/Sybil/finality/censorship and independent-L1 architecture; no novelty required for a valid baseline. | Model sustainable security budgets, demand and distribution without selecting premature parameters. |
+| 7–8 | Reproducible implementations and adversarial/independent review. | Local multi-node faults, client/operator diversity, then only separately authorized testnet review. | Synthetic economics and reviewed user/operational evidence; do not equate test activity with adoption. |
+| 9–10 | Ongoing contribution correctness, accessibility and utility. | Separately approved production security, decentralization and verifiable upgrades. | Continuing demand, affordability, fee/incentive/issuance risks, distribution and capture monitoring. |
+
+## Conditional stages
+
 | Stage | Prerequisites | Deliverables | Measurable exit criteria | Major risks |
 | --- | --- | --- | --- | --- |
 | **0. Project foundation and prior-art research** | Charter and evidence labels adopted. | Research questions, annotated prior-art map, threat model, experiment standards. | Each core track has bounded questions, cited references, stated gaps and search limits; threat review identifies key assumptions. | Premature narrowing, missed prior art, unexamined assumptions. |
@@ -59,3 +87,7 @@ The [six-mechanism comparison](../research/experiments/EXPERIMENT_002_FAIR_EXCHA
 **Proposed exit/security-review gate:** at least two fresh separate-process exchanges, refusal/offline-requester collection with timely canonical claims, no invalid/unauthorized/over-cap/replayed payment, deterministic refund and conserved accounting, signature/retry/deadline/fault tests and reviewed reproducibility evidence. Report the intentional output-leakage/non-inclusion counterexample and all inconclusive runs. Strong fair exchange, useful outsourcing and production assurance are not exit claims.
 
 **Status and risks:** design proposal only, not executed or accepted. Misspecified predicates, expensive verification, censorship, late claims, key loss and communication failures remain risks. No automatic stage completion or next-task authorization follows; Stages 3–10 and independent-network/consensus/native-asset research remain intact.
+
+## Task 006 review disposition
+
+[Experiment 002 design review](experiments/EXPERIMENT_002_DESIGN_REVIEW.md): **amend and remain Proposed**, not implementation-ready. H2-C now distinguishes exclusive outcomes/refund availability from automatic progress. T18–T20 add late-funding, absent-caller and repeated-work controls; all earlier planned tests remain. Close R1–R3 (scope/consent, schema/vector/timing freeze, reviewed pinned dependencies and evidence mapping) in a small specification-finalization task before separate implementation authorization. No stage completion, native-token result or consensus conclusion follows.

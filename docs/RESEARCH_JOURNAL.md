@@ -56,6 +56,14 @@ Proposed a separate [Experiment 002](experiments/EXPERIMENT_002.md), [architectu
 
 This is documentation only: no Experiment 002 implementation, benchmark, executed test or security result exists. Experiment 001's published CONDITIONAL PASS, 112-test milestone and requester-veto semantics remain unchanged. Existing regression CI, if successful for this documentation commit, is evidence about Experiment 001 only. Resolve the task commit and CI through Git history/Actions rather than predeclaring success here. Next proposed task: founder/design review of the consent change, assumptions and test plan, then a separately authorized bounded implementation. No final Genesis chain, consensus, native asset or production architecture is chosen.
 
+## 2026-10-18 — Vision alignment and Experiment 002 design review (Task 006)
+
+The founder's Task 006 instruction explicitly clarifies an independent permissionless L1/native human-and-machine economy as the long-term research goal, including AI mining/earning through independently verifiable contributions and genuine human utility. [ADR 0003](adr/0003-independent-l1-research-direction.md) records research-scope acceptance only; no chain, asset, consensus, issuance parameters or economic outcome is approved. Updated canonical vision/charter, architecture territory and research documents; organized all roadmap stages around Verifiable Autonomous Work, Independent Network Security and Human and Machine Economy, retaining the original technical tracks and historical reconstruction.
+
+The [Experiment 002 review](experiments/EXPERIMENT_002_DESIGN_REVIEW.md) concludes **amend and remain Proposed**, not implementation-ready. H2-C now distinguishes exclusive outcomes/refund availability from automatic closure, and provider progress is reported independently of timely-inclusion safety. T18–T20 add late-funding, absent-caller and repeated-work controls without removing T01–T17. Upfront consent remains a candidate for veto isolation, not proof of general fairness, unique useful contributions, Sybil resistance, consensus or native demand.
+
+Documentation/design review only: no Experiment 002 code, deployment or executed evidence. Experiment 001's publication, 112-test milestone, implementation and control semantics remain unchanged. Next recommended task: close review gates R1–R3 in specification finalization, explicitly decide on ADR 0002, then separately authorize bounded implementation if accepted. This entry's commit and regression CI are recoverable from Git history/Actions; regression CI is not Experiment 002 evidence.
+
 ## Source boundary
 
 This journal does not infer events beyond the repository record. See [`SESSION_HANDOFF.md`](SESSION_HANDOFF.md) for current working context and the reusable handoff format.

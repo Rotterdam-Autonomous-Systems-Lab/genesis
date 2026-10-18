@@ -12,7 +12,7 @@ The [six-mechanism comparison](../../research/experiments/EXPERIMENT_002_FAIR_EX
 
 - **H2-A, conditional collectability:** after valid funding, a bound correct provider claim canonically included strictly before claimBefore credits exactly the agreed principal to the provider without a post-funding requester action. Requester refusal or shutdown cannot veto that transition.
 - **H2-B, payment safety:** incorrect results, invalid signatures/bindings, replay, consumed/revoked first-use authority, expired actions and unauthorized callers cannot move principal contrary to the signed terms or exceed the spending cap.
-- **H2-C, deterministic closure:** no valid settlement before claimBefore permits requester refund at/after claimBefore; exactly one terminal transition occurs, with conserved principal/credits and own-account withdrawal.
+- **H2-C, exclusive outcomes and conditional refund availability:** at most one terminal transition can occur. If still Funded at/after claimBefore, a live authorized requester can obtain a refund credit through a canonically included transaction; withdrawal requires its own successful transaction. With no live caller or no inclusion, a record may remain Funded indefinitely. Principal/credits are conserved; no automatic closure or unconditional refund liveness is claimed.
 
 A counterexample inside the stated environment falsifies the corresponding hypothesis. Non-inclusion, reorganization, host failure or key loss must be separately recorded as outside a hypothesis premise or inconclusive execution; never discard these runs from the report. A deliberate result-leakage/censored-claim run should show that unconditional compensation and strong fair exchange are **not** established.
 
@@ -67,4 +67,10 @@ Success requires every mandatory [test-plan](EXPERIMENT_002_TEST_PLAN.md) assert
 
 **FAIL:** unauthorized/incorrect payout, requester veto of a timely valid funded claim, cap/replay/terminal-state/accounting breach, or claimed success without canonical payment evidence. **CONDITIONAL PASS:** all core safety/collectability/closure assertions hold but named noncritical evidence or coverage gaps remain, with reviewer rationale. **PASS within the bounded model:** all predeclared criteria and review gates are met; still not a strong-fairness proof or production approval. Missing mandatory safety tests or an untested core hypothesis cannot be hidden behind conditional acceptance.
 
-Current assessment: **NOT EXECUTED**. Next proposed task: founder/design review of the consent change, hypotheses, threat assumptions and test plan, followed only by a separately authorized implementation task. No architecture is adopted by this specification.
+Current assessment: **NOT EXECUTED**. [Task 006 design review](EXPERIMENT_002_DESIGN_REVIEW.md) amends closure/progress claims and keeps ADR 0002 Proposed. Next recommended task: specification finalization against review gates R1–R3, followed only by separate implementation authorization. No architecture is adopted by this specification.
+
+## Task 006 vision alignment and progress evidence
+
+The target research direction is an independent permissionless L1 economy where AI systems may earn native tokens through independently verified contributions and humans/machines share meaningful economic utility. This experiment addresses only a small service-settlement question. It supplies no native issuance, mining eligibility, useful-work uniqueness, consensus/Sybil resistance, sustainable demand or future-proofing evidence.
+
+Separate valid-claim safety from provider progress: record canonical funding observation, first claim submission, canonical inclusion, credit and withdrawal, with remaining claim-time slack at each step. Report all attempted runs, including late funding, censorship, key loss, stalled actors and inconclusive outcomes. Never restrict the outcome denominator to already timely included claims. No numerical progress target for a real permissionless network is claimed.
