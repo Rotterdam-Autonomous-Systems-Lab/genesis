@@ -11,9 +11,9 @@ Use this document to carry concise project context between Codex sessions and co
 ### Completed work
 
 - Traced contract/agents/codec/signer/supervisor, frozen specs, cost/toolchain assumptions, tests and archived evidence at `2161dc2b32c2e4b872bf1ebfee63aa1b6b9a544c`.
-- R013-01 Medium: aggregate supervisor audit accepts swapped credit owners. R013-02 Medium: inconsistent current receipt fee fields/transaction identities accept; preflight can allow a subsequent bounded send. R013-03 Low: ready barriers/signer do not enforce expired wall deadline before acting.
-- Six [review characterization/control tests](../tests/experiment002/test_review013.py) reproduce findings, verify contract negative controls and archive arithmetic. Existing assertions/caps/code/pins are untouched. Green characterization tests mean unresolved defects reproduce, not that they were repaired.
-- [Acceptance assessment](experiments/EXPERIMENT_002_AGENT_ACCEPTANCE.md) now points to the review; historical observations/archive are retained. Local regressions passed: 86 Solidity, 54 original Python and 58 Experiment 002 Python tests; check the review commit's Actions result.
+- R013-01 Medium: aggregate supervisor audit accepts swapped credit owners. R013-02 Medium: inconsistent current receipt fee fields/transaction identities accept; preflight can allow a subsequent bounded send. R013-03 Low: ready barriers/signer do not enforce expired wall deadline before acting. R013-04 Medium: initial review CI errored at existing late-funding setup (funding reverted); exact failed-run timestamp evidence is unavailable.
+- Seven [review characterization/control tests](../tests/experiment002/test_review013.py) reproduce findings, verify contract negative controls and archive arithmetic. Existing assertions/caps/code/pins are untouched. Green characterization tests mean unresolved defects reproduce, not that they were repaired.
+- [Acceptance assessment](experiments/EXPERIMENT_002_AGENT_ACCEPTANCE.md) now points to the review; historical observations/archive are retained. Local regressions passed: 86 Solidity, 54 original Python and 59 Experiment 002 Python tests; check the review commit's Actions result.
 
 ### Open questions
 
@@ -25,7 +25,7 @@ Recommend separately authorized minimal evidence-checker/deadline hardening. Con
 
 ### Blockers
 
-R013-01/02 block mandatory P2-14/T12/T16 evidence closure. R013-03 needs explicit runtime remediation/disposition. No implementation fix was authorized/performed in this review task. A passing CI is reproduction/regression evidence, not a clearance of the findings.
+R013-01/02 block mandatory P2-14/T12/T16 evidence closure. R013-03 needs explicit runtime remediation/disposition; R013-04 requires captured failure evidence and deterministic valid-late-funding setup. No implementation fix was authorized/performed in this review task. A passing CI is reproduction/regression evidence, not a clearance of the findings.
 
 ### Relevant commits
 

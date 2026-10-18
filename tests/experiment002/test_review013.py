@@ -11,7 +11,7 @@ import unittest
 from unittest.mock import Mock, patch
 from web3 import Web3
 from web3.exceptions import ContractLogicError
-from genesis_experiment.protocol import Inconclusive
+from genesis_experiment.protocol import Inconclusive, Rejected
 from genesis_experiment002.chain import Chain, RESERVATION
 from genesis_experiment002.protocol import PRICE
 from genesis_experiment002.protocol import wire, tuple_for, write
@@ -144,6 +144,29 @@ class EvidenceCounterexamples(unittest.TestCase):
             self.fund()
         self.assertEqual(self.chain.record(self.id)[2], 1)
         self.assertEqual(self.chain.budget.used, 1)
+        self.assertEqual(self.chain.budget.reserved, RESERVATION)
+
+    def test_R013_04_last_second_funding_can_expire_at_inclusion(self):
+        self.fixture.advance(int(self.t["fundBefore"]) - 1)
+        self.assertEqual(
+            self.fixture.w3.eth.get_block("latest")["timestamp"],
+            int(self.t["fundBefore"]) - 1,
+        )
+        # Deterministic controlled inclusion, not proof of the failed CI's timestamp.
+        self.fixture.rpc_call("evm_setNextBlockTimestamp", [int(self.t["fundBefore"])])
+        with self.assertRaises(Rejected):
+            self.fund()
+        receipt = self.chain.receipts[-1]
+        self.assertEqual(receipt["status"], 0)
+        self.assertEqual(
+            self.fixture.w3.eth.get_block(receipt["blockNumber"])["timestamp"],
+            int(self.t["fundBefore"]),
+        )
+        self.assertEqual(self.chain.record(self.id)[2], 0)
+        self.assertEqual(
+            self.fixture.contract.functions.nonceStatus(self.a.address, 0).call(), 0
+        )
+        self.assertEqual(self.fixture.contract.functions.lockedPrincipal().call(), 0)
         self.assertEqual(self.chain.budget.reserved, RESERVATION)
 
     def test_contract_rejects_copied_claim_wrong_result_and_duplicate(self):
