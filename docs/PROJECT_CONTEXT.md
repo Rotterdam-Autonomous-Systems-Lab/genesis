@@ -1,5 +1,9 @@
 # Genesis Project Context
 
+## Task 017 current status — comparative specification, no implementation
+
+[Workloads W01–W08](architecture/NATIVE_L1_WORKLOADS.md), [authority/settlement/recovery](architecture/NATIVE_L1_AUTHORITY_SETTLEMENT_RECOVERY.md), [consensus premises](architecture/NATIVE_L1_CONSENSUS_ASSUMPTIONS.md), [budgets](architecture/NATIVE_L1_RESOURCE_BUDGETS.md) and [proposed experiment](architecture/NATIVE_L1_NEXT_EXPERIMENT.md) define a common bounded evaluation framework. Caps are proposed lab controls, not native capabilities; model ordering/checkpoint oracle does not solve consensus. Shared grant reserves, stable logical intents and durable recovery must be compared at identical semantics. No candidate eliminated; G0 independent review/vector/adapter freeze pending, G1 unrun. Recommend separately authorized Task 018 reference models after that freeze; no native devnet/token/monetary policy or final design selected. MASTER_PLAN and both experiments preserved.
+
 ## Task 016 current status — native architecture research, no selection
 
 [Native L1 foundations](architecture/NATIVE_L1_RESEARCH.md), [matrix](architecture/NATIVE_L1_DECISION_MATRIX.md), [risks](architecture/NATIVE_L1_RISKS.md) and [proposed gate](architecture/NATIVE_L1_DECISION_GATE.md) compare accounts, objects and extended UTXO with execution and consensus as separate axes. Experiment 002 is [BOUNDED CONDITIONAL PASS — READY TO CLOSE](experiments/EXPERIMENT_002_FINAL_REVIEW.md); native consensus, useful-work scarcity, secure offline recovery and real demand remain unverified. Next recommendation: comparative authority/settlement/recovery specification, then separately authorized bounded models. No final architecture, asset, monetary policy, chain implementation or discovery capability selected. MASTER_PLAN and all experiment/security boundaries are preserved; older statuses below are historical.

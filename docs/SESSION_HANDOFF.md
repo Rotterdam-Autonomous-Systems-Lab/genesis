@@ -2,7 +2,15 @@
 
 Use this document to carry concise project context between Codex sessions and contributors. Update the current handoff after significant work; preserve prior handoffs in Git history where useful. Do not put secrets, credentials, or local-only notes here.
 
-## Current handoff — 2026-10-18 (Task 016)
+## Current handoff — 2026-10-19 (Task 017)
+
+Research/specification only. Five canonical documents: [workloads](architecture/NATIVE_L1_WORKLOADS.md), [authority/settlement/recovery](architecture/NATIVE_L1_AUTHORITY_SETTLEMENT_RECOVERY.md), [consensus assumptions](architecture/NATIVE_L1_CONSENSUS_ASSUMPTIONS.md), [budgets](architecture/NATIVE_L1_RESOURCE_BUDGETS.md), [next experiment](architecture/NATIVE_L1_NEXT_EXPERIMENT.md). Eight workloads share I1–I8, deterministic logical intent/operation schemas, cumulative principal/fee reserve semantics, expiry/revoke ordering and journal/evidence recovery; each maps account/object/eUTXO obligations without free external infrastructure.
+
+No candidate eliminated; final native architecture unsupported. Budget numbers are proposed finite laboratory controls, not performance results. Native scarce-resource bootstrap and authenticated finality/recovery remain the most consequential unresolved dependency; toy ordering/proof oracle cannot close it. Physical services, discovery, true demand, secure offline transfer and useful-AI-work consensus are unverified. MASTER_PLAN, Experiments 001/002, implementation, caps, dependencies and workflow unchanged.
+
+Next recommendation: independent adversarial schema/vector/adapter and corpus freeze (G0), then separately authorized Task 018 bounded shared-budget/crash-recovery models (G1). No nodes/consensus/wallet/token implementation in Task 017. Proposed accountability roles are listed in the next-experiment document; no appointments or independent review are claimed. Baseline `5ebb298138bc222822af07def0e77b9112bd77bc`; Task 017 commit introduces these specifications. Documentation checks passed for 11 changed Markdown documents and 162 local links, structure, workload/invariant/budget coverage and protected-file preservation. Required push CI is the remaining publication gate; inspect the Task 017 commit’s run.
+
+## Previous handoff — 2026-10-18 (Task 016)
 
 Research/documentation only. [Native L1 report](architecture/NATIVE_L1_RESEARCH.md), [decision matrix](architecture/NATIVE_L1_DECISION_MATRIX.md), [open risks](architecture/NATIVE_L1_RISKS.md) and [next gate](architecture/NATIVE_L1_DECISION_GATE.md) separate experimental evidence from architecture hypotheses. Candidates: account/module-or-VM + stake-BFT; owned/shared objects/resource VM + stake-BFT; extended UTXO/restricted validation + PoW contrast. Pairings are research configurations, not selected stacks; state and consensus comparisons must control different variables.
 

@@ -1,5 +1,7 @@
 # Proposed next architecture decision gate — Task 016
 
+**Task 017 follow-up:** [W01–W08 workloads](NATIVE_L1_WORKLOADS.md), [common authority/recovery semantics](NATIVE_L1_AUTHORITY_SETTLEMENT_RECOVERY.md), [consensus assumptions](NATIVE_L1_CONSENSUS_ASSUMPTIONS.md), [experimental budgets](NATIVE_L1_RESOURCE_BUDGETS.md) and [next gate](NATIVE_L1_NEXT_EXPERIMENT.md) supply comparative specifications. G0 review/vector/adapter freeze remains pending; G1 is not run. No final architecture or candidate elimination follows. Earlier next-task language below is historical.
+
 **Proposal, not implementation authorization.** Recommended Task 017: **Comparative authority, settlement and recovery specification** for [C1–C3](NATIVE_L1_DECISION_MATRIX.md), with a separate consensus/admission threat model. Status: READY to specify comparative research; **NOT READY to select or implement a native L1**.
 
 ## Question and competing hypotheses

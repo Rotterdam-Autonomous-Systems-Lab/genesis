@@ -1,5 +1,7 @@
 # Native L1 decision matrix — Task 016
 
+**Task 017 follow-up:** [W01–W08 workloads](NATIVE_L1_WORKLOADS.md), [common authority/recovery semantics](NATIVE_L1_AUTHORITY_SETTLEMENT_RECOVERY.md), [consensus assumptions](NATIVE_L1_CONSENSUS_ASSUMPTIONS.md), [experimental budgets](NATIVE_L1_RESOURCE_BUDGETS.md) and [next gate](NATIVE_L1_NEXT_EXPERIMENT.md) supply comparative specifications. G0 review/vector/adapter freeze remains pending; G1 is not run. No final architecture or candidate elimination follows. Earlier next-task language below is historical.
+
 **Research judgments, not measured scores or a selection.** Read the [requirements and primary sources](NATIVE_L1_RESEARCH.md), [risks](NATIVE_L1_RISKS.md) and [gate](NATIVE_L1_DECISION_GATE.md). N-01–N-08 refer to the report. State, execution and consensus remain separable.
 
 ## State-model comparison
