@@ -1,5 +1,9 @@
 # Genesis Project Context
 
+## Task 016 current status — native architecture research, no selection
+
+[Native L1 foundations](architecture/NATIVE_L1_RESEARCH.md), [matrix](architecture/NATIVE_L1_DECISION_MATRIX.md), [risks](architecture/NATIVE_L1_RISKS.md) and [proposed gate](architecture/NATIVE_L1_DECISION_GATE.md) compare accounts, objects and extended UTXO with execution and consensus as separate axes. Experiment 002 is [BOUNDED CONDITIONAL PASS — READY TO CLOSE](experiments/EXPERIMENT_002_FINAL_REVIEW.md); native consensus, useful-work scarcity, secure offline recovery and real demand remain unverified. Next recommendation: comparative authority/settlement/recovery specification, then separately authorized bounded models. No final architecture, asset, monetary policy, chain implementation or discovery capability selected. MASTER_PLAN and all experiment/security boundaries are preserved; older statuses below are historical.
+
 ## Task 014 current status — remediation pending re-review
 
 [Evidence/workflow remediation](experiments/EXPERIMENT_002_REMEDIATION.md) implements owner/state reconstruction, pinned/repeated observations, full receipt/own-intent consistency and sticky submission failure, shared cooperative deadlines, and controlled last-valid late funding with failure diagnostics. Existing caps, contract, schemas, Anvil/Cancun profile, Experiment 001 and MASTER_PLAN are unchanged. All prior review scenarios remain as rejection/boundary regressions. Original late-funding CI timing cannot be conclusively reconstructed, but the old scheduling-sensitive mechanism reproduces and current fixture controls inclusion without extending terms. **Independent re-review may proceed after required publication CI; acceptance/closure is not automatically granted.** Earlier statuses below are historical.

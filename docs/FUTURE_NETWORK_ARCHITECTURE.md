@@ -1,5 +1,7 @@
 # Future Network Architecture Research Territory
 
+**Task 016:** [Native L1 foundations](architecture/NATIVE_L1_RESEARCH.md) adds evidence-derived requirements, a candidate decision matrix, unresolved risks and a proposed comparative gate. No final architecture is selected; Experiment 002 is [closed as a bounded conditional result](experiments/EXPERIMENT_002_FINAL_REVIEW.md). Earlier milestone language below retains its historical scope.
+
 This document maps the research space for the founder-defined goal of an independent permissionless Layer 1 (L1) blockchain economy with a native asset for humans and machines. Task 006 and [ADR 0003](adr/0003-independent-l1-research-direction.md) clarify the goal; other architectures remain comparison baselines. It is not a selected design or implementation specification. Candidate approaches below are starting points for comparison; Genesis has not completed a comprehensive literature review or selected an architecture.
 
 For every area, selection requires relevant prior art, explicit trust and threat assumptions, measurable requirements, comparative evidence, and review. Dependencies connect network operation, consensus, execution, economics, and participant tooling; choices cannot be made in isolation.

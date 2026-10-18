@@ -2,7 +2,17 @@
 
 Use this document to carry concise project context between Codex sessions and contributors. Update the current handoff after significant work; preserve prior handoffs in Git history where useful. Do not put secrets, credentials, or local-only notes here.
 
-## Current handoff — 2026-10-18 (Task 015 completed)
+## Current handoff — 2026-10-18 (Task 016)
+
+Research/documentation only. [Native L1 report](architecture/NATIVE_L1_RESEARCH.md), [decision matrix](architecture/NATIVE_L1_DECISION_MATRIX.md), [open risks](architecture/NATIVE_L1_RISKS.md) and [next gate](architecture/NATIVE_L1_DECISION_GATE.md) separate experimental evidence from architecture hypotheses. Candidates: account/module-or-VM + stake-BFT; owned/shared objects/resource VM + stake-BFT; extended UTXO/restricted validation + PoW contrast. Pairings are research configurations, not selected stacks; state and consensus comparisons must control different variables.
+
+Completed: charter/ADRs/experiment evidence and primary technical source review; N-01–N-08 requirements, A-01–A-10 risk register, expensive commitments, machine-participation/economic boundaries and falsifiable gate. No native chain, asset, monetary policy, discovery, final architecture or new consensus result. MASTER_PLAN, prior experiments, implementation, caps and dependencies preserved. Source review is focused, not exhaustive; benchmarks/audits not reproduced.
+
+Next recommended Task 017: comparative authority, settlement and durable-recovery specification plus independent consensus/admission threat model (G0); only a later separately authorized task may build disposable models (G1). Blockers to final selection: no native workload/device budgets, comparative semantics/resource results, dynamic-participation/security economics, authenticated offline/light-client recovery or demand evidence. No implementation is authorized by the report.
+
+Baseline `ce657ccf244f9b94168518934aae4f61b361fcff`; Task 016 commit is the commit introducing these reports. Documentation checks passed: eight changed Markdown files, 144 local link targets, table/fence/newline structure, whitespace and protected-file preservation. Required push-triggered CI remains the publication gate; inspect this commit’s run. Preserve Task 015 bounded closure and historical failed inclusion-timing uncertainty.
+
+## Previous handoff — 2026-10-18 (Task 015 completed)
 
 [Final review](experiments/EXPERIMENT_002_FINAL_REVIEW.md): **BOUNDED CONDITIONAL PASS — READY TO CLOSE** for the unchanged synthetic local Experiment 002. Earlier environment-blocked verdict/evidence is preserved in the review and below. No unconditional PASS, general fairness, native-network, token, consensus or autonomous-discovery result.
 

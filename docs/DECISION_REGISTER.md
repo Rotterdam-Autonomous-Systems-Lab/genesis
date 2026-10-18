@@ -99,3 +99,7 @@ Initial Task 013 [publication CI](https://github.com/Rotterdam-Autonomous-System
 ## Task 014 — authorized remediation, acceptance remains under review
 
 [Remediation](experiments/EXPERIMENT_002_REMEDIATION.md) implements the existing criteria with owner/state modeling, consistent pinned observations, sticky failure/no-new-signing, shared cooperative deadlines and deterministic late-test inclusion. No architectural/economic or authorization-rule change follows; all caps/pins and historical findings/failures remain. Independent re-review may proceed after final publication CI passes; final acceptance/closure is not authorized merely by green tests. Original failed CI timing is not recovered; current clock mechanism/fix has separate reproducible evidence.
+
+## Task 016 — architecture research without selection
+
+The [research report](architecture/NATIVE_L1_RESEARCH.md) and [decision matrix](architecture/NATIVE_L1_DECISION_MATRIX.md) retain three candidate families for comparison, with separate state/execution and consensus/Sybil assumptions. This records research outputs, not an accepted stack or protocol decision; no new ADR is warranted. [Risks and expensive commitments](architecture/NATIVE_L1_RISKS.md) and [G0/G1 gates](architecture/NATIVE_L1_DECISION_GATE.md) define evidence still needed. Experiment 002 closure supports bounded contingent settlement only, not native-network security or economics. No existing decision or MASTER_PLAN is changed.
