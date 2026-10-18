@@ -10,7 +10,7 @@ Completed: charter/ADRs/experiment evidence and primary technical source review;
 
 Next recommended Task 017: comparative authority, settlement and durable-recovery specification plus independent consensus/admission threat model (G0); only a later separately authorized task may build disposable models (G1). Blockers to final selection: no native workload/device budgets, comparative semantics/resource results, dynamic-participation/security economics, authenticated offline/light-client recovery or demand evidence. No implementation is authorized by the report.
 
-Baseline `ce657ccf244f9b94168518934aae4f61b361fcff`; Task 016 commit is the commit introducing these reports. Documentation checks passed: eight changed Markdown files, 144 local link targets, table/fence/newline structure, whitespace and protected-file preservation. Required push-triggered CI remains the publication gate; inspect this commit’s run. Preserve Task 015 bounded closure and historical failed inclusion-timing uncertainty.
+Baseline `ce657ccf244f9b94168518934aae4f61b361fcff`; Task 016 commit is the commit introducing these reports. Documentation checks passed: eight changed Markdown files, 145 local link targets, table/fence/newline structure, whitespace and protected-file preservation. Required push-triggered CI remains the publication gate; inspect this commit’s run. Preserve Task 015 bounded closure and historical failed inclusion-timing uncertainty.
 
 ## Previous handoff — 2026-10-18 (Task 015 completed)
 
