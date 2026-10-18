@@ -32,3 +32,16 @@ internal/agent-venv/bin/python research/compatibility/experiment002/check_anvil_
 ```
 
 This new diagnostic differs from the Task 008 stateless probes: it creates fresh in-memory development keys, prefunds only synthetic initial allowances, deploys the isolated Experiment 002 contract and sends one zero-value revocation on temporary loopback Anvil. It sets a controlled base fee and compares receipt fee with the actual wallet debit. No keys/raw signed transactions are printed or persisted; child cleanup is mandatory. **Exit 2 records the known contradiction and blocks acceptance.** See [observed numeric evidence](task009-fee-receipt-evidence.json). It is not silently added as a passing test or used to overwrite Experiment 001 results. Existing CI runs the discovered contract tests and original agent controls; full Experiment 002 CI remains blocked.
+
+## Task 010 independent raw-RPC investigation
+
+After the unchanged pinned build, run:
+
+```sh
+internal/agent-venv/bin/python -m unittest discover -s research/compatibility/experiment002 -p 'test_fee_*.py' -v
+internal/agent-venv/bin/python research/compatibility/experiment002/investigate_fee_receipts.py --repeats 2
+```
+
+The 14 tests characterize the known defect and test strict rejection, including mutated evidence. The CLI executes 22 fresh bounded nodes (11 cases twice), prints public raw-hex and integer measurements, and **returns 2** when contradiction remains. No receipt value is normalized. HTTP is literal loopback with proxies/redirects disabled; no agent code/key files/raw signed transactions or public calls. Test-only [FeeWitness](../../../contracts/test/FeeWitness.sol) supplies GASPRICE/BASEFEE observations; full [evidence](task010-fee-evidence.json) and [source references](task010-source-review.json) are public synthetic data. No unverified archive was executed.
+
+See [Task 010 report](../../../docs/experiments/EXPERIMENT_002_FEE_INVESTIGATION.md): **STILL BLOCKED**, despite green characterization. The required original gate remains unchanged. Corrected-node source exists, but binary/full compatibility validation and explicit dependency review remain necessary. No incomplete agent workflow is resumed or new toolchain adopted here.

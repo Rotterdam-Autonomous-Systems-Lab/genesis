@@ -1,0 +1,31 @@
+{
+  "baseline": {
+    "commit": "8692e926198056d0228c1e166b1b6c34a5bed66c",
+    "minedTransactionLines": [
+      2941,
+      2955
+    ],
+    "path": "crates/anvil/src/eth/backend/mem/mod.rs",
+    "receiptLines": [
+      2348,
+      2366
+    ],
+    "sha256": "d2736af798608622b700c3f618ec617250a949b9c1d40e1c53feb6720c616f5a"
+  },
+  "candidate": {
+    "asset": "foundry_v1.8.5_darwin_amd64.tar.gz",
+    "binaryValidation": "NOT PERFORMED: one bounded download timed out; partial archive did not match expected checksum and was never extracted/executed. No retry or pin replacement.",
+    "commit": "51a52c59cffd940f76eddd0b4bb1791aa4b5ac7f",
+    "expectedArchiveSha256": "b919f69bb4231ad68beaaba9dc8f7d36d9d552cef1a76a8bf69c2bdfd974339a",
+    "partialArchiveBytes": 126533605,
+    "partialArchiveSha256": "abd11076b0ffe5372d89781af206a67d356ca6bc657ea182f0bbc5b4e518283e",
+    "sourceSha256": "bb4dce7ab3a5c7130d9deae611c9446d59c91125af9403c99b472341f0ef1579",
+    "version": "v1.8.5"
+  },
+  "upstreamReceiptCorrection": {
+    "commit": "75151e9cae397d34034c1d03defc4f94b6363a3c",
+    "committedAt": "2025-11-24T09:04:12Z",
+    "pullRequest": 12639,
+    "scope": "Source evidence only; no backport or dependency adoption."
+  }
+}

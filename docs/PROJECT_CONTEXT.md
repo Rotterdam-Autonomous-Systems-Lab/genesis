@@ -24,6 +24,12 @@ Task 009 separately authorized bounded local implementation. An [isolated Solidi
 
 No complete Experiment 002 agent workflow is released. The partial agent draft is local-only under ignored internal notes; all mandatory integrated scenarios/cost controls still require reviewed evidence. ADR 0002 remains accepted design only. Do not silently upgrade dependencies, replace canonical fee evidence, raise budgets or claim acceptance. Next recommended task is independent reproduction/root-cause and explicit dependency/evidence-policy review, then resume implementation only after the blocker is resolved.
 
+## Task 010 current status — root cause diagnosed, still blocked
+
+The [fee investigation](experiments/EXPERIMENT_002_FEE_INVESTIGATION.md) reproduces the discrepancy through raw JSON-RPC, sender balances and an EVM GASPRICE/BASEFEE witness. The pinned Anvil source omits the total-fee clamp in mined receipt and transaction reporting; actual charges respect the cap. Two clean runs of 11 cases give 12 reconciled, eight contradictory and two not included. The strict checker still rejects contradictions; no fee cap, signature, escrow or agent policy changed.
+
+**STILL BLOCKED:** an upstream source correction and a source-reviewed v1.8.5 candidate exist, but the one candidate binary download timed out and failed integrity validation. It was never executed/adopted. The original baseline and Experiment 001/002 regressions are preserved. The incomplete agents remain paused; do not infer readiness from green discrepancy-characterization CI. Next task is verified corrected-node acquisition and full compatibility review, followed by an explicit dependency decision before implementation resumes.
+
 ## Core principles
 
 “The network must not need to trust the intelligence of its participants. It must only need to verify their actions.” Treat this as a research principle, not a proven universal property. Prioritize bounded cryptographic authority, security, verifiability, interoperability, open participation, privacy, resilience, and honest reporting of uncertainty.

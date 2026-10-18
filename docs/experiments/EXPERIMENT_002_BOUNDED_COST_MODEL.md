@@ -60,3 +60,11 @@ No real-money asset loss is authorized; zero real-fund exposure relies on local-
 5. Execute T01–T20 plus these controls, measure future component gas against ceilings, run wall-time/child cleanup tests and report all incomplete outcomes. The [integer arithmetic check](../../research/compatibility/experiment002/check_fee_bounds.py) currently covers 20 formula cases and role-bound exhaustion; it is not an implemented budget manager, signer test or empirical inclusion experiment.
 
 B-FEE is resolved because meaningful finite policy limits are now specified and numerically checked. Implementation readiness does not assert those controls already exist in Experiment 002; their enforcement is mandatory acceptance evidence in the separately authorized implementation task.
+
+## Task 010 — derived RPC metadata and isolated balance evidence
+
+[Investigation](EXPERIMENT_002_FEE_INVESTIGATION.md) confirms the cost equation and strict gate are correct: effectivePrice = baseFee + min(priorityCap, feeCap - baseFee) for includable type-2 transactions. Pinned Anvil instead reports baseFee + priorityCap in receipt/mined-transaction RPC fields; raw RPC and opcode/balance evidence establish a reporting defect, not observed excess charging. The same error exists at the one-wei clamp boundary and on reverts. Do not normalize or bypass it.
+
+Fee-added RPC metadata is not authenticated merely by checking block/transaction membership. Require independent arithmetic, canonical anchors and appropriate wallet/accounting evidence to agree. BalanceBefore - BalanceAfter equals fee only for isolated zero-value calls without incoming transfers, another sender transaction or coinbase payment. Real fixture funding/withdrawal accounting must include principal flows; the new diagnostic oracle deliberately does not implement that general audit.
+
+No fee/attempt/reservation/principal/run limits change. **Compatibility remains BLOCKED** pending a verified corrected-node decision. A mathematical bound and green defect-characterization tests do not establish complete signer enforcement or agent readiness. No dependency or agent code is adopted by this investigation.

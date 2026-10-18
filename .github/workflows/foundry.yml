@@ -45,5 +45,7 @@ jobs:
         env:
           PYTHONPATH: sdk/python
         run: internal/agent-venv/bin/python -m unittest discover -s tests/python -v
+      - name: Pinned-Anvil fee discrepancy characterization (not Experiment 002 acceptance)
+        run: internal/agent-venv/bin/python -m unittest discover -s research/compatibility/experiment002 -p 'test_fee_*.py' -v
       - name: End-to-end independent-agent experiment (loopback synthetic funds only)
         run: scripts/run-experiment-001.sh
