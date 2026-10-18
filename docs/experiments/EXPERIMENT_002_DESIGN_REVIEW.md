@@ -51,3 +51,7 @@ Recommend a small **Experiment 002 specification-finalization task** next, closi
 ## Task 007 follow-up
 
 [Final specification](EXPERIMENT_002_FINAL_SPEC.md) supplies R2's exact schemas/interfaces and checked public signature fixtures. Conditional collectability remains the narrow proposed question. ADR 0002 stays Proposed because B-DEP and B-FEE remain explicit blocking release decisions; see the [dependency assessment](EXPERIMENT_002_DEPENDENCY_REVIEW.md). This follow-up does not retroactively change the Task 006 review or supply implementation/audit evidence.
+
+## Task 008 subsequent decision
+
+The historical Task 006/007 review is preserved above. [Task 008 blocker resolution](EXPERIMENT_002_BLOCKER_RESOLUTION.md) records tested constrained baseline reuse and an explicit finite fee model; ADR 0002 is now Accepted for bounded local design only, READY for separate implementation authorization. The public disclosure, conditional inclusion/refund, useful-work and economic limitations remain. No Experiment 002 implementation/audit/result or final Genesis architecture follows.

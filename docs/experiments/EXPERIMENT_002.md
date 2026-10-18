@@ -1,6 +1,6 @@
 # Experiment 002 Proposal: Removing Requester Veto for a Directly Verifiable Service
 
-**2026-10-18 — Proposed; research/documentation only. No Experiment 002 implementation or results.**
+**2026-10-18 — Accepted bounded local design after Task 008 review; READY for separate implementation authorization. No Experiment 002 implementation or results.**
 
 ## Research question and relationship to Experiment 001
 
@@ -78,3 +78,7 @@ Separate valid-claim safety from provider progress: record canonical funding obs
 ## Task 007 exact specification and readiness
 
 The [final technical specification](EXPERIMENT_002_FINAL_SPEC.md) is the current normative proposal for exact wire/type schemas, interfaces, state/accounting rules, deadlines and failure handling. See [public signature/state vectors](EXPERIMENT_002_SIGNING_VECTORS.md) and [dependency review](EXPERIMENT_002_DEPENDENCY_REVIEW.md). R2's schema/vector detail is supplied; readiness remains **BLOCKED** by B-DEP (reviewed exact dependency tuple or documented constrained reuse) and B-FEE (finite local operator gas-fee/run-cost policy). ADR 0002 remains Proposed; no Experiment 002 code, deployment or end-to-end evidence exists. Public data hash/recovery checks are not contract tests.
+
+## Task 008 current readiness
+
+[Blocker resolution](EXPERIMENT_002_BLOCKER_RESOLUTION.md) supersedes Task 007's BLOCKED status: B-DEP is resolved by constrained tested baseline reuse, and B-FEE by the [bounded-cost policy](EXPERIMENT_002_BOUNDED_COST_MODEL.md). ADR 0002 is Accepted for local design only. The [final specification revision 2](EXPERIMENT_002_FINAL_SPEC.md) is normative. Implementation and experimental acceptance remain separate; no general fair-exchange/native-economy result follows.

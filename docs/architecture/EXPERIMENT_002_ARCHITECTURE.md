@@ -1,6 +1,6 @@
-# Proposed Experiment 002 Architecture
+# Experiment 002 Architecture
 
-**2026-10-18 — Proposed, not adopted or implemented.** See [ADR 0002](../adr/0002-experiment-002-fair-exchange.md), [experiment](../experiments/EXPERIMENT_002.md) and [prior-art comparison](../../research/experiments/EXPERIMENT_002_FAIR_EXCHANGE_COMPARISON.md).
+**2026-10-18 — Accepted bounded local design after Task 008 review; unimplemented.** See [ADR 0002](../adr/0002-experiment-002-fair-exchange.md), [experiment](../experiments/EXPERIMENT_002.md) and [prior-art comparison](../../research/experiments/EXPERIMENT_002_FAIR_EXCHANGE_COMPARISON.md).
 
 ## Mechanism and components
 
@@ -72,3 +72,7 @@ A future independent L1 must supply its own secure authentication/domain rules, 
 ## Task 007 exact interface reference
 
 Use the [final specification](../experiments/EXPERIMENT_002_FINAL_SPEC.md) for exact EIP-712/wire schemas, negotiation envelope, constructor/view/mutation/event interfaces and reconciliation rules. [Vector guide](../experiments/EXPERIMENT_002_SIGNING_VECTORS.md) supplies concrete signed payloads and timestamp/state expectations. The [dependency assessment](../experiments/EXPERIMENT_002_DEPENDENCY_REVIEW.md) has not approved a new tuple. Readiness is BLOCKED by B-DEP and B-FEE; no code is authorized. Service principal limits and transaction gas-cost limits are explicitly distinct.
+
+## Task 008 accepted design constraints
+
+[Blocker resolution](../experiments/EXPERIMENT_002_BLOCKER_RESOLUTION.md) and [bounded costs](../experiments/EXPERIMENT_002_BOUNDED_COST_MODEL.md) supersede prior readiness paragraphs. Use the [final specification revision 2](../experiments/EXPERIMENT_002_FINAL_SPEC.md), exact tested baseline, compiler/source restrictions and finite independently authorized signer budgets. ADR 0002 is Accepted for local design only; READY does not authorize code/deployment or select a future Genesis L1 architecture.

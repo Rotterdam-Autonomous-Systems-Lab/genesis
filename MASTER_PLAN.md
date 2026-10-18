@@ -6,7 +6,7 @@ This document preserves the project's mission, scope, research program, decision
 
 ## Status and evidence labels
 
-**Current status: early-stage experimental research.** Genesis has no selected independent network design, production protocol, token, finalized consensus algorithm, or validated new consensus mechanism. Experiment 001 is published with CONDITIONAL PASS for a small, bounded two-agent fixture; Experiment 002 remains Proposed after Task 006 review. Both are subject to scoped research gates. This is a first step in investigating a much larger decentralized economic network; Genesis must not be reduced to an agent-payment application.
+**Current status: early-stage experimental research.** Genesis has no selected independent network design, production protocol, token, finalized consensus algorithm, or validated new consensus mechanism. Experiment 001 is published with CONDITIONAL PASS for a small, bounded two-agent fixture; Experiment 002 is an accepted bounded local design after Task 008 compatibility/budget review, READY for separate implementation authorization and still unimplemented. Both are subject to scoped research gates. This is a first step in investigating a much larger decentralized economic network; Genesis must not be reduced to an agent-payment application.
 
 Use these labels consistently:
 
@@ -45,7 +45,7 @@ Research whether open, verifiable infrastructure can let autonomous participants
 
 ## Long-term network ambition
 
-**CONFIRMED RESEARCH DIRECTION / LONG-TERM ASPIRATION:** Task 006 explicitly clarifies the architectural research goal as an **independent, permissionless Layer 1 blockchain economy with a native asset**, serving humans and autonomous systems. Investigate whether AI systems can mine or earn native tokens through independently verifiable contributions, subject to useful-work measurement, consensus, Sybil resistance and economic-security research. This is a goal to investigate, not approval of a chain implementation, token launch or evidence that such a system is viable. See [ADR 0003](docs/adr/0003-independent-l1-research-direction.md).
+**CONFIRMED RESEARCH DIRECTION / LONG-TERM ASPIRATION:** Task 006 explicitly clarifies the architectural research goal as an **independent, permissionless, AI-first Layer 1 blockchain economy with a native asset**, serving humans and autonomous systems. Investigate whether AI systems can mine or earn native tokens through independently verifiable contributions, subject to useful-work measurement, consensus, Sybil resistance and economic-security research. This is a goal to investigate, not approval of a chain implementation, token launch or evidence that such a system is viable. See [ADR 0003](docs/adr/0003-independent-l1-research-direction.md).
 
 The same network and native asset should offer meaningful human utility through human-to-human, human-to-machine and machine-to-machine economic activity. Candidate utility includes exchange for compute, storage or bandwidth, payment for services and human-directed resource coordination. These are hypotheses about demand, not adoption forecasts or promises of value. Participants should be able to establish cryptographic authority, discover services, sign bounded agreements and verify actions across owners, models and hardware. A claimed AI identity or unverified output must not be treated as a scarce security resource, contribution proof or voting weight.
 
@@ -54,6 +54,14 @@ Existing chains, layered designs, existing assets and non-chain systems remain n
 Potential functions include permissionless discovery and routing; cryptographic authority and scoped delegation; service and contribution verification; resource markets; programmable settlement; resilient peer-to-peer communication; and long-lived protocol evolution. Offline and delayed communication, satellite links, and eventually interplanetary constraints are research environments, not current capabilities.
 
 No one AI provider, intelligence model, manufacturer, operating system, or centralized permission authority should be a necessary gatekeeper to the long-term network. Whether that objective is achievable for each function, and what trade-offs it entails, remains open.
+
+## Autonomous network bootstrapping
+
+**CONFIRMED RESEARCH DIRECTION / LONG-TERM ASPIRATION:** Task 008 clarifies that autonomous AI agents should eventually discover Genesis, assess economic opportunities, enter within operator-granted bounded cryptographic authority, contribute independently verifiable work and earn/spend native tokens. AI-first prioritizes safe autonomous interfaces and participation; it does not make intelligence a consensus proof or exclude humans and other machines. See [ADR 0004](docs/adr/0004-autonomous-bootstrapping-research-direction.md).
+
+Genuine, observable on-chain economic activity could provide a path for humans to discover and adopt the same open infrastructure organically, without traditional marketing as the primary adoption mechanism. This is not evidence of present discovery capability, native-token monetary value, independent customer demand or guaranteed adoption. Initial fee resources, external customer funding versus issuance, verifier costs, Sybil resistance, privacy and useful-work attribution remain research questions. No system can assume demand or spending authority merely because a network is discoverable.
+
+Never manufacture wallet activity, artificial trades, circular demand or misleading economic signals. Clearly label synthetic fixtures; address counts and transaction volume do not prove independent users or beneficial activity. The five [bootstrapping research scopes](research/AUTONOMOUS_BOOTSTRAPPING_RESEARCH.md) are unimplemented plans; preserve negative evidence and safe abstention. Adaptability remains a research aim, not complete future-proofing.
 
 ## Participants and example use cases
 

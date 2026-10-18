@@ -1,10 +1,12 @@
 # Genesis
 
-Genesis is the temporary codename for Rotterdam Autonomous Systems Lab (RASL)'s open research into **autonomous economic coordination and decentralized systems**. It researches an independent, permissionless Layer 1 blockchain economy where independently controlled participants could establish cryptographic authority, make verifiable agreements, exchange resources, and transact without a centralized permission authority.
+Genesis is the temporary codename for Rotterdam Autonomous Systems Lab (RASL)'s open research into **autonomous economic coordination and decentralized systems**. It researches an independent, permissionless, AI-first Layer 1 blockchain economy where independently controlled participants could establish cryptographic authority, make verifiable agreements, exchange resources, and transact without a centralized permission authority.
 
 The long-term ambition encompasses humans and human-operated systems, AI agents and autonomous software, robots and industrial machines, vehicles and drones, satellites and space infrastructure, sensors, distributed computational systems, and future autonomous entities. Participants may have different owners, hardware, capabilities, jurisdictions, objectives, and connectivity. The network should not depend on one AI provider, model, manufacturer, or operating system.
 
 The central question is whether participants that have never met can coordinate safely without trusting each other or a central platform. The guiding principle is: **the network must not need to trust the intelligence of its participants; it must only need to verify their actions.** This is a research challenge, not a proven guarantee.
+
+The autonomous bootstrapping aspiration is that agents eventually discover opportunities, onboard within bounded authority, contribute verifiable work and earn/spend native tokens. Genuine observable activity could help humans discover useful infrastructure organically without traditional marketing as the primary mechanism. This is not a demonstrated capability, monetary-value claim or adoption guarantee. Never manufacture wallet activity, trades or misleading signals; synthetic tests remain labelled. See the [five research scopes](research/AUTONOMOUS_BOOTSTRAPPING_RESEARCH.md).
 
 A small two-agent transaction is the first engineering milestone toward this broader network ambition. It does not define the final Genesis architecture.
 
@@ -38,7 +40,7 @@ Development follows explicit research questions and scoped experiments. Prior ar
 2. **Independent Network Security** — secure permissionless consensus and resistance to Sybil attacks, including AI swarms.
 3. **Human and Machine Economy** — meaningful human-to-human, human-to-machine and machine-to-machine use of the same native asset; investigate sustainable demand, fees, incentives and issuance without selecting parameters.
 
-Long-term adaptability to AI, computing, robotics, cryptography and communications is a research requirement, not guaranteed future-proofing. See the [final Experiment 002 proposal](docs/experiments/EXPERIMENT_002_FINAL_SPEC.md) and [Task 006 design review](docs/experiments/EXPERIMENT_002_DESIGN_REVIEW.md); Experiment 002 remains Proposed, BLOCKED pending dependency/fee-policy decisions, and unimplemented.
+Long-term adaptability to AI, computing, robotics, cryptography and communications is a research requirement, not guaranteed future-proofing. See the [final Experiment 002 proposal](docs/experiments/EXPERIMENT_002_FINAL_SPEC.md) and [Task 006 design review](docs/experiments/EXPERIMENT_002_DESIGN_REVIEW.md); Experiment 002 is an accepted bounded local design after [blocker resolution](docs/experiments/EXPERIMENT_002_BLOCKER_RESOLUTION.md), READY for separate implementation authorization and still unimplemented.
 
 ## Cross-cutting technical tracks
 

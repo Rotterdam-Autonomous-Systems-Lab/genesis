@@ -50,3 +50,7 @@ P2-11 specifies exclusive outcomes and deterministic refund rules, not automatic
 ## Task 007 fee and supply-chain boundaries
 
 **Gas-cost exhaustion / High bounded-authority risk:** a principal-only signed cap is not a total wallet-cost ceiling. The existing gas-unit/attempt bounds need a finite per-gas fee and total run-cost policy; B-FEE blocks integrated implementation until it is specified/tested. Do not infer unauthorized principal transfer from expected gas charged on a mined revert. **Dependency expansion / High residual:** [B-DEP review](EXPERIMENT_002_DEPENDENCY_REVIEW.md) records point-in-time findings, not approved new pins. See the [final specification](EXPERIMENT_002_FINAL_SPEC.md) and [public fixtures](EXPERIMENT_002_SIGNING_VECTORS.md). No changes to Experiment 001's security claims follow.
+
+## Task 008 resolution boundaries
+
+[The accepted cost policy](EXPERIMENT_002_BOUNDED_COST_MODEL.md) specifies independently authorized fee/run budgets, not universal escrow enforcement. The baseline already had 3 gwei maximum/1 gwei priority fee fields; Task 007 overlooked them. Compromised signer/host, external credits or other transaction paths can defeat the off-chain policy. [Constrained dependency reuse](EXPERIMENT_002_BLOCKER_RESOLUTION.md) accepts disclosed local-only residual risks; source/feature changes reopen review. All future implementation controls require actual tests. Native value, autonomous discovery and human adoption are aspirations, not supplied by this settlement mechanism.

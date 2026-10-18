@@ -50,3 +50,7 @@ Proposed [ADR 0002](../adr/0002-experiment-002-fair-exchange.md) requires a sepa
 ## Task 007 concrete fixture requirements
 
 All T01–T20 remain mandatory. Add the [signature/state vectors](EXPERIMENT_002_SIGNING_VECTORS.md) and [JSON constants](EXPERIMENT_002_SIGNING_VECTORS.json) as independent interoperability/negative oracles; verification must recompute hashes and recover signers, including correctly signed but semantically invalid terms and B-signed wrong arithmetic. Add insufficient-wallet-funds and unknown-broadcast classification cases. Once B-FEE is resolved, test fee ceiling, per-run gas-cost exhaustion including failed transactions, and refusal to sign out-of-budget transactions; do not change principal cap semantics silently. [Final specification](EXPERIMENT_002_FINAL_SPEC.md) freezes expected behavior; no contract cases have executed.
+
+## Task 008 acceptance additions
+
+B-DEP/B-FEE are [resolved for design readiness](EXPERIMENT_002_BLOCKER_RESOLUTION.md), not proven implemented controls. All T01–T20 and Task 007 vectors remain mandatory. Add the [cost-model tests](EXPERIMENT_002_BOUNDED_COST_MODEL.md) for exact/over per-gas fee, gas units, attempt/reservation limits, insufficient funds, withheld/ambiguous/reverted transactions, reserved closing slots, no top-ups/escalation, canonical fee reconciliation and runtime/cleanup. Run the [stateless compatibility checks](../../research/compatibility/experiment002/README.md) on the selected tuple. No new Experiment 002 protocol test has run; original 58/54 tests remain control evidence only.

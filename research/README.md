@@ -8,4 +8,7 @@ Store literature reviews, formal analyses, experiment plans, and reproducible re
 - [Experiment 002 fair-exchange comparison](experiments/EXPERIMENT_002_FAIR_EXCHANGE_COMPARISON.md) — six established mechanism families and a proposed bounded next experiment; no implementation or result yet.
 
 - [AI-earned native tokens and human/machine utility](economics/AI_EARNED_NATIVE_TOKENS_AND_UTILITY.md) — initial primary-source comparison, distinct earning/security models and proposed token-free economic research.
-- [Experiment 002 final technical proposal](../docs/experiments/EXPERIMENT_002_FINAL_SPEC.md) — exact schemas/interfaces, public vectors and explicit implementation blockers; no implementation yet.
+- [Experiment 002 final technical proposal](../docs/experiments/EXPERIMENT_002_FINAL_SPEC.md) — exact schemas/interfaces, public vectors and resolved local design gates and mandatory implementation evidence; no implementation yet.
+
+- [Autonomous bootstrapping research](AUTONOMOUS_BOOTSTRAPPING_RESEARCH.md) — five unimplemented scopes covering safe discovery, funding provenance, useful/duplicate work, fixed-resource Sybils and genuine human discovery.
+- [Experiment 002 compatibility checks](compatibility/experiment002/README.md) — stateless public-vector and arithmetic tooling, exact baseline/reproduction evidence; no Experiment 002 protocol implementation.

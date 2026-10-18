@@ -102,3 +102,9 @@ Risks include client monoculture, service-provider concentration, privileged hos
 ## Cross-cutting decision criteria
 
 Any future architecture proposal must include: (1) requirement and use case; (2) existing approaches and prior art; (3) candidate alternatives; (4) assumptions and trust dependencies; (5) adversaries and failure modes; (6) safety, liveness, privacy, and availability properties; (7) cost and hardware profiles; (8) reproducible comparative evidence; (9) upgrade and governance implications; and (10) limitations and reasons alternatives were rejected or deferred.
+
+## Autonomous bootstrapping requirements — Task 008
+
+The target is AI-first and permissionless while shared by humans and machines. [ADR 0004](adr/0004-autonomous-bootstrapping-research-direction.md) adds eventual safe agent discovery, opportunity assessment, scoped onboarding and earning/spending to the research direction, not implemented capabilities. Compare independent network identity verification, permissionless/read-only discovery, initial gas resources, bounded delegation, genuine task/funding evidence and observable settlement while respecting privacy. Agents must be able to abstain when identity, value, opportunity or authority cannot be established.
+
+Genuine activity may aid organic human discovery without marketing as the primary mechanism, but volume, many addresses and newly issued rewards do not prove independent demand or adoption. No manufactured wallet activity/trading/signals; synthetic fixtures remain explicit laboratory evidence. Use the [bounded scopes](../research/AUTONOMOUS_BOOTSTRAPPING_RESEARCH.md) as research inputs rather than selected network components. Neither accepted local EVM design nor compatibility checks establish future L1 consensus, native value or guaranteed adaptability.
