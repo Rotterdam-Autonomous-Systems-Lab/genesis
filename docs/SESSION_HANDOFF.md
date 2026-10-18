@@ -2,30 +2,30 @@
 
 Use this document to carry concise project context between Codex sessions and contributors. Update the current handoff after significant work; preserve prior handoffs in Git history where useful. Do not put secrets, credentials, or local-only notes here.
 
-## Current handoff — 2026-10-18 (Task 012)
+## Current handoff — 2026-10-18 (Task 013)
 
 ### Current status
 
-Experiment 002 **CONDITIONAL PASS for bounded local conditional collectability, subject to publication CI**; separate processes settle/withdraw correct timely included work without a second requester authorization. [Assessment](experiments/EXPERIMENT_002_AGENT_ACCEPTANCE.md) is the current outcome; historical Task 009 FAIL and Task 010 BLOCKED remain preserved. Task 011 [Ubuntu CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39136054716). Genesis's independent permissionless AI-first L1/native human-and-machine economy remains an aspiration; MASTER_PLAN and Experiment 001 code/evidence/limitations are unchanged.
+**Experiment 002 security/evidence closure BLOCKED pending remediation**, per [review](experiments/EXPERIMENT_002_INDEPENDENT_REVIEW.md). Task 012 narrow no-second-signature conditional collectability is reproduced, not upgraded to PASS. Its [CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39137210473). No confirmed unauthorized principal payout, replay or cap bypass was found; this is not a formal/organizationally independent audit. Long-term Genesis vision, MASTER_PLAN, existing implementations and published evidence remain unchanged.
 
 ### Completed work
 
-- New isolated `genesis_experiment002` requester/provider/signing/chain/runner package and [commands](../sdk/python/genesis_experiment002/README.md); exact hash-verified Anvil v1.6.0-rc1 b272ce3366987406406e9eb1b82596653a3ad628, explicit Cancun, no replacement of original tools.
-- Exact schemas/caps/nonce/deadline/refund rules; per-role fee reservation/closing slots, one principal intent and no top-ups/escalation; strict canonical prices and principal-adjusted wallet/whole-ledger audit. Supervisor never receives agent keys.
-- 86 Solidity, 54 unchanged original Python, 52 new Python tests pass locally; [18 process-scenario records](../research/experiments/experiment002/task012-agent-runs.json), including two successes, refusal/offline, crashes, malformed messages, disclosure, two-second slack, no actor and rollback. Existing fee/candidate CI gates retained and workflow extended for new tests/standalone settlement.
-- [T01–T20/P2-01–16 assessment](experiments/EXPERIMENT_002_AGENT_ACCEPTANCE.md), reproducibility, setup errors, observations and residual risks recorded. No formal assurance/independent audit.
+- Traced contract/agents/codec/signer/supervisor, frozen specs, cost/toolchain assumptions, tests and archived evidence at `2161dc2b32c2e4b872bf1ebfee63aa1b6b9a544c`.
+- R013-01 Medium: aggregate supervisor audit accepts swapped credit owners. R013-02 Medium: inconsistent current receipt fee fields/transaction identities accept; preflight can allow a subsequent bounded send. R013-03 Low: ready barriers/signer do not enforce expired wall deadline before acting.
+- Six [review characterization/control tests](../tests/experiment002/test_review013.py) reproduce findings, verify contract negative controls and archive arithmetic. Existing assertions/caps/code/pins are untouched. Green characterization tests mean unresolved defects reproduce, not that they were repaired.
+- [Acceptance assessment](experiments/EXPERIMENT_002_AGENT_ACCEPTANCE.md) now points to the review; historical observations/archive are retained. Local regressions passed: 86 Solidity, 54 original Python and 58 Experiment 002 Python tests; check the review commit's Actions result.
 
 ### Open questions
 
-Strong fair exchange after disclosure/non-inclusion, censorship/deadline/finality, absent callers/key loss, trusted host/RPC and supply chain. Fixed addition validates neither effort/unique useful work nor AI/physical-world correctness. Independent-network/security/native-economic/bootstrapping questions remain research.
+Exact owner/terminal/liability reconstruction, complete cross-source fee/identity/intent checks, pre-signing/phase deadline enforcement. Broader inclusion/disclosure/finality/host/key/supply-chain and useful-work/native-economy questions remain unchanged.
 
 ### Next task
 
-Recommended: independent review of Experiment 002 implementation/evidence, then separately select and authorize the next research question. Do not automatically start another experiment, token, L1 or autonomous public bootstrapping.
+Recommend separately authorized minimal evidence-checker/deadline hardening. Convert accepting-bad-evidence characterization into rejection/no-new-send regression assertions; preserve budgets and normal/refusal/offline/deadline controls; re-review closure. Do not automatically begin another experiment, token, L1 or public bootstrapping.
 
 ### Blockers
 
-No known local implementation blocker within the exact verified profile. Required publication CI must pass; a failure reopens acceptance. No production/fairness guarantee follows from a green run. Check Actions for this file's publication commit before relying on cross-platform acceptance.
+R013-01/02 block mandatory P2-14/T12/T16 evidence closure. R013-03 needs explicit runtime remediation/disposition. No implementation fix was authorized/performed in this review task. A passing CI is reproduction/regression evidence, not a clearance of the findings.
 
 ### Relevant commits
 

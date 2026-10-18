@@ -1,5 +1,7 @@
 # Experiment 002 agent integration and security acceptance — Task 012
 
+**Task 013 review notice:** [Adversarial review](EXPERIMENT_002_INDEPENDENT_REVIEW.md) reproduces the narrow no-second-signature result but identifies unresolved credit-owner and RPC re-read validation defects, plus a wall-deadline coverage gap. **Security/evidence closure is BLOCKED pending remediation.** The Task 012 CONDITIONAL PASS and measurements below are preserved historically; they do not establish complete mandatory P2-14/T12/T16 fault detection. [Task 012 CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39137210473); green regressions alone do not resolve the findings.
+
 **2026-10-18 — CONDITIONAL PASS for the bounded local experiment, conditional on the publication commit's required CI.** This supersedes the historical integration-blocked status after Task 011's [passing compatibility CI](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39136054716). The narrowed conditional-collectability question is tested; general fair exchange remains unresolved. A failing publication CI reopens acceptance. This is an internal engineering review, not an independent audit, formal proof or production assurance.
 
 ## Scope, implementation and unchanged authority

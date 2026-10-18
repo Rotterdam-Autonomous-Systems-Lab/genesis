@@ -1,5 +1,9 @@
 # Genesis Project Context
 
+## Task 013 current review status — closure blocked
+
+[Experiment 002 adversarial review](experiments/EXPERIMENT_002_INDEPENDENT_REVIEW.md) confirms two medium evidence-validation defects (credit-owner allocation and contradictory RPC re-reads) and a low wall-deadline coverage gap. The no-second-requester-signature demonstration remains reproducible, with no confirmed unauthorized payout/cap bypass, but full security/evidence closure is BLOCKED pending minimal hardening and review. Task 012 CONDITIONAL PASS remains historical, not upgraded to PASS. Only review documentation and six characterization/control tests changed; experiments, limits and MASTER_PLAN remain intact. Next recommended task is separately authorized evidence/deadline hardening, not another experiment or architecture expansion.
+
 ## Task 012 current status — local integration completed
 
 [Experiment 002 integration assessment](experiments/EXPERIMENT_002_AGENT_ACCEPTANCE.md) records **CONDITIONAL PASS**, subject to the publication commit CI: separate requester/provider processes settle objectively correct, timely included work without a second requester authorization. The exact ADR 0005 Anvil/Cancun profile, existing contract, signatures and principal/fee/wallet/run limits remain unchanged. Experiment 001 remains unchanged and conditionally accepted. Public disclosure, censorship/deadlines, absent callers, rollback, trusted host/RPC and supply-chain limitations remain. Earlier milestone statuses below are historical, superseded in sequence; no native-chain/token/consensus/adoption result follows. Next recommendation: independent review and separately selected research question, not automatic implementation expansion.

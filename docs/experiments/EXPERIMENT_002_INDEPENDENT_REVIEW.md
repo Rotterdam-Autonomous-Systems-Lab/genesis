@@ -1,0 +1,74 @@
+# Experiment 002 adversarial implementation and evidence review — Task 013
+
+**2026-10-18. Reviewed baseline:** [`2161dc2b32c2e4b872bf1ebfee63aa1b6b9a544c`](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/commit/2161dc2b32c2e4b872bf1ebfee63aa1b6b9a544c), whose [CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39137210473).
+
+**Conclusion: NOT READY TO CLOSE; evidence-acceptance gate BLOCKED pending remediation.** The narrow no-second-signature result reproduces, and no unauthorized principal transfer, cap bypass, invalid-result payment or contract replay vulnerability was found in this review. However, two confirmed evidence-validation defects contradict the blanket reconciliation/rejection claims in [Task 012's CONDITIONAL PASS assessment](EXPERIMENT_002_AGENT_ACCEPTANCE.md). Preserve that historical assessment and its successful observations; do not treat it as complete satisfaction of mandatory P2-14/T12/T16 evidence checks. This is not a finding that the demonstrated settlement was fraudulent or a change to protocol semantics.
+
+This is a fresh project-assisted adversarial review using independent fault assertions, not an organizationally independent audit: the same repository/assistant environment contributed to the implementation. No formal verification, exhaustive assurance or production-readiness claim. Only documentation and six characterization/control tests change; implementation, limits, dependencies, Experiment 001 evidence and MASTER_PLAN remain intact.
+
+## Method and lifecycle trace
+
+Read the [frozen specification](EXPERIMENT_002_FINAL_SPEC.md), [test plan](EXPERIMENT_002_TEST_PLAN.md), [cost model](EXPERIMENT_002_BOUNDED_COST_MODEL.md), [Anvil validation](EXPERIMENT_002_ANVIL_VALIDATION.md), ADRs and source/tests. Trace [contract](../../contracts/src/Experiment002Escrow.sol), [agents](../../sdk/python/genesis_experiment002/agent.py), [signer/evidence checker](../../sdk/python/genesis_experiment002/chain.py), [codec](../../sdk/python/genesis_experiment002/protocol.py) and [supervisor](../../sdk/python/genesis_experiment002/runner.py); compare claimed properties with actual checks, then inject narrowly inconsistent reads rather than assume green tests imply coverage.
+
+1. B signs a fixed-service advertisement; A validates provider/run/policy/price/expiry. A and B sign identical Terms; A signs single-use, agreement-bound Authorization. EIP-712 chain/contract/run/domain separation and established ECDSA recovery bind consent. Exact wire widths, canonical integers, 65-byte low-s signatures and unknown-field rejection constrain messages.
+2. Only A funds exact price before authority expiry; expiry <= fundBefore < claimBefore. The combined inequalities enforce the funding boundary. The contract consumes nonce and records immutable terms/locked principal atomically. Revocation before consumption prevents funding; revocation after funding cannot cancel it.
+3. B verifies canonical funding/event/record, computes public uint64 addition, signs Claim and submits as B. The contract checks parties, agreement, nonce, run, fixed sum, Funded state and strict claim deadline. No A Acceptance exists. Claim creates B credit; withdrawal clears credit before guarded transfer. Revert restores state; no gas compensation.
+4. At/after claimBefore, A can refund only a still-Funded record and then withdraw its own credit. Terminal states exclude double settlement/refund; refund does not restore authority. Absent callers do not trigger closure. Forced surplus creates no credit.
+5. The client reserves worst-case fees before signing, keeps closing slots, binds funding retries to one intent and checks final transaction fields. Unknown broadcast outcomes latch new sends; canonical reverts consume reservation. Receipts, fees, state and whole-run wallets are checked, but the evidence completeness defects below remain.
+
+## Confirmed findings
+
+Severity describes impact on this local experiment, not a production exploit rating. No Critical/High principal-safety vulnerability was confirmed.
+
+| ID | Severity / classification | Evidence and consequence | Recommended next decision |
+| --- | --- | --- | --- |
+| R013-01 | **Medium — evidence-validation defect** | `audit_ledger` sums A/B credits and compares aggregate liabilities, without reconstructing credit ownership from claims/refunds/withdrawals. After real settlement leaving B credit P, mock credit reads as A=P/B=0; every receipt, wallet and total stays genuine. Audit returns successfully. A separate mock reports Funded/result=0 after the genuine Claim while preserving terms/nonce; that audit also accepts. Existing corruption test changes totals and misses these cases. | Reconstruct expected per-owner credits and locked/terminal state from canonical transitions; compare each owner, including a provider killed before withdrawal. Require swapped-owner rejection. |
+| R013-02 | **Medium — fail-closed reconciliation defect** | Inherited `canonical_receipt` re-reads status/logs/identity but omits current gasUsed/effectiveGasPrice. E002 verifies the previously supplied receipt against other sources; a conflicting current re-read is ignored. The reproducer then sends another real bounded revocation transaction despite that contradiction. Separately, a returned transaction with wrong hash/blockNumber passes because those fields are not cross-checked. | Compare required fields across supplied/current/block receipts and transaction identity/inclusion; bind own observed transactions to recorded intent. On contradiction, stop before another signature/send. Extend independent field mutations, without normalization/tolerance. |
+| R013-03 | **Low — confirmed deadline-check coverage gap** | `Fixture.wait` checks the watchdog only while the file is absent; a ready barrier returns after the wall deadline. `Chain.transact` has no wall-deadline input/check. Logical clock injection makes `guard` reject while ready-barrier handling and funding still sign/mine. | Propagate a monotonic deadline through phase/transaction/audit checks and test delayed RPC/ready barriers. Preserve 120-second/15-second limits. Review bounded external supervision for long synchronous phases. |
+
+R013-01/02 mock contradictory RPC/contract-view responses; they do **not** change the real chain's credit owner, fees or principal. A consistently malicious RPC/host can fabricate all observations and remains excluded. These smaller contradictions nevertheless fall within the assessment's explicit fault-detection claims. Successful normal withdrawal tests have additional owner/balance assertions; the aggregate helper accepting a false credit allocation does not show those complete tests falsely passed.
+
+R013-03 is a deterministic clock/phase counterexample, not a measured 120-second overrun or proof the full runner returns success after its deadline. The final runner guard would reject; the problem is late checking after work/signing and unguarded synchronous phases. Sampled RSS is already disclosed as cooperative, not a hard OS quota. R013-01/02 are the closure blockers; R013-03 requires an explicit bounded-runtime remediation/disposition, not an invented stronger containment claim.
+
+## Reproduce without changing implementation
+
+Use the existing hash-locked Python environment, compiled artifacts and exact ADR 0005 Anvil v1.6.0-rc1 / b272ce3366987406406e9eb1b82596653a3ad628, explicit Cancun. No downloads, public RPC, real funds or changed caps are needed after setup.
+
+```sh
+forge build --offline
+PYTHONPATH=sdk/python internal/agent-venv/bin/python -m unittest discover -s tests/experiment002 -p test_review013.py -v
+```
+
+[Six added tests](../../tests/experiment002/test_review013.py): swapped credit owners/contradictory terminal state; inconsistent current fee fields with subsequent submission; wrong transaction identity; expired-wall ready barrier/signing; copied/wrong-result/duplicate contract-claim controls; independent archive arithmetic/limit checks. Temporary setup/signing helpers are reused, while the expectations and single-field faults are new. The first test invocation had an import-path error before executing cases; corrected setup retained all six tests.
+
+**Passing counterexample tests mean the defects remain reproducible, not fixed.** They deliberately characterize baseline acceptance of inconsistent evidence; no original security assertion is weakened, skipped or replaced. A separately authorized repair must convert them into rejection/no-further-send regressions, not retain green characterization as closure evidence. CI automatically discovers them through the existing Experiment 002 suite.
+
+Local verification: 86 Solidity tests (58 original +28 Experiment 002), 54 unchanged Experiment 001 Python tests and 58 Experiment 002 Python tests (52 existing +six review tests). Existing finite fuzz 256/stateful 128 x 64 settings remain. The strengthened current-receipt reproduction additionally passed in isolation. Publication CI repeats original/corrected-node regressions, fee controls and standalone settlement; inspect this review commit's Actions result. A green run is regression/reproduction evidence, not clearance of R013-01/02.
+
+## Property and evidence disposition
+
+| Properties | Review result / boundary |
+| --- | --- |
+| P2-01/06/07/08 authorization, terms, domain, participants | Source and signed-field/domain/encoding tests support the scoped checks. Correct host/fresh deployment/key custody and standard library/compiler behavior remain assumptions. |
+| P2-02 principal and fees | Contract exact-price/signed cap and signer reservations/caps are supported. Off-chain policy is not a universal wallet limit; other keys, top-ups or compromised signers are excluded. |
+| P2-03/04/05 replay, expiry, revocation | Consumed/revoked nonce and terminal checks, exact-boundary contract matrices and live regressions support intended rules. Canonical execution order wins; no fresh-nonce blind retry. |
+| P2-09 result verification | Fixed deterministic sum is checked on-chain and independently recomputed. Correctness is neither useful effort nor unique work, AI quality or physical truth. |
+| P2-10/11 caller/terminal/refund rules | Caller restrictions, exclusive outcomes and full refund credit supported. No automatic refund, eventual inclusion or effort reimbursement. |
+| P2-12 accounting | Contract accounting/callback tests support ledger safety; independent supervisor ownership validation is incomplete (R013-01). Callback harness is test-only, not contract-wallet support. |
+| P2-13 no requester veto | Timely B claims settle without second A authorization, including refusal/offline controls. This narrow observation survives the review; it is not unconditional provider payment. |
+| P2-14 evidence/recovery | Unknown-delivery/reorganization safeguards exist, but the claimed contradiction rejection is incomplete (R013-01/02). Mandatory evidence gate remains open. |
+| P2-15 bounded execution | Fee/attempt/message limits and ordinary cleanup tested; hard wall-deadline enforcement across phases is unsupported (R013-03). No hostile-host containment. |
+| P2-16 local-only | Verified isolated node, explicit Cancun/no fork, loopback/proxy/CCIP restrictions and ephemeral in-process keys are supported. Host/toolchain/CI trust persists. |
+
+## Hidden assumptions, limitations and coverage gaps
+
+- **Inclusion and availability:** trusted supervisor go-files schedule computation/submission/withdrawal. Separate processes are demonstrated; autonomous progress without that controller is not. A is not the post-funding authority, but the test operator can suppress B. No censorship resistance, eventual caller or fee-bump guarantee; low slack, disappearance/key loss and no actor can prevent collection.
+- **Disclosure and verification:** public operands already permit anyone to compute the sum. Early-disclosure/refund is a valid non-inclusion counterexample, not confidential service delivery or a general fairness solution. Repeated separately authorized identical work may pay and proves no unique contribution/Sybil resistance.
+- **Finality and RPC:** one transaction per block, serialized wallets, no top-ups and trusted no-fork chain underpin historical balance reconciliation. Snapshot/revert is a local fault model, not probabilistic finality or durable recovery. Own hashes are recorded in memory, not a crash-resumable signer journal. Arbitrary multi-transaction/concurrent blocks and Byzantine RPC authenticity are not validated.
+- **Evidence archive:** arithmetic/limits of all 18 committed scenario records agree. They remain derived observations, not independently authenticated chain proofs: full signed Terms/transaction/event preimages and block base-fee data are not all retained, so an offline reader cannot reconstruct every typed digest/EIP-1559 calculation from that JSON alone. Re-running is the primary reproduction path; do not invent missing measurements or rewrite the archive.
+- **Tests:** field/encoding mutations and stateful accounting are finite. The stateful handler uses funding/claim/refund/withdraw actions, not revocation; revocation has dedicated unit/live tests. Exact deadline matrices are contract tests; not every matrix cell is a separate process run. Phase-latency, crash-resume key custody and host-kill cleanup require further work if claimed.
+- **Supply chain:** pinned compiler/vendored hashes, lockfile and isolated node checks remain; no new dependency. Reviewed rc1 binary integrity relies on upstream HTTPS/publisher hashes and source/version correlation, without successful attestation/reproducible-build assurance. Known local-only dependency/compiler restrictions and disabled CCIP remain necessary. No new advisory sweep or independent build/audit was performed. CI retains contents:read, immutable action SHAs, no public-chain deployment/production credentials; setup downloads and untrusted PR code still carry supply-chain risk.
+
+## Closure decision
+
+Keep the narrow conditional-collectability observation and historical CONDITIONAL PASS, but **do not close Experiment 002's security/evidence acceptance yet**. Under the unchanged specification, missing mandatory safety/evidence checks block closure. Recommended next task: separately authorize minimal evidence-checker/deadline hardening, convert R013 reproductions into fail-closed regressions, rerun existing controls and obtain an explicit review disposition. No token, consensus, native-L1 or new experiment decision follows.
