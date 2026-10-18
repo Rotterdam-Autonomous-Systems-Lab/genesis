@@ -1,5 +1,53 @@
 # Experiment 002 final review — Task 015
 
+## Completion validation — 2026-10-18
+
+**BOUNDED CONDITIONAL PASS — READY TO CLOSE.** This disposition supersedes the initial environment-blocked verdict preserved below. The missing live checks now pass on the unchanged validated profile, and the original review commit's required Ubuntu CI passes. No new material defect or unsupported core claim was confirmed. Experiment 002 may close as a bounded local research result; this is not an unconditional PASS, production assurance, strong fair exchange or a native-network result.
+
+The session now permits local TCP binding and actual client/server communication over `127.0.0.1`; HTTPS to both GitHub and its API returned 200. Remote main was verified at the expected `f5efc4b` baseline before publication. Existing commit `f1dab65e141bb6fa0385a96a7a344bbe8b9721d8` was pushed by ordinary fast-forward, preserved without rewriting. The earlier sandbox/DNS failures remain valid historical observations, not experiment failures or evidence erased by this recovery.
+
+### Completed validation and publication evidence
+
+| Check on recovered environment | Result |
+| --- | --- |
+| Exact Foundry v1.0.0 / `8692e926198056d0228c1e166b1b6c34a5bed66c`; format/build | PASS, including toolchain check. |
+| Solidity regressions | 86 passed, zero failures/skips; 58 Experiment 001 plus 28 Experiment 002; fuzz 256 and stateful 128 x 64 unchanged. |
+| Full Experiment 002 Python suite | 73 passed, including all seven converted Task 013 regressions, eleven Task 014 hardening tests and three new Task 015 probes. Suite duration 114.200 seconds is aggregate test time, not one fixture's wall time. |
+| Experiment 001 Python on original node | 54 passed, unchanged assertions. |
+| Experiment 001 Python on verified corrected node/Cancun | 54 passed; additional success/refusal controls settled/refunded with children stopped. |
+| Original-node fee controls / corrected-node compatibility | 14 / nine passed, retaining original negative controls and exact fee reconciliation. |
+| Signature interoperability / finite fee model | Each node checked 25 digests and 34 signatures; all 20 fee-model cases passed. |
+| Standalone Experiment 002 normal exchange | Settled, result 18, provider withdrawal and complete owner/fee ledger audit; children stopped; elapsed 6.240 seconds, cleanup about 0.004 seconds. |
+| Standalone controlled late funding | Funded with two seconds claim slack, valid late claim rejected, principal refunded/withdrawn; children stopped; elapsed 4.004 seconds. |
+| Two controlled late-funding repetitions in hardening suite | Both passed with two seconds slack, funding status 1 and late-claim status 0. Old-clock delay and exact funding-expiry rejection controls also passed. |
+| Standalone Experiment 001 | Settled with children stopped; requester-veto/refund controls remain in both profile regressions. |
+| Dependency integrity | Vendored checksums, hash/version-verified candidate loader and Python dependency consistency passed. |
+| Required publication CI for preserved review commit | [Run 39168554999](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39168554999), head `f1dab65e141bb6fa0385a96a7a344bbe8b9721d8`: SUCCESS. |
+
+The required workflow also covers clean Ubuntu tool/compiler installation, hash-locked Python dependencies, original/corrected fee and signature controls, Experiment 001 on both nodes, all Experiment 002 tests and standalone canonical settlement. Task 014's [publication run 39142706331](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39142706331) was independently verified SUCCESS for `f5efc4b4a1a73ec651e7f1cbde4c4720d1c558e5`. Closure documentation retains the same required workflow; any publication regression reopens the gate.
+
+### Final disposition of the four findings
+
+- **R013-01 addressed within the closed fixture:** real-chain controls and swapped owner, stale terminal, conflicting owner snapshot and wrong-party faults now execute and reject. Independent reconstruction verifies each owner's entitlement and terminal state, including a provider killed with its credit unwithdrawn.
+- **R013-02 addressed within the declared fault model:** current/block receipt and own-intent mutations, identity faults, stale/conflicting records, dropped responses and rollback checks pass. Contradictions/unknown delivery prevent subsequent signing. Later good replies do not clear the latch; the 24 independent receipt mutations and deadline/latch interaction probes also pass.
+- **R013-03 addressed as cooperative enforcement:** ready barriers, exact monotonic boundary, delayed RPC response, construction/typed signing and post-broadcast expiry regressions pass. Expiry during signing retains reservation/hash and prevents broadcast. Synchronous operations can overshoot until a return check; this is not a hard OS containment guarantee.
+- **R013-04 current fixture blocker resolved:** controlled pending-first inclusion and the separate expired-funding controls pass locally and in required CI, without extending signed windows or budgets. Valid funding with very short slack still does not guarantee provider collection.
+
+Fresh nominal/maximum-input runs and requester-refusal/offline controls confirm the core claim: correct deterministic work can settle and be withdrawn without a second requester authorization, conditional on valid timely inclusion. Invalid-result, replay, revocation, authorization/signature, principal/fee/attempt/closing-slot, exact accounting, transport, crash, cleanup and rollback regressions pass. No implementation, caps, Experiment 001 behavior, dependency selection, workflow permissions or MASTER_PLAN changes were needed.
+
+### Historical uncertainty and remaining boundaries
+
+The original failed [CI run 39139135792](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39139135792) log was fetched after connectivity recovery. It confirms the late-funding setup rejection and 57/58 tests passing, but contains no failed receipt/block timestamp. The later unmodified green run is also verified. **The historical inclusion timestamp has not been recovered, and its exact root cause remains unestablished.** Reproducing a scheduling-sensitive expiry mechanism and controlling current inclusion does not establish that historical cause.
+
+All trust assumptions and unresolved limitations in the original review below remain acceptance conditions: honest host/supervisor/RPC and toolchain, one-agreement/one-transaction-per-block fixture, synthetic funds, fresh run/deployment, in-memory latch without durable crash recovery, publisher/supply-chain trust, and cooperative runtime/cleanup. Public disclosure, absent/censored callers, late inclusion, key loss, rollback and dishonest RPC still prevent general fairness/authenticity/liveness guarantees. Distinct keys/processes do not establish independent owners; deterministic payment proves neither useful/unique work nor Sybil resistance, consensus or native-economic feasibility.
+
+The next research dependency is a separately authorized specification comparing useful/unique contribution evidence or delivery/inclusion assumptions with prior-art baselines. No new experiment implementation, token mechanics, consensus/native-chain development or autonomous discovery follows automatically from this closure.
+
+## Historical initial review — preserved environment-blocked evidence
+
+The original assessment below records what was verifiable before permission recovery. Its pending/blocked language and initial NOT READY verdict are historical and superseded by the completion disposition above; its limitations, reproduction instructions and negative evidence remain relevant.
+
+
 **2026-10-18 — NOT READY TO CLOSE.** Reviewed baseline: `f5efc4b4a1a73ec651e7f1cbde4c4720d1c558e5`, matching local HEAD and the local `origin/main` tracking ref. Remote freshness could not be checked. No material contract defect was confirmed. Source inspection and executable isolated probes support the remediation direction, but required live revalidation and publication CI could not be completed or independently verified in this session. This is an acceptance-evidence blocker, not a finding that correct work cannot settle. Do not upgrade the historical conditional result to unconditional PASS.
 
 ## Method and evidence boundary

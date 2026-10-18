@@ -2,7 +2,19 @@
 
 Use this document to carry concise project context between Codex sessions and contributors. Update the current handoff after significant work; preserve prior handoffs in Git history where useful. Do not put secrets, credentials, or local-only notes here.
 
-## Current handoff — 2026-10-18 (Task 015)
+## Current handoff — 2026-10-18 (Task 015 completed)
+
+[Final review](experiments/EXPERIMENT_002_FINAL_REVIEW.md): **BOUNDED CONDITIONAL PASS — READY TO CLOSE** for the unchanged synthetic local Experiment 002. Earlier environment-blocked verdict/evidence is preserved in the review and below. No unconditional PASS, general fairness, native-network, token, consensus or autonomous-discovery result.
+
+Permissions recovered: local TCP bind/connect and GitHub HTTPS verified. Exact tools/candidate identity, checksums and pip consistency pass. Local validation: 86 Solidity, 73 Experiment 002 Python, 54 unchanged Experiment 001 Python on each node, 14 original fee controls, nine candidate tests, 25 digests/34 signatures per node and 20 fee-model cases. Standalone Experiment 002 settles result 18; controlled late funding gives two seconds slack, rejects late claim and refunds/withdraws. Both controlled repetitions pass; Experiment 001 success/refusal remains intact. All four R013 fixes verified within declared trusted/cooperative fixture boundaries.
+
+Preserved original review commit `f1dab65e141bb6fa0385a96a7a344bbe8b9721d8`, pushed ordinary fast-forward to origin/main. [Its complete Ubuntu CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39168554999); [Task 014 CI](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39142706331) independently verified green. Completion documentation is a subsequent ordinary commit; retain required publication CI and reopen if it fails.
+
+Historical failed CI log fetched: confirms funding rejection, but failed receipt timestamp/root cause remains unrecovered. Residual trusted host/RPC/supply chain, explicit inclusion control, public disclosure, late/censored/absent actors, key loss, rollback, in-memory recovery and cooperative resource limits remain. MASTER_PLAN, contracts, agents, caps, Experiment 001 and CI workflow unchanged.
+
+Next recommended dependency: separately scoped specification/research on useful/unique contribution evidence or delivery/inclusion assumptions; no automatic implementation expansion. Completion commit is the commit adding this disposition. Local logs are ignored under `internal/task015-completion/`.
+
+## Previous handoff — 2026-10-18 (Task 015 environment-blocked)
 
 [Final review](experiments/EXPERIMENT_002_FINAL_REVIEW.md): **NOT READY TO CLOSE** because fresh live remediation/compatibility checks and publication CI could not be verified in this restricted session. No new material contract defect confirmed; source and isolated tests support the corrections and the bounded no-second-authorization claim.
 
