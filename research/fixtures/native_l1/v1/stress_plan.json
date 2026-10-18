@@ -1,0 +1,76 @@
+{
+  "actor_universe": 32,
+  "cases": [
+    {
+      "active_clients": 1,
+      "delivered_actions": 10,
+      "id": "S01",
+      "sharing": "disjoint"
+    },
+    {
+      "active_clients": 1,
+      "delivered_actions": 10,
+      "id": "S02",
+      "sharing": "half_shared"
+    },
+    {
+      "active_clients": 1,
+      "delivered_actions": 10,
+      "id": "S03",
+      "sharing": "shared"
+    },
+    {
+      "active_clients": 8,
+      "delivered_actions": 100,
+      "id": "S04",
+      "sharing": "disjoint"
+    },
+    {
+      "active_clients": 8,
+      "delivered_actions": 100,
+      "id": "S05",
+      "sharing": "half_shared"
+    },
+    {
+      "active_clients": 8,
+      "delivered_actions": 100,
+      "id": "S06",
+      "sharing": "shared"
+    },
+    {
+      "active_clients": 32,
+      "delivered_actions": 1000,
+      "id": "S07",
+      "sharing": "disjoint"
+    },
+    {
+      "active_clients": 32,
+      "delivered_actions": 1000,
+      "id": "S08",
+      "sharing": "half_shared"
+    },
+    {
+      "active_clients": 32,
+      "delivered_actions": 1000,
+      "id": "S09",
+      "sharing": "shared"
+    }
+  ],
+  "claim_before": 20,
+  "fee": 1,
+  "fee_total": 3000,
+  "fund_before": 10,
+  "principal_total": 3000,
+  "root_balance": 10000,
+  "rules": {
+    "actions": "Count k grant inclusions inside n. For i=0..n-k-1, client index i%c, per-actor sequence1+i//c; even i Transfer to S, odd i Fund sum7+11 with provider B and requester H. Price1+i%3; fee ceiling1. Stable salt/invoice digest SHA256 UTF8 Sxx:<i>, using case ID plus decimal i without padding. Terms are signed by H/B upfront. All include at tick1; stress ends with funded prices locked. No terminal throughput is claimed.",
+    "allocation": "For c active clients, per-client principal allocation is 3000//c plus1 for lowest-ID 3000%c clients; fee allocations use the same rule. Disjoint creates c grants. Shared coalesces all allocations into one grant. Half-shared coalesces first c//2 allocations into one, leaves others disjoint; c=1 degenerates to disjoint. Setup grants have root sequences1..k in ascending first-delegate ID order and ASR-derived IDs. Delegate lists sorted by raw ID. Grant scope codes1,5; recipients B,S sorted by raw ID; expiry40.",
+    "outcome": "All setup/data actions are expected success in a fresh-reference run. Principal sums and fee totals fit each assigned grant; validator checks those bounds without applying transitions. Count all structural conflicts/rebuilds separately in stale-reference mode; compare logical projections only at canonical barriers.",
+    "profiles": "R mandatory; selected L128MiB and S10KiB/s overlays use the same action manifest, not extra runs. No all-tier cross product. All core cases plus9 stress cases=30 configurations, three repeats+one warm-up=91 runs/model.",
+    "setup": "All32 delegate principals have balance100; B/provider balance100; S/recipient balance0; H/root balance10000. No initial grants. Fixed IDs are SHA256 UTF8 genesis-lab018-stress:<role>, roles H,B,S,D00..D31. Assign fresh ephemeral signing keys to those fixed principal IDs once, before timing; preserve public keys and signed intents in the per-run artifact for exact replay. All candidates/repetitions use that same artifact. No private keys are published."
+  },
+  "scope": "model-level stress plan; no candidate execution or production prediction",
+  "tick": 1,
+  "valid_before": 30,
+  "version": 1
+}

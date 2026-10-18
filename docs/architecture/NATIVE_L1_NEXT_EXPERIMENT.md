@@ -1,6 +1,8 @@
 # Proposed next experiment and decision gate — Task 017
 
-**Proposed Task 018: bounded comparative authority and crash-recovery reference models. No implementation in Task 017.** Continue the [Task 016 G0/G1 framework](NATIVE_L1_DECISION_GATE.md) with [W01–W08](NATIVE_L1_WORKLOADS.md), [ASR semantics](NATIVE_L1_AUTHORITY_SETTLEMENT_RECOVERY.md), [consensus premises](NATIVE_L1_CONSENSUS_ASSUMPTIONS.md) and [B1–B9 controls](NATIVE_L1_RESOURCE_BUDGETS.md).
+**Task 018 completed review/freeze; proposed Task 019: bounded comparative authority and crash-recovery models. No models implemented yet.**
+
+The [Task 018 review](NATIVE_L1_SPEC_REVIEW.md), [adapter](NATIVE_L1_ADAPTER.md), [measurement plan](NATIVE_L1_MEASUREMENTS.md) and [v1 corpus](../../research/fixtures/native_l1/README.md) freeze the minimal authorized comparison scope: 21 core plus nine stress configurations. Original broader coverage below is retained as proposed follow-up, not a claim of frozen or executed coverage. Explicit fixture balances override illustrative defaults. Continue the [Task 016 G0/G1 framework](NATIVE_L1_DECISION_GATE.md) with [W01–W08](NATIVE_L1_WORKLOADS.md), [ASR semantics](NATIVE_L1_AUTHORITY_SETTLEMENT_RECOVERY.md), [consensus premises](NATIVE_L1_CONSENSUS_ASSUMPTIONS.md) and [B1–B9 controls](NATIVE_L1_RESOURCE_BUDGETS.md).
 
 ## Highest-value question
 
@@ -55,4 +57,4 @@ Artifacts: public manifest/hash, reviewed dependency/source identities, golden b
 | Deferred | Application discovery, physical oracles, channels/privacy/proofs for expensive work, bridges and specific services; each requires its own threat/economic review. No token launch/monetary policy. |
 | Expensive to reverse | Canonical identity/encoding/signatures, ownership/state commitments/proofs, VM/ABI/metering, consensus/finality, replay retention, recovery authority and economic/governance rules; require explicit approval and ADR before adopting. |
 
-**G0 specification supplied, independent review and vector/adapter freeze pending; G1 not run. No candidate eliminated.** The most consequential native-network dependency remains credible scarce-resource admission/bootstrap and authenticated finality/recovery under realistic small-network adversaries. The next bounded experiment should address shared-budget crash recovery first, not pretend that its ordering oracle resolves that network-security dependency. Recommend separately authorizing Task 018 only after the freeze/review items above are complete; final architecture selection remains unsupported.
+**G0 minimal review/vector/adapter freeze complete: READY FOR COMPARATIVE MODELS. G1 not run. No candidate eliminated.** The most consequential native-network dependency remains credible scarce-resource admission/bootstrap and authenticated finality/recovery under realistic small-network adversaries. The next bounded experiment should address shared-budget crash recovery first, not pretend that its ordering oracle resolves that network-security dependency. Recommend Task 019 bounded models against the frozen scope; final architecture selection remains unsupported.

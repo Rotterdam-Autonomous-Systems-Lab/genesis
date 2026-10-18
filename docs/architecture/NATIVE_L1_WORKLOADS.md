@@ -55,9 +55,9 @@ Default logical clock is an integer supplied by the test scheduler, not wall tim
 
 ## W05 — drone or robot coordination
 
-- **Participants/authority:** two fleet delegates D1/D2 share H's grant principal 20/fees 6, recipients S1/S2, Fund only, expiry 20. H and providers sign distinct deterministic planning/checksum task agreements upfront; physical mission performance is outside the predicate.
+- **Participants/authority:** two fleet delegates D1/D2 share H's grant principal 20/fees 6, recipients S1/S2, Fund only, expiry 20. H and providers sign distinct deterministic sum-u64 coordination-stub agreements upfront; physical mission performance is outside the predicate.
 - **Transitions:** both propose funding 12. Fixed order admits at most one successful funding; the other may retry *the same intent* only after authenticated non-admission. A later refund returns funds to H and does not permit the losing 12 under spent G. Interrupt the winning provider after claim, before collection.
-- **Success/failure/invariants:** I1–I8; shared reserves include locked work, so concurrency cannot overcommit. Distinct intents/agreements must not overwrite each other. Correct checksum is not proof of safe navigation or completed delivery.
+- **Success/failure/invariants:** I1–I8; shared reserves include locked work, so concurrency cannot overcommit. Distinct intents/agreements must not overwrite each other. Correct sum is not proof of safe navigation or completed delivery.
 - **Recovery/network:** duplicate, delay and reorder both requests; providers resume independently. Recovery collects existing credit once or reports outstanding obligation; no assumption that both machines stay online.
 - **Resources/verification:** B1–B4/B6/B8–B9; chain validates budget and fixed work relation. Dispatch, scheduling, physical safety and service truth remain applications. No fleet-wide trusted coordinator is assumed in the model.
 

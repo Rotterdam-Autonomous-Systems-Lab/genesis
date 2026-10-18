@@ -2,6 +2,8 @@
 
 **Proposed laboratory semantics, not a selected native protocol.** Applies to [W01–W08](NATIVE_L1_WORKLOADS.md) and extends Task 016's [comparison](NATIVE_L1_DECISION_MATRIX.md). Experiments 001/002 remain unchanged. Delegation, durable journals and native authenticated proofs are new requirements, not inherited experimental guarantees.
 
+**Task 018 freeze:** the [v1 adapter](NATIVE_L1_ADAPTER.md) clarifies admission precedence, fee-first solvency, terminal codes, reserve-return counters, canonical versus native attempt barriers and fenced recovery. The [corpus](../../research/fixtures/native_l1/README.md) supplies concrete overrides and signed vectors. These laboratory clarifications take precedence where the original proposal below was ambiguous; no native design is selected.
+
 ## 1. Common logical state and signed intent
 
 State contains principal balances, registered public keys/epochs, grants, agreements, owner credits, consumed intent identifiers and a fee sink. Initial synthetic balances are fixed by each case; no issuance or top-up operation exists. Amounts, epochs, sequences and logical time are unsigned 64-bit integers; checked arithmetic rejects overflow. Grant/intent/agreement identifiers are 32-byte digests. Network identity commits to a fixed genesis-fixture header before intents/corpus are generated (not a hash of a self-referential final corpus manifest); perfect cloned ledgers with the same identity remain indistinguishable without an external trusted anchor.

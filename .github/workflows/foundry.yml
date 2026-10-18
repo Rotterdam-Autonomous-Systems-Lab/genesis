@@ -41,6 +41,8 @@ jobs:
           python -m venv internal/agent-venv
           internal/agent-venv/bin/python -m pip install --only-binary=:all: --require-hashes -r sdk/python/requirements.lock
           internal/agent-venv/bin/python -m pip check
+      - name: Native architecture fixture validation (no candidate models)
+        run: internal/agent-venv/bin/python -m unittest discover -s tests/architecture -v
       - name: Python unit and local Anvil integration tests
         env:
           PYTHONPATH: sdk/python

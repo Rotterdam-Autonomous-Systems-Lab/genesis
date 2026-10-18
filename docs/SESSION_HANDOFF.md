@@ -2,6 +2,12 @@
 
 Use this document to carry concise project context between Codex sessions and contributors. Update the current handoff after significant work; preserve prior handoffs in Git history where useful. Do not put secrets, credentials, or local-only notes here.
 
+## Current handoff — 2026-10-19 (Task 018)
+
+**READY FOR COMPARATIVE MODELS**, research/fixtures only. Baseline `23be098502f7fa0920e02930d3130fa78926289d`; locate publication with Git history for this file. [Adversarial review](architecture/NATIVE_L1_SPEC_REVIEW.md) records six resolved specification findings; [adapter](architecture/NATIVE_L1_ADAPTER.md), [measurement plan](architecture/NATIVE_L1_MEASUREMENTS.md) and [v1 corpus](../research/fixtures/native_l1/README.md) freeze 21 core vectors/32 signed intents plus nine deterministic stress configurations. Nine fixture-integrity tests pass and are added to CI. No candidate model execution or winner. MASTER_PLAN and Experiments 001/002 preserved.
+
+Recommended next task: Task 019 three distinct bounded models and independent harness, pinned wrappers/dependencies/instrumentation and second-environment reproduction under unchanged budgets. No blocker to this bounded implementation scope. Production finality/non-execution proofs, permissionless security/bootstrap, replay retention, recovery and physical-service truth remain open; fixture oracle solves none of them. Earlier handoff retained below as history.
+
 ## Current handoff — 2026-10-19 (Task 017)
 
 Research/specification only. Five canonical documents: [workloads](architecture/NATIVE_L1_WORKLOADS.md), [authority/settlement/recovery](architecture/NATIVE_L1_AUTHORITY_SETTLEMENT_RECOVERY.md), [consensus assumptions](architecture/NATIVE_L1_CONSENSUS_ASSUMPTIONS.md), [budgets](architecture/NATIVE_L1_RESOURCE_BUDGETS.md), [next experiment](architecture/NATIVE_L1_NEXT_EXPERIMENT.md). Eight workloads share I1–I8, deterministic logical intent/operation schemas, cumulative principal/fee reserve semantics, expiry/revoke ordering and journal/evidence recovery; each maps account/object/eUTXO obligations without free external infrastructure.

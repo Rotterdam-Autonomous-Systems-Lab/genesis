@@ -1,5 +1,10 @@
 # Genesis Project Context
 
+## Task 018 current status — adversarial review and fixture freeze
+
+[Review/readiness](architecture/NATIVE_L1_SPEC_REVIEW.md): **READY FOR COMPARATIVE MODELS**, no candidate selected/eliminated. [V1 fixtures](../research/fixtures/native_l1/README.md) freeze 21 signed core vectors plus nine stress configurations; [adapter](architecture/NATIVE_L1_ADAPTER.md) and [measurements](architecture/NATIVE_L1_MEASUREMENTS.md) define Task 019. Authority-before-fee, atomic solvency, structural-versus-logical conflicts, fenced recovery and sum-only service semantics are clarified. Nine integrity tests pass; no candidate transitions executed. Native permissionless security and authenticated finality remain open. Earlier statuses below are historical.
+
+
 ## Task 017 current status — comparative specification, no implementation
 
 [Workloads W01–W08](architecture/NATIVE_L1_WORKLOADS.md), [authority/settlement/recovery](architecture/NATIVE_L1_AUTHORITY_SETTLEMENT_RECOVERY.md), [consensus premises](architecture/NATIVE_L1_CONSENSUS_ASSUMPTIONS.md), [budgets](architecture/NATIVE_L1_RESOURCE_BUDGETS.md) and [proposed experiment](architecture/NATIVE_L1_NEXT_EXPERIMENT.md) define a common bounded evaluation framework. Caps are proposed lab controls, not native capabilities; model ordering/checkpoint oracle does not solve consensus. Shared grant reserves, stable logical intents and durable recovery must be compared at identical semantics. No candidate eliminated; G0 independent review/vector/adapter freeze pending, G1 unrun. Recommend separately authorized Task 018 reference models after that freeze; no native devnet/token/monetary policy or final design selected. MASTER_PLAN and both experiments preserved.

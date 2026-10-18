@@ -1,0 +1,53 @@
+{
+  "cbor": [
+    {
+      "hex": "00",
+      "value": 0
+    },
+    {
+      "hex": "17",
+      "value": 23
+    },
+    {
+      "hex": "1818",
+      "value": 24
+    },
+    {
+      "hex": "18ff",
+      "value": 255
+    },
+    {
+      "hex": "190100",
+      "value": 256
+    },
+    {
+      "hex": "1bffffffffffffffff",
+      "value": 18446744073709551615
+    },
+    {
+      "hex": "80",
+      "value": []
+    },
+    {
+      "hex": "83010203",
+      "value": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "hex": "43010203",
+      "value": {
+        "bytes": "010203"
+      }
+    }
+  ],
+  "ed25519": {
+    "message_hex": "",
+    "public_key": "d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a",
+    "signature": "e5564300c360ac729086e2cc806e828a84877f1eb8e5d974d873e065224901555fb8821590a33bacc61e39701cf9b46bd25bf5f0595bbe24655141438e7a100b"
+  },
+  "source": "RFC 8949 Appendix A / RFC 8032 section 7.1; public test data only",
+  "version": 1
+}
