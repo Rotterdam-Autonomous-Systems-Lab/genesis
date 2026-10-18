@@ -2,7 +2,17 @@
 
 Use this document to carry concise project context between Codex sessions and contributors. Update the current handoff after significant work; preserve prior handoffs in Git history where useful. Do not put secrets, credentials, or local-only notes here.
 
-## Current handoff — 2026-10-18 (Task 014)
+## Current handoff — 2026-10-18 (Task 015)
+
+[Final review](experiments/EXPERIMENT_002_FINAL_REVIEW.md): **NOT READY TO CLOSE** because fresh live remediation/compatibility checks and publication CI could not be verified in this restricted session. No new material contract defect confirmed; source and isolated tests support the corrections and the bounded no-second-authorization claim.
+
+Completed: exact pinned Foundry format/build/86 Solidity tests; 15 existing socket-free tests; three candidate integrity tests; three new independent probes including 24 receipt mutations and deadline/latch interactions. Dependency checksums and candidate loader identity pass. MASTER_PLAN, implementation, limits and historical archives preserved.
+
+Blockers: loopback socket bind is prohibited, so full Python suites and standalone exchange cannot validate integrations. GitHub DNS/API unavailable; CI status unknown. Global Foundry initially differed; rerun used existing exact pinned binaries. See report for every failed/inconclusive attempt.
+
+Next dependency: finish live suites/unchanged CI on exact tools and Anvil/Cancun, publish review, inspect commit-specific CI, then explicitly reconsider bounded conditional closure. Do not infer unconditional PASS or implement another experiment/token/consensus/discovery feature. Historical failed CI timestamp/root cause remains unrecovered. Baseline and local tracking ref: `f5efc4b4a1a73ec651e7f1cbde4c4720d1c558e5`; Task 015 commit is the commit introducing this review.
+
+## Previous handoff — 2026-10-18 (Task 014)
 
 ### Current status
 
