@@ -1,5 +1,7 @@
 # Experiment 002 Proposal: Removing Requester Veto for a Directly Verifiable Service
 
+**Task 009 current status: partial escrow published; acceptance FAIL / implementation BLOCKED.** See [implementation review](EXPERIMENT_002_IMPLEMENTATION_REVIEW.md) for the pinned-Anvil fee-evidence contradiction and pending integration gates. Earlier design/readiness statements below are historical; design semantics remain unchanged.
+
 **2026-10-18 — Accepted bounded local design after Task 008 review; READY for separate implementation authorization. No Experiment 002 implementation or results.**
 
 ## Research question and relationship to Experiment 001

@@ -6,7 +6,7 @@ This document preserves the project's mission, scope, research program, decision
 
 ## Status and evidence labels
 
-**Current status: early-stage experimental research.** Genesis has no selected independent network design, production protocol, token, finalized consensus algorithm, or validated new consensus mechanism. Experiment 001 is published with CONDITIONAL PASS for a small, bounded two-agent fixture; Experiment 002 is an accepted bounded local design after Task 008 compatibility/budget review, READY for separate implementation authorization and still unimplemented. Both are subject to scoped research gates. This is a first step in investigating a much larger decentralized economic network; Genesis must not be reduced to an agent-payment application.
+**Current status: early-stage experimental research.** Genesis has no selected independent network design, production protocol, token, finalized consensus algorithm, or validated new consensus mechanism. Experiment 001 is published with CONDITIONAL PASS for a small, bounded two-agent fixture; Experiment 002 has a partial isolated escrow implementation from separately authorized Task 009, but acceptance is FAIL / implementation BLOCKED by a pinned-Anvil fee-receipt contradiction; no complete agent workflow is published. See [the blocking review](docs/experiments/EXPERIMENT_002_IMPLEMENTATION_REVIEW.md). Both are subject to scoped research gates. This is a first step in investigating a much larger decentralized economic network; Genesis must not be reduced to an agent-payment application.
 
 Use these labels consistently:
 

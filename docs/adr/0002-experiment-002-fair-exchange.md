@@ -1,5 +1,7 @@
 # ADR 0002: Direct-Predicate Fair-Exchange Baseline
 
+**Task 009 current disposition: partial contract implementation; acceptance FAIL / implementation BLOCKED.** [Fee-evidence review](../experiments/EXPERIMENT_002_IMPLEMENTATION_REVIEW.md) supersedes earlier READY status without changing the frozen design or budgets. Pinned Anvil receipt effectiveGasPrice conflicts with the actual capped wallet debit; dependency/fee-evidence compatibility is reopened. ADR 0002 remains accepted design only.
+
 - **Date:** 2026-10-18.
 - **Status:** **Accepted for bounded local experimental design — Task 008; implementation requires separate authorization.**
 - **Scope:** separate, synthetic, local Experiment 002; no Experiment 001 change or future network commitment.

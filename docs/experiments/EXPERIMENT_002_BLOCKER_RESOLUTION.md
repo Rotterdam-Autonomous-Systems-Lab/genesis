@@ -1,5 +1,7 @@
 # Experiment 002 Blocker Resolution and Architecture Review — Task 008
 
+**Task 009 current disposition: partial contract implementation; acceptance FAIL / implementation BLOCKED.** [Fee-evidence review](EXPERIMENT_002_IMPLEMENTATION_REVIEW.md) supersedes earlier READY status without changing the frozen design or budgets. Pinned Anvil receipt effectiveGasPrice conflicts with the actual capped wallet debit; dependency/fee-evidence compatibility is reopened. ADR 0002 remains accepted design only.
+
 **2026-10-18 — B-DEP RESOLVED (constrained baseline reuse); B-FEE RESOLVED (explicit local policy). Implementation readiness: READY for a separately authorized bounded implementation.** This is design readiness, not an implemented, audited, deployed or experimentally accepted Experiment 002.
 
 ## 1. Exact dependency selection

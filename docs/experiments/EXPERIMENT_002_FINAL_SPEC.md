@@ -1,5 +1,7 @@
 # Experiment 002 Final Technical Specification
 
+**Task 009 current disposition: partial contract implementation; acceptance FAIL / implementation BLOCKED.** [Fee-evidence review](EXPERIMENT_002_IMPLEMENTATION_REVIEW.md) supersedes earlier READY status without changing the frozen design or budgets. Pinned Anvil receipt effectiveGasPrice conflicts with the actual capped wallet debit; dependency/fee-evidence compatibility is reopened. ADR 0002 remains accepted design only.
+
 **2026-10-18 — Specification revision 2 (Task 008); implementation readiness: READY for separate authorization. ADR 0002 is accepted for bounded local design only.** This document freezes intended semantics/interfaces and local budgets; it does not authorize code or claim they have been implemented. [Blocker resolution](EXPERIMENT_002_BLOCKER_RESOLUTION.md) and [bounded costs](EXPERIMENT_002_BOUNDED_COST_MODEL.md) document the reviewed dependency/risk and fee decisions. Read with the [architecture](../architecture/EXPERIMENT_002_ARCHITECTURE.md), [design review](EXPERIMENT_002_DESIGN_REVIEW.md), [threat model](EXPERIMENT_002_THREAT_MODEL.md), [test plan](EXPERIMENT_002_TEST_PLAN.md), [signature fixtures](EXPERIMENT_002_SIGNING_VECTORS.md) and [dependency review](EXPERIMENT_002_DEPENDENCY_REVIEW.md).
 
 ## 1. Research scope and consent

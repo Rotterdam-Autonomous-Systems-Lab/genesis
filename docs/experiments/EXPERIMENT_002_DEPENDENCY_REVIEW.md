@@ -1,5 +1,7 @@
 # Experiment 002 Dependency and Reproducibility Review
 
+**Task 009 current status: partial escrow published; acceptance FAIL / implementation BLOCKED.** See [implementation review](EXPERIMENT_002_IMPLEMENTATION_REVIEW.md) for the pinned-Anvil fee-evidence contradiction and pending integration gates. Earlier design/readiness statements below are historical; design semantics remain unchanged.
+
 **Historical Task 007 review, 2026-10-18 — B-DEP was BLOCKING at that milestone.** [Task 008 resolution](EXPERIMENT_002_BLOCKER_RESOLUTION.md) now selects constrained baseline reuse with compatibility evidence and explicit residual risks. The historical findings below remain intact; resolution is not a claim they disappeared. No packages/toolchains, locks, source, credentials or CI settings were changed. Exact baseline is commit [ded3fff](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/commit/ded3fff203145cd8ec50fb3d91cca916a95cb331); [DEPENDENCIES.md](../../DEPENDENCIES.md) remains Experiment 001's evidence, not an approved Experiment 002 manifest.
 
 ## Baseline assessment

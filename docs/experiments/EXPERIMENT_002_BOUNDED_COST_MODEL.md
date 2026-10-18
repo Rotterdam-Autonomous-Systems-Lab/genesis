@@ -1,5 +1,7 @@
 # Experiment 002 Bounded Cost Model — Task 008
 
+**Task 009 current disposition: partial contract implementation; acceptance FAIL / implementation BLOCKED.** [Fee-evidence review](EXPERIMENT_002_IMPLEMENTATION_REVIEW.md) supersedes earlier READY status without changing the frozen design or budgets. Pinned Anvil receipt effectiveGasPrice conflicts with the actual capped wallet debit; dependency/fee-evidence compatibility is reopened. ADR 0002 remains accepted design only.
+
 **2026-10-18 — B-FEE RESOLVED as a local operator policy; not yet implemented/enforced by Experiment 002.** All amounts are synthetic wei on a temporary local chain. No real assets, paid hosting, native-token issuance or production pricing is authorized. See [blocker resolution](EXPERIMENT_002_BLOCKER_RESOLUTION.md), [final specification](EXPERIMENT_002_FINAL_SPEC.md) and [arithmetic check](../../research/compatibility/experiment002/check_fee_bounds.py).
 
 ## 1. Independent authorities and assumptions
