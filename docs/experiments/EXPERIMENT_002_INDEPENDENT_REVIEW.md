@@ -1,5 +1,7 @@
 # Experiment 002 adversarial implementation and evidence review — Task 013
 
+**Task 014 remediation:** [Evidence/workflow hardening](EXPERIMENT_002_REMEDIATION.md) implements the four review corrections and converts the counterexamples to rejection regressions. Status is **pending independent re-review and required publication CI**, not automatic PASS/closure. Historical findings and measurements below remain preserved.
+
 **2026-10-18. Reviewed baseline:** [`2161dc2b32c2e4b872bf1ebfee63aa1b6b9a544c`](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/commit/2161dc2b32c2e4b872bf1ebfee63aa1b6b9a544c), whose [CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39137210473).
 
 **Conclusion: NOT READY TO CLOSE; evidence-acceptance gate BLOCKED pending remediation.** The narrow no-second-signature result reproduces, and no unauthorized principal transfer, cap bypass, invalid-result payment or contract replay vulnerability was found in this review. However, two confirmed evidence-validation defects contradict the blanket reconciliation/rejection claims in [Task 012's CONDITIONAL PASS assessment](EXPERIMENT_002_AGENT_ACCEPTANCE.md). Preserve that historical assessment and its successful observations; do not treat it as complete satisfaction of mandatory P2-14/T12/T16 evidence checks. This is not a finding that the demonstrated settlement was fraudulent or a change to protocol semantics.

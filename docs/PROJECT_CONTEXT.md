@@ -1,5 +1,9 @@
 # Genesis Project Context
 
+## Task 014 current status — remediation pending re-review
+
+[Evidence/workflow remediation](experiments/EXPERIMENT_002_REMEDIATION.md) implements owner/state reconstruction, pinned/repeated observations, full receipt/own-intent consistency and sticky submission failure, shared cooperative deadlines, and controlled last-valid late funding with failure diagnostics. Existing caps, contract, schemas, Anvil/Cancun profile, Experiment 001 and MASTER_PLAN are unchanged. All prior review scenarios remain as rejection/boundary regressions. Original late-funding CI timing cannot be conclusively reconstructed, but the old scheduling-sensitive mechanism reproduces and current fixture controls inclusion without extending terms. **Independent re-review may proceed after required publication CI; acceptance/closure is not automatically granted.** Earlier statuses below are historical.
+
 ## Task 013 current review status — closure blocked
 
 [Experiment 002 adversarial review](experiments/EXPERIMENT_002_INDEPENDENT_REVIEW.md) confirms two medium evidence-validation defects (credit-owner allocation and contradictory RPC re-reads) and a low wall-deadline coverage gap. The no-second-requester-signature demonstration remains reproducible, with no confirmed unauthorized payout/cap bypass, but full security/evidence closure is BLOCKED pending minimal hardening and review. Task 012 CONDITIONAL PASS remains historical, not upgraded to PASS. R013-04 additionally preserves an initial review CI failure in the existing late-funding setup; the exact failed inclusion timestamp is unavailable and reproducibility remains open. Only review documentation and seven characterization/control tests changed; experiments, limits and MASTER_PLAN remain intact. Next recommended task is separately authorized evidence/deadline hardening, not another experiment or architecture expansion.

@@ -14,6 +14,7 @@ from genesis_experiment.protocol import (
     Rejected as ChainRejected,
 )
 from .chain import Chain
+from .limits import check_deadline
 from .protocol import (
     Inconclusive,
     Rejected,
@@ -80,8 +81,11 @@ def run(role, folder):
     own = config["roles"][role]
     if own["address"] != account.address or own["pid"] != os.getpid():
         raise Rejected("operator identity mismatch")
+    end = min(end, manifest["deadlineMonotonic"])
     chain = Chain(config["rpc"], account, artifact, role, PRICE, manifest)
+    check_deadline(end)
     node_info = chain.w3.provider.make_request("anvil_nodeInfo", [])["result"]
+    check_deadline(end)
     if (
         node_info["hardFork"].lower() != "cancun"
         or node_info["forkConfig"]["forkUrl"] is not None
@@ -285,24 +289,38 @@ def run(role, folder):
             signing.envelope("authorization", auth, {"requester": auth_sig}),
         )
         wait(folder / "fund-go.json", end)
-        receipt = chain.transact(
-            chain.contract.functions.fund(
-                tuple_for("Terms", terms),
-                tuple_for("Authorization", auth),
-                bytes.fromhex(dual["signatures"]["requester"][2:]),
-                bytes.fromhex(dual["signatures"]["provider"][2:]),
-                bytes.fromhex(auth_sig[2:]),
-            ),
-            "Funded",
-            {
-                "agreementId": agreement_id,
-                "requester": a,
-                "provider": b,
-                "authorizationNonce": 0,
-                "price": PRICE,
-            },
-            PRICE,
-        )
+        try:
+            receipt = chain.transact(
+                chain.contract.functions.fund(
+                    tuple_for("Terms", terms),
+                    tuple_for("Authorization", auth),
+                    bytes.fromhex(dual["signatures"]["requester"][2:]),
+                    bytes.fromhex(dual["signatures"]["provider"][2:]),
+                    bytes.fromhex(auth_sig[2:]),
+                ),
+                "Funded",
+                {
+                    "agreementId": agreement_id,
+                    "requester": a,
+                    "provider": b,
+                    "authorizationNonce": 0,
+                    "price": PRICE,
+                },
+                PRICE,
+            )
+        except (ChainRejected, ChainInconclusive):
+            write(
+                folder / "funding-failure.json",
+                {
+                    "fundBefore": terms["fundBefore"],
+                    "claimBefore": terms["claimBefore"],
+                    "observedReceipts": list(chain.observations.values()),
+                    "currentEvidenceVerified": False,
+                    "intents": chain.intents,
+                    "reservedFees": str(chain.budget.reserved),
+                },
+            )
+            raise
         observe(chain, terms, agreement_id, 1)
         write(
             folder / "funded.json",

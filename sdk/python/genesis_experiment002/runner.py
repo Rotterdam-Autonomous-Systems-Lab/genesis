@@ -18,7 +18,8 @@ from genesis_experiment.runner import stop
 from genesis_experiment.chain import connect
 from genesis_experiment.protocol import Inconclusive, Rejected
 from .chain import Chain, ATTEMPTS, RESERVATION, METHODS
-from .protocol import PRICE, integer, read, write, tuple_for
+from .protocol import PRICE, integer, read, write, tuple_for, wire
+from .limits import bound_rpc, check_deadline
 
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "research/compatibility/experiment002"))
@@ -52,6 +53,7 @@ class Fixture:
     def __enter__(self):
         self.processes = []
         self.started = time.monotonic()
+        self.deadline = self.started + 120
         self.peak_rss = 0
         self.temp = tempfile.TemporaryDirectory(
             prefix="experiment-002-", dir=ROOT / "internal"
@@ -82,8 +84,11 @@ class Fixture:
             )
             self.processes.append(self.node)
             for _ in range(160):
+                check_deadline(self.deadline)
                 try:
                     self.w3 = connect(self.rpc)
+                    bound_rpc(self.w3, self.deadline)
+                    check_deadline(self.deadline)
                     break
                 except Exception:
                     if self.node.poll() is not None:
@@ -101,7 +106,14 @@ class Fixture:
             self.run_id = "0x" + secrets.token_hex(32)
             self.deployer = Account.create()
             self.rpc_call("anvil_setBalance", [self.deployer.address, hex(RESERVATION)])
-            deploy = Chain(self.rpc, self.deployer, self.artifact, "deployer", PRICE)
+            deploy = Chain(
+                self.rpc,
+                self.deployer,
+                self.artifact,
+                "deployer",
+                PRICE,
+                deadline=self.deadline,
+            )
             constructor = self.w3.eth.contract(
                 abi=self.artifact["abi"], bytecode=self.artifact["bytecode"]["object"]
             ).constructor(self.run_id)
@@ -136,6 +148,7 @@ class Fixture:
                 "attempts": ATTEMPTS,
                 "rpcTimeout": 1,
                 "wallSeconds": 120,
+                "deadlineMonotonic": self.deadline,
                 "cleanupSeconds": 15,
             }
             self.contract = self.w3.eth.contract(
@@ -151,7 +164,9 @@ class Fixture:
             raise
 
     def rpc_call(self, method, params):
+        check_deadline(self.deadline)
         response = self.w3.provider.make_request(method, params)
+        check_deadline(self.deadline)
         if "error" in response:
             raise Inconclusive("fixture RPC error")
         return response["result"]
@@ -173,18 +188,28 @@ class Fixture:
             raise Inconclusive("RSS watchdog threshold")
 
     def wait(self, name, parse=True):
+        self.guard()
         path = self.folder / name
         while not path.exists():
             self.guard()
             for role in ("requester", "provider"):
-                if (self.folder / (role + "-error.json")).exists():
+                if (self.folder / (role + "-error.json")).exists() and self.folder / (
+                    role + "-error.json"
+                ) != path:
                     raise Inconclusive(
                         "agent rejected/failed: "
                         + role
                         + " "
                         + str(read(self.folder / (role + "-error.json")))
+                        + (
+                            " fundingEvidence="
+                            + str(read(self.folder / "funding-failure.json"))
+                            if (self.folder / "funding-failure.json").exists()
+                            else ""
+                        )
                     )
             time.sleep(0.025)
+        self.guard()
         return read(path) if parse else None
 
     def __exit__(self, *args):
@@ -200,24 +225,61 @@ class Fixture:
 
 
 def audit_ledger(f, ready, agreement_id, config):
-    """Independent closed-ledger audit, including receipts of terminated agents."""
+    """Reconstruct the one-agreement fixture, then compare pinned owner/state views."""
+    f.guard()
     audit = Chain(f.rpc, f.deployer, f.artifact, "deployer", PRICE, f.manifest)
+    audit.intents = list(f.deployment_intents)
     names = {
         f.deployer.address: "deployer",
         **{v["address"]: r for r, v in ready.items()},
     }
+    if len(names) != 3:
+        raise Inconclusive("ambiguous fixture identities")
+    a, b = (ready[r]["address"] for r in ("requester", "provider"))
     balances = {
         "deployer": RESERVATION,
         "requester": 8 * RESERVATION + PRICE,
         "provider": 8 * RESERVATION,
     }
-    fees = {role: 0 for role in balances}
-    attempts = {role: 0 for role in balances}
+    fees = {r: 0 for r in balances}
+    attempts = {r: 0 for r in balances}
+    expected_credits = {address: 0 for address in names}
+    expected_state = 0
+    expected_result = 0
+    expected_locked = 0
+    funded_count = 0
     gas = {}
     times = {}
-    funded_count = 0
-    for number in range(f.deployment_block, f.w3.eth.block_number + 1):
+    terms = read(f.folder / "terms.json")["message"]
+    if (
+        audit.signing.digest("Terms", terms) != agreement_id
+        or terms["requester"] != a.lower()
+        or terms["provider"] != b.lower()
+        or int(terms["price"]) != PRICE
+        or int(terms["x"]) != int(config["x"])
+        or int(terms["y"]) != int(config["y"])
+        or int(terms["claimBefore"]) != config["claimBefore"]
+        or ("fundBefore" in config and int(terms["fundBefore"]) != config["fundBefore"])
+    ):
+        raise Inconclusive("unattributed agreement")
+
+    def encoded(kind, values):
+        return wire(
+            kind,
+            **{
+                k: Web3.to_hex(v) if isinstance(v, bytes) else v
+                for k, v in values.items()
+            },
+        )
+
+    anchor = f.w3.eth.get_block("latest")
+    previous = None
+    for number in range(f.deployment_block, anchor["number"] + 1):
+        f.guard()
         block = f.w3.eth.get_block(number)
+        if previous is not None and block["parentHash"] != previous:
+            raise Inconclusive("audit chain changed")
+        previous = block["hash"]
         for digest in block["transactions"]:
             receipt = f.w3.eth.get_transaction_receipt(digest)
             tx = f.w3.eth.get_transaction(digest)
@@ -225,11 +287,11 @@ def audit_ledger(f, ready, agreement_id, config):
             if tx["from"] not in names:
                 raise Inconclusive("unauthorized fixture sender")
             role = names[tx["from"]]
-            method = (
-                "constructor"
-                if tx["to"] is None
-                else f.contract.decode_function_input(tx["input"])[0].fn_name
-            )
+            if tx["to"] is None:
+                method, args = "constructor", {}
+            else:
+                function, args = f.contract.decode_function_input(tx["input"])
+                method = function.fn_name
             if method not in METHODS[role] or (
                 method != "constructor" and tx["to"] != f.contract.address
             ):
@@ -254,72 +316,146 @@ def audit_ledger(f, ready, agreement_id, config):
             )
             if receipt["status"] == 0:
                 continue
+            if method != "fund" and tx["value"] != 0:
+                raise Inconclusive("unmodeled principal flow")
             if method == "fund":
                 funded_count += 1
-                if funded_count != 1 or tx["value"] != PRICE:
-                    raise Inconclusive("principal budget exceeded")
+                auth = encoded("Authorization", args["a"])
+                if (
+                    funded_count != 1
+                    or expected_state != 0
+                    or tx["from"] != a
+                    or tx["value"] != PRICE
+                    or encoded("Terms", args["t"]) != terms
+                    or auth["agreementId"] != agreement_id
+                    or auth["requester"] != a.lower()
+                    or auth["provider"] != b.lower()
+                    or int(auth["nonce"]) != 0
+                    or not PRICE <= int(auth["maxAmount"]) <= 10**15
+                    or not block["timestamp"]
+                    < int(auth["expiresAt"])
+                    <= int(terms["fundBefore"])
+                    < int(terms["claimBefore"])
+                ):
+                    raise Inconclusive("principal/authorization reconstruction failed")
+                audit.signing.verify("Terms", terms, Web3.to_hex(args["sigA"]), a)
+                audit.signing.verify("Terms", terms, Web3.to_hex(args["sigB"]), b)
+                audit.signing.verify(
+                    "Authorization", auth, Web3.to_hex(args["sigAuth"]), a
+                )
                 audit.check_event(
                     receipt,
                     "Funded",
                     {
                         "agreementId": agreement_id,
-                        "requester": ready["requester"]["address"],
-                        "provider": ready["provider"]["address"],
+                        "requester": a,
+                        "provider": b,
                         "authorizationNonce": 0,
                         "price": PRICE,
                     },
                 )
                 balances[role] -= PRICE
-            elif method == "withdraw":
-                audit.check_event(
-                    receipt, "Withdrawn", {"owner": tx["from"], "amount": PRICE}
-                )
-                balances[role] += PRICE
+                expected_locked = PRICE
+                expected_state = 1
             elif method == "claim":
+                c = encoded("Claim", args["c"])
+                value = int(config["x"]) + int(config["y"])
+                if (
+                    expected_state != 1
+                    or tx["from"] != b
+                    or c["agreementId"] != agreement_id
+                    or c["requester"] != a.lower()
+                    or c["provider"] != b.lower()
+                    or int(c["authorizationNonce"]) != 0
+                    or int(c["value"]) != value
+                    or block["timestamp"] >= int(terms["claimBefore"])
+                ):
+                    raise Inconclusive("claim reconstruction failed")
+                audit.signing.verify("Claim", c, Web3.to_hex(args["signature"]), b)
                 audit.check_event(
                     receipt,
                     "Claimed",
                     {
                         "agreementId": agreement_id,
-                        "provider": ready["provider"]["address"],
+                        "provider": b,
                         "authorizationNonce": 0,
-                        "value": int(config["x"]) + int(config["y"]),
+                        "value": value,
                         "price": PRICE,
                     },
                 )
+                expected_state = 2
+                expected_result = value
+                expected_locked = 0
+                expected_credits[b] += PRICE
             elif method == "refund":
+                if (
+                    expected_state != 1
+                    or tx["from"] != a
+                    or Web3.to_hex(args["id"]) != agreement_id
+                    or block["timestamp"] < int(terms["claimBefore"])
+                ):
+                    raise Inconclusive("refund reconstruction failed")
                 audit.check_event(
                     receipt,
                     "Refunded",
                     {
                         "agreementId": agreement_id,
-                        "requester": ready["requester"]["address"],
+                        "requester": a,
                         "authorizationNonce": 0,
                         "price": PRICE,
                     },
                 )
-    for address, role in names.items():
-        if f.w3.eth.get_balance(address) != balances[role]:
-            raise Inconclusive("whole-run wallet reconciliation failed")
-    terms = read(f.folder / "terms.json")["message"]
-    record = f.contract.functions.getRecord(agreement_id).call()
+                expected_state = 3
+                expected_locked = 0
+                expected_credits[a] += PRICE
+            elif method == "withdraw":
+                amount = expected_credits[tx["from"]]
+                if amount <= 0:
+                    raise Inconclusive("unattributed withdrawal")
+                audit.check_event(
+                    receipt, "Withdrawn", {"owner": tx["from"], "amount": amount}
+                )
+                balances[role] += amount
+                expected_credits[tx["from"]] = 0
+    if funded_count != 1:
+        raise Inconclusive("missing funded obligation")
+
+    def snapshot():
+        n = anchor["number"]
+        return (
+            f.contract.functions.getRecord(agreement_id).call(block_identifier=n),
+            f.contract.functions.nonceStatus(a, 0).call(block_identifier=n),
+            f.contract.functions.lockedPrincipal().call(block_identifier=n),
+            {
+                address: f.contract.functions.credits(address).call(block_identifier=n)
+                for address in names
+            },
+            f.contract.functions.totalCredits().call(block_identifier=n),
+            {role: f.w3.eth.get_balance(address, n) for address, role in names.items()},
+            f.w3.eth.get_balance(f.contract.address, n),
+        )
+
+    observed = snapshot()
+    if observed != snapshot() or f.w3.eth.get_block("latest")["hash"] != anchor["hash"]:
+        raise Inconclusive("contradictory/stale audit snapshot")
+    record, nonce, locked, credits, total, observed_balances, contract_balance = (
+        observed
+    )
     if (
         tuple(Web3.to_hex(v) if isinstance(v, bytes) else v for v in record[0])
         != tuple_for("Terms", terms)
         or record[1] != 0
+        or record[2] != expected_state
+        or record[3] != expected_result
+        or nonce != 1
+        or locked != expected_locked
+        or credits != expected_credits
+        or total != sum(expected_credits.values())
+        or observed_balances != balances
+        or contract_balance != expected_locked + total
     ):
-        raise Inconclusive("whole-run agreement reconciliation failed")
-    if f.contract.functions.nonceStatus(ready["requester"]["address"], 0).call() != 1:
-        raise Inconclusive("whole-run nonce mismatch")
-    locked = f.contract.functions.lockedPrincipal().call()
-    credits = sum(
-        f.contract.functions.credits(v["address"]).call() for v in ready.values()
-    )
-    if (
-        locked + credits != f.w3.eth.get_balance(f.contract.address)
-        or credits != f.contract.functions.totalCredits().call()
-    ):
-        raise Inconclusive("whole-run liabilities mismatch")
+        raise Inconclusive("owner/state/ledger reconciliation failed")
+    f.guard()
     return {
         "balances": balances,
         "fees": fees,
@@ -328,6 +464,10 @@ def audit_ledger(f, ready, agreement_id, config):
         "inclusion": times,
         "reservedFees": {r: attempts[r] * RESERVATION for r in attempts},
         "principalFundings": funded_count,
+        "creditsByOwner": credits,
+        "state": expected_state,
+        "result": str(expected_result),
+        "anchorHash": Web3.to_hex(anchor["hash"]),
     }
 
 
@@ -409,8 +549,19 @@ def run(scenario="success", x="7", y="11"):
             }
         else:
             if scenario == "late_funding":
-                f.advance(config["fundBefore"] - 1)
+                # Hold automining until the signed transaction is pending, then include
+                # it at the exact existing last-valid timestamp. No deadline extension.
+                f.rpc_call("evm_setAutomine", [False])
             write(folder / "fund-go.json", {})
+            if scenario == "late_funding":
+                while int(f.rpc_call("txpool_status", [])["pending"], 16) == 0:
+                    f.guard()
+                    if (folder / "requester-error.json").exists():
+                        f.wait("funded.json")
+                    time.sleep(0.025)
+                f.rpc_call("evm_setNextBlockTimestamp", [config["fundBefore"] - 1])
+                f.rpc_call("evm_mine", [])
+                f.rpc_call("evm_setAutomine", [True])
             funded = f.wait("funded.json")
             agreement_id = funded["agreementId"]
             snapshot = f.rpc_call("evm_snapshot", []) if scenario == "reorg" else None
@@ -547,6 +698,10 @@ def run(scenario="success", x="7", y="11"):
         f.guard()
         result.update(
             {
+                "signedWindows": {
+                    k: read(folder / "terms.json")["message"][k]
+                    for k in ("fundBefore", "claimBefore")
+                },
                 "deploymentIntents": f.deployment_intents,
                 "manifest": f.manifest,
                 "operatorHash": manifest_hash,

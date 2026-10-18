@@ -9,6 +9,7 @@ import time
 from eth_account import Account
 from eth_account.messages import encode_typed_data
 from web3 import Web3
+from .limits import check_deadline
 
 LIMIT = 16384
 MAX_PRICE = 10**15
@@ -129,7 +130,10 @@ def write(path, value):
 def wait(path, end):
     while time.monotonic() < end:
         if path.exists():
-            return read(path)
+            value = read(path)
+            if time.monotonic() >= end:
+                raise Inconclusive("transport deadline reached after read")
+            return value
         time.sleep(0.025)
     raise Inconclusive("transport timeout")
 
@@ -163,7 +167,8 @@ def wire(kind, **values):
 
 
 class Signing:
-    def __init__(self, contract, run_id):
+    def __init__(self, contract, run_id, deadline=None):
+        self.deadline = deadline
         self.domain = {
             "name": "GenesisExperiment002",
             "version": "1",
@@ -189,7 +194,15 @@ class Signing:
         )
 
     def sign(self, account, kind, message):
-        return Web3.to_hex(account.sign_message(self.typed(kind, message)).signature)
+        if self.deadline is not None:
+            check_deadline(self.deadline)
+        typed = self.typed(kind, message)
+        if self.deadline is not None:
+            check_deadline(self.deadline)
+        signature = Web3.to_hex(account.sign_message(typed).signature)
+        if self.deadline is not None:
+            check_deadline(self.deadline)
+        return signature
 
     def verify(self, kind, message, signature, signer):
         data = bytes.fromhex(hex_value(signature, 65)[2:])

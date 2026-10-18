@@ -1,9 +1,4 @@
-"""Task 013 counterexamples against unchanged 2161dc2, not remediation tests.
-
-Passing characterization tests mean the documented evidence gap still reproduces.
-A repair must deliberately replace acceptance-of-bad-evidence assertions with
-rejection assertions; never interpret green CI as resolution of these findings.
-"""
+"""Task 014 fail-closed regressions retaining every Task 013 fault scenario."""
 
 import json
 import time
@@ -19,7 +14,7 @@ from genesis_experiment002.runner import ROOT, audit_ledger
 import test_experiment002 as fixtures
 
 
-class EvidenceCounterexamples(unittest.TestCase):
+class ReviewRegressions(unittest.TestCase):
     # Reuse only disposable setup/signing; all review expectations are new.
     setUp = fixtures.Chain002Tests.setUp
     funding_function = fixtures.Chain002Tests.funding_function
@@ -56,7 +51,7 @@ class EvidenceCounterexamples(unittest.TestCase):
         config = {"x": "7", "y": "11", "claimBefore": int(self.t["claimBefore"])}
         return b, ready, config
 
-    def test_R013_01_swapped_credit_owners_pass_aggregate_audit(self):
+    def test_R013_01_swapped_credit_owners_and_states_are_rejected(self):
         b, ready, config = self.settle()
         actual = self.fixture.contract.functions.credits
         self.assertEqual(actual(self.a.address).call(), 0)
@@ -72,8 +67,8 @@ class EvidenceCounterexamples(unittest.TestCase):
         with patch.object(
             self.fixture.contract.functions, "credits", side_effect=swapped
         ):
-            accepted = audit_ledger(self.fixture, ready, self.id, config)
-            self.assertEqual(accepted["principalFundings"], 1)
+            with self.assertRaises(Inconclusive):
+                audit_ledger(self.fixture, ready, self.id, config)
         # No real theft: honest ledger continues to credit only B.
         self.assertEqual(actual(self.a.address).call(), 0)
         self.assertEqual(actual(self.b.address).call(), PRICE)
@@ -83,68 +78,73 @@ class EvidenceCounterexamples(unittest.TestCase):
         inconsistent[3] = 0
         with patch.object(self.fixture.contract.functions, "getRecord") as record:
             record.return_value.call.return_value = inconsistent
-            self.assertEqual(
-                audit_ledger(self.fixture, ready, self.id, config)["principalFundings"],
-                1,
-            )
+            with self.assertRaises(Inconclusive):
+                audit_ledger(self.fixture, ready, self.id, config)
         self.assertEqual(
             self.fixture.contract.functions.getRecord(self.id).call()[2], 2
         )
 
-    def test_R013_02_changed_current_receipt_fee_fields_are_ignored(self):
+    def test_R013_02_changed_current_receipt_fee_fields_are_rejected(self):
         receipt = self.fund()
-        for index, field in enumerate(("gasUsed", "effectiveGasPrice")):
-            bad = dict(receipt)
-            bad[field] += 1
+        for field in ("gasUsed", "effectiveGasPrice"):
             with self.subTest(field=field):
-                # Negative control: directly supplied false evidence rejects.
-                with self.assertRaises(Inconclusive):
-                    self.chain.canonical_receipt(bad, receipt["transactionHash"])
-                # Counterexample: same contradiction in the mandatory re-read accepts.
-                original = self.chain.w3.eth.get_transaction_receipt
-
-                def inconsistent(digest):
-                    return (
-                        bad
-                        if digest == receipt["transactionHash"]
-                        else original(digest)
-                    )
-
+                probe = Chain(
+                    self.fixture.rpc,
+                    self.a,
+                    self.fixture.artifact,
+                    "requester",
+                    PRICE,
+                    self.fixture.manifest,
+                )
+                probe.receipts = [receipt]
+                bad = dict(receipt)
+                bad[field] += 1
                 with patch.object(
-                    self.chain.w3.eth,
-                    "get_transaction_receipt",
-                    side_effect=inconsistent,
+                    probe.w3.eth, "get_transaction_receipt", return_value=bad
                 ):
-                    self.chain.canonical_receipt(receipt, receipt["transactionHash"])
-                    # Preflight sees the contradiction, yet another transaction is sent.
-                    self.chain.transact(
-                        self.chain.contract.functions.revokeUnused(index + 1)
-                    )
-                self.assertEqual(self.chain.budget.used, index + 2)
+                    with self.assertRaises(Inconclusive):
+                        probe.preflight()
+                # A later good response does not grant fresh signing permission.
+                with patch.object(
+                    self.a, "sign_transaction", wraps=self.a.sign_transaction
+                ) as sign, patch.object(probe.w3.eth, "send_raw_transaction") as send:
+                    with self.assertRaises(Inconclusive):
+                        probe.transact(probe.contract.functions.revokeUnused(1))
+                    sign.assert_not_called()
+                    send.assert_not_called()
+                self.assertTrue(probe.halted)
+                self.assertEqual(probe.budget.used, 0)
 
-    def test_R013_02_wrong_transaction_identity_is_ignored(self):
+    def test_R013_02_wrong_transaction_identity_is_rejected(self):
         receipt = self.fund()
-        tx = dict(self.chain.w3.eth.get_transaction(receipt["transactionHash"]))
-        tx["hash"] = b"\xff" * 32
-        tx["blockNumber"] += 1
-        with patch.object(self.chain.w3.eth, "get_transaction", return_value=tx):
-            self.chain.canonical_receipt(receipt, receipt["transactionHash"])
-        self.assertNotEqual(tx["hash"], receipt["transactionHash"])
+        for field in ("hash", "blockNumber"):
+            with self.subTest(field=field):
+                tx = dict(self.chain.w3.eth.get_transaction(receipt["transactionHash"]))
+                tx[field] = b"\xff" * 32 if field == "hash" else tx[field] + 1
+                with patch.object(
+                    self.chain.w3.eth, "get_transaction", return_value=tx
+                ):
+                    with self.assertRaises(Inconclusive):
+                        self.chain.canonical_receipt(
+                            receipt, receipt["transactionHash"]
+                        )
 
-    def test_R013_03_ready_barrier_and_signer_do_not_check_wall_deadline(self):
+    def test_R013_03_ready_barrier_and_signer_check_wall_deadline(self):
         barrier = self.fixture.folder / "review-ready.json"
         write(barrier, {})
-        # Logical time fault, no 120-second sleep or change to signed chain deadlines.
-        real = time.monotonic()
-        with patch("time.monotonic", return_value=real + 121):
+        with patch("time.monotonic", return_value=time.monotonic() + 121):
             with self.assertRaises(Inconclusive):
                 self.fixture.guard()
-            self.assertEqual(self.fixture.wait(barrier.name), {})
-            # This path still signs/mines, despite the expired run watchdog.
-            self.fund()
-        self.assertEqual(self.chain.record(self.id)[2], 1)
-        self.assertEqual(self.chain.budget.used, 1)
-        self.assertEqual(self.chain.budget.reserved, RESERVATION)
+            with self.assertRaises(Inconclusive):
+                self.fixture.wait(barrier.name)
+            with patch.object(
+                self.a, "sign_transaction", wraps=self.a.sign_transaction
+            ) as sign:
+                with self.assertRaises(Inconclusive):
+                    self.fund()
+                sign.assert_not_called()
+        self.assertEqual(self.chain.record(self.id)[2], 0)
+        self.assertEqual(self.chain.budget.used, 0)
 
     def test_R013_04_last_second_funding_can_expire_at_inclusion(self):
         self.fixture.advance(int(self.t["fundBefore"]) - 1)

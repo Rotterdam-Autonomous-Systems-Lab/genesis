@@ -1,0 +1,206 @@
+{
+  "baseline": "7511f08fbf52af449bbba7f2b7f7d29d159fbbb8",
+  "controlledLateFunding": [
+    {
+      "agreementId": "0x181bef5e3e56347bf314f80943f4463729464b16c55b7075f067c8d65997eaf0",
+      "childrenStopped": true,
+      "cleanupSeconds": 0.003971214988268912,
+      "elapsedSeconds": 2.971,
+      "fees": {
+        "deployer": 3265246000000000,
+        "provider": 62267557624460,
+        "requester": 798291584814243
+      },
+      "fundingSlack": 2,
+      "inclusion": {
+        "claim": [
+          {
+            "claimSlack": 0,
+            "hash": "0xa50dad24432ebb52c3f3e34efbe2c7cfd82d3d06040561356aaca808cee97ab8",
+            "status": 0,
+            "timestamp": 1792339012
+          }
+        ],
+        "constructor": [
+          {
+            "claimSlack": 121,
+            "hash": "0x877b76a32db6fd0b4946d22fbd2bd4e823ed20828e953d3748f39472b6503e2b",
+            "status": 1,
+            "timestamp": 1792338891
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 2,
+            "hash": "0xab6cad220f262db424ada0d4041cb00a97257e56db091593698085fd2bff3f23",
+            "status": 1,
+            "timestamp": 1792339010
+          }
+        ],
+        "refund": [
+          {
+            "claimSlack": -2,
+            "hash": "0x5996cfe39154210b17b3f9a3768144f167407e74cf2f978ab3dec3a870eb18b9",
+            "status": 1,
+            "timestamp": 1792339014
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": -2,
+            "hash": "0x78f9a97d20743f1e84f6f2fb94eb4b6ab83fc7ee2ceeb91ea94ea514ad66c51f",
+            "status": 1,
+            "timestamp": 1792339014
+          }
+        ]
+      },
+      "manifest": {
+        "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+        "attempts": {
+          "deployer": 1,
+          "provider": 8,
+          "requester": 8
+        },
+        "chainId": 31337,
+        "cleanupSeconds": 15,
+        "codeHash": "0x7557675cd559db6e209fc0a14dd4f851b21f9c39e0bf4584be056aba31910926",
+        "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+        "contract": "0x20F70F4be3EABAC641a413AC3aa7b337a85cd08d",
+        "deadlineMonotonic": 638313.898768986,
+        "gas": 2000000,
+        "hardfork": "cancun",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+        "principal": 1000000000000,
+        "rpcTimeout": 1,
+        "runId": "0xb0a4de588292c1d851d0211c9480c9422dab44042452d5339277adb990c66e1f",
+        "wallSeconds": 120
+      },
+      "outcome": "refunded",
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 6000000000000000,
+        "requester": 18000000000000000
+      },
+      "scenario": "late_funding",
+      "signedWindows": {
+        "claimBefore": "1792339012",
+        "fundBefore": "1792339011"
+      },
+      "state": 3
+    },
+    {
+      "agreementId": "0x04d9d4a38b3298fa03bff2975ad90069f314bb79f237ffcd7bd2e7c74e9bef65",
+      "childrenStopped": true,
+      "cleanupSeconds": 0.0035035680048167706,
+      "elapsedSeconds": 3.013,
+      "fees": {
+        "deployer": 3265246000000000,
+        "provider": 62267560511240,
+        "requester": 798295980949035
+      },
+      "fundingSlack": 2,
+      "inclusion": {
+        "claim": [
+          {
+            "claimSlack": 0,
+            "hash": "0xea25e237ddf34d91310ab56c76d8ead7feea1fd9fc3ed120800de40568a8a51f",
+            "status": 0,
+            "timestamp": 1792339015
+          }
+        ],
+        "constructor": [
+          {
+            "claimSlack": 121,
+            "hash": "0xda847b16db04c6a0abfd8086d5ee5b7221ba2126dbd57f4aa5b596f0b947e4a5",
+            "status": 1,
+            "timestamp": 1792338894
+          }
+        ],
+        "fund": [
+          {
+            "claimSlack": 2,
+            "hash": "0xb615596b1fde25e9024a5c8ffc92eea45018734fc414aac148bb7cce82401254",
+            "status": 1,
+            "timestamp": 1792339013
+          }
+        ],
+        "refund": [
+          {
+            "claimSlack": -2,
+            "hash": "0x5619fc5601c07b4d03921ff726d7b845725f61d21adafc1290a315fbdbee7580",
+            "status": 1,
+            "timestamp": 1792339017
+          }
+        ],
+        "withdraw": [
+          {
+            "claimSlack": -2,
+            "hash": "0xf1babb213b568529b178a5970e95197371d5638c80467a51d304aa630bd0f067",
+            "status": 1,
+            "timestamp": 1792339017
+          }
+        ]
+      },
+      "manifest": {
+        "artifactHash": "93fff0eb7f9b4605b7c94eb7f625bcffd61c7e9acba4c74aa509ebd7670d4005",
+        "attempts": {
+          "deployer": 1,
+          "provider": 8,
+          "requester": 8
+        },
+        "chainId": 31337,
+        "cleanupSeconds": 15,
+        "codeHash": "0xaf9a6e5924f89c1f1dcc4584fda716621b097e51f6017982073be9158413b2bc",
+        "compilerMetadataHash": "42266e62a8b47390586d90c2fd116cfc1dfcb4314a4b7112a69f91e75b0f8c54",
+        "contract": "0xE96ce5260f3F2F02F78e152546dE6F04608b184a",
+        "deadlineMonotonic": 638316.877962119,
+        "gas": 2000000,
+        "hardfork": "cancun",
+        "maxFeePerGas": 3000000000,
+        "maxPriorityFeePerGas": 1000000000,
+        "nodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+        "principal": 1000000000000,
+        "rpcTimeout": 1,
+        "runId": "0xdd12b955fb1c683042a80ff3d649960252b7bb787c6467298e526e69a93658ff",
+        "wallSeconds": 120
+      },
+      "outcome": "refunded",
+      "reservedFees": {
+        "deployer": 6000000000000000,
+        "provider": 6000000000000000,
+        "requester": 18000000000000000
+      },
+      "scenario": "late_funding",
+      "signedWindows": {
+        "claimBefore": "1792339015",
+        "fundBefore": "1792339014"
+      },
+      "state": 3
+    }
+  ],
+  "date": "2026-10-18",
+  "oldAutomaticClock": {
+    "claimBefore": "1792339201",
+    "delaySeconds": 1.1,
+    "fundBefore": "1792339021",
+    "hardfork": "cancun",
+    "mode": "old-auto-delayed",
+    "nonceConsumed": false,
+    "profile": "b272ce3366987406406e9eb1b82596653a3ad628",
+    "receipt": {
+      "block": "3",
+      "blockHash": "0x7e3c6a6dd7c74c886ff102288b605971f1d999d06721eca5e7690454ddf833ec",
+      "effectiveGasPrice": "1777529543",
+      "fee": "72377447931874",
+      "gasUsed": "40718",
+      "hash": "0xc5779f4284867ee237029ff91fb783774f3f7aef35e5579948744dffab4583ec",
+      "status": "0",
+      "timestamp": "1792339021"
+    },
+    "reservedFees": 6000000000000000,
+    "state": 0
+  },
+  "scope": "synthetic local timing; historical CI timestamp not recovered"
+}

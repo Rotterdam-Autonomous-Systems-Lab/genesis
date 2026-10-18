@@ -2,30 +2,31 @@
 
 Use this document to carry concise project context between Codex sessions and contributors. Update the current handoff after significant work; preserve prior handoffs in Git history where useful. Do not put secrets, credentials, or local-only notes here.
 
-## Current handoff — 2026-10-18 (Task 013)
+## Current handoff — 2026-10-18 (Task 014)
 
 ### Current status
 
-**Experiment 002 security/evidence closure BLOCKED pending remediation**, per [review](experiments/EXPERIMENT_002_INDEPENDENT_REVIEW.md). Task 012 narrow no-second-signature conditional collectability is reproduced, not upgraded to PASS. Its [CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39137210473). No confirmed unauthorized principal payout, replay or cap bypass was found; this is not a formal/organizationally independent audit. Long-term Genesis vision, MASTER_PLAN, existing implementations and published evidence remain unchanged.
+Experiment 002 [remediation](experiments/EXPERIMENT_002_REMEDIATION.md) implemented; **pending required publication CI and independent re-review**, not final PASS/closure. Preserve Task 012 conditional result, Task 013 findings and failed CI history. Genesis vision, MASTER_PLAN, contracts, schemas, fee/principal/wallet/time budgets, exact Anvil/Cancun profile and Experiment 001 are unchanged.
 
 ### Completed work
 
-- Traced contract/agents/codec/signer/supervisor, frozen specs, cost/toolchain assumptions, tests and archived evidence at `2161dc2b32c2e4b872bf1ebfee63aa1b6b9a544c`.
-- R013-01 Medium: aggregate supervisor audit accepts swapped credit owners. R013-02 Medium: inconsistent current receipt fee fields/transaction identities accept; preflight can allow a subsequent bounded send. R013-03 Low: ready barriers/signer do not enforce expired wall deadline before acting. R013-04 Medium: initial review CI errored at existing late-funding setup (funding reverted); exact failed-run timestamp evidence is unavailable.
-- Seven [review characterization/control tests](../tests/experiment002/test_review013.py) reproduce findings, verify contract negative controls and archive arithmetic. Existing assertions/caps/code/pins are untouched. Green characterization tests mean unresolved defects reproduce, not that they were repaired.
-- [Acceptance assessment](experiments/EXPERIMENT_002_AGENT_ACCEPTANCE.md) now points to the review; historical observations/archive are retained. Local regressions passed: 86 Solidity, 54 original Python and 59 Experiment 002 Python tests; check the review commit's Actions result.
+- R013-01: reconstruct each owner/state/result/entitlement from attributed signed included transactions; repeated pinned final snapshot must match model.
+- R013-02: cross-check current/block receipts, transaction identity and own signing intent; contradictory/stale observations latch further signing. Known terminal events constrain record views.
+- R013-03: shared 120-second cooperative monotonic deadline at ready barriers/RPC/typed signing/transaction phases/audits; unknown post-broadcast outcomes remain latched. Cleanup cap remains 15 seconds.
+- R013-04: old auto-clock +1.1-second delay reproduces expiry with gas-only loss; queue then explicitly mine the late test at existing fundBefore-1. Separate expired-funding control retained; safe failure diagnostics survive into error output. Historical CI timestamp is irrecoverable, not invented.
+- Seven converted review scenarios plus eleven new tests; local results: 86 Solidity /54 original Python /70 Experiment 002 Python. See [timing evidence](../research/experiments/experiment002/task014-timing-evidence.json) and exact reproduction/limitations in remediation record. No new dependencies/workflow permissions.
 
 ### Open questions
 
-Exact owner/terminal/liability reconstruction, complete cross-source fee/identity/intent checks, pre-signing/phase deadline enforcement. Broader inclusion/disclosure/finality/host/key/supply-chain and useful-work/native-economy questions remain unchanged.
+Independent review of reconstruction/snapshot assumptions, sticky evidence handling and cooperative deadline enforcement. Consistently dishonest RPC/host, finality/rollback, public disclosure, censorship/deadlines, absent callers/key loss and supply chain remain risks. No general fairness, work-uniqueness or native-network result.
 
 ### Next task
 
-Recommend separately authorized minimal evidence-checker/deadline hardening. Convert accepting-bad-evidence characterization into rejection/no-new-send regression assertions; preserve budgets and normal/refusal/offline/deadline controls; re-review closure. Do not automatically begin another experiment, token, L1 or public bootstrapping.
+Recommend independent re-review of the remediation and published CI before explicit acceptance disposition. No automatic new experiment, token/L1/consensus or public infrastructure work.
 
 ### Blockers
 
-R013-01/02 block mandatory P2-14/T12/T16 evidence closure. R013-03 needs explicit runtime remediation/disposition; R013-04 requires captured failure evidence and deterministic valid-late-funding setup. No implementation fix was authorized/performed in this review task. A passing CI is reproduction/regression evidence, not a clearance of the findings.
+No known local unresolved implementation finding within the stated cooperative/trusted fixture; final regressions and publication CI must pass. Closure still requires re-review. Original failed CI's exact timing remains unverified; current clock fix is supported by new reproducible evidence, not recovered historical data.
 
 ### Relevant commits
 
