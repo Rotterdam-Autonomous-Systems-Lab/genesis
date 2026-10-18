@@ -1,0 +1,15 @@
+{
+  "scope": "development diagnostics, not measured comparison evidence",
+  "projection_alias_bug": {
+    "case": "V02 step 1 (and other pay10 cases)",
+    "observed": "valid pay10 consumed outcome displayed as wrong_key because both share identical unsigned bytes and intent ID",
+    "cause": "last-label-wins digest-to-display-name map",
+    "resolution": "stable first-label presentation; harness compares consumed identity by exact digest, not display alias",
+    "security_effect": "no unauthorized key accepted; wrong-key negative control remains and rejects without fees"
+  },
+  "pre_measurement_checks": {
+    "core": "21 canonical vectors passed on all three models in development checks",
+    "selected_stress": "S01/S04/S07 passed before final measurement freeze; these runs used development sources and are not reproduction or performance acceptance evidence",
+    "fixture_defects": "none established; frozen v1 bytes and expected semantics unchanged"
+  }
+}

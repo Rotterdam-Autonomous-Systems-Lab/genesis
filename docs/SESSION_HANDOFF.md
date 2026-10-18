@@ -2,6 +2,10 @@
 
 Use this document to carry concise project context between Codex sessions and contributors. Update the current handoff after significant work; preserve prior handoffs in Git history where useful. Do not put secrets, credentials, or local-only notes here.
 
+## Current handoff — Task 019 implementation publication
+
+Three bounded research models and independent comparison harness are implemented; [comparison report](architecture/NATIVE_L1_COMPARISON_RESULTS.md) is pending full measured evidence. Frozen v1 and all prior implementation/security caps remain unchanged. [Reproduction/source boundary](../research/native_l1/README.md), public signed stress expansion and source lock define the run. Seven bounded unit methods cover canonical cases and negative controls. Full clean local and fresh Ubuntu CI batches must complete before a final disposition; no candidate selected/eliminated or BOUNDED MODEL PASS claimed. Docker daemon is unavailable; CI is the independent host. Earlier handoffs are historical.
+
 ## Current handoff — 2026-10-19 (Task 018)
 
 **READY FOR COMPARATIVE MODELS**, research/fixtures only. Baseline `23be098502f7fa0920e02930d3130fa78926289d`; locate publication with Git history for this file. [Adversarial review](architecture/NATIVE_L1_SPEC_REVIEW.md) records six resolved specification findings; [adapter](architecture/NATIVE_L1_ADAPTER.md), [measurement plan](architecture/NATIVE_L1_MEASUREMENTS.md) and [v1 corpus](../research/fixtures/native_l1/README.md) freeze 21 core vectors/32 signed intents plus nine deterministic stress configurations. Nine fixture-integrity tests pass and are added to CI. No candidate model execution or winner. MASTER_PLAN and Experiments 001/002 preserved.
