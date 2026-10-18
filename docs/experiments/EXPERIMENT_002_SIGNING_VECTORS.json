@@ -1,0 +1,2136 @@
+{
+  "format": "GenesisExperiment002-public-signing-vectors-v1",
+  "status": "specification fixtures; no contract executed",
+  "generatedWith": {
+    "eth-account": "0.13.7",
+    "eth-abi": "6.0.0",
+    "eth-utils": "6.0.0"
+  },
+  "provenance": "Generated once with ephemeral in-process keys then discarded. Verify public signatures/digests; production or funded identities must never reuse this fixture. ABI/Keccak struct hashing cross-checked against eth-account; neither is independent formal assurance.",
+  "domain": {
+    "name": "GenesisExperiment002",
+    "version": "1",
+    "chainId": "31337",
+    "verifyingContract": "0x1111111111111111111111111111111111111111"
+  },
+  "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+  "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+  "fixtures": [
+    {
+      "id": "V01-nominal",
+      "expected": "fund and claim eligible at valid times",
+      "terms": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Terms": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "serviceId",
+                "type": "bytes32"
+              },
+              {
+                "name": "policyId",
+                "type": "bytes32"
+              },
+              {
+                "name": "x",
+                "type": "uint64"
+              },
+              {
+                "name": "y",
+                "type": "uint64"
+              },
+              {
+                "name": "price",
+                "type": "uint256"
+              },
+              {
+                "name": "fundBefore",
+                "type": "uint64"
+              },
+              {
+                "name": "claimBefore",
+                "type": "uint64"
+              },
+              {
+                "name": "salt",
+                "type": "bytes32"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Terms",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "serviceId": "0x47834750b7b5efb398f945a6f35d9719e5c854a6ebadde233cb70339cfe643bc",
+            "policyId": "0x1d6ddd70729ad2873537066269d1c77abd5bc2b500404336bd8f564c298fb0e0",
+            "x": "7",
+            "y": "11",
+            "price": "1000000000000",
+            "fundBefore": "1120",
+            "claimBefore": "1300",
+            "salt": "0x3333333333333333333333333333333333333333333333333333333333333333",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0x10aad0c269c3bd5fd0e80ed9e039c1ab50799436bc37dd9d12b06f61bedc367e",
+        "digest": "0x3a6536fff5884f850a3ff7aa50efadd24f392e2e1a2e6175c420c1fcf8290817",
+        "signatures": {
+          "requester": "0xf23ac06f086ab56c7d956f0e6d024cc1e28faf8754cd80e469c2dd2363ca94dc559d65530d0e18ac6512088e91379e67d092250af7b50ff40e62b6d0265757c01c",
+          "provider": "0x99361835274db4a79fc119d166b50a8452ee83410113bb16c87beaa7928aecef133354f34652f59ea82e0fddfd9b07c5afc046f7695da3af179af373d1d7d7e91b"
+        }
+      },
+      "authorization": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Authorization": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "agreementId",
+                "type": "bytes32"
+              },
+              {
+                "name": "nonce",
+                "type": "uint256"
+              },
+              {
+                "name": "maxAmount",
+                "type": "uint256"
+              },
+              {
+                "name": "expiresAt",
+                "type": "uint64"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Authorization",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "agreementId": "0x3a6536fff5884f850a3ff7aa50efadd24f392e2e1a2e6175c420c1fcf8290817",
+            "nonce": "0",
+            "maxAmount": "2000000000000",
+            "expiresAt": "1120",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0x5c9c4cab6ea358c3e3df851c52b5c36dcf0e35a049a71584e5e7c9e029ce8a36",
+        "digest": "0x047a36a9cf62a3b2cce4179c73bb4f7488e1cefbc6b09cf634127c41a9457437",
+        "signatures": {
+          "requester": "0x1478a7ed0f21e1f72380d39daae5caaa6e1efb70c9b4f55c0b367eb992f00ee207875d4c413c1d9da972ac3bb5e4ad79ff1808beb5c3129382512525272049631c"
+        }
+      },
+      "claim": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Claim": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "agreementId",
+                "type": "bytes32"
+              },
+              {
+                "name": "authorizationNonce",
+                "type": "uint256"
+              },
+              {
+                "name": "value",
+                "type": "uint256"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Claim",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "agreementId": "0x3a6536fff5884f850a3ff7aa50efadd24f392e2e1a2e6175c420c1fcf8290817",
+            "authorizationNonce": "0",
+            "value": "18",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0x5adfe5ccc98e53bb1ce5f025b8615a938e39229791d05e5a6715eb0a0dd4e901",
+        "digest": "0x4df1ff9da827c2a0e5311c4f5d924b093bf5ae6dc61946e4f0d25daa07fcf847",
+        "signatures": {
+          "provider": "0xe80c126e32a051192c70ba89b68e12d397147a95235cfb8c3258a018e7101de1156d6328baf83698e28716d13ae3e768eb22f003886cff48c71ca39092fe127a1c"
+        }
+      }
+    },
+    {
+      "id": "V02-max-operands",
+      "expected": "correct value 36893488147419103230 eligible",
+      "terms": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Terms": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "serviceId",
+                "type": "bytes32"
+              },
+              {
+                "name": "policyId",
+                "type": "bytes32"
+              },
+              {
+                "name": "x",
+                "type": "uint64"
+              },
+              {
+                "name": "y",
+                "type": "uint64"
+              },
+              {
+                "name": "price",
+                "type": "uint256"
+              },
+              {
+                "name": "fundBefore",
+                "type": "uint64"
+              },
+              {
+                "name": "claimBefore",
+                "type": "uint64"
+              },
+              {
+                "name": "salt",
+                "type": "bytes32"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Terms",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "serviceId": "0x47834750b7b5efb398f945a6f35d9719e5c854a6ebadde233cb70339cfe643bc",
+            "policyId": "0x1d6ddd70729ad2873537066269d1c77abd5bc2b500404336bd8f564c298fb0e0",
+            "x": "18446744073709551615",
+            "y": "18446744073709551615",
+            "price": "1000000000000",
+            "fundBefore": "1120",
+            "claimBefore": "1300",
+            "salt": "0x4444444444444444444444444444444444444444444444444444444444444444",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0x535f5cd0184006d3d013982c3e0104551abb71ce66db662c3e2fdb5614c88491",
+        "digest": "0x247f3b806fae7fe67413a9021dd00d7a25b3dbf67b7d1e5aa356fc7f92c0e178",
+        "signatures": {
+          "requester": "0xb3a93a5018ca701b05f3a03ffaf0f829125be895bd9b652bf3300a3c3035b6fe1c9c97d873110cb2af15213d464405418f3057ffd5fefad2eb1c92c9d444ad7e1b",
+          "provider": "0xe0d7dd32458709526edd5f6d21c25e7f2e079aac1ba213d71ef2c6ac47dd376b6895066a2e75ce0e2548521d98a0b6f7f382b5d195f7014f63e9a14527f780ae1b"
+        }
+      },
+      "authorization": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Authorization": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "agreementId",
+                "type": "bytes32"
+              },
+              {
+                "name": "nonce",
+                "type": "uint256"
+              },
+              {
+                "name": "maxAmount",
+                "type": "uint256"
+              },
+              {
+                "name": "expiresAt",
+                "type": "uint64"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Authorization",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "agreementId": "0x247f3b806fae7fe67413a9021dd00d7a25b3dbf67b7d1e5aa356fc7f92c0e178",
+            "nonce": "1",
+            "maxAmount": "2000000000000",
+            "expiresAt": "1120",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0xe5d976c3dbeb4b30f582f89774ca32ad4fce7904d62f4adba2d294cb83dd9140",
+        "digest": "0x40fa322a9b1a565dfed663bf3bd60aafa5e30793483e24e59c2a41d596c72fda",
+        "signatures": {
+          "requester": "0xc3cb7be540989e3ca882da8343e0503801a87473b856141138b032218c386fce3a885f1c9c30db6ad8208d364f6401b9d04819752e54fc34b3108f42e7b6e4ef1b"
+        }
+      },
+      "claim": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Claim": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "agreementId",
+                "type": "bytes32"
+              },
+              {
+                "name": "authorizationNonce",
+                "type": "uint256"
+              },
+              {
+                "name": "value",
+                "type": "uint256"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Claim",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "agreementId": "0x247f3b806fae7fe67413a9021dd00d7a25b3dbf67b7d1e5aa356fc7f92c0e178",
+            "authorizationNonce": "1",
+            "value": "36893488147419103230",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0x022d448c4b94080a0108de5802befbac70c4529829ed31eb2457f694c34024d1",
+        "digest": "0x05c0c28dd92c6ce4e3a6be70d64fd3be0d811422b150ed39abb633ab8ee2a884",
+        "signatures": {
+          "provider": "0xff787741b06a13a1f9a7305518ed9baf884c02c51e4c74c9d68af20d7304531945d4fbc29bfd59eb32bb7d0ee1cc51e2423534bfe6f131d96e11c538272c80d31c"
+        }
+      }
+    },
+    {
+      "id": "V03-zero-price",
+      "expected": "valid signatures but funding rejects zero price",
+      "terms": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Terms": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "serviceId",
+                "type": "bytes32"
+              },
+              {
+                "name": "policyId",
+                "type": "bytes32"
+              },
+              {
+                "name": "x",
+                "type": "uint64"
+              },
+              {
+                "name": "y",
+                "type": "uint64"
+              },
+              {
+                "name": "price",
+                "type": "uint256"
+              },
+              {
+                "name": "fundBefore",
+                "type": "uint64"
+              },
+              {
+                "name": "claimBefore",
+                "type": "uint64"
+              },
+              {
+                "name": "salt",
+                "type": "bytes32"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Terms",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "serviceId": "0x47834750b7b5efb398f945a6f35d9719e5c854a6ebadde233cb70339cfe643bc",
+            "policyId": "0x1d6ddd70729ad2873537066269d1c77abd5bc2b500404336bd8f564c298fb0e0",
+            "x": "7",
+            "y": "11",
+            "price": "0",
+            "fundBefore": "1120",
+            "claimBefore": "1300",
+            "salt": "0x5555555555555555555555555555555555555555555555555555555555555555",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0x87801079a50f12ab4e97e2828ce48b4ef315d3033c4c0d3492d5ba1a374bb302",
+        "digest": "0x833b0804bc682a542f32d6a27751e48c964bc4cb60354e34176b1f6b5d4950e7",
+        "signatures": {
+          "requester": "0x6a4d2b52c18da2a713717bcfea850f275f5f1f12d16b61c9461cc5cb2a495b302a997a146ab2d2f4d4837ea9aa3713f5b6787f74df7b7e3a026d3847a09bf3611b",
+          "provider": "0x04cf09546125fda573777791c80bedd226c8292ec1bc97e99a6537ca6517c1071a4fadcc2a0118b7d13094f9e1bdb493ca2ef3e1b924152605f8ed93eeddd9461b"
+        }
+      },
+      "authorization": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Authorization": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "agreementId",
+                "type": "bytes32"
+              },
+              {
+                "name": "nonce",
+                "type": "uint256"
+              },
+              {
+                "name": "maxAmount",
+                "type": "uint256"
+              },
+              {
+                "name": "expiresAt",
+                "type": "uint64"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Authorization",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "agreementId": "0x833b0804bc682a542f32d6a27751e48c964bc4cb60354e34176b1f6b5d4950e7",
+            "nonce": "2",
+            "maxAmount": "2000000000000",
+            "expiresAt": "1120",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0x618da3b67cef19f72a41e1c61afbc200959925767d96515d037dcc177bd4b4cb",
+        "digest": "0x476c461a0b155427c9f2d4997f5f39c595fbe71c4cfee4ce960a25bc37e67c0b",
+        "signatures": {
+          "requester": "0xbae47cce71deceeade165f01870203ffbf66e1964112ffcc3402195739d115d44240fc50bbb34bbf2431b4c4b41927760682faa87708f706b4fa22e6dc0c57241b"
+        }
+      },
+      "claim": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Claim": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "agreementId",
+                "type": "bytes32"
+              },
+              {
+                "name": "authorizationNonce",
+                "type": "uint256"
+              },
+              {
+                "name": "value",
+                "type": "uint256"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Claim",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "agreementId": "0x833b0804bc682a542f32d6a27751e48c964bc4cb60354e34176b1f6b5d4950e7",
+            "authorizationNonce": "2",
+            "value": "18",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0x82ed35c8a9f2c296fdf8fe9e2ec64e5408c5f2511c05000bfc63639db74ccd1d",
+        "digest": "0x5d37312597a0346cad4c7fd9b83b727d7370b13a7fdbba8ed8153e14e279a459",
+        "signatures": {
+          "provider": "0x5f8fc5e5a10d3ef8d280a96f01e85b1f369e96f1a570c7c22dfd8fb3985610be704fd3bc12b0e6fab9c81fc3ea38b06fbb859e1240dfd93cf3543031f839ba921b"
+        }
+      }
+    },
+    {
+      "id": "V04-price-over-cap",
+      "expected": "valid signatures but funding rejects price above cap",
+      "terms": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Terms": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "serviceId",
+                "type": "bytes32"
+              },
+              {
+                "name": "policyId",
+                "type": "bytes32"
+              },
+              {
+                "name": "x",
+                "type": "uint64"
+              },
+              {
+                "name": "y",
+                "type": "uint64"
+              },
+              {
+                "name": "price",
+                "type": "uint256"
+              },
+              {
+                "name": "fundBefore",
+                "type": "uint64"
+              },
+              {
+                "name": "claimBefore",
+                "type": "uint64"
+              },
+              {
+                "name": "salt",
+                "type": "bytes32"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Terms",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "serviceId": "0x47834750b7b5efb398f945a6f35d9719e5c854a6ebadde233cb70339cfe643bc",
+            "policyId": "0x1d6ddd70729ad2873537066269d1c77abd5bc2b500404336bd8f564c298fb0e0",
+            "x": "7",
+            "y": "11",
+            "price": "2000000000001",
+            "fundBefore": "1120",
+            "claimBefore": "1300",
+            "salt": "0x6666666666666666666666666666666666666666666666666666666666666666",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0x390bc32547b715d89f6471da1e4de8e8639aabc7e1d1c0cc390a40b135d9c8cd",
+        "digest": "0x67ee93d1f664f937d3d69cac5dbb7693259b89f6d84ae864fa98de1227aa86b3",
+        "signatures": {
+          "requester": "0x1c126c2ffacad0e4dce524efe9b8b922f5e43fffeff4ea40da235dcfa6dd70bb4bbc7a7b456e8f2441ae2020713637bb3774db12269cee1e69717f6e56e5afd71b",
+          "provider": "0x0232f6690a53c9019e3b1c7d43f9a8927f44958d99fc525e7d3e009b6cb25def58fe83a1321be7d93c7ebce2fa076dbcd39189c8b98cb810addaddde14f617671b"
+        }
+      },
+      "authorization": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Authorization": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "agreementId",
+                "type": "bytes32"
+              },
+              {
+                "name": "nonce",
+                "type": "uint256"
+              },
+              {
+                "name": "maxAmount",
+                "type": "uint256"
+              },
+              {
+                "name": "expiresAt",
+                "type": "uint64"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Authorization",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "agreementId": "0x67ee93d1f664f937d3d69cac5dbb7693259b89f6d84ae864fa98de1227aa86b3",
+            "nonce": "3",
+            "maxAmount": "2000000000000",
+            "expiresAt": "1120",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0xe8766d81e7fad13565f8f80665bb08461612c09ec65c0a05c226bf011ceb2fd2",
+        "digest": "0x3441b971be8a647bd43c202e49d15c7afd0f07fb143310ff02a2a2b4ef43d43b",
+        "signatures": {
+          "requester": "0x337eecbe9441de6496441432f7a3e5eb6d051b94ecec00691411c837c77327996e47eac8cc65a9fb38e09bbc081e47bffb0fe9c95133faabbb56225b86d324a61c"
+        }
+      },
+      "claim": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Claim": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "agreementId",
+                "type": "bytes32"
+              },
+              {
+                "name": "authorizationNonce",
+                "type": "uint256"
+              },
+              {
+                "name": "value",
+                "type": "uint256"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Claim",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "agreementId": "0x67ee93d1f664f937d3d69cac5dbb7693259b89f6d84ae864fa98de1227aa86b3",
+            "authorizationNonce": "3",
+            "value": "18",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0x618601a01cfe59e0f5127574ef1f6d65b993190adb9d56f94d56357e1ab15e89",
+        "digest": "0x9dd9f66a86bffd220e1e80cfa00727284b33bc61db19d229351baab7e16b9211",
+        "signatures": {
+          "provider": "0xf4a0ad96c2acf8c927bbb78c371b66ca94f2ce6fc71339409a467a921e570b035fef89b2a7c3ed7e83ba45e8075192c4a54cfe96788a0ec0a9ca8ccd899e44601b"
+        }
+      }
+    },
+    {
+      "id": "V05-wrong-policy",
+      "expected": "valid signatures but funding rejects unsupported policy",
+      "terms": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Terms": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "serviceId",
+                "type": "bytes32"
+              },
+              {
+                "name": "policyId",
+                "type": "bytes32"
+              },
+              {
+                "name": "x",
+                "type": "uint64"
+              },
+              {
+                "name": "y",
+                "type": "uint64"
+              },
+              {
+                "name": "price",
+                "type": "uint256"
+              },
+              {
+                "name": "fundBefore",
+                "type": "uint64"
+              },
+              {
+                "name": "claimBefore",
+                "type": "uint64"
+              },
+              {
+                "name": "salt",
+                "type": "bytes32"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Terms",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "serviceId": "0x47834750b7b5efb398f945a6f35d9719e5c854a6ebadde233cb70339cfe643bc",
+            "policyId": "0x7777777777777777777777777777777777777777777777777777777777777777",
+            "x": "7",
+            "y": "11",
+            "price": "1000000000000",
+            "fundBefore": "1120",
+            "claimBefore": "1300",
+            "salt": "0x7777777777777777777777777777777777777777777777777777777777777777",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0x4586121109338006e761537aa1dceac169406c3ccddf150dcd9c1d2daa628182",
+        "digest": "0x3bc9a6706315c8f515e528cea52f95d37f730340182671ace7a6d0c9e3afecce",
+        "signatures": {
+          "requester": "0xe2de0d563e99a84f5db18840aa2a6285b2d264468e0f214cdb9644919d7c4a9130f02bdc20ad033fd6d93ed9255f0333473d233a7a2be377c45b67bc77c89a711c",
+          "provider": "0xa3b0606d0c312f04690b86e790e536a8dc296f8f9e68113fce3dd02ba1540f3a49b9d0fcd2aefbe57d2728bbaaf95d2bec66ddaedd46917cafb6f4627c1bb0cb1c"
+        }
+      },
+      "authorization": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Authorization": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "agreementId",
+                "type": "bytes32"
+              },
+              {
+                "name": "nonce",
+                "type": "uint256"
+              },
+              {
+                "name": "maxAmount",
+                "type": "uint256"
+              },
+              {
+                "name": "expiresAt",
+                "type": "uint64"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Authorization",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "agreementId": "0x3bc9a6706315c8f515e528cea52f95d37f730340182671ace7a6d0c9e3afecce",
+            "nonce": "4",
+            "maxAmount": "2000000000000",
+            "expiresAt": "1120",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0x0f1b140a188a025ea95f291e56ff6298a19e03668c92181795234b0624e49cc0",
+        "digest": "0x24edd39ee4c2286eb351a1181f777e7bd82ea2b99fc060b0a249deadef35a1dc",
+        "signatures": {
+          "requester": "0x230c33834a5811676d033fbd821ce1147d4e8e844036dfc28702843631a11a0a5e6431c8ad5865e2c3251c7308a07ab962aabac3dc2f6b8195fef22e7a8248781b"
+        }
+      },
+      "claim": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Claim": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "agreementId",
+                "type": "bytes32"
+              },
+              {
+                "name": "authorizationNonce",
+                "type": "uint256"
+              },
+              {
+                "name": "value",
+                "type": "uint256"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Claim",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "agreementId": "0x3bc9a6706315c8f515e528cea52f95d37f730340182671ace7a6d0c9e3afecce",
+            "authorizationNonce": "4",
+            "value": "18",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0xedd0599374b0c3fd0e76882c71941c0d591f56f607d593b0320122fffc039d77",
+        "digest": "0x28ff02957944cd731603f5d57a46152cc4cd723e21585e674e6c6d59f4596410",
+        "signatures": {
+          "provider": "0xadb9b9849b9c957e8010487aa4dcf0bca05a7761062451fac9e713540f45867d50445207d50b993f703f71359c1b10917351d3d8e1db414f4ce892b3595e73f11b"
+        }
+      }
+    },
+    {
+      "id": "V06-late-funding",
+      "expected": "fund at 1298 allowed; claim must still be included before 1300",
+      "terms": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Terms": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "serviceId",
+                "type": "bytes32"
+              },
+              {
+                "name": "policyId",
+                "type": "bytes32"
+              },
+              {
+                "name": "x",
+                "type": "uint64"
+              },
+              {
+                "name": "y",
+                "type": "uint64"
+              },
+              {
+                "name": "price",
+                "type": "uint256"
+              },
+              {
+                "name": "fundBefore",
+                "type": "uint64"
+              },
+              {
+                "name": "claimBefore",
+                "type": "uint64"
+              },
+              {
+                "name": "salt",
+                "type": "bytes32"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Terms",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "serviceId": "0x47834750b7b5efb398f945a6f35d9719e5c854a6ebadde233cb70339cfe643bc",
+            "policyId": "0x1d6ddd70729ad2873537066269d1c77abd5bc2b500404336bd8f564c298fb0e0",
+            "x": "7",
+            "y": "11",
+            "price": "1000000000000",
+            "fundBefore": "1299",
+            "claimBefore": "1300",
+            "salt": "0x8888888888888888888888888888888888888888888888888888888888888888",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0x51be0d1b5aa443a57f3c7ba49ca30ff75d27b6412c1ceb5bdf567cd7a0bedc68",
+        "digest": "0x15ff935596317375a50c3159152649f627658bc025179dae79cae72754b47cfa",
+        "signatures": {
+          "requester": "0x1b45d4b3b42aa05773bdd57e7d6159865d999ddbda4daddb2c941f4f963a10c0352ef9d90fc472f5771db584aa1617066e8f9459c461942cbd8528a033ac279b1c",
+          "provider": "0xb29c9f8d51c730229bba89c4b2f6326e99d87d7f169ee0936d1e7eeb2358863a279fa0f939b507ce8f961f02e221cd6b90008d756b42332f67c35e1469d56e341c"
+        }
+      },
+      "authorization": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Authorization": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "agreementId",
+                "type": "bytes32"
+              },
+              {
+                "name": "nonce",
+                "type": "uint256"
+              },
+              {
+                "name": "maxAmount",
+                "type": "uint256"
+              },
+              {
+                "name": "expiresAt",
+                "type": "uint64"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Authorization",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "agreementId": "0x15ff935596317375a50c3159152649f627658bc025179dae79cae72754b47cfa",
+            "nonce": "5",
+            "maxAmount": "2000000000000",
+            "expiresAt": "1299",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0x7320d81e504c74bc798bf89e339c0398a79b8faa5ef5ca66baa4176dd9a2ebb0",
+        "digest": "0x914a782ed3782779bed9b83907e2b1fe863c93405d818ec58ff7cf5ab5286eb1",
+        "signatures": {
+          "requester": "0xe17365548cfb7827317dd4f72338300b8c707eec51e938dada5ca5a36f60b6961c8cf3462846cf171b44881021c2426139705532580e0dbed80839bdb4273dc31c"
+        }
+      },
+      "claim": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Claim": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "agreementId",
+                "type": "bytes32"
+              },
+              {
+                "name": "authorizationNonce",
+                "type": "uint256"
+              },
+              {
+                "name": "value",
+                "type": "uint256"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Claim",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "agreementId": "0x15ff935596317375a50c3159152649f627658bc025179dae79cae72754b47cfa",
+            "authorizationNonce": "5",
+            "value": "18",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0xefa014c6e96449f4aba99eecbce227ea051b51acfcdef0580e733c9669f95a6d",
+        "digest": "0xb16d8cabcbebd5191ad8b59959f010f902169a21c26d7e84450d7bd35d68cfc4",
+        "signatures": {
+          "provider": "0x128dbe5f42a2c1212ed0908a47619778d669c819749b76196c62586db5b466fd3647ee861ae6b4c7737954d13c2c7fd0e8dbb7f74cd6200ebf7d2b3730efa5d51b"
+        }
+      }
+    },
+    {
+      "id": "V07-repeated-work",
+      "expected": "same work with distinct agreement and nonce eligible separately",
+      "terms": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Terms": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "serviceId",
+                "type": "bytes32"
+              },
+              {
+                "name": "policyId",
+                "type": "bytes32"
+              },
+              {
+                "name": "x",
+                "type": "uint64"
+              },
+              {
+                "name": "y",
+                "type": "uint64"
+              },
+              {
+                "name": "price",
+                "type": "uint256"
+              },
+              {
+                "name": "fundBefore",
+                "type": "uint64"
+              },
+              {
+                "name": "claimBefore",
+                "type": "uint64"
+              },
+              {
+                "name": "salt",
+                "type": "bytes32"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Terms",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "serviceId": "0x47834750b7b5efb398f945a6f35d9719e5c854a6ebadde233cb70339cfe643bc",
+            "policyId": "0x1d6ddd70729ad2873537066269d1c77abd5bc2b500404336bd8f564c298fb0e0",
+            "x": "7",
+            "y": "11",
+            "price": "1000000000000",
+            "fundBefore": "1120",
+            "claimBefore": "1300",
+            "salt": "0x9999999999999999999999999999999999999999999999999999999999999999",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0x56727e3c48450e61dde9f1767a37bb396199dac9206e94aa9d628f3d905365be",
+        "digest": "0x9cfef38df8330390663877fae0d85287bd878fa422cbf6e3ec2d76b6fd2f4cbb",
+        "signatures": {
+          "requester": "0xa6bedb2e0d93529fdd53c9b2c65fa2ec2e670c1e54bb6f69c68767b7bba128a149115bb49869b7bbf40a9a3bb8d9be566768b925dd8003996098707de68840df1b",
+          "provider": "0xf3c321c243c0ce382cef8a801b74b305364c3a17efb159c68734e0032868065e4ecbeb4843a8469e9937b6f57ccd3924e37adcffb86097b52fa88ee1443d4df11c"
+        }
+      },
+      "authorization": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Authorization": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "agreementId",
+                "type": "bytes32"
+              },
+              {
+                "name": "nonce",
+                "type": "uint256"
+              },
+              {
+                "name": "maxAmount",
+                "type": "uint256"
+              },
+              {
+                "name": "expiresAt",
+                "type": "uint64"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Authorization",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "agreementId": "0x9cfef38df8330390663877fae0d85287bd878fa422cbf6e3ec2d76b6fd2f4cbb",
+            "nonce": "6",
+            "maxAmount": "2000000000000",
+            "expiresAt": "1120",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0xa0b6937ec060770d0bc069a0b9276881ed7bf5806eccbc1fd5e07ef4b0aee2ac",
+        "digest": "0xa1244a920caec315b5dc44b0cf861f214ecfe9a7d470302c464067cf3b666fa9",
+        "signatures": {
+          "requester": "0xdfcac5dcb343c4d51c52b507d5ceb3909c20dca5393adbb38b985adbdbdd545f5040ad74dd75eced90ea6633b812ff3e9d0da1183227fc025327fbda14c59a331c"
+        }
+      },
+      "claim": {
+        "typedData": {
+          "types": {
+            "EIP712Domain": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "chainId",
+                "type": "uint256"
+              },
+              {
+                "name": "verifyingContract",
+                "type": "address"
+              }
+            ],
+            "Claim": [
+              {
+                "name": "requester",
+                "type": "address"
+              },
+              {
+                "name": "provider",
+                "type": "address"
+              },
+              {
+                "name": "agreementId",
+                "type": "bytes32"
+              },
+              {
+                "name": "authorizationNonce",
+                "type": "uint256"
+              },
+              {
+                "name": "value",
+                "type": "uint256"
+              },
+              {
+                "name": "runId",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "Claim",
+          "domain": {
+            "name": "GenesisExperiment002",
+            "version": "1",
+            "chainId": "31337",
+            "verifyingContract": "0x1111111111111111111111111111111111111111"
+          },
+          "message": {
+            "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+            "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+            "agreementId": "0x9cfef38df8330390663877fae0d85287bd878fa422cbf6e3ec2d76b6fd2f4cbb",
+            "authorizationNonce": "6",
+            "value": "18",
+            "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+        "structHash": "0x89a004c9b2e7bcf6c010558eee56e6601894358bea5104adb8b05567f7673bcb",
+        "digest": "0x587f24f1e538bd4d0ba93bc97bc04ade9ad0d5983a2672c4a604755d53aaa337",
+        "signatures": {
+          "provider": "0x74d44a714db3894c32955c943bf5ae52cbfbc87519022076e10069be1c98969b36b575ea4586f2824bc1fba05709a791027043bb57f75dfc31a9e8de9684a7b41b"
+        }
+      }
+    }
+  ],
+  "additionalArtifacts": {
+    "advertisement": {
+      "typedData": {
+        "types": {
+          "EIP712Domain": [
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "version",
+              "type": "string"
+            },
+            {
+              "name": "chainId",
+              "type": "uint256"
+            },
+            {
+              "name": "verifyingContract",
+              "type": "address"
+            }
+          ],
+          "Advertisement": [
+            {
+              "name": "provider",
+              "type": "address"
+            },
+            {
+              "name": "serviceId",
+              "type": "bytes32"
+            },
+            {
+              "name": "policyId",
+              "type": "bytes32"
+            },
+            {
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "name": "offerExpiresAt",
+              "type": "uint64"
+            },
+            {
+              "name": "runId",
+              "type": "bytes32"
+            }
+          ]
+        },
+        "primaryType": "Advertisement",
+        "domain": {
+          "name": "GenesisExperiment002",
+          "version": "1",
+          "chainId": "31337",
+          "verifyingContract": "0x1111111111111111111111111111111111111111"
+        },
+        "message": {
+          "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+          "serviceId": "0x47834750b7b5efb398f945a6f35d9719e5c854a6ebadde233cb70339cfe643bc",
+          "policyId": "0x1d6ddd70729ad2873537066269d1c77abd5bc2b500404336bd8f564c298fb0e0",
+          "price": "1000000000000",
+          "offerExpiresAt": "1120",
+          "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      },
+      "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+      "structHash": "0x0ae56b6013c874386f636e8352c04663a320192624928a81f6399f00e4d6e9d9",
+      "digest": "0xb5a266152e36702a581844978eeba0137521be1216be851d1825a27bb3a497bc",
+      "signatures": {
+        "provider": "0xa4e3189636c94fa8b6dc83bbf82867b78ba1d9893cdc61d86003e9176df8be894d422288fc8a2b0d8d4ed4b7c013db2c7dededa0f50ba2cda069405e40f015911b"
+      }
+    },
+    "invalidResultSignedByProvider": {
+      "typedData": {
+        "types": {
+          "EIP712Domain": [
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "version",
+              "type": "string"
+            },
+            {
+              "name": "chainId",
+              "type": "uint256"
+            },
+            {
+              "name": "verifyingContract",
+              "type": "address"
+            }
+          ],
+          "Claim": [
+            {
+              "name": "requester",
+              "type": "address"
+            },
+            {
+              "name": "provider",
+              "type": "address"
+            },
+            {
+              "name": "agreementId",
+              "type": "bytes32"
+            },
+            {
+              "name": "authorizationNonce",
+              "type": "uint256"
+            },
+            {
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "name": "runId",
+              "type": "bytes32"
+            }
+          ]
+        },
+        "primaryType": "Claim",
+        "domain": {
+          "name": "GenesisExperiment002",
+          "version": "1",
+          "chainId": "31337",
+          "verifyingContract": "0x1111111111111111111111111111111111111111"
+        },
+        "message": {
+          "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+          "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+          "agreementId": "0x3a6536fff5884f850a3ff7aa50efadd24f392e2e1a2e6175c420c1fcf8290817",
+          "authorizationNonce": "0",
+          "value": "19",
+          "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      },
+      "domainSeparator": "0xffba928f9e9f0ccb4deadaf2a591be63e06c1d8c6b8f8c54c9728e7cad53fbd4",
+      "structHash": "0x0e93427e05d62fa6d974a8ebb21c13e2aec6a28e840faee7d54c9f70d932465c",
+      "digest": "0x04c5bd4625ec8cde573fbfeabb41b11228cd433cbd64aa7d7f09d8838a57d141",
+      "signatures": {
+        "provider": "0x3c8243b8e850bdb6d558f7a500ce4810b3878d271afe9426b408dc4970a78ec66635503a7c13028a2eb51e51d65cc8065d890a39f3a81b34433aaf44a0bf21a41c"
+      }
+    },
+    "termsSignedForWrongChain": {
+      "typedData": {
+        "types": {
+          "EIP712Domain": [
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "version",
+              "type": "string"
+            },
+            {
+              "name": "chainId",
+              "type": "uint256"
+            },
+            {
+              "name": "verifyingContract",
+              "type": "address"
+            }
+          ],
+          "Terms": [
+            {
+              "name": "requester",
+              "type": "address"
+            },
+            {
+              "name": "provider",
+              "type": "address"
+            },
+            {
+              "name": "serviceId",
+              "type": "bytes32"
+            },
+            {
+              "name": "policyId",
+              "type": "bytes32"
+            },
+            {
+              "name": "x",
+              "type": "uint64"
+            },
+            {
+              "name": "y",
+              "type": "uint64"
+            },
+            {
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "name": "fundBefore",
+              "type": "uint64"
+            },
+            {
+              "name": "claimBefore",
+              "type": "uint64"
+            },
+            {
+              "name": "salt",
+              "type": "bytes32"
+            },
+            {
+              "name": "runId",
+              "type": "bytes32"
+            }
+          ]
+        },
+        "primaryType": "Terms",
+        "domain": {
+          "name": "GenesisExperiment002",
+          "version": "1",
+          "chainId": "31338",
+          "verifyingContract": "0x1111111111111111111111111111111111111111"
+        },
+        "message": {
+          "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+          "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+          "serviceId": "0x47834750b7b5efb398f945a6f35d9719e5c854a6ebadde233cb70339cfe643bc",
+          "policyId": "0x1d6ddd70729ad2873537066269d1c77abd5bc2b500404336bd8f564c298fb0e0",
+          "x": "7",
+          "y": "11",
+          "price": "1000000000000",
+          "fundBefore": "1120",
+          "claimBefore": "1300",
+          "salt": "0x3333333333333333333333333333333333333333333333333333333333333333",
+          "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      },
+      "domainSeparator": "0x62da7216173b4a64c83306236bedb0cb89dd4390be7fe47275eac66f6da0d795",
+      "structHash": "0x10aad0c269c3bd5fd0e80ed9e039c1ab50799436bc37dd9d12b06f61bedc367e",
+      "digest": "0xf3bbffe5880139f0f043308de4edf726b573008895a0b39aabaf44d49267105a",
+      "signatures": {
+        "requester": "0x6d44228f22bcff4c774dca0261f4f58ce0fbdad2ebe251c0501a311cb06b3a695a3fb2b8738c367b518b216a352070980d89baf3457f953fd2997c91b838bed71c",
+        "provider": "0x4b008318768f3f135912ffc06d027ecabf94523f47fe3d1fc4496040e9ac8ac26f35367abe25519aaefbe091d5d385627e274e6e52b5c132b2f11d8770c925161c"
+      }
+    },
+    "termsSignedForWrongContract": {
+      "typedData": {
+        "types": {
+          "EIP712Domain": [
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "version",
+              "type": "string"
+            },
+            {
+              "name": "chainId",
+              "type": "uint256"
+            },
+            {
+              "name": "verifyingContract",
+              "type": "address"
+            }
+          ],
+          "Terms": [
+            {
+              "name": "requester",
+              "type": "address"
+            },
+            {
+              "name": "provider",
+              "type": "address"
+            },
+            {
+              "name": "serviceId",
+              "type": "bytes32"
+            },
+            {
+              "name": "policyId",
+              "type": "bytes32"
+            },
+            {
+              "name": "x",
+              "type": "uint64"
+            },
+            {
+              "name": "y",
+              "type": "uint64"
+            },
+            {
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "name": "fundBefore",
+              "type": "uint64"
+            },
+            {
+              "name": "claimBefore",
+              "type": "uint64"
+            },
+            {
+              "name": "salt",
+              "type": "bytes32"
+            },
+            {
+              "name": "runId",
+              "type": "bytes32"
+            }
+          ]
+        },
+        "primaryType": "Terms",
+        "domain": {
+          "name": "GenesisExperiment002",
+          "version": "1",
+          "chainId": "31337",
+          "verifyingContract": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "message": {
+          "requester": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+          "provider": "0x176ab2f68a14156794f05943e131aeaf273a9acc",
+          "serviceId": "0x47834750b7b5efb398f945a6f35d9719e5c854a6ebadde233cb70339cfe643bc",
+          "policyId": "0x1d6ddd70729ad2873537066269d1c77abd5bc2b500404336bd8f564c298fb0e0",
+          "x": "7",
+          "y": "11",
+          "price": "1000000000000",
+          "fundBefore": "1120",
+          "claimBefore": "1300",
+          "salt": "0x3333333333333333333333333333333333333333333333333333333333333333",
+          "runId": "0x2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      },
+      "domainSeparator": "0x7a4722e029795c910a9dd163424667f4ceaed275426c1dc56861c86ce7ad90c8",
+      "structHash": "0x10aad0c269c3bd5fd0e80ed9e039c1ab50799436bc37dd9d12b06f61bedc367e",
+      "digest": "0xfddad03a26252dbd0ebe1ba992aa3e6f697d040b0fa2562a80f1caca45eeaac2",
+      "signatures": {
+        "requester": "0x0bc627344f150c913b51a03a6aca1261d66095db5b57404f1b9a2375b901df4776809305845d82e02192b17b50772ee4e96eeb795ed48d4e00f70a1ba772c5981b",
+        "provider": "0xb164702b4e22380f7c744b273a0bca28425ff184ea91464e3cf8cf240dc51af00dd94d5d66d445fc2678423bf69940bb1214917a39c46c054c6a2f3fb6ad91391c"
+      }
+    }
+  },
+  "mutations": [
+    {
+      "id": "M01-unsigned-price",
+      "base": "V01-nominal",
+      "path": "terms.typedData.message.price",
+      "value": "1000000000001",
+      "resign": false,
+      "expected": "original signatures fail against changed Terms; no funding"
+    },
+    {
+      "id": "M02-wrong-agreement",
+      "base": "V01-nominal",
+      "path": "authorization.typedData.message.agreementId",
+      "value": "0x9cfef38df8330390663877fae0d85287bd878fa422cbf6e3ec2d76b6fd2f4cbb",
+      "resign": false,
+      "expected": "authorization signature/binding fails; no funding"
+    },
+    {
+      "id": "M03-wrong-provider",
+      "base": "V01-nominal",
+      "path": "terms.typedData.message.provider",
+      "value": "0x6a1d8d21818039ab4a180a29961ec4a299841290",
+      "resign": false,
+      "expected": "party/signature checks fail; no funding"
+    },
+    {
+      "id": "M04-malformed-signature",
+      "base": "V01-nominal",
+      "path": "terms.signatures.requester",
+      "value": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "resign": false,
+      "expected": "zero/invalid recovered signer; no funding"
+    },
+    {
+      "id": "M05-truncated-signature",
+      "base": "V01-nominal",
+      "path": "terms.signatures.requester",
+      "value": "0xf23ac06f086ab56c7d956f0e6d024cc1e28faf8754cd80e469c2dd2363ca94dc559d65530d0e18ac6512088e91379e67d092250af7b50ff40e62b6d0265757c0",
+      "resign": false,
+      "expected": "64-byte encoding rejected; no funding"
+    }
+  ]
+}

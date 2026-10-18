@@ -46,3 +46,7 @@ Proposed [ADR 0002](../adr/0002-experiment-002-fair-exchange.md) requires a sepa
 ## Task 006 readiness status
 
 [Review](EXPERIMENT_002_DESIGN_REVIEW.md) requires R1–R3 before implementation and retains ADR 0002 as Proposed. All T01–T20 are mandatory planned scenarios; none has run. Report outcomes over all attempted runs alongside the conditional safety result; do not treat a timely-inclusion premise as a measured provider-progress guarantee. Test T19 corrects the original H2-C automatic-closure overstatement without changing escrow rules.
+
+## Task 007 concrete fixture requirements
+
+All T01–T20 remain mandatory. Add the [signature/state vectors](EXPERIMENT_002_SIGNING_VECTORS.md) and [JSON constants](EXPERIMENT_002_SIGNING_VECTORS.json) as independent interoperability/negative oracles; verification must recompute hashes and recover signers, including correctly signed but semantically invalid terms and B-signed wrong arithmetic. Add insufficient-wallet-funds and unknown-broadcast classification cases. Once B-FEE is resolved, test fee ceiling, per-run gas-cost exhaustion including failed transactions, and refusal to sign out-of-budget transactions; do not change principal cap semantics silently. [Final specification](EXPERIMENT_002_FINAL_SPEC.md) freezes expected behavior; no contract cases have executed.

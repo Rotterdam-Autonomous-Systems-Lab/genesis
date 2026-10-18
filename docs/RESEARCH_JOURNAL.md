@@ -64,6 +64,14 @@ The [Experiment 002 review](experiments/EXPERIMENT_002_DESIGN_REVIEW.md) conclud
 
 Documentation/design review only: no Experiment 002 code, deployment or executed evidence. Experiment 001's publication, 112-test milestone, implementation and control semantics remain unchanged. Next recommended task: close review gates R1–R3 in specification finalization, explicitly decide on ADR 0002, then separately authorize bounded implementation if accepted. This entry's commit and regression CI are recoverable from Git history/Actions; regression CI is not Experiment 002 evidence.
 
+## 2026-10-18 — Experiment 002 final specification and economic foundations (Task 007)
+
+Added the [final technical specification](experiments/EXPERIMENT_002_FINAL_SPEC.md), [public signature/state vector guide](experiments/EXPERIMENT_002_SIGNING_VECTORS.md)/[JSON fixtures](experiments/EXPERIMENT_002_SIGNING_VECTORS.json), and [dependency review](experiments/EXPERIMENT_002_DEPENDENCY_REVIEW.md). Exact public-data fixtures were generated with ephemeral discarded keys; ABI/EIP-712 hashes and public signer recovery checked locally. Seven signed agreement/auth/claim sets, four additional artifacts and five mutations are interoperability research data, not an implemented contract or passed Experiment 002 test suite. No keys, raw transactions or credentials are published.
+
+Readiness is **BLOCKED**, ADR 0002 remains Proposed. B-DEP requires reviewed compatible dependencies or documented constrained reuse; B-FEE requires finite operator gas-fee/run-cost limits distinct from principal. A fresh OSV query of 39 locked packages returned Web3.py's existing advisory IDs; compiler inventory/chronology, runtime and supply-chain limitations are documented. No dependency or CI changes made.
+
+Added [AI-earned native tokens and human/machine utility research](../research/economics/AI_EARNED_NATIVE_TOKENS_AND_UTILITY.md), distinguishing service payment, protocol issuance and security compensation, and proposing E-01–E-05 token-free research methods. Primary-source comparison is scoped, not exhaustive or empirically validated. No issuance/consensus/economic outcome is selected. Updated roadmap, context, decisions, research navigation and handoff; Experiment 001 remains unchanged. Recommended next technical task: close B-DEP/B-FEE before separate implementation authorization; independently scope E-01/E-02 research. This commit's regression CI is evidence about Experiment 001 only.
+
 ## Source boundary
 
 This journal does not infer events beyond the repository record. See [`SESSION_HANDOFF.md`](SESSION_HANDOFF.md) for current working context and the reusable handoff format.

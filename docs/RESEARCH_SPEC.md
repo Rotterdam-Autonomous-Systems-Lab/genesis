@@ -67,3 +67,7 @@ A simulation result supports only the modeled conditions. A cryptographic proof 
 ## Evidence and literature discipline
 
 Use `ESTABLISHED TECHNIQUE`, `PROJECT ASSUMPTION`, `RESEARCH HYPOTHESIS`, and `FINDING` labels where helpful. Cite primary sources and technical documentation for factual comparisons. State what was searched and what was out of scope. Do not claim comprehensiveness or originality without a documented, reviewable search. Current repository content does not establish that such a comprehensive review has been completed.
+
+## Task 007 economic research foundations
+
+The separate [AI-earned native-token and human/machine utility review](../research/economics/AI_EARNED_NATIVE_TOKENS_AND_UTILITY.md) proposes E-01–E-05 without issuing a token or selecting consensus. Prioritize correctness/usefulness/uniqueness separation and fixed-resource identity-splitting tests, then subsidy/security-budget and native-versus-stable-settlement sensitivity. These are research plans, not results. The [Experiment 002 final proposal](experiments/EXPERIMENT_002_FINAL_SPEC.md) remains BLOCKED by dependency and finite-fee-policy decisions; synthetic service settlement does not validate issuance eligibility or economic demand.

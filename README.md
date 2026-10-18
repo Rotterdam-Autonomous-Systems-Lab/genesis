@@ -25,7 +25,7 @@ Development follows explicit research questions and scoped experiments. Prior ar
 | Researcher's question | Documentation |
 | --- | --- |
 | What is Genesis, and what is established? | [Project context](docs/PROJECT_CONTEXT.md), [canonical charter](MASTER_PLAN.md), [decision register](docs/DECISION_REGISTER.md) |
-| What is being investigated? | [Research specification](docs/RESEARCH_SPEC.md), [protocol hypotheses](docs/PROTOCOL_HYPOTHESES.md) |
+| What is being investigated? | [Research specification](docs/RESEARCH_SPEC.md), [protocol hypotheses](docs/PROTOCOL_HYPOTHESES.md), [AI-earned native tokens and economic utility](research/economics/AI_EARNED_NATIVE_TOKENS_AND_UTILITY.md) |
 | What could the long-term network include? | [Future network architecture research](docs/FUTURE_NETWORK_ARCHITECTURE.md), [conditional roadmap](docs/ROADMAP.md) |
 | What does the first experiment specify and test? | [Experiment 001](docs/experiments/EXPERIMENT_001.md), [architecture](docs/architecture/EXPERIMENT_001_ARCHITECTURE.md), [coverage and limitations](docs/experiments/EXPERIMENT_001_ESCROW_COVERAGE.md) |
 | What are the security assumptions? | [Threat model](docs/THREAT_MODEL.md), [security invariants](docs/SECURITY_INVARIANTS.md) |
@@ -38,7 +38,7 @@ Development follows explicit research questions and scoped experiments. Prior ar
 2. **Independent Network Security** — secure permissionless consensus and resistance to Sybil attacks, including AI swarms.
 3. **Human and Machine Economy** — meaningful human-to-human, human-to-machine and machine-to-machine use of the same native asset; investigate sustainable demand, fees, incentives and issuance without selecting parameters.
 
-Long-term adaptability to AI, computing, robotics, cryptography and communications is a research requirement, not guaranteed future-proofing. See the [Task 006 design review](docs/experiments/EXPERIMENT_002_DESIGN_REVIEW.md); Experiment 002 remains Proposed and unimplemented.
+Long-term adaptability to AI, computing, robotics, cryptography and communications is a research requirement, not guaranteed future-proofing. See the [final Experiment 002 proposal](docs/experiments/EXPERIMENT_002_FINAL_SPEC.md) and [Task 006 design review](docs/experiments/EXPERIMENT_002_DESIGN_REVIEW.md); Experiment 002 remains Proposed, BLOCKED pending dependency/fee-policy decisions, and unimplemented.
 
 ## Cross-cutting technical tracks
 
