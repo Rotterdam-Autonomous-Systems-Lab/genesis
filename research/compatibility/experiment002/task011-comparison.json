@@ -1,0 +1,3007 @@
+{
+  "candidateCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+  "correctedCandidate": {
+    "artifactSha256": "e7395829c595435500a1c68aaf495849f49a024797b486e12bbc9a1d7b9a34ae",
+    "elapsedSeconds": 10.528,
+    "foundryCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+    "host": "macOS-12.7.6-x86_64-i386-64bit",
+    "nodeProfile": "verified candidate / Cancun",
+    "results": [
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x0"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa7349d5f19e00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x0",
+          "gasUsed": "0x57dd",
+          "hash": "0x086895558035b0f0c60137a1c8d1a13dcc3011eeaa99fed5c636fb97ea8d1383",
+          "number": "0x2",
+          "parentHash": "0xc052a3882cd1bf51e083a6dc562242256be210878fddecfe11e3ab506facb632",
+          "transactions": [
+            "0x811fd73bc8214ea97ee2e9200bc658bd42182bc3d75d833a77f90d4f9d11b83e"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0x3b9aca00",
+        "case": "zero",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 22493000000000,
+          "expectedFee": 22493000000000,
+          "expectedPrice": 1000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 22493000000000,
+          "reportedPrice": 1000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0xc052a3882cd1bf51e083a6dc562242256be210878fddecfe11e3ab506facb632",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x086895558035b0f0c60137a1c8d1a13dcc3011eeaa99fed5c636fb97ea8d1383",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0x3b9aca00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x811fd73bc8214ea97ee2e9200bc658bd42182bc3d75d833a77f90d4f9d11b83e",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 0,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x086895558035b0f0c60137a1c8d1a13dcc3011eeaa99fed5c636fb97ea8d1383",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x2b51497a31a2117866b11f0a49fab829c8ad9499",
+          "gas": "0x1e8480",
+          "gasPrice": "0x3b9aca00",
+          "hash": "0x811fd73bc8214ea97ee2e9200bc658bd42182bc3d75d833a77f90d4f9d11b83e",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x572d88c510c18acb49c7106000e7c39d296364d8",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x0",
+        "witnessGasPrice": "0x3b9aca00"
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x3b9aca00"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa5ed4c6ab3c00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x3b9aca00",
+          "gasUsed": "0x57dd",
+          "hash": "0x7d3eb65898397fbbec134676cf6642cbc63cfc8b036d20689925713a4a03a772",
+          "number": "0x2",
+          "parentHash": "0xad349d13c0419ff8e5361cccbc0e70be05c6231346bc976d824182a9f58c9ae2",
+          "transactions": [
+            "0x12474a0ba238629b2fdcb81d040f2457ed7c4ba140ceee7081716af9b84cddaf"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0x77359400",
+        "case": "one-gwei",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 44986000000000,
+          "expectedFee": 44986000000000,
+          "expectedPrice": 2000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 44986000000000,
+          "reportedPrice": 2000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0xad349d13c0419ff8e5361cccbc0e70be05c6231346bc976d824182a9f58c9ae2",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x7d3eb65898397fbbec134676cf6642cbc63cfc8b036d20689925713a4a03a772",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0x77359400",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x12474a0ba238629b2fdcb81d040f2457ed7c4ba140ceee7081716af9b84cddaf",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 1000000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x7d3eb65898397fbbec134676cf6642cbc63cfc8b036d20689925713a4a03a772",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x98bdb067e1f1815ab59c423b11b529b96f06fdda",
+          "gas": "0x1e8480",
+          "gasPrice": "0x77359400",
+          "hash": "0x12474a0ba238629b2fdcb81d040f2457ed7c4ba140ceee7081716af9b84cddaf",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xf88cdb63f506ea5d122c3cf754b4b8f133770a85",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x3b9aca00",
+        "witnessGasPrice": "0x77359400"
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x773593ff"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa4a5fb76531dd",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x773593ff",
+          "gasUsed": "0x57dd",
+          "hash": "0x2ddb9a7697c32bb00a537389c37e106d5403cf4958b55a62009aae25824f91c8",
+          "number": "0x2",
+          "parentHash": "0xfdf027de016b6b7bfe703e8394dc8b88de0ac1c3b1bb5dbcfc751d2accd05c1e",
+          "transactions": [
+            "0x72a46ac49e65d1909746ac92e0876b598e9bfddbbb16e972fb80558696b01e79"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05dff",
+        "case": "below-tip-clamp",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 67478999977507,
+          "expectedFee": 67478999977507,
+          "expectedPrice": 2999999999,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67478999977507,
+          "reportedPrice": 2999999999
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0xfdf027de016b6b7bfe703e8394dc8b88de0ac1c3b1bb5dbcfc751d2accd05c1e",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x2ddb9a7697c32bb00a537389c37e106d5403cf4958b55a62009aae25824f91c8",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05dff",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x72a46ac49e65d1909746ac92e0876b598e9bfddbbb16e972fb80558696b01e79",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 1999999999,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x2ddb9a7697c32bb00a537389c37e106d5403cf4958b55a62009aae25824f91c8",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x13d4918a52ffb05c9071660c10349f95b1478b9c",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05dff",
+          "hash": "0x72a46ac49e65d1909746ac92e0876b598e9bfddbbb16e972fb80558696b01e79",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x104ce00309625faa96dd0d9dc492474d83239ff0",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x773593ff",
+        "witnessGasPrice": "0xb2d05dff"
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x77359400"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x77359400",
+          "gasUsed": "0x57dd",
+          "hash": "0xbab0c16a2d17966f1845eaa9ceaa89747e775165ad4617bd9fa53186934415cd",
+          "number": "0x2",
+          "parentHash": "0x5d4c70872ea590e8b952807a666bdecfc76b27e9e8822d158b9ced699ffb50f9",
+          "transactions": [
+            "0xc0bcfb3f9da0f7666df3c19da73ee2a4f3730824dfbbe6b146a3a96f8b272f47"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e00",
+        "case": "at-tip-clamp",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67479000000000,
+          "reportedPrice": 3000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x5d4c70872ea590e8b952807a666bdecfc76b27e9e8822d158b9ced699ffb50f9",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0xbab0c16a2d17966f1845eaa9ceaa89747e775165ad4617bd9fa53186934415cd",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0xc0bcfb3f9da0f7666df3c19da73ee2a4f3730824dfbbe6b146a3a96f8b272f47",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 2000000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0xbab0c16a2d17966f1845eaa9ceaa89747e775165ad4617bd9fa53186934415cd",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x15383dfd6ec6e9c6fdab5caea50a532b4aaff93b",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e00",
+          "hash": "0xc0bcfb3f9da0f7666df3c19da73ee2a4f3730824dfbbe6b146a3a96f8b272f47",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xd339bcca97bcbeda465099840272ed0a83235d42",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x77359400",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x77359401"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x77359401",
+          "gasUsed": "0x57dd",
+          "hash": "0x4c1bf1103169896439f855fe61c07518d639bdca34b93b639d31cd84af67e6a5",
+          "number": "0x2",
+          "parentHash": "0xfbb31d05effed866f393e80a81a2bd2f2dc6ce6009f7c5892f93ecbabdfe3c24",
+          "transactions": [
+            "0x5eb2ac9bb88c35e1a7ad726bad76760193c167de13e9dd8380cc0ff553b005df"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e00",
+        "case": "above-tip-clamp",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67479000000000,
+          "reportedPrice": 3000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0xfbb31d05effed866f393e80a81a2bd2f2dc6ce6009f7c5892f93ecbabdfe3c24",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x4c1bf1103169896439f855fe61c07518d639bdca34b93b639d31cd84af67e6a5",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x5eb2ac9bb88c35e1a7ad726bad76760193c167de13e9dd8380cc0ff553b005df",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 2000000001,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x4c1bf1103169896439f855fe61c07518d639bdca34b93b639d31cd84af67e6a5",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x51c78b94d2ab694a8bc0c34e51040bd031612560",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e00",
+          "hash": "0x5eb2ac9bb88c35e1a7ad726bad76760193c167de13e9dd8380cc0ff553b005df",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xd64d4a99e3245376d4160ff4a3fa2146a88a5edb",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x77359401",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x9c765240"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x9c765240",
+          "gasUsed": "0x57dd",
+          "hash": "0xb3ad4ceb6456a8963127e69d3bfd436a2fc7f854f76b344ea50d0ddafb235f12",
+          "number": "0x2",
+          "parentHash": "0x7b8317ebdf72000c6c6de48a4b79b9f8a4f8e9db0ccc70b3a8e65f07fd225d71",
+          "transactions": [
+            "0xa71ea0d4e7ea08fcd9f6ddfd9552eea89c9ca2a86697ddd028763e33f90e2232"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e00",
+        "case": "original-inclusion-base",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67479000000000,
+          "reportedPrice": 3000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x7b8317ebdf72000c6c6de48a4b79b9f8a4f8e9db0ccc70b3a8e65f07fd225d71",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0xb3ad4ceb6456a8963127e69d3bfd436a2fc7f854f76b344ea50d0ddafb235f12",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0xa71ea0d4e7ea08fcd9f6ddfd9552eea89c9ca2a86697ddd028763e33f90e2232",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 2625000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0xb3ad4ceb6456a8963127e69d3bfd436a2fc7f854f76b344ea50d0ddafb235f12",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0xa4f5f07afb1fb94a7455333cbcda489baf7986bf",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e00",
+          "hash": "0xa71ea0d4e7ea08fcd9f6ddfd9552eea89c9ca2a86697ddd028763e33f90e2232",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x0d7138c09f086eeeed276667fadd945ac09ad0a3",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x9c765240",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0xb2d05e00"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "hash": "0x19efef32087187052fce9f0256f4338687ea803da453412fe6863b62fc215175",
+          "number": "0x2",
+          "parentHash": "0xaca8c03bdbbbc48933d3f906f39a66a4465de97455d7fb8a0ca60af0234c1c19",
+          "transactions": [
+            "0x8005c27f69f196858f3f5250610ee32015344a7f844b63674d970579753e1e0d"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e00",
+        "case": "at-fee-cap",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67479000000000,
+          "reportedPrice": 3000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0xaca8c03bdbbbc48933d3f906f39a66a4465de97455d7fb8a0ca60af0234c1c19",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x19efef32087187052fce9f0256f4338687ea803da453412fe6863b62fc215175",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x8005c27f69f196858f3f5250610ee32015344a7f844b63674d970579753e1e0d",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 3000000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x19efef32087187052fce9f0256f4338687ea803da453412fe6863b62fc215175",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x5b8f201b5eafe88ec4e6c3cade0476aa03956a37",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e00",
+          "hash": "0x8005c27f69f196858f3f5250610ee32015344a7f844b63674d970579753e1e0d",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x3cb09f8e85841612fa5774c16e25f120bf3e437a",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0xb2d05e00",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0xb2d05e01"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa87bee5380000",
+        "balanceBefore": "0xaa87bee5380000",
+        "case": "above-fee-cap",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "not included",
+        "clientVersion": "anvil/v1.6.0",
+        "nonceAfter": "0x0",
+        "receipt": null,
+        "repeat": 0,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 3000000001,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": -32003,
+        "transactionHash": null
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0xb2d05e00"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "hash": "0xf92d6b762be4826852d8859dcf4c52e49b2507aec7fe37f2867c172375cc3c76",
+          "number": "0x2",
+          "parentHash": "0x1c14c2db8fe9d5736f2e203e9b32c181f4307ab7fff398c526101b0127bf25ac",
+          "transactions": [
+            "0x22560d81e9b0fc4a88911a0b92469dfb7acdee0296e5e7cd1ee68e45ce0a2fac"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e00",
+        "case": "zero-tip-at-cap",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67479000000000,
+          "reportedPrice": 3000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x1c14c2db8fe9d5736f2e203e9b32c181f4307ab7fff398c526101b0127bf25ac",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0xf92d6b762be4826852d8859dcf4c52e49b2507aec7fe37f2867c172375cc3c76",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x22560d81e9b0fc4a88911a0b92469dfb7acdee0296e5e7cd1ee68e45ce0a2fac",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 3000000000,
+        "requestedPriorityFee": 0,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0xf92d6b762be4826852d8859dcf4c52e49b2507aec7fe37f2867c172375cc3c76",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0xf06f5fa6c9283bf08730e07f72000efc9d44ee5a",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e00",
+          "hash": "0x22560d81e9b0fc4a88911a0b92469dfb7acdee0296e5e7cd1ee68e45ce0a2fac",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x0",
+          "nonce": "0x0",
+          "to": "0x5617445116089ba6b42b356ce60743e4b7a1ac2c",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0xb2d05e00",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x3b9aca00"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa60fdfb4e0c00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x3b9aca00",
+          "gasUsed": "0x5339",
+          "hash": "0xf5d5b086ca676afb399493c19f9662fb00d639108cc67f0967f487d2971004a3",
+          "number": "0x2",
+          "parentHash": "0x48a91b9949e7a6cb2184a8407b4170b83291b33ea6f5675394834bfb37157aac",
+          "transactions": [
+            "0xbe4867da5de47aa115d674dbbf09ff80ca9f4d9471edab7a0719ebf0c5943b3e"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0x77359400",
+        "case": "revert-unclamped",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 42610000000000,
+          "expectedFee": 42610000000000,
+          "expectedPrice": 2000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 42610000000000,
+          "reportedPrice": 2000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x48a91b9949e7a6cb2184a8407b4170b83291b33ea6f5675394834bfb37157aac",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0xf5d5b086ca676afb399493c19f9662fb00d639108cc67f0967f487d2971004a3",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0x77359400",
+          "gasUsed": "0x5339",
+          "status": "0x0",
+          "transactionHash": "0xbe4867da5de47aa115d674dbbf09ff80ca9f4d9471edab7a0719ebf0c5943b3e",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 1000000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0xf5d5b086ca676afb399493c19f9662fb00d639108cc67f0967f487d2971004a3",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x9207be08e84206417ba589fbc199c5bffa86ea4c",
+          "gas": "0x1e8480",
+          "gasPrice": "0x77359400",
+          "hash": "0xbe4867da5de47aa115d674dbbf09ff80ca9f4d9471edab7a0719ebf0c5943b3e",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xcfb1bb2a798dd9aa03669c61d34b9bfdb22b46cd",
+          "type": "0x2",
+          "value": "0x0"
+        }
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x9c765240"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa4d9d86591200",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x9c765240",
+          "gasUsed": "0x5339",
+          "hash": "0xdada6adc9a049da46413fcc2bb3cdba49996e7e9e5b4f5973acde339d1a178b8",
+          "number": "0x2",
+          "parentHash": "0x2073e709124e08840b00c529681ffc054eafd315045f2d36bb7c2758a1a985bd",
+          "transactions": [
+            "0x018dc0ddaa7188e9c67f62e9339e831202c46f23618632c7331c33bac066e1d3"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e00",
+        "case": "revert-clamped",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 63915000000000,
+          "expectedFee": 63915000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 63915000000000,
+          "reportedPrice": 3000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x2073e709124e08840b00c529681ffc054eafd315045f2d36bb7c2758a1a985bd",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0xdada6adc9a049da46413fcc2bb3cdba49996e7e9e5b4f5973acde339d1a178b8",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e00",
+          "gasUsed": "0x5339",
+          "status": "0x0",
+          "transactionHash": "0x018dc0ddaa7188e9c67f62e9339e831202c46f23618632c7331c33bac066e1d3",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 2625000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0xdada6adc9a049da46413fcc2bb3cdba49996e7e9e5b4f5973acde339d1a178b8",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x8bc1f71e79fd824f6ad38fde271ffa1de93f784e",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e00",
+          "hash": "0x018dc0ddaa7188e9c67f62e9339e831202c46f23618632c7331c33bac066e1d3",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x33d2bf8cb2e811445ae9a5b50c552d30afaa6fcf",
+          "type": "0x2",
+          "value": "0x0"
+        }
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x0"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa7349d5f19e00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x0",
+          "gasUsed": "0x57dd",
+          "hash": "0x1cfc05f886a1dcabc41c69662f57282af0a4e2eb3e7a60859cb02a69a8fa316a",
+          "number": "0x2",
+          "parentHash": "0x2961bb2533bc7c4f0ab2eb0323f17fcbf56a43be375b811ddc4824201b2e5f0c",
+          "transactions": [
+            "0x8726dd50e1bd8999bf0e8c0ee7c1ce95ba5616eddfaa4f2af9865ba65bf38baf"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0x3b9aca00",
+        "case": "zero",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 22493000000000,
+          "expectedFee": 22493000000000,
+          "expectedPrice": 1000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 22493000000000,
+          "reportedPrice": 1000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x2961bb2533bc7c4f0ab2eb0323f17fcbf56a43be375b811ddc4824201b2e5f0c",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x1cfc05f886a1dcabc41c69662f57282af0a4e2eb3e7a60859cb02a69a8fa316a",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0x3b9aca00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x8726dd50e1bd8999bf0e8c0ee7c1ce95ba5616eddfaa4f2af9865ba65bf38baf",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 0,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x1cfc05f886a1dcabc41c69662f57282af0a4e2eb3e7a60859cb02a69a8fa316a",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x3a02e2f7bf3e3bd05e1b36b9c8de6010a907e60b",
+          "gas": "0x1e8480",
+          "gasPrice": "0x3b9aca00",
+          "hash": "0x8726dd50e1bd8999bf0e8c0ee7c1ce95ba5616eddfaa4f2af9865ba65bf38baf",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xde181afcec65385dbb8dcc01598ae6aa36f22914",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x0",
+        "witnessGasPrice": "0x3b9aca00"
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x3b9aca00"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa5ed4c6ab3c00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x3b9aca00",
+          "gasUsed": "0x57dd",
+          "hash": "0x819785dc6227375b3595a81049ade41a2de17b7d724b6f0c80e474465c6db0e4",
+          "number": "0x2",
+          "parentHash": "0x8de7b683878d36fcc21e5b1722396e644ceda98a8d2acfb4def154e857fde1cc",
+          "transactions": [
+            "0x0f99da7672f531047e506dd66e6640b745bfff2cfee60eed27bf0ed97e8dfa53"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0x77359400",
+        "case": "one-gwei",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 44986000000000,
+          "expectedFee": 44986000000000,
+          "expectedPrice": 2000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 44986000000000,
+          "reportedPrice": 2000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x8de7b683878d36fcc21e5b1722396e644ceda98a8d2acfb4def154e857fde1cc",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x819785dc6227375b3595a81049ade41a2de17b7d724b6f0c80e474465c6db0e4",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0x77359400",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x0f99da7672f531047e506dd66e6640b745bfff2cfee60eed27bf0ed97e8dfa53",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 1000000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x819785dc6227375b3595a81049ade41a2de17b7d724b6f0c80e474465c6db0e4",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x51fa7898b7d088a8d68170e22b44742bf4e3b0c8",
+          "gas": "0x1e8480",
+          "gasPrice": "0x77359400",
+          "hash": "0x0f99da7672f531047e506dd66e6640b745bfff2cfee60eed27bf0ed97e8dfa53",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xa914e801dcd0fb3f71ba44041c6ac5541a907e3d",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x3b9aca00",
+        "witnessGasPrice": "0x77359400"
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x773593ff"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa4a5fb76531dd",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x773593ff",
+          "gasUsed": "0x57dd",
+          "hash": "0x3caa4a88923dc6165d2c04981bb80d8a21067253263fea6d06ba213afe1d4cdc",
+          "number": "0x2",
+          "parentHash": "0xac4b59b25a746ed02ef5023339aa002c0348453b79222c06dc40a6e121cc8836",
+          "transactions": [
+            "0x429881748cff0ba70a2ae5875ffb4ee0ae82ab968f2da4aa2f1428160edfe022"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05dff",
+        "case": "below-tip-clamp",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 67478999977507,
+          "expectedFee": 67478999977507,
+          "expectedPrice": 2999999999,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67478999977507,
+          "reportedPrice": 2999999999
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0xac4b59b25a746ed02ef5023339aa002c0348453b79222c06dc40a6e121cc8836",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x3caa4a88923dc6165d2c04981bb80d8a21067253263fea6d06ba213afe1d4cdc",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05dff",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x429881748cff0ba70a2ae5875ffb4ee0ae82ab968f2da4aa2f1428160edfe022",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 1999999999,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x3caa4a88923dc6165d2c04981bb80d8a21067253263fea6d06ba213afe1d4cdc",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x5b7c8f5c00e897a2cc5bcd44cf174ff6810cafdd",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05dff",
+          "hash": "0x429881748cff0ba70a2ae5875ffb4ee0ae82ab968f2da4aa2f1428160edfe022",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x9de07512a6d2e788ad2e6cd6e649cb471ed69e7e",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x773593ff",
+        "witnessGasPrice": "0xb2d05dff"
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x77359400"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x77359400",
+          "gasUsed": "0x57dd",
+          "hash": "0xcaec19c9c4fe1e19654f63cce6e819596e65020e99882c0deb01e23eb20bd94a",
+          "number": "0x2",
+          "parentHash": "0x3eec5b9cb47684f39b65e8ebbde0d4da28aa3a9e76e2b8ea74825b44be52ea7f",
+          "transactions": [
+            "0xbd4ffe8d5ea7a0d7a6488bd7f2e02c083c052829ae46d416192ce2a6615548a6"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e00",
+        "case": "at-tip-clamp",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67479000000000,
+          "reportedPrice": 3000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x3eec5b9cb47684f39b65e8ebbde0d4da28aa3a9e76e2b8ea74825b44be52ea7f",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0xcaec19c9c4fe1e19654f63cce6e819596e65020e99882c0deb01e23eb20bd94a",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0xbd4ffe8d5ea7a0d7a6488bd7f2e02c083c052829ae46d416192ce2a6615548a6",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 2000000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0xcaec19c9c4fe1e19654f63cce6e819596e65020e99882c0deb01e23eb20bd94a",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x10fe96746dabf8cafc99008dfa76f7e94acd5ae2",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e00",
+          "hash": "0xbd4ffe8d5ea7a0d7a6488bd7f2e02c083c052829ae46d416192ce2a6615548a6",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x8510d1e3aeb34c6e34672e24c228dcc2149bc081",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x77359400",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x77359401"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x77359401",
+          "gasUsed": "0x57dd",
+          "hash": "0x3746519f91ae25e0982f9683aa6a733693f5b1c2ad8c70188d6fdb089c1ab75c",
+          "number": "0x2",
+          "parentHash": "0x82e6c87023c5e636bf5e51b3cf9cbc8ff72872e6e3c52fde2e32ae76077d760a",
+          "transactions": [
+            "0x3f3493a0e7b4082d1499210a8d5ca7df868cefade1437355215347254fd3ae22"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e00",
+        "case": "above-tip-clamp",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67479000000000,
+          "reportedPrice": 3000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x82e6c87023c5e636bf5e51b3cf9cbc8ff72872e6e3c52fde2e32ae76077d760a",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x3746519f91ae25e0982f9683aa6a733693f5b1c2ad8c70188d6fdb089c1ab75c",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x3f3493a0e7b4082d1499210a8d5ca7df868cefade1437355215347254fd3ae22",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 2000000001,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x3746519f91ae25e0982f9683aa6a733693f5b1c2ad8c70188d6fdb089c1ab75c",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0xcf822b40f3922590fa39050e3ae8676c8de2492b",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e00",
+          "hash": "0x3f3493a0e7b4082d1499210a8d5ca7df868cefade1437355215347254fd3ae22",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xc569cdd03a242e375c1634f4c2b24b06d66e8dc7",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x77359401",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x9c765240"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x9c765240",
+          "gasUsed": "0x57dd",
+          "hash": "0x1d5e2d129ef14acc79ab629a89369ce19e1387e7fcdc129e94b3ec5af9294bf5",
+          "number": "0x2",
+          "parentHash": "0x1447fdae72e6cf0abbd664c42bf537333da5b3ef466c8da2190e245e8ed01768",
+          "transactions": [
+            "0x75fa68d93aa21ef33f143087a8a6a1bd7ae15f1e2514c0941f7c73b3f2b3b8f2"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e00",
+        "case": "original-inclusion-base",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67479000000000,
+          "reportedPrice": 3000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x1447fdae72e6cf0abbd664c42bf537333da5b3ef466c8da2190e245e8ed01768",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x1d5e2d129ef14acc79ab629a89369ce19e1387e7fcdc129e94b3ec5af9294bf5",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x75fa68d93aa21ef33f143087a8a6a1bd7ae15f1e2514c0941f7c73b3f2b3b8f2",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 2625000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x1d5e2d129ef14acc79ab629a89369ce19e1387e7fcdc129e94b3ec5af9294bf5",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0xb0415240965dbfba25d25e0b286b424dd5b0aa7b",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e00",
+          "hash": "0x75fa68d93aa21ef33f143087a8a6a1bd7ae15f1e2514c0941f7c73b3f2b3b8f2",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xd29d549d6ec439cc3e121193a7a87b634556e304",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x9c765240",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0xb2d05e00"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "hash": "0x248dac2879a8f2736e6e3a067c77922551d0f15e31a44c97cd0ce222351d28d6",
+          "number": "0x2",
+          "parentHash": "0xc938c298af7bba43ba0dae2d893da9a7d95462fa1eea46ff7b2d0ded35a13914",
+          "transactions": [
+            "0x91cf7463e5f37863ed74a6f2b0c0f87cab30d6100ced97bd1099be0cb728d733"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e00",
+        "case": "at-fee-cap",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67479000000000,
+          "reportedPrice": 3000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0xc938c298af7bba43ba0dae2d893da9a7d95462fa1eea46ff7b2d0ded35a13914",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x248dac2879a8f2736e6e3a067c77922551d0f15e31a44c97cd0ce222351d28d6",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x91cf7463e5f37863ed74a6f2b0c0f87cab30d6100ced97bd1099be0cb728d733",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 3000000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x248dac2879a8f2736e6e3a067c77922551d0f15e31a44c97cd0ce222351d28d6",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x5a6259c0011ba20fa511f70b25439f68a4297ab0",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e00",
+          "hash": "0x91cf7463e5f37863ed74a6f2b0c0f87cab30d6100ced97bd1099be0cb728d733",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xc2d624f56ac40f1edcc93d567ff29bc3ff67ec8a",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0xb2d05e00",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0xb2d05e01"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa87bee5380000",
+        "balanceBefore": "0xaa87bee5380000",
+        "case": "above-fee-cap",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "not included",
+        "clientVersion": "anvil/v1.6.0",
+        "nonceAfter": "0x0",
+        "receipt": null,
+        "repeat": 1,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 3000000001,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": -32003,
+        "transactionHash": null
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0xb2d05e00"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "hash": "0x64bc69fa25fc0b57fcf3e835c988c4ee91057df3bc5426ebe01246538cdc4122",
+          "number": "0x2",
+          "parentHash": "0x1e1da172d06f7ea2897ccc9baa78f99eeb4bed7bb2adaf71be6b3ab51f5c584a",
+          "transactions": [
+            "0x2adff14337955ad04f397a168a0a9a4cb2eca5a35543814e65fbfab744cdab7a"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e00",
+        "case": "zero-tip-at-cap",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67479000000000,
+          "reportedPrice": 3000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x1e1da172d06f7ea2897ccc9baa78f99eeb4bed7bb2adaf71be6b3ab51f5c584a",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x64bc69fa25fc0b57fcf3e835c988c4ee91057df3bc5426ebe01246538cdc4122",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x2adff14337955ad04f397a168a0a9a4cb2eca5a35543814e65fbfab744cdab7a",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 3000000000,
+        "requestedPriorityFee": 0,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x64bc69fa25fc0b57fcf3e835c988c4ee91057df3bc5426ebe01246538cdc4122",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0xcbe7c26b99216a5e43fd4cb805af93ae0b9fa84d",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e00",
+          "hash": "0x2adff14337955ad04f397a168a0a9a4cb2eca5a35543814e65fbfab744cdab7a",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x0",
+          "nonce": "0x0",
+          "to": "0x7c7ddcbb43fdc955fb9b163c4bfed0a4e75de905",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0xb2d05e00",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x3b9aca00"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa60fdfb4e0c00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x3b9aca00",
+          "gasUsed": "0x5339",
+          "hash": "0x95da3c0e5caa4d02a664b6dee62cfed03f432a48b3959b4fd82b80fa427d8bc3",
+          "number": "0x2",
+          "parentHash": "0x2610c6997a24d780bf677bdd5274a660e46d9b121629f1a3c10be260dd79e85c",
+          "transactions": [
+            "0x8be649aa6261ac83f6bb30472a6ca0dbf47220bd846d14c587e1429fd75c9a72"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0x77359400",
+        "case": "revert-unclamped",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 42610000000000,
+          "expectedFee": 42610000000000,
+          "expectedPrice": 2000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 42610000000000,
+          "reportedPrice": 2000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x2610c6997a24d780bf677bdd5274a660e46d9b121629f1a3c10be260dd79e85c",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x95da3c0e5caa4d02a664b6dee62cfed03f432a48b3959b4fd82b80fa427d8bc3",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0x77359400",
+          "gasUsed": "0x5339",
+          "status": "0x0",
+          "transactionHash": "0x8be649aa6261ac83f6bb30472a6ca0dbf47220bd846d14c587e1429fd75c9a72",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 1000000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x95da3c0e5caa4d02a664b6dee62cfed03f432a48b3959b4fd82b80fa427d8bc3",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0xddea28ad31f8049834faba656c6ad3b83d3e4b55",
+          "gas": "0x1e8480",
+          "gasPrice": "0x77359400",
+          "hash": "0x8be649aa6261ac83f6bb30472a6ca0dbf47220bd846d14c587e1429fd75c9a72",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x6a44f04b73b548c7ec28ffc6d8f48b55ebbb9fd1",
+          "type": "0x2",
+          "value": "0x0"
+        }
+      },
+      {
+        "anvilBinarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x9c765240"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.6.0-v1.6.0-rc1\nCommit SHA: b272ce3366987406406e9eb1b82596653a3ad628\nBuild Timestamp: 2026-01-22T15:20:44.391172000Z (1769095244)\nBuild Profile: dist",
+        "balanceAfter": "0xaa4d9d86591200",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x9c765240",
+          "gasUsed": "0x5339",
+          "hash": "0x994b237b551f7eede51b5769dc44ea6ead1fd6df7467798975de9f0a3b69ca8d",
+          "number": "0x2",
+          "parentHash": "0xefc0554c8876d1325488672e27fe5895833e1cb40f2a19c52a762726dc5cd548",
+          "transactions": [
+            "0xb7b9a9fcefa99dff2007cd26d78cb9aac86a7165a0e32603027e793eb74d7958"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e00",
+        "case": "revert-clamped",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.6.0",
+        "measurements": {
+          "actualDebit": 63915000000000,
+          "expectedFee": 63915000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 63915000000000,
+          "reportedPrice": 3000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0xefc0554c8876d1325488672e27fe5895833e1cb40f2a19c52a762726dc5cd548",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x994b237b551f7eede51b5769dc44ea6ead1fd6df7467798975de9f0a3b69ca8d",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e00",
+          "gasUsed": "0x5339",
+          "status": "0x0",
+          "transactionHash": "0xb7b9a9fcefa99dff2007cd26d78cb9aac86a7165a0e32603027e793eb74d7958",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "reportedHardfork": "Cancun",
+        "requestedBaseFee": 2625000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x994b237b551f7eede51b5769dc44ea6ead1fd6df7467798975de9f0a3b69ca8d",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0xba94a6b6c04074db27a1d6ee9c83847de9583b7b",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e00",
+          "hash": "0xb7b9a9fcefa99dff2007cd26d78cb9aac86a7165a0e32603027e793eb74d7958",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x75418cbf724f1c2194941449195b2f89b6bc31fb",
+          "type": "0x2",
+          "value": "0x0"
+        }
+      }
+    ],
+    "scope": "Task 010 raw-RPC characterization; not Experiment 002 acceptance"
+  },
+  "decision": "PASS: bounded local infrastructure compatibility only",
+  "hardfork": "cancun",
+  "oldBaseline": {
+    "artifactSha256": "e7395829c595435500a1c68aaf495849f49a024797b486e12bbc9a1d7b9a34ae",
+    "elapsedSeconds": 4.937,
+    "foundryCommit": "8692e926198056d0228c1e166b1b6c34a5bed66c",
+    "host": "macOS-12.7.6-x86_64-i386-64bit",
+    "nodeProfile": "original baseline",
+    "results": [
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x0"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa7349d5f19e00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x0",
+          "gasUsed": "0x57dd",
+          "hash": "0x6e5730ad60a7a02942e2a088d329936f3049b096c798b3793a2352a88051293e",
+          "number": "0x2",
+          "parentHash": "0x4f645d14c623a650132d485ba5fc37e3c684da8de29ac4b791a211917b83282e",
+          "transactions": [
+            "0xe31e758b88efbfde103fad8cf9a1bad46a45de0a79b8fa0f7d21bda36eea45e6"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0x3b9aca00",
+        "case": "zero",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 22493000000000,
+          "expectedFee": 22493000000000,
+          "expectedPrice": 1000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 22493000000000,
+          "reportedPrice": 1000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x4f645d14c623a650132d485ba5fc37e3c684da8de29ac4b791a211917b83282e",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x6e5730ad60a7a02942e2a088d329936f3049b096c798b3793a2352a88051293e",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0x3b9aca00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0xe31e758b88efbfde103fad8cf9a1bad46a45de0a79b8fa0f7d21bda36eea45e6",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "requestedBaseFee": 0,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x6e5730ad60a7a02942e2a088d329936f3049b096c798b3793a2352a88051293e",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x856d522d9a0553ed48f72c04c43e802003750583",
+          "gas": "0x1e8480",
+          "gasPrice": "0x3b9aca00",
+          "hash": "0xe31e758b88efbfde103fad8cf9a1bad46a45de0a79b8fa0f7d21bda36eea45e6",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x70753185d0745b3c5bd02eef87667431c671ca31",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x0",
+        "witnessGasPrice": "0x3b9aca00"
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x3b9aca00"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa5ed4c6ab3c00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x3b9aca00",
+          "gasUsed": "0x57dd",
+          "hash": "0xdd9f5c889511b6929f3133f74a59d6b9c764b55dcc5061791e74dbdc332eaa38",
+          "number": "0x2",
+          "parentHash": "0x31ed2402743e7341faf7b90274d3079e6c63aa67f235971236b6ecfc4e176fc8",
+          "transactions": [
+            "0xf02e07ed8997ff8bd4f22e21353214f74167fc7bc94cd1929577ee4fa5cc7a7f"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0x77359400",
+        "case": "one-gwei",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 44986000000000,
+          "expectedFee": 44986000000000,
+          "expectedPrice": 2000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 44986000000000,
+          "reportedPrice": 2000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x31ed2402743e7341faf7b90274d3079e6c63aa67f235971236b6ecfc4e176fc8",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0xdd9f5c889511b6929f3133f74a59d6b9c764b55dcc5061791e74dbdc332eaa38",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0x77359400",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0xf02e07ed8997ff8bd4f22e21353214f74167fc7bc94cd1929577ee4fa5cc7a7f",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "requestedBaseFee": 1000000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0xdd9f5c889511b6929f3133f74a59d6b9c764b55dcc5061791e74dbdc332eaa38",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0xbd0df7681b7b1cd510d4ec5072f898451cfa3ae7",
+          "gas": "0x1e8480",
+          "gasPrice": "0x77359400",
+          "hash": "0xf02e07ed8997ff8bd4f22e21353214f74167fc7bc94cd1929577ee4fa5cc7a7f",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xe590444e5c970eeaac225a2e3c79bcf4b6579f6d",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x3b9aca00",
+        "witnessGasPrice": "0x77359400"
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x773593ff"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa4a5fb76531dd",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x773593ff",
+          "gasUsed": "0x57dd",
+          "hash": "0x33ff34f143b3b3671df3a00e61520212b257f89eddbd61beb149465c53a5f9ad",
+          "number": "0x2",
+          "parentHash": "0x4d949d1058c2efe75431e746af68f45673de8d4a26534e8bf9d6c4c91838704c",
+          "transactions": [
+            "0x497bccc6ee57f6db4f50503edd6f7dc478e926945d35dbab8f44f09a9ad50c7d"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05dff",
+        "case": "below-tip-clamp",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 67478999977507,
+          "expectedFee": 67478999977507,
+          "expectedPrice": 2999999999,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67478999977507,
+          "reportedPrice": 2999999999
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x4d949d1058c2efe75431e746af68f45673de8d4a26534e8bf9d6c4c91838704c",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x33ff34f143b3b3671df3a00e61520212b257f89eddbd61beb149465c53a5f9ad",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05dff",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x497bccc6ee57f6db4f50503edd6f7dc478e926945d35dbab8f44f09a9ad50c7d",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "requestedBaseFee": 1999999999,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x33ff34f143b3b3671df3a00e61520212b257f89eddbd61beb149465c53a5f9ad",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x7344046f6d0d7ebeb0854dcdda6413cfb45cf188",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05dff",
+          "hash": "0x497bccc6ee57f6db4f50503edd6f7dc478e926945d35dbab8f44f09a9ad50c7d",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x0870d671f93bc331686692c6c36e7dc342e6bcf4",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x773593ff",
+        "witnessGasPrice": "0xb2d05dff"
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x77359400"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x77359400",
+          "gasUsed": "0x57dd",
+          "hash": "0x0cbd64a5cc3243ae50dc8068e59fd4fd6f17c873ae16be7f57fc8a5da52ab998",
+          "number": "0x2",
+          "parentHash": "0x869c8a1042938ef8fc2eef0f70b3d7a2a5f98510f611694997ce79a695d78e80",
+          "transactions": [
+            "0xdc820c66c353f96008ff8db990b88ccc5694001d365fa3771543dd7e1d3e85c4"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e00",
+        "case": "at-tip-clamp",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67479000000000,
+          "reportedPrice": 3000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x869c8a1042938ef8fc2eef0f70b3d7a2a5f98510f611694997ce79a695d78e80",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x0cbd64a5cc3243ae50dc8068e59fd4fd6f17c873ae16be7f57fc8a5da52ab998",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0xdc820c66c353f96008ff8db990b88ccc5694001d365fa3771543dd7e1d3e85c4",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "requestedBaseFee": 2000000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x0cbd64a5cc3243ae50dc8068e59fd4fd6f17c873ae16be7f57fc8a5da52ab998",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x6785cdf8e8095ae03c4912f911fff5e630cc8c94",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e00",
+          "hash": "0xdc820c66c353f96008ff8db990b88ccc5694001d365fa3771543dd7e1d3e85c4",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xffc473b7b7ca1366df6f5fcf81a5f14aa0bca131",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x77359400",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x77359401"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x77359401",
+          "gasUsed": "0x57dd",
+          "hash": "0xce4673d1af124b15eba333dee279f731b287e9f6e482248a24f1c5b763796852",
+          "number": "0x2",
+          "parentHash": "0xbbc7292de1093fc2de8c29a9ccb36b1c20b5f88f84e03567f9c432f6ae938407",
+          "transactions": [
+            "0x1971d89ddf5d2e5579eee870ba103182fb5deb08a4445e760cd908f3b510ad87"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e01",
+        "case": "above-tip-clamp",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "BLOCKED: contradictory RPC fee evidence",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 22493,
+          "reportedFee": 67479000022493,
+          "reportedPrice": 3000000001
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0xbbc7292de1093fc2de8c29a9ccb36b1c20b5f88f84e03567f9c432f6ae938407",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0xce4673d1af124b15eba333dee279f731b287e9f6e482248a24f1c5b763796852",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e01",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x1971d89ddf5d2e5579eee870ba103182fb5deb08a4445e760cd908f3b510ad87",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "requestedBaseFee": 2000000001,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0xce4673d1af124b15eba333dee279f731b287e9f6e482248a24f1c5b763796852",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0xa6de0715e5296f505c64c8e2dc0fa1d5bfca837e",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e01",
+          "hash": "0x1971d89ddf5d2e5579eee870ba103182fb5deb08a4445e760cd908f3b510ad87",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x260b175b84fcf8092af5179d9617fa0b9dd58093",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x77359401",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x9c765240"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x9c765240",
+          "gasUsed": "0x57dd",
+          "hash": "0xaae49e68e3cacff49b00fe275b078d032f292a3b269c3af11a93e988bb7e206d",
+          "number": "0x2",
+          "parentHash": "0x1779068d40a0bf610918c468a0bf653e8cc73060926684485c82beff1aeedc2e",
+          "transactions": [
+            "0x55127e18407efdd7842c096292411bc331f2c32a54d964ac8ec9745ec000cd53"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xd8111c40",
+        "case": "original-inclusion-base",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "BLOCKED: contradictory RPC fee evidence",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 14058125000000,
+          "reportedFee": 81537125000000,
+          "reportedPrice": 3625000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x1779068d40a0bf610918c468a0bf653e8cc73060926684485c82beff1aeedc2e",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0xaae49e68e3cacff49b00fe275b078d032f292a3b269c3af11a93e988bb7e206d",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xd8111c40",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x55127e18407efdd7842c096292411bc331f2c32a54d964ac8ec9745ec000cd53",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "requestedBaseFee": 2625000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0xaae49e68e3cacff49b00fe275b078d032f292a3b269c3af11a93e988bb7e206d",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0xaf94bcd13170b5f6f0404dfaec157641b5bbac56",
+          "gas": "0x1e8480",
+          "gasPrice": "0xd8111c40",
+          "hash": "0x55127e18407efdd7842c096292411bc331f2c32a54d964ac8ec9745ec000cd53",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xbf46e5225f54e84080c00a4ae1375781cd4399f3",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x9c765240",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0xb2d05e00"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "hash": "0x5dcf6a1e00d52e38bfda108d68a468d7710a80f956fcc210424cb4ad0719a6c9",
+          "number": "0x2",
+          "parentHash": "0xba9a1a109f29daabd6d006a4c104625599f9ed648c0ff3c1407410821ec80dfa",
+          "transactions": [
+            "0x1c05cec43a53653fd1a902417145c77fa057e0f52e6b787f96323e2c0289b09a"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xee6b2800",
+        "case": "at-fee-cap",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "BLOCKED: contradictory RPC fee evidence",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 22493000000000,
+          "reportedFee": 89972000000000,
+          "reportedPrice": 4000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0xba9a1a109f29daabd6d006a4c104625599f9ed648c0ff3c1407410821ec80dfa",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x5dcf6a1e00d52e38bfda108d68a468d7710a80f956fcc210424cb4ad0719a6c9",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xee6b2800",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x1c05cec43a53653fd1a902417145c77fa057e0f52e6b787f96323e2c0289b09a",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "requestedBaseFee": 3000000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x5dcf6a1e00d52e38bfda108d68a468d7710a80f956fcc210424cb4ad0719a6c9",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0xb80e70ea96b696828cbc00ef9940be9ae6317549",
+          "gas": "0x1e8480",
+          "gasPrice": "0xee6b2800",
+          "hash": "0x1c05cec43a53653fd1a902417145c77fa057e0f52e6b787f96323e2c0289b09a",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x4a24b9599487bd4bd938b0588833de3bdcd05dbd",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0xb2d05e00",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0xb2d05e01"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa87bee5380000",
+        "balanceBefore": "0xaa87bee5380000",
+        "case": "above-fee-cap",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "not included",
+        "clientVersion": "anvil/v1.0.0",
+        "nonceAfter": "0x0",
+        "receipt": null,
+        "repeat": 0,
+        "requestedBaseFee": 3000000001,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": -32003,
+        "transactionHash": null
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0xb2d05e00"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "hash": "0x464f00b4b88bb4917bfc1c626b1e213d683024faf046956554985738cd28580c",
+          "number": "0x2",
+          "parentHash": "0x833436469798ba799f3ec2000356b3fe0f6c58d7ff31fe6ffd6f51f020cb69a7",
+          "transactions": [
+            "0xf07287197851da3b927060329d89a3f2fcaa5f6cc224db2d1318743af962538a"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e00",
+        "case": "zero-tip-at-cap",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67479000000000,
+          "reportedPrice": 3000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x833436469798ba799f3ec2000356b3fe0f6c58d7ff31fe6ffd6f51f020cb69a7",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x464f00b4b88bb4917bfc1c626b1e213d683024faf046956554985738cd28580c",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0xf07287197851da3b927060329d89a3f2fcaa5f6cc224db2d1318743af962538a",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "requestedBaseFee": 3000000000,
+        "requestedPriorityFee": 0,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x464f00b4b88bb4917bfc1c626b1e213d683024faf046956554985738cd28580c",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x7def44a9e898f4f97d0002cb6a536682ce77b4b8",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e00",
+          "hash": "0xf07287197851da3b927060329d89a3f2fcaa5f6cc224db2d1318743af962538a",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x0",
+          "nonce": "0x0",
+          "to": "0x6c494b122293cb2bc5d37b93b8bfda4201fe0e75",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0xb2d05e00",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x3b9aca00"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa60fdfb4e0c00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x3b9aca00",
+          "gasUsed": "0x5339",
+          "hash": "0x37012bd891f35a2403bd1b986ab1c1f594cb44bda8a43fa2d788d9000c56db23",
+          "number": "0x2",
+          "parentHash": "0x95ddbf5ee4b539362d5429012534fdb9153adf9c11b8118587193197f514022d",
+          "transactions": [
+            "0x6d3756eb475cc99bb023543792177fa66b061d90e1bb4831c7804e6e1fb40060"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0x77359400",
+        "case": "revert-unclamped",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 42610000000000,
+          "expectedFee": 42610000000000,
+          "expectedPrice": 2000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 42610000000000,
+          "reportedPrice": 2000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x95ddbf5ee4b539362d5429012534fdb9153adf9c11b8118587193197f514022d",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x37012bd891f35a2403bd1b986ab1c1f594cb44bda8a43fa2d788d9000c56db23",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0x77359400",
+          "gasUsed": "0x5339",
+          "status": "0x0",
+          "transactionHash": "0x6d3756eb475cc99bb023543792177fa66b061d90e1bb4831c7804e6e1fb40060",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "requestedBaseFee": 1000000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x37012bd891f35a2403bd1b986ab1c1f594cb44bda8a43fa2d788d9000c56db23",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x9aa2d0ddbe60a2c9e42391dafb0b56d9bcd5ea9f",
+          "gas": "0x1e8480",
+          "gasPrice": "0x77359400",
+          "hash": "0x6d3756eb475cc99bb023543792177fa66b061d90e1bb4831c7804e6e1fb40060",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xd0e9dcdb0d8430c29aba7904225cbda65bfc1a30",
+          "type": "0x2",
+          "value": "0x0"
+        }
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x9c765240"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa4d9d86591200",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x9c765240",
+          "gasUsed": "0x5339",
+          "hash": "0xe8f60bfcb9ea2e59845e812e54abe2230b605a988a286b3dadf4e92828d9cae5",
+          "number": "0x2",
+          "parentHash": "0xd7b3ff2b79a515f11b100a1a40582647bccdf174519abd5cfd03bdfb6963abd8",
+          "transactions": [
+            "0xa03ae82b68b3abb1775d5d3eccbb1e3fba3c625642829930b9cbfdb82594afd3"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xd8111c40",
+        "case": "revert-clamped",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "BLOCKED: contradictory RPC fee evidence",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 63915000000000,
+          "expectedFee": 63915000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 13315625000000,
+          "reportedFee": 77230625000000,
+          "reportedPrice": 3625000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0xd7b3ff2b79a515f11b100a1a40582647bccdf174519abd5cfd03bdfb6963abd8",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0xe8f60bfcb9ea2e59845e812e54abe2230b605a988a286b3dadf4e92828d9cae5",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xd8111c40",
+          "gasUsed": "0x5339",
+          "status": "0x0",
+          "transactionHash": "0xa03ae82b68b3abb1775d5d3eccbb1e3fba3c625642829930b9cbfdb82594afd3",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 0,
+        "requestedBaseFee": 2625000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0xe8f60bfcb9ea2e59845e812e54abe2230b605a988a286b3dadf4e92828d9cae5",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x62090d2598f9b14ef049588899888ee0dafb054b",
+          "gas": "0x1e8480",
+          "gasPrice": "0xd8111c40",
+          "hash": "0xa03ae82b68b3abb1775d5d3eccbb1e3fba3c625642829930b9cbfdb82594afd3",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x02689a9814393711cdee55b8f0b83565e23485e5",
+          "type": "0x2",
+          "value": "0x0"
+        }
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x0"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa7349d5f19e00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x0",
+          "gasUsed": "0x57dd",
+          "hash": "0xa62999374bc4c2a0b953fb3e3247e5634df703a27a1a18970ae9afceb10b6dca",
+          "number": "0x2",
+          "parentHash": "0x25da91bb83806b78d351db17356ec90fd666508abf05c753ae57edb34d092cb0",
+          "transactions": [
+            "0x673221f4fa591b78b9ad695306705e8881eea9105f555455a83faad02b784763"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0x3b9aca00",
+        "case": "zero",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 22493000000000,
+          "expectedFee": 22493000000000,
+          "expectedPrice": 1000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 22493000000000,
+          "reportedPrice": 1000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x25da91bb83806b78d351db17356ec90fd666508abf05c753ae57edb34d092cb0",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0xa62999374bc4c2a0b953fb3e3247e5634df703a27a1a18970ae9afceb10b6dca",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0x3b9aca00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x673221f4fa591b78b9ad695306705e8881eea9105f555455a83faad02b784763",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "requestedBaseFee": 0,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0xa62999374bc4c2a0b953fb3e3247e5634df703a27a1a18970ae9afceb10b6dca",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x57becc85bc030e0fb701bd78001e95232b4541b5",
+          "gas": "0x1e8480",
+          "gasPrice": "0x3b9aca00",
+          "hash": "0x673221f4fa591b78b9ad695306705e8881eea9105f555455a83faad02b784763",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xc722a286a5883403b76e86a2908dc63c7cd79fea",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x0",
+        "witnessGasPrice": "0x3b9aca00"
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x3b9aca00"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa5ed4c6ab3c00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x3b9aca00",
+          "gasUsed": "0x57dd",
+          "hash": "0x04273a11ad21559d23044bdcb63eeb5acc09d6a923c992a203eaca7d0a00d6bf",
+          "number": "0x2",
+          "parentHash": "0xbfa12bcdf71993eb59fb6c1130291d5aa8c19218c245806d9cb6383b30487e50",
+          "transactions": [
+            "0xa75d08a782c0c316b233561da23734686af718e3c8c6dff703e4c1ac3952c697"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0x77359400",
+        "case": "one-gwei",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 44986000000000,
+          "expectedFee": 44986000000000,
+          "expectedPrice": 2000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 44986000000000,
+          "reportedPrice": 2000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0xbfa12bcdf71993eb59fb6c1130291d5aa8c19218c245806d9cb6383b30487e50",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x04273a11ad21559d23044bdcb63eeb5acc09d6a923c992a203eaca7d0a00d6bf",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0x77359400",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0xa75d08a782c0c316b233561da23734686af718e3c8c6dff703e4c1ac3952c697",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "requestedBaseFee": 1000000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x04273a11ad21559d23044bdcb63eeb5acc09d6a923c992a203eaca7d0a00d6bf",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x7395d07105367b06dc8ac1a06012fc446bfabe21",
+          "gas": "0x1e8480",
+          "gasPrice": "0x77359400",
+          "hash": "0xa75d08a782c0c316b233561da23734686af718e3c8c6dff703e4c1ac3952c697",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x0064ff40c5537992da0fceed439919010e1c24f4",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x3b9aca00",
+        "witnessGasPrice": "0x77359400"
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x773593ff"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa4a5fb76531dd",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x773593ff",
+          "gasUsed": "0x57dd",
+          "hash": "0x9f6a0e5050f8aec0c06e10a592d92ea2811861e91bf11cb2425840da8943d62b",
+          "number": "0x2",
+          "parentHash": "0x8a8fa9fb26c6cae7eaa17c540587f76702f59a67ec94597f634d9bac07ee9e00",
+          "transactions": [
+            "0x99bacdcd3ad2cb37a995baa3becfeb4ea629ce6a0cab468aa2381b0644178031"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05dff",
+        "case": "below-tip-clamp",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 67478999977507,
+          "expectedFee": 67478999977507,
+          "expectedPrice": 2999999999,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67478999977507,
+          "reportedPrice": 2999999999
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x8a8fa9fb26c6cae7eaa17c540587f76702f59a67ec94597f634d9bac07ee9e00",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x9f6a0e5050f8aec0c06e10a592d92ea2811861e91bf11cb2425840da8943d62b",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05dff",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x99bacdcd3ad2cb37a995baa3becfeb4ea629ce6a0cab468aa2381b0644178031",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "requestedBaseFee": 1999999999,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x9f6a0e5050f8aec0c06e10a592d92ea2811861e91bf11cb2425840da8943d62b",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0xbd4f27dc77fc67e7ceeed4d51565a6ec99e594e0",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05dff",
+          "hash": "0x99bacdcd3ad2cb37a995baa3becfeb4ea629ce6a0cab468aa2381b0644178031",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x445b896b93daa2e0c55c65ec4483f82c0336bd47",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x773593ff",
+        "witnessGasPrice": "0xb2d05dff"
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x77359400"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x77359400",
+          "gasUsed": "0x57dd",
+          "hash": "0x75c321019b57f225754a8fe56f33f390738803ac192b81954a35bb5b67632f11",
+          "number": "0x2",
+          "parentHash": "0xf1ac8c6839769ba02481d91930403bc4cce295dbd8a7c1a32e6145db8b22a318",
+          "transactions": [
+            "0xa933373ab3ecdfad845f9ee99aac29f7ef4c237429759f4c26cfa4dd61a01048"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e00",
+        "case": "at-tip-clamp",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67479000000000,
+          "reportedPrice": 3000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0xf1ac8c6839769ba02481d91930403bc4cce295dbd8a7c1a32e6145db8b22a318",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x75c321019b57f225754a8fe56f33f390738803ac192b81954a35bb5b67632f11",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0xa933373ab3ecdfad845f9ee99aac29f7ef4c237429759f4c26cfa4dd61a01048",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "requestedBaseFee": 2000000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x75c321019b57f225754a8fe56f33f390738803ac192b81954a35bb5b67632f11",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x351492618741bbc753ce24d25ab7ad370bf0c416",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e00",
+          "hash": "0xa933373ab3ecdfad845f9ee99aac29f7ef4c237429759f4c26cfa4dd61a01048",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x6a32025c56287f1510d2b005f8cc4cf25e62d7ca",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x77359400",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x77359401"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x77359401",
+          "gasUsed": "0x57dd",
+          "hash": "0x42faa95549dfc7bb756f224e5373c8d642b7218c83a5016f436acdb701c7250e",
+          "number": "0x2",
+          "parentHash": "0xff7b9f0b0b32db7ba8bfdd1565a2ce18b7cfdc2e171a5675356b83359382612b",
+          "transactions": [
+            "0xb1c5808220b6705a0124b328c1434730dfc119142ce0ae4826ad658e80dc9213"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e01",
+        "case": "above-tip-clamp",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "BLOCKED: contradictory RPC fee evidence",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 22493,
+          "reportedFee": 67479000022493,
+          "reportedPrice": 3000000001
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0xff7b9f0b0b32db7ba8bfdd1565a2ce18b7cfdc2e171a5675356b83359382612b",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x42faa95549dfc7bb756f224e5373c8d642b7218c83a5016f436acdb701c7250e",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e01",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0xb1c5808220b6705a0124b328c1434730dfc119142ce0ae4826ad658e80dc9213",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "requestedBaseFee": 2000000001,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x42faa95549dfc7bb756f224e5373c8d642b7218c83a5016f436acdb701c7250e",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0xfc968ff8cf3d9ecbe6bab73955638796462d2d31",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e01",
+          "hash": "0xb1c5808220b6705a0124b328c1434730dfc119142ce0ae4826ad658e80dc9213",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xdaa5230a664461f068f0bd34b051a93d78690298",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x77359401",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x9c765240"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x9c765240",
+          "gasUsed": "0x57dd",
+          "hash": "0x8e397efc6eda0210f742ec5376397eb213a6690073202681e54a2da726a47c3a",
+          "number": "0x2",
+          "parentHash": "0xa03a04b7c50f84af91415ba82175624bfe0c26b37bb34a7002f2f36359801360",
+          "transactions": [
+            "0xcb5aaf10f4117ab8302787025aafb7201052d272e8f043fd43936549e8f4ebbd"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xd8111c40",
+        "case": "original-inclusion-base",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "BLOCKED: contradictory RPC fee evidence",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 14058125000000,
+          "reportedFee": 81537125000000,
+          "reportedPrice": 3625000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0xa03a04b7c50f84af91415ba82175624bfe0c26b37bb34a7002f2f36359801360",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x8e397efc6eda0210f742ec5376397eb213a6690073202681e54a2da726a47c3a",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xd8111c40",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0xcb5aaf10f4117ab8302787025aafb7201052d272e8f043fd43936549e8f4ebbd",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "requestedBaseFee": 2625000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x8e397efc6eda0210f742ec5376397eb213a6690073202681e54a2da726a47c3a",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0xeb8e9d04e1a21f3e7c8d742963ea5e41e32d4d31",
+          "gas": "0x1e8480",
+          "gasPrice": "0xd8111c40",
+          "hash": "0xcb5aaf10f4117ab8302787025aafb7201052d272e8f043fd43936549e8f4ebbd",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xdc53ab7fba82077dade8fdc688f577073bf6d509",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0x9c765240",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0xb2d05e00"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "hash": "0x073f2011f2af974842a5e874ebfe5ebe3abf44b4bb391e2a6d3dc8003837e9ed",
+          "number": "0x2",
+          "parentHash": "0x5bcd50a17fb0796e41c7f200bab3f1bbcf546417b7d36d4d81f2a1222dd6a4d4",
+          "transactions": [
+            "0x0ac477f290ed83f7213729e43c5d3038e5d29110bad3aedc5c51c7286b50ca80"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xee6b2800",
+        "case": "at-fee-cap",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "BLOCKED: contradictory RPC fee evidence",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 22493000000000,
+          "reportedFee": 89972000000000,
+          "reportedPrice": 4000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x5bcd50a17fb0796e41c7f200bab3f1bbcf546417b7d36d4d81f2a1222dd6a4d4",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x073f2011f2af974842a5e874ebfe5ebe3abf44b4bb391e2a6d3dc8003837e9ed",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xee6b2800",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x0ac477f290ed83f7213729e43c5d3038e5d29110bad3aedc5c51c7286b50ca80",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "requestedBaseFee": 3000000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x073f2011f2af974842a5e874ebfe5ebe3abf44b4bb391e2a6d3dc8003837e9ed",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x46b6af8941a65f19ffb06e9bc6ff729d972be129",
+          "gas": "0x1e8480",
+          "gasPrice": "0xee6b2800",
+          "hash": "0x0ac477f290ed83f7213729e43c5d3038e5d29110bad3aedc5c51c7286b50ca80",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x6047fcb8a2936105f86f12bed38258737f9c0426",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0xb2d05e00",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0xb2d05e01"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa87bee5380000",
+        "balanceBefore": "0xaa87bee5380000",
+        "case": "above-fee-cap",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "not included",
+        "clientVersion": "anvil/v1.0.0",
+        "nonceAfter": "0x0",
+        "receipt": null,
+        "repeat": 1,
+        "requestedBaseFee": 3000000001,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": -32003,
+        "transactionHash": null
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0xb2d05e00"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa4a5fb764da00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "hash": "0x0ab253df06dfd0634782229d4d476584ee4e4768ebfe0879feca46fbdd363807",
+          "number": "0x2",
+          "parentHash": "0x35663327bb5249c468d6b34dd0b95ad9704edc3d5807defaebe7dd3052e54138",
+          "transactions": [
+            "0x9d87ca1f0be071e7f9244d142ce8fa6a62e069e66609872c6310c7094f6d8e25"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xb2d05e00",
+        "case": "zero-tip-at-cap",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 67479000000000,
+          "expectedFee": 67479000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 67479000000000,
+          "reportedPrice": 3000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x35663327bb5249c468d6b34dd0b95ad9704edc3d5807defaebe7dd3052e54138",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x0ab253df06dfd0634782229d4d476584ee4e4768ebfe0879feca46fbdd363807",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xb2d05e00",
+          "gasUsed": "0x57dd",
+          "status": "0x1",
+          "transactionHash": "0x9d87ca1f0be071e7f9244d142ce8fa6a62e069e66609872c6310c7094f6d8e25",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "requestedBaseFee": 3000000000,
+        "requestedPriorityFee": 0,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x0ab253df06dfd0634782229d4d476584ee4e4768ebfe0879feca46fbdd363807",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0xf2bfaa92b633a6c382563567e3225ca2c072dedc",
+          "gas": "0x1e8480",
+          "gasPrice": "0xb2d05e00",
+          "hash": "0x9d87ca1f0be071e7f9244d142ce8fa6a62e069e66609872c6310c7094f6d8e25",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x0",
+          "nonce": "0x0",
+          "to": "0xc4371d1bda93f5ab53299b49155495e2a12b32f2",
+          "type": "0x2",
+          "value": "0x0"
+        },
+        "witnessBaseFee": "0xb2d05e00",
+        "witnessGasPrice": "0xb2d05e00"
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x3b9aca00"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa60fdfb4e0c00",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x3b9aca00",
+          "gasUsed": "0x5339",
+          "hash": "0x7084d65bdeafe1d2f520e3d9286e30d6f5e5d2e679ba54b8ae5476262f0973b3",
+          "number": "0x2",
+          "parentHash": "0xf622ead2908722b32c2e0b5817f5dcac016e4e07b7b3663ee11ffa6c794b204a",
+          "transactions": [
+            "0xfc93becc468754aa697b53423f5570a7ab57a8e3a1a029147be82747ab8b7c79"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0x77359400",
+        "case": "revert-unclamped",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "reconciled",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 42610000000000,
+          "expectedFee": 42610000000000,
+          "expectedPrice": 2000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 0,
+          "reportedFee": 42610000000000,
+          "reportedPrice": 2000000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0xf622ead2908722b32c2e0b5817f5dcac016e4e07b7b3663ee11ffa6c794b204a",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x7084d65bdeafe1d2f520e3d9286e30d6f5e5d2e679ba54b8ae5476262f0973b3",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0x77359400",
+          "gasUsed": "0x5339",
+          "status": "0x0",
+          "transactionHash": "0xfc93becc468754aa697b53423f5570a7ab57a8e3a1a029147be82747ab8b7c79",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "requestedBaseFee": 1000000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x7084d65bdeafe1d2f520e3d9286e30d6f5e5d2e679ba54b8ae5476262f0973b3",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x1eb40eae7f589d609b332824941c127494bcd5d4",
+          "gas": "0x1e8480",
+          "gasPrice": "0x77359400",
+          "hash": "0xfc93becc468754aa697b53423f5570a7ab57a8e3a1a029147be82747ab8b7c79",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0x0bbc3f5ad23ee825b38e6607122bc9cf6caa4bdc",
+          "type": "0x2",
+          "value": "0x0"
+        }
+      },
+      {
+        "anvilBinarySha256": "ebd4c5615575c61f9c75c75e167085637b8e05d83bc028fe4529ec7e38fa6991",
+        "anvilSetNextBlockBaseFeePerGas": {
+          "params": [
+            "0x9c765240"
+          ],
+          "result": null
+        },
+        "anvilVersion": "anvil Version: 1.0.0-v1.0.0\nCommit SHA: 8692e926198056d0228c1e166b1b6c34a5bed66c\nBuild Timestamp: 2025-02-10T09:05:48.126322000Z (1739178348)\nBuild Profile: maxperf",
+        "balanceAfter": "0xaa4d9d86591200",
+        "balanceBefore": "0xaa87bee5380000",
+        "block": {
+          "baseFeePerGas": "0x9c765240",
+          "gasUsed": "0x5339",
+          "hash": "0x11cd20422e7297f9d4ea0dba144ff0bbca53407ecf91e57716c9902ecc9402ec",
+          "number": "0x2",
+          "parentHash": "0x91c3a05e63c3e809c391cdb87333bb09c71abbe325c7a899546b661e2aa214e0",
+          "transactions": [
+            "0x7226ee966847bc84daf323bedf3132f9a2c4655d55ba677334d19f2213c5f5a0"
+          ]
+        },
+        "blockReceiptEffectiveGasPrice": "0xd8111c40",
+        "case": "revert-clamped",
+        "chainId": "0x7a69",
+        "childrenStopped": true,
+        "classification": "BLOCKED: contradictory RPC fee evidence",
+        "clientVersion": "anvil/v1.0.0",
+        "measurements": {
+          "actualDebit": 63915000000000,
+          "expectedFee": 63915000000000,
+          "expectedPrice": 3000000000,
+          "maxReservation": 6000000000000000,
+          "receiptOverstatement": 13315625000000,
+          "reportedFee": 77230625000000,
+          "reportedPrice": 3625000000
+        },
+        "nonceAfter": "0x1",
+        "parentHash": "0x91c3a05e63c3e809c391cdb87333bb09c71abbe325c7a899546b661e2aa214e0",
+        "parentNumber": "0x1",
+        "receipt": {
+          "blockHash": "0x11cd20422e7297f9d4ea0dba144ff0bbca53407ecf91e57716c9902ecc9402ec",
+          "blockNumber": "0x2",
+          "effectiveGasPrice": "0xd8111c40",
+          "gasUsed": "0x5339",
+          "status": "0x0",
+          "transactionHash": "0x7226ee966847bc84daf323bedf3132f9a2c4655d55ba677334d19f2213c5f5a0",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "repeat": 1,
+        "requestedBaseFee": 2625000000,
+        "requestedPriorityFee": 1000000000,
+        "rpcErrorCode": null,
+        "transaction": {
+          "blockHash": "0x11cd20422e7297f9d4ea0dba144ff0bbca53407ecf91e57716c9902ecc9402ec",
+          "blockNumber": "0x2",
+          "chainId": "0x7a69",
+          "from": "0x13034c3825b5565e275b218157bebde623d1fe29",
+          "gas": "0x1e8480",
+          "gasPrice": "0xd8111c40",
+          "hash": "0x7226ee966847bc84daf323bedf3132f9a2c4655d55ba677334d19f2213c5f5a0",
+          "maxFeePerGas": "0xb2d05e00",
+          "maxPriorityFeePerGas": "0x3b9aca00",
+          "nonce": "0x0",
+          "to": "0xbd2a57c860d2ec27224f0a65091ddae09c604a2f",
+          "type": "0x2",
+          "value": "0x0"
+        }
+      }
+    ],
+    "scope": "Task 010 raw-RPC characterization; not Experiment 002 acceptance"
+  },
+  "originalReproducer": {
+    "candidate": {
+      "actualBalanceDebit": 144228000000000,
+      "actualFeeWithinReservation": true,
+      "blockBaseFeePerGas": 2625000000,
+      "chainId": 31337,
+      "classification": "no discrepancy observed; review still required",
+      "contradiction": false,
+      "deploymentGasUsed": 1632623,
+      "elapsedSeconds": 0.14,
+      "expectedEIP1559Price": 3000000000,
+      "gasUsed": 48076,
+      "receiptEffectiveGasPrice": 3000000000,
+      "reportedFee": 144228000000000,
+      "signedMaxFeePerGas": 3000000000,
+      "signedMaxPriorityFeePerGas": 1000000000,
+      "status": 1,
+      "worstCaseReservation": 6000000000000000
+    },
+    "old": {
+      "actualBalanceDebit": 144228000000000,
+      "actualFeeWithinReservation": true,
+      "blockBaseFeePerGas": 2625000000,
+      "chainId": 31337,
+      "childrenStopped": true,
+      "classification": "BLOCKED: fee evidence contradiction",
+      "contradiction": true,
+      "deploymentGasUsed": 1632611,
+      "elapsedSeconds": 0.141,
+      "expectedEIP1559Price": 3000000000,
+      "gasUsed": 48076,
+      "receiptEffectiveGasPrice": 3625000000,
+      "reportedFee": 174275500000000,
+      "signedMaxFeePerGas": 3000000000,
+      "signedMaxPriorityFeePerGas": 1000000000,
+      "status": 1,
+      "worstCaseReservation": 6000000000000000
+    },
+    "oldExitCode": 2
+  }
+}

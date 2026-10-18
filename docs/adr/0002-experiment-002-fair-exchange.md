@@ -1,5 +1,7 @@
 # ADR 0002: Direct-Predicate Fair-Exchange Baseline
 
+**Task 011 update:** [ADR 0005](0005-experiment-002-corrected-anvil-baseline.md) validates the isolated corrected node, subject to publication Ubuntu CI. Earlier BLOCKED statements below preserve history. No authorization/settlement/fee semantics change; agents remain incomplete and paused under this task.
+
 **Task 009 current disposition: partial contract implementation; acceptance FAIL / implementation BLOCKED.** [Fee-evidence review](../experiments/EXPERIMENT_002_IMPLEMENTATION_REVIEW.md) supersedes earlier READY status without changing the frozen design or budgets. Pinned Anvil receipt effectiveGasPrice conflicts with the actual capped wallet debit; dependency/fee-evidence compatibility is reopened. ADR 0002 remains accepted design only.
 
 - **Date:** 2026-10-18.

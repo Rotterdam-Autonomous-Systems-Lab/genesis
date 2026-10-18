@@ -6,26 +6,26 @@ Use this document to carry concise project context between Codex sessions and co
 
 ### Current status
 
-Genesis retains its independent permissionless AI-first L1/native human-and-machine economy and bootstrapping research direction; these are aspirations, not demonstrated consensus/token/adoption capabilities. Experiment 001 remains published CONDITIONAL PASS and unchanged. Experiment 002 has the partial Task 009 escrow but no accepted/published complete agent workflow. **Task 010 conclusion: STILL BLOCKED**, with the fee-reporting root cause diagnosed. ADR 0002 remains accepted design only.
+Genesis retains the independent permissionless AI-first L1/native human-and-machine economy and bootstrapping research direction; no chain/consensus/token/adoption result is claimed. Experiment 001 remains published CONDITIONAL PASS and unchanged. **Task 011 infrastructure compatibility PASS for ADR 0005's corrected Anvil profile, subject to publication Ubuntu CI.** When CI passes, the fee-reporting blocker is resolved for that profile. Experiment 002 still lacks accepted full agent integration; agents stayed paused throughout Task 011.
 
 ### Completed work
 
-- [Fee investigation](experiments/EXPERIMENT_002_FEE_INVESTIGATION.md): pinned Anvil omits total-fee clamping in mined receipt/transaction RPC prices. Actual wallet charges and EVM GASPRICE agree with the signed cap. No excess debit observed.
-- [Raw-RPC probe](../research/compatibility/experiment002/investigate_fee_receipts.py), [test-only opcode witness](../contracts/test/FeeWitness.sol), strict oracle and 14 research tests. Two repeats of 11 cases give 12 reconciled, eight contradictory and two not included; [full public evidence](../research/compatibility/experiment002/task010-fee-evidence.json) records raw fields/balances/versions/cleanup. The default diagnostic and unchanged Task 009 reproducer return 2 to preserve the blocker.
-- Existing Solidity/Python controls, pins, signed fixtures, escrow code and fee caps remain unchanged. CI adds only a clearly named defect-characterization step with the existing read-only permissions/actions. Green CI does not mean Experiment 002 readiness.
-- Upstream fix and a source-reviewed v1.8.5 candidate are documented. A single archive download timed out; unverified partial bytes were never executed/adopted. No candidate runtime/full compatibility evidence exists. The incomplete agents under ignored `internal/task009/unpublished/` were not resumed.
+- [Validation](experiments/EXPERIMENT_002_ANVIL_VALIDATION.md)/[ADR 0005](adr/0005-experiment-002-corrected-anvil-baseline.md): isolated Anvil v1.6.0-rc1 / b272ce3366987406406e9eb1b82596653a3ad628, explicit Cancun. [Manifest/installer](../research/compatibility/experiment002/anvil-candidate.json) verify source/archive/binary hashes before execution; no global/PATH or old-tool replacement. Existing Forge/Cast/compiler/library/Python pins and limits remain.
+- [44-case comparison](../research/compatibility/experiment002/task011-comparison.json): old 12 reconciled/eight contradictory/two unincluded; corrected 20 reconciled/zero contradictory/two unincluded. Same strict oracle and original escrow probe, no normalization/cap increase. Corrected probe deployment remains 1,632,623 gas.
+- 86 Solidity tests, unchanged 54 Python tests on each node, 14 old research and nine candidate tests pass locally (217 executions). Both signature probes match 25 digests/34 signatures; 20 fee cases pass. Candidate success/refusal controls preserve requester veto. [Actual-node regression metadata](../research/compatibility/experiment002/task011-regressions.json) distinguishes the old fixture's historical version label.
+- CI adds verified Linux candidate installation and identical matrix/signature/original-control gates. Inspect the publication commit's Actions run; failure retains/reopens BLOCKED. [Provenance](../research/compatibility/experiment002/task011-provenance.json) preserves setup failures, hash/source identities and attestation 404; no crypto-attestation, reproducible-build or comprehensive audit claim.
 
 ### Open questions
 
-Which exact corrected-node tuple satisfies full local/CI compatibility and supply-chain review? How will the resumed workflow reconcile fee evidence together with principal and concurrent flows? All T01–T20/P2/fee/resource integration gates remain. Broader fairness, inclusion/finality, trusted-host/key failures, useful-work uniqueness, native economics/consensus and organic adoption remain unresolved.
+Full Experiment 002 T01–T20/P2/fee/resource and fault-recovery evidence; verified accounting with principal flows; general fairness/disclosure/inclusion/deadlines/finality, host/key and supply-chain risks. Future useful-work/Sybil/security/native economics/adoption remain unresolved. A new platform/node feature, integrity mismatch or CI failure reopens compatibility.
 
 ### Next task
 
-Recommended: verify an explicit corrected-node candidate and test both RPC reporting paths against the strict matrix, original reproducer and full regressions. Record reviewed dependency adoption before resuming Task 009. Do not resume agents under Task 010 or start a new experiment/token/bootstrap implementation.
+After required CI passes, recommend Task 009 continuation using only ADR 0005's explicit verified node. Review the ignored partial draft before integrating; complete all tests/gas budgets/security assessment without changing consent rules. Task 011 does not itself authorize resuming agents or starting another experiment/token/bootstrapping implementation.
 
 ### Blockers
 
-**B-ANVIL-FEE-EVIDENCE remains open:** source-level root cause identified but no verified compatible corrected runtime adopted. The equation/caps remain valid; replacing reported fees with computed values, hiding clamp cases or increasing caps is prohibited. Partial agents require review and full acceptance evidence after resolution.
+No known local infrastructure blocker on the verified macOS profile. Ubuntu CI is mandatory before final cross-platform readiness; then B-ANVIL-FEE-EVIDENCE is resolved for the manifest profile. Experiment 002 acceptance remains pending complete implementation/security evidence. Never use the old node as if its fee check passed or weaken the check for either node.
 
 ### Relevant commits
 
@@ -38,7 +38,8 @@ Recommended: verify an explicit corrected-node candidate and test both RPC repor
 - [`d05d690`](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/commit/d05d69008229cbb10f437eb622d88b11cc09bfdd) — Task 007 specification/vectors/economics; [regression CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39116760576), 58 Solidity/54 Python plus end-to-end.
 - [`f41216f`](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/commit/f41216fae335a83cc758d11033d2066397a4f0aa) — Task 008 blocker/vision/checks; [baseline CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39117831964).
 - [`aa484cd`](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/commit/aa484cd0355131a8fb3cac5db5898bb97a3786a1) — Task 009 partial escrow/blocker; [regression CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39119076562).
-- Task 010 investigation publication: locate using Git history for this file; inspect its regression/characterization Actions run. Neither is Experiment 002 acceptance.
+- [`b7ba71b`](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/commit/b7ba71b41e8e1c48d1427677eee5ed0207f4606e) — Task 010 diagnosis; [CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39120325081).
+- Task 011 corrected-node publication: locate with Git history for this file and verify its Actions run. Infrastructure PASS does not mean Experiment 002 acceptance.
 
 ### Canonical documents
 

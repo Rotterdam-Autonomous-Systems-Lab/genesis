@@ -1,0 +1,32 @@
+{
+  "ancestry": {
+    "ahead_by": 240,
+    "behind_by": 0,
+    "merge_base": "75151e9cae397d34034c1d03defc4f94b6363a3c",
+    "status": "ahead"
+  },
+  "attestation": "Release attestation URL was fetched/hash-checked, but gh attestation verify archive returned HTTP 404. No successful cryptographic attestation or reproducible-source-build claim. Integrity relies on pinned hashes/HTTPS/upstream release trust.",
+  "availableLocalRustVersion": "1.83.0",
+  "candidateCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+  "cargoLockSha256": "89b6af821a7325a3f55f84c37c846ad86ed76c9ee6dc6353b9795971eb7b3ebf",
+  "cargoTomlSha256": "11b38b069d4dc713c7ac328e0a00abc9f93e8ace7101f92fffbebd3b099f66bc",
+  "decisionScope": "Bounded local compatibility; no Experiment 002 agents or experimental acceptance",
+  "firstFixedSourceSha256": "7c41bdeaf2727a60caaa474372b908e17aae9f49e792029668d6738a76b7b08c",
+  "macOS": {
+    "binaryMinimumVersion": "10.12",
+    "host": "12.7.6 x86_64",
+    "installedLibusbSha256": "3cff60e07294b412124ec8c5fef7aed618f6cf95b5d7c0865204ba3c8ca25dbb"
+  },
+  "observedAt": "2026-10-18",
+  "preservedDevelopmentFailures": [
+    "Initial candidate regression harness omitted PYTHONPATH for FIFO child; 53/54 passed, one setup failure. Harness corrected; unchanged 54 assertions then passed.",
+    "Initial nodeInfo preflight treated forkConfig as nullable; actual schema is an object with forkUrl=None. Schema check corrected, Cancun/no-fork checks retained."
+  ],
+  "receiptCorrection": "75151e9cae397d34034c1d03defc4f94b6363a3c",
+  "release": "v1.6.0-rc1",
+  "requiredSourceRustVersion": "1.89",
+  "selection": "Smallest suitable packaged family reviewed after unfixed v1.5.1; exact correction nightly asset unavailable (404). No universal minimal-version claim.",
+  "sourceBuild": "Not needed/performed: official archives downloaded and hash-verified.",
+  "sourceSha256": "2de852961ab58eb50afe5b9b87e8823078283095bdbbb40a5e30e8cf9be34c16",
+  "upstreamPrereleaseFlag": false
+}

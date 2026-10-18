@@ -45,3 +45,17 @@ internal/agent-venv/bin/python research/compatibility/experiment002/investigate_
 The 14 tests characterize the known defect and test strict rejection, including mutated evidence. The CLI executes 22 fresh bounded nodes (11 cases twice), prints public raw-hex and integer measurements, and **returns 2** when contradiction remains. No receipt value is normalized. HTTP is literal loopback with proxies/redirects disabled; no agent code/key files/raw signed transactions or public calls. Test-only [FeeWitness](../../../contracts/test/FeeWitness.sol) supplies GASPRICE/BASEFEE observations; full [evidence](task010-fee-evidence.json) and [source references](task010-source-review.json) are public synthetic data. No unverified archive was executed.
 
 See [Task 010 report](../../../docs/experiments/EXPERIMENT_002_FEE_INVESTIGATION.md): **STILL BLOCKED**, despite green characterization. The required original gate remains unchanged. Corrected-node source exists, but binary/full compatibility validation and explicit dependency review remain necessary. No incomplete agent workflow is resumed or new toolchain adopted here.
+
+## Task 011 corrected-node profile
+
+See [validation](../../../docs/experiments/EXPERIMENT_002_ANVIL_VALIDATION.md) and [ADR 0005](../../../docs/adr/0005-experiment-002-corrected-anvil-baseline.md). Install separately and run identical checks:
+
+```sh
+internal/agent-venv/bin/python research/compatibility/experiment002/install_anvil_candidate.py
+internal/agent-venv/bin/python -m unittest discover -s research/compatibility/experiment002 -p 'test_candidate_*.py' -v
+internal/agent-venv/bin/python research/compatibility/experiment002/check_vectors.py --candidate
+internal/agent-venv/bin/python research/compatibility/experiment002/compare_anvil_baselines.py
+internal/agent-venv/bin/python research/compatibility/experiment002/candidate_regressions.py
+```
+
+The [manifest](anvil-candidate.json) pins v1.6.0-rc1/b272ce3 source/archive/binary bytes for macOS/Linux x86_64. Explicit Cancun, no global/default replacement; no arbitrary executable/version override. Installation uses HTTPS; execution is local-only. Default probes preserve the original failing baseline. `--candidate` selects only the separately verified profile and uses the same strict predicates. [Comparison](task011-comparison.json), [regressions](task011-regressions.json) and [provenance](task011-provenance.json) are public synthetic evidence, not agent implementation. Infrastructure PASS requires publication Ubuntu CI; full Experiment 002 acceptance remains outstanding. Attestation lookup failed; no reproducible-build/audit guarantee.

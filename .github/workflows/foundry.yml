@@ -49,3 +49,20 @@ jobs:
         run: internal/agent-venv/bin/python -m unittest discover -s research/compatibility/experiment002 -p 'test_fee_*.py' -v
       - name: End-to-end independent-agent experiment (loopback synthetic funds only)
         run: scripts/run-experiment-001.sh
+      - name: Preserve pinned control binaries for signature comparison
+        run: |
+          mkdir -p internal/tools/foundry internal/task011
+          cp "$(command -v anvil)" internal/tools/foundry/anvil
+          cp "$(command -v cast)" internal/tools/foundry/cast
+          internal/agent-venv/bin/python research/compatibility/experiment002/check_vectors.py
+          internal/agent-venv/bin/python research/compatibility/experiment002/check_fee_bounds.py
+      - name: Install isolated checksum/source-pinned corrected Anvil
+        run: internal/agent-venv/bin/python research/compatibility/experiment002/install_anvil_candidate.py
+      - name: Corrected-node integrity and identical strict fee tests
+        run: internal/agent-venv/bin/python -m unittest discover -s research/compatibility/experiment002 -p 'test_candidate_*.py' -v
+      - name: Corrected-node signatures and old/new fee evidence
+        run: |
+          internal/agent-venv/bin/python research/compatibility/experiment002/check_vectors.py --candidate
+          internal/agent-venv/bin/python research/compatibility/experiment002/compare_anvil_baselines.py > internal/task011/ci-fee-comparison.json
+      - name: Unchanged Experiment 001 controls on verified corrected node
+        run: internal/agent-venv/bin/python research/compatibility/experiment002/candidate_regressions.py > internal/task011/ci-candidate-regressions.json

@@ -1,5 +1,7 @@
 # Experiment 002 Fee-Evidence Investigation — Task 010
 
+**Task 011 follow-up:** [corrected-node validation](EXPERIMENT_002_ANVIL_VALIDATION.md) supersedes readiness for the explicit verified profile, subject to publication Ubuntu CI. This document preserves the original diagnosis and failed acquisition; the old node still fails the unchanged strict check.
+
 **2026-10-18 — Conclusion: STILL BLOCKED.** The Task 009 contradiction is reproduced and diagnosed as an Anvil v1.0.0 RPC fee-reporting defect. No actual fee-cap violation was observed. The strict reconciliation check is retained; no agent implementation was resumed, dependency adopted, cap raised or authorization semantics changed. Experiment 002 remains unaccepted and its incomplete agent workflow stays paused.
 
 ## Scope and reproducible artifacts

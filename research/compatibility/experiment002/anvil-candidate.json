@@ -1,0 +1,24 @@
+{
+  "commit": "b272ce3366987406406e9eb1b82596653a3ad628",
+  "hardfork": "cancun",
+  "installDirectory": "internal/tools/experiment002-anvil-v1.6.0-rc1",
+  "platforms": {
+    "darwin-x86_64": {
+      "archiveSha256": "ce8d6ebbf5a8ab1be36c298c6167dd97798d04c96d1342b50253550c1e523eca",
+      "archiveUrl": "https://github.com/foundry-rs/foundry/releases/download/v1.6.0-rc1/foundry_v1.6.0-rc1_darwin_amd64.tar.gz",
+      "binarySha256": "73036c6402dcbf5d1b3e5d933f9a3b64df83dac828b309f5deef930003050e92"
+    },
+    "linux-x86_64": {
+      "archiveSha256": "2e4378e23e93c35d938bd6faeeff8bc48aa5faf081033a9235309172bfb76d5f",
+      "archiveUrl": "https://github.com/foundry-rs/foundry/releases/download/v1.6.0-rc1/foundry_v1.6.0-rc1_linux_amd64.tar.gz",
+      "binarySha256": "8c0444f7196c0a345ffb67254d77524a745cd9a307fdd651b7e48d83947a4077"
+    }
+  },
+  "receiptCorrection": "75151e9cae397d34034c1d03defc4f94b6363a3c",
+  "releaseTag": "v1.6.0-rc1",
+  "source": {
+    "sha256": "2de852961ab58eb50afe5b9b87e8823078283095bdbbb40a5e30e8cf9be34c16",
+    "url": "https://raw.githubusercontent.com/foundry-rs/foundry/b272ce3366987406406e9eb1b82596653a3ad628/crates/anvil/src/eth/backend/mem/mod.rs"
+  },
+  "version": "1.6.0-v1.6.0-rc1"
+}

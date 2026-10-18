@@ -23,7 +23,7 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
         return None
 
 
-def main():
+def main(candidate=False):
     vectors = json.loads(
         (ROOT / "docs/experiments/EXPERIMENT_002_SIGNING_VECTORS.json").read_text()
     )
@@ -31,9 +31,14 @@ def main():
     anvil = str(ROOT / "internal/tools/foundry/anvil")
     started = time.monotonic()
     end = started + 90
-    for tool in (cast, anvil):
+    anvil_commit = FOUNDRY_COMMIT
+    if candidate:
+        from anvil_candidate import candidate_path, profile
+        anvil = candidate_path()
+        anvil_commit = profile()[0]["commit"]
+    for tool, expected_commit in ((cast, FOUNDRY_COMMIT), (anvil, anvil_commit)):
         version = subprocess.check_output([tool, "--version"], text=True, timeout=5)
-        assert FOUNDRY_COMMIT in version, "unexpected Foundry binary version"
+        assert expected_commit in version, "unexpected Foundry binary version"
     opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect())
 
     def cli(*args):
@@ -63,7 +68,7 @@ def main():
         port = sock.getsockname()[1]
     node = subprocess.Popen(
         [anvil, "--host", "127.0.0.1", "--port", str(port), "--chain-id", "31337",
-         "--accounts", "0", "--silent"],
+         "--accounts", "0", "--silent"] + (["--hardfork", "cancun"] if candidate else []),
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
     )
@@ -141,4 +146,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--candidate", action="store_true")
+    main(parser.parse_args().candidate)

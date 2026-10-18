@@ -45,6 +45,9 @@ class RpcFailure(Exception):
 
 
 class LocalNode:
+    def __init__(self, candidate=False):
+        self.candidate = candidate
+
     def __enter__(self):
         self.process = None
         self.started = time.monotonic()
@@ -52,8 +55,13 @@ class LocalNode:
         self.binary = str(ROOT / "internal/tools/foundry/anvil")
         if not Path(self.binary).exists():
             self.binary = shutil.which("anvil")
+        expected_pin = PIN
+        if self.candidate:
+            from anvil_candidate import candidate_path, profile
+            self.binary = candidate_path()
+            expected_pin = profile()[0]["commit"]
         self.version = subprocess.check_output([self.binary, "--version"], text=True, timeout=3).strip()
-        if PIN not in self.version:
+        if expected_pin not in self.version:
             raise RuntimeError("exact pinned Anvil required")
         self.binary_hash = hashlib.sha256(Path(self.binary).read_bytes()).hexdigest()
         with socket.socket() as sock:
@@ -61,12 +69,17 @@ class LocalNode:
         self.url = f"http://127.0.0.1:{port}"
         self.opener = build_opener(ProxyHandler({}), NoRedirect())
         self.process = subprocess.Popen([self.binary, "--host", "127.0.0.1", "--port", str(port),
-            "--chain-id", "31337", "--accounts", "0", "--silent"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            "--chain-id", "31337", "--accounts", "0", "--silent"] + (["--hardfork", "cancun"] if self.candidate else []), stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         try:
             for _ in range(100):
                 try:
                     if self.rpc("eth_chainId", []) != "0x7a69":
                         raise RuntimeError("wrong chain")
+                    if self.candidate:
+                        info = self.rpc("anvil_nodeInfo", [])
+                        if info["hardFork"].lower() != "cancun" or info["forkConfig"]["forkUrl"] is not None:
+                            raise RuntimeError("candidate hardfork/fork policy mismatch")
+                        self.reported_hardfork = info["hardFork"]
                     return self
                 except (OSError, RpcFailure):
                     if self.process.poll() is not None:
@@ -125,9 +138,9 @@ class LocalNode:
             raise RuntimeError("child cleanup failed")
 
 
-def run_case(case, repeat):
+def run_case(case, repeat, candidate=False):
     name, base, priority, should_revert = case
-    with LocalNode() as node:
+    with LocalNode(candidate) as node:
         deployer, requester = Account.create(), Account.create()
         for account, balance in ((deployer, GAS*FEE), (requester, 8*GAS*FEE)):
             node.rpc("anvil_setBalance", [account.address, hex(balance)])
@@ -150,6 +163,8 @@ def run_case(case, repeat):
             "anvilSetNextBlockBaseFeePerGas":{"params":[hex(base)],"result":admin}, "rpcErrorCode":error_code,
             "anvilVersion":node.version, "anvilBinarySha256":node.binary_hash,
             "clientVersion":node.rpc("web3_clientVersion",[]), "chainId":node.rpc("eth_chainId",[])}
+        if candidate:
+            common["reportedHardfork"] = node.reported_hardfork
         if receipt is None:
             after = node.rpc("eth_getBalance",[requester.address,"latest"])
             common.update({"classification":"not included", "balanceBefore":before,"balanceAfter":after,
@@ -205,21 +220,23 @@ def run_case(case, repeat):
     return common
 
 
-def collect(repeats=2):
+def collect(repeats=2, candidate=False):
     if type(repeats) is not int or not 1<=repeats<=2:
         raise ValueError("bounded repeats 1 or 2 required")
     started=time.monotonic()
-    results=[run_case(case,repeat) for repeat in range(repeats) for case in CASES]
+    results=[run_case(case,repeat,candidate) for repeat in range(repeats) for case in CASES]
     return {"scope":"Task 010 raw-RPC characterization; not Experiment 002 acceptance", "host":platform.platform(),
-        "foundryCommit":PIN, "artifactSha256":hashlib.sha256(ARTIFACT.read_bytes()).hexdigest(),
+        "foundryCommit":(__import__("anvil_candidate").profile()[0]["commit"] if candidate else PIN),
+        "nodeProfile":"verified candidate / Cancun" if candidate else "original baseline", "artifactSha256":hashlib.sha256(ARTIFACT.read_bytes()).hexdigest(),
         "results":results,"elapsedSeconds":round(time.monotonic()-started,3)}
 
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument("--repeats",type=int,choices=(1,2),default=2)
+    parser.add_argument("--candidate",action="store_true",help="Use the separately checksum/source-pinned candidate, not PATH")
     args=parser.parse_args()
     try:
-        evidence=collect(args.repeats)
+        evidence=collect(args.repeats,args.candidate)
     except Exception:
         print(json.dumps({"classification":"inconclusive diagnostic failure"}));return 3
     print(json.dumps(evidence,indent=2,sort_keys=True))

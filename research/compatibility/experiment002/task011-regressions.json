@@ -1,0 +1,39 @@
+{
+  "candidateCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+  "experiment001Controls": [
+    {
+      "actualNodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "childrenStopped": true,
+      "fixtureDeclaredFoundryCommit": "8692e926198056d0228c1e166b1b6c34a5bed66c",
+      "outcome": "settled",
+      "scenario": "success"
+    },
+    {
+      "actualNodeCommit": "b272ce3366987406406e9eb1b82596653a3ad628",
+      "childrenStopped": true,
+      "fixtureDeclaredFoundryCommit": "8692e926198056d0228c1e166b1b6c34a5bed66c",
+      "outcome": "refunded",
+      "scenario": "requester_refusal"
+    }
+  ],
+  "hardfork": "cancun",
+  "originalStrictProbe": {
+    "actualBalanceDebit": 144228000000000,
+    "actualFeeWithinReservation": true,
+    "blockBaseFeePerGas": 2625000000,
+    "chainId": 31337,
+    "classification": "no discrepancy observed; review still required",
+    "contradiction": false,
+    "deploymentGasUsed": 1632623,
+    "elapsedSeconds": 0.159,
+    "expectedEIP1559Price": 3000000000,
+    "gasUsed": 48076,
+    "receiptEffectiveGasPrice": 3000000000,
+    "reportedFee": 144228000000000,
+    "signedMaxFeePerGas": 3000000000,
+    "signedMaxPriorityFeePerGas": 1000000000,
+    "status": 1,
+    "worstCaseReservation": 6000000000000000
+  },
+  "pythonTests": 54
+}

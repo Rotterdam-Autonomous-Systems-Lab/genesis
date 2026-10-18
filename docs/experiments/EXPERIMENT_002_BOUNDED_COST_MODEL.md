@@ -1,5 +1,7 @@
 # Experiment 002 Bounded Cost Model — Task 008
 
+**Task 011 current profile:** [corrected-node validation](EXPERIMENT_002_ANVIL_VALIDATION.md) and [ADR 0005](../adr/0005-experiment-002-corrected-anvil-baseline.md) replace only the Experiment 002 Anvil selection with v1.6.0-rc1 / b272ce3366987406406e9eb1b82596653a3ad628, explicit Cancun, conditional on publication Ubuntu CI. Forge/Cast/compiler/libraries/Python, source restrictions, signed types and all economic/security limits remain unchanged. Old blocker evidence below is historical. This is infrastructure PASS, not complete agent implementation or experiment acceptance.
+
 **Task 009 current disposition: partial contract implementation; acceptance FAIL / implementation BLOCKED.** [Fee-evidence review](EXPERIMENT_002_IMPLEMENTATION_REVIEW.md) supersedes earlier READY status without changing the frozen design or budgets. Pinned Anvil receipt effectiveGasPrice conflicts with the actual capped wallet debit; dependency/fee-evidence compatibility is reopened. ADR 0002 remains accepted design only.
 
 **2026-10-18 — B-FEE RESOLVED as a local operator policy; not yet implemented/enforced by Experiment 002.** All amounts are synthetic wei on a temporary local chain. No real assets, paid hosting, native-token issuance or production pricing is authorized. See [blocker resolution](EXPERIMENT_002_BLOCKER_RESOLUTION.md), [final specification](EXPERIMENT_002_FINAL_SPEC.md) and [arithmetic check](../../research/compatibility/experiment002/check_fee_bounds.py).

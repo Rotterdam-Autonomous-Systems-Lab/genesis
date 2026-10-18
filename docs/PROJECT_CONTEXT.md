@@ -30,6 +30,12 @@ The [fee investigation](experiments/EXPERIMENT_002_FEE_INVESTIGATION.md) reprodu
 
 **STILL BLOCKED:** an upstream source correction and a source-reviewed v1.8.5 candidate exist, but the one candidate binary download timed out and failed integrity validation. It was never executed/adopted. The original baseline and Experiment 001/002 regressions are preserved. The incomplete agents remain paused; do not infer readiness from green discrepancy-characterization CI. Next task is verified corrected-node acquisition and full compatibility review, followed by an explicit dependency decision before implementation resumes.
 
+## Task 011 current status — corrected infrastructure profile validated
+
+[Validation](experiments/EXPERIMENT_002_ANVIL_VALIDATION.md) and [ADR 0005](adr/0005-experiment-002-corrected-anvil-baseline.md) select isolated Anvil v1.6.0-rc1 / b272ce3366987406406e9eb1b82596653a3ad628, explicit Cancun, with source/archive/binary hashes. Local compatibility is PASS; publication Ubuntu CI is mandatory. When it passes, the reporting blocker is resolved for this profile. Original node remains the negative control; Forge/Cast/compiler/libraries/Python and all fee/authority limits are unchanged. Official artifacts were verified; no successful attestation/reproducible-build claim.
+
+The same 22-case matrix now gives 20 reconciled/two unincluded, versus eight reporting contradictions on the old node. All 86 Solidity tests, 54 Python tests on each node, signatures/fee arithmetic and old/new research tests pass locally. Green compatibility is not Experiment 002 acceptance: incomplete agents stay paused, and full T01–T20/P2/fee/resource integration remains the next implementation dependency. Do not silently replace Experiment 001's default tools or infer production/native-network security.
+
 ## Core principles
 
 “The network must not need to trust the intelligence of its participants. It must only need to verify their actions.” Treat this as a research principle, not a proven universal property. Prioritize bounded cryptographic authority, security, verifiability, interoperability, open participation, privacy, resilience, and honest reporting of uncertainty.
