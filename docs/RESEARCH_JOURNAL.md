@@ -48,6 +48,14 @@ Published the [Experiment 001 report](../research/reports/EXPERIMENT_001_REPORT.
 
 Experiment 001 is conditionally accepted and publicly documented, not production-ready, formally proven, independently audited, or evidence of new consensus/native blockchain/native asset feasibility. Requester-veto fairness and the existing acceptance conditions remain open. The publication discussion is created only after the report is verified on origin/main; its URL is recorded in the Task 004 completion report and the thread is discoverable by title “Experiment 001: Reproducible autonomous service exchange — results and limitations”. No implementation or architecture changed. Next proposed step: select the Experiment 002 research question through a separate design review; no Experiment 002 implementation is authorized here.
 
+## 2026-10-18 — Experiment 002 fair-exchange research proposal (Task 005)
+
+Compared six established mechanism families using primary research, specifications and selected open-source references: direct deterministic verification, optimistic challenge games, committed encrypted delivery/FairSwap, optimistic third-party resolution, channels/HTLCs and proof-verified computation. The [research comparison](../research/experiments/EXPERIMENT_002_FAIR_EXCHANGE_COMPARISON.md) records citation/inspection limits and distinguishes deterministic digital services from subjective AI and physical tasks.
+
+Proposed a separate [Experiment 002](experiments/EXPERIMENT_002.md), [architecture](architecture/EXPERIMENT_002_ARCHITECTURE.md), [threat model](experiments/EXPERIMENT_002_THREAT_MODEL.md), [test plan](experiments/EXPERIMENT_002_TEST_PLAN.md) and **Proposed** [ADR 0002](adr/0002-experiment-002-fair-exchange.md). The bounded hypothesis is provider collectability for a timely canonical correct claim under upfront signed predicate consent, without a second requester approval. Public-result leakage followed by non-inclusion/expiry is an explicit counterexample to strong fair exchange, not hidden by the hypothesis.
+
+This is documentation only: no Experiment 002 implementation, benchmark, executed test or security result exists. Experiment 001's published CONDITIONAL PASS, 112-test milestone and requester-veto semantics remain unchanged. Existing regression CI, if successful for this documentation commit, is evidence about Experiment 001 only. Resolve the task commit and CI through Git history/Actions rather than predeclaring success here. Next proposed task: founder/design review of the consent change, assumptions and test plan, then a separately authorized bounded implementation. No final Genesis chain, consensus, native asset or production architecture is chosen.
+
 ## Source boundary
 
 This journal does not infer events beyond the repository record. See [`SESSION_HANDOFF.md`](SESSION_HANDOFF.md) for current working context and the reusable handoff format.

@@ -2,82 +2,50 @@
 
 Use this document to carry concise project context between Codex sessions and contributors. Update the current handoff after significant work; preserve prior handoffs in Git history where useful. Do not put secrets, credentials, or local-only notes here.
 
-## Current handoff — 2026-10-17
+## Current handoff — 2026-10-18
 
 ### Current status
 
-Genesis is in early-stage experimental research. The current milestone is project foundation and prior-art mapping. A small, bounded two-agent independently verifiable economic transaction is the first implementation milestone, but remains an early step toward the broader permissionless economic network ambition. Task 003A implements and locally tests the Solidity escrow component with pinned dependencies and GitHub CI. Task 003B now implements separate Python requester/provider processes and a temporary Anvil end-to-end fixture; the original contract and requester-veto semantics are unchanged. Local Solidity and Python evidence is recorded in the coverage map. Task 003C adds adversarial tests and a project-assisted security review with CONDITIONAL PASS for the bounded experiment. Task 004 publishes the [Experiment 001 report](../research/reports/EXPERIMENT_001_REPORT.md), anchored to the final passing validation commit and CI run. Experiment 001 is conditionally accepted and published; independent review and the explicit remaining coverage/supply-chain conditions remain open.
+Genesis remains early-stage research into broad permissionless economic infrastructure, including a possible independent network. Experiment 001 is published with **CONDITIONAL PASS** and unchanged requester-veto semantics. Task 005 supplies a research-only Experiment 002 proposal; no implementation, new test results or adopted architecture follows.
 
 ### Completed work
 
-- Initial repository foundation was recorded in commit [`239a235`](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/commit/239a23574c012af9cd782b5bb17cb05b46e3665d).
-- The long-term vision, research plan, decision boundaries, architecture research territory, and recovered history were documented in commit [`606a52c`](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/commit/606a52c8bc2a6c48961f164af4da718ecc06b163).
-- Routine work now defaults to a reviewed commit and push to `origin/main`, as recorded in commit [`e872efb`](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/commit/e872efb93a0b8acb86db721fe293848eaa45a0cc).
-- Continuity hardening was committed as `ed13296`; the journal and reusable handoff preserve repository history.
-- Task 002B adds the Experiment 001 specification, architecture, 18 testable security invariants, proposed ADR 0001, expanded threat model, and implementation/security-review gates. Critical behavior is specified; requester veto and provider-fairness limitations are explicit. No implementation findings are claimed.
-
-- Task 003A: escrow component, 55 passing local tests (including fuzz/stateful properties), dependency pins, offline build and read-only pinned-action CI. See the coverage map for partial/integration invariants; no independent audit or end-to-end finding is claimed.
-
-- Organic discoverability: clarified the README introduction and researcher navigation; updated the GitHub description and eight research topics; enabled Discussions. Published a [welcome thread](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/discussions/1) and an [unresolved requester-veto fairness thread](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/discussions/2). No implementation, architectural decision, or research status changed. The documentation commit is recoverable from this file's Git history.
-
-- Task 003B: independent ephemeral process-owned signers, signed file discovery/agreement/result/Acceptance transport, actual local escrow transactions, and bounded runner cleanup. All 55 Solidity tests and 30 Python tests passed locally; a standalone run settled and withdrew exact synthetic principal. Hash-locked Python dependencies and pinned-action CI now cover integration. See [agent reproduction](../sdk/python/README.md) and [coverage/pending cases](experiments/EXPERIMENT_001_ESCROW_COVERAGE.md). The implementation commit is recoverable from this file's history; remote CI evidence belongs to that commit's Actions run.
-
-- Task 003C: [adversarial security review](experiments/EXPERIMENT_001_SECURITY_REVIEW.md), transport/receipt/lifecycle fixes, disabled unused CCIP Read, and expanded fault/process/concurrent-accounting coverage. Local evidence: 58 Solidity and 54 Python tests, with original fuzz/stateful budgets retained. Conditional acceptance preserves requester veto, key-loss/inconclusive-run limits, and independent review requirements. Resolve this task's commit and Actions evidence through this file's Git history.
-
-- Task 004: published [Experiment 001 report](../research/reports/EXPERIMENT_001_REPORT.md), added researcher navigation, verified immutable evidence links and reproduction commands, and preserved conditional acceptance and unresolved fairness. Local publication recheck passed all 112 tests and a fresh synthetic settlement. The requested publication Discussion follows successful push verification; see the Task 004 completion report or find the title “Experiment 001: Reproducible autonomous service exchange — results and limitations” in GitHub Discussions. Resolve this documentation commit through this file's history.
+- Preserved [Experiment 001's published report](../research/reports/EXPERIMENT_001_REPORT.md), implementation and 112-test milestone (58 Solidity / 54 Python); no code or baseline evidence changed.
+- Compared six established [fair-exchange mechanism families](../research/experiments/EXPERIMENT_002_FAIR_EXCHANGE_COMPARISON.md), with primary sources, immutable open-source references and explicit inspection limits.
+- Proposed a [bounded Experiment 002](experiments/EXPERIMENT_002.md), [architecture](architecture/EXPERIMENT_002_ARCHITECTURE.md), [threat model](experiments/EXPERIMENT_002_THREAT_MODEL.md), [test plan](experiments/EXPERIMENT_002_TEST_PLAN.md) and **Proposed** [ADR 0002](adr/0002-experiment-002-fair-exchange.md).
+- Recommendation: upfront consent to a fixed deterministic predicate permits provider collection without a second requester approval, conditional on a timely canonical claim. Documented output-leakage/censorship/expiry counterexample prevents a general fairness claim. Updated roadmap, journal, decision register and context.
 
 ### Open questions
 
-- Whether an independent permissionless Layer 1 is justified compared with existing networks or another architecture.
-- Whether a native asset is necessary and, if so, what function it serves.
-- Which consensus or non-consensus security architecture is appropriate.
-- Whether useful contributions can be measured and whether they belong in consensus, incentives, or service markets.
-- How authority, discovery, execution, governance, upgrades, and offline coordination should work.
+- Accept/reject the upfront-consent change and bounded conditional-collectability research question; no design approval recorded yet.
+- Which useful task justifies outsourcing with cheap objective verification? Addition isolates the veto but does not establish useful work.
+- How to bind confidential delivery/payment, accommodate offline or satellite delays, and verify subjective AI or physical tasks without disguising oracle trust?
+- Whether challenger/proof systems justify their costs; no measurements or completed exhaustive literature review exist.
+- Final network/consensus/asset/governance/economics remain open under the canonical charter.
 
 ### Next task
 
-Recommended next task: select the Experiment 002 research question through a separate design review, including prior art, assumptions, falsifiable acceptance criteria and treatment of Experiment 001's conditional acceptance. No question, architecture, implementation, or settlement redesign is selected or authorized by Task 004.
+Recommended: founder/design review of the Experiment 002 proposal, explicit consent semantics, leakage/deadline limitations and tests. If approved, separately authorize small local implementation with reviewed/frozen schemas and digest vectors, dependency-maintenance review, pinned tools and tested reproduction commands. Do not implement automatically or change Experiment 001.
 
 ### Blockers
 
-No blocking specification contradiction was found. Contract test evidence is local and scoped. The bounded project-assisted review is complete with CONDITIONAL PASS; independent audit/source review, remaining advisory/compiler maintenance, and broader fault/host-failure conditions remain open. No critical protocol-semantic flaw requiring redesign was confirmed.
+No repository or specification contradiction discovered in this documentation task. Implementation is not authorized. Proposal review, schema/vector review and dependency maintenance are required pre-implementation gates. Full-paper/source audits were not performed; source-access/inspection limits are recorded. General fair exchange and requester-veto fairness for subjective/physical work remain unresolved. Experiment 001's independent-review and residual supply-chain/fault conditions remain open.
 
 ### Relevant commits
 
-- `239a235` — initial repository foundation.
-- `606a52c` — vision and research-plan preservation.
-- `e872efb` — routine `origin/main` push default.
-- `ed13296` — journal and handoff continuity hardening.
-- `5701aee` — Experiment 001 specification and invariants.
-- `db7da99` — initial escrow implementation. Its first CI run rejected the mismatched preinstalled stable-build pin before tests.
-- `cb64036` — Task 003A follow-up pins official Foundry v1.0.0 commit `8692e926…`; its [CI run passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39054332964).
-
-- `59375be` — Task 003B agent integration; [CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39056715409).
-
-- `f66cda9` — Task 003C adversarial review, conditional acceptance and final 112-test milestone; [CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39057757966).
+- `239a235` — foundation; `606a52c` — vision preservation; `e872efb` — reviewed routine commit/push default; `ed13296` — continuity hardening.
+- `5701aee` — Experiment 001 specification; `db7da99` / `cb64036` — escrow and official tool-pin correction; `59375be` — separate-agent integration.
+- [`f66cda9`](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/commit/f66cda91af5cb2f2da266fe11d90bc67c05cfc77) — final Experiment 001 adversarial review/112-test milestone; [CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39057757966).
+- [`418d310`](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/commit/418d3105ab96729cf01233bbcb0cde3aaee808be) — report publication; [CI passed](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39064529125); [publication Discussion](https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/discussions/3).
+- Task 005 documentation commit: recover its exact hash with `git log -1 -- docs/SESSION_HANDOFF.md`; inspect that commit's Actions run for regression status. It is not Experiment 002 execution evidence.
 
 ### Canonical documents
 
-- [`MASTER_PLAN.md`](../MASTER_PLAN.md) — canonical project charter.
-- [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) — concise onboarding and context recovery.
-- [`DECISION_REGISTER.md`](DECISION_REGISTER.md) — established decisions and unresolved choices.
-- [`ROADMAP.md`](ROADMAP.md) — conditional research stages.
-- [`RESEARCH_SPEC.md`](RESEARCH_SPEC.md) and [`PROTOCOL_HYPOTHESES.md`](PROTOCOL_HYPOTHESES.md) — research methods and hypotheses.
-- [`FUTURE_NETWORK_ARCHITECTURE.md`](FUTURE_NETWORK_ARCHITECTURE.md) — future architecture research territory.
-- [`THREAT_MODEL.md`](THREAT_MODEL.md) — general threats and Experiment 001 severity/coverage.
-- [`experiments/EXPERIMENT_001.md`](experiments/EXPERIMENT_001.md) — proposed experiment and evaluation.
-- [`architecture/EXPERIMENT_001_ARCHITECTURE.md`](architecture/EXPERIMENT_001_ARCHITECTURE.md) — exact schemas, authority, state and failure behavior.
-- [`SECURITY_INVARIANTS.md`](SECURITY_INVARIANTS.md) — 18 proposed invariants and required tests.
-- [`adr/0001-experiment-001-architecture.md`](adr/0001-experiment-001-architecture.md) — accepted for local escrow only; not final network architecture.
-- [`research/history/ORIGINAL_BRAINSTORM.md`](../research/history/ORIGINAL_BRAINSTORM.md) — reconstructed historical ideas, not an approved architecture or verbatim transcript.
-- [`research/history/CONTEXT_RECOVERY.md`](../research/history/CONTEXT_RECOVERY.md) — instructions for reconstructing context.
-
-- [EXPERIMENT_001_ESCROW_COVERAGE.md](experiments/EXPERIMENT_001_ESCROW_COVERAGE.md) — local results, invariant mapping and pending integration.
-- [DEPENDENCIES.md](../DEPENDENCIES.md) and [contracts/README.md](../contracts/README.md) — exact pins and fresh-checkout commands.
-
-- [EXPERIMENT_001_SECURITY_REVIEW.md](experiments/EXPERIMENT_001_SECURITY_REVIEW.md) — Task 003C findings, all-invariant assessment and conditional acceptance.
-
-- [EXPERIMENT_001_REPORT.md](../research/reports/EXPERIMENT_001_REPORT.md) — published methods, evidence, reproduction and limitations.
+- [MASTER_PLAN.md](../MASTER_PLAN.md), [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md), [DECISION_REGISTER.md](DECISION_REGISTER.md), [ROADMAP.md](ROADMAP.md), [RESEARCH_JOURNAL.md](RESEARCH_JOURNAL.md).
+- [RESEARCH_SPEC.md](RESEARCH_SPEC.md), [PROTOCOL_HYPOTHESES.md](PROTOCOL_HYPOTHESES.md), [FUTURE_NETWORK_ARCHITECTURE.md](FUTURE_NETWORK_ARCHITECTURE.md), [THREAT_MODEL.md](THREAT_MODEL.md).
+- [Experiment 001 specification](experiments/EXPERIMENT_001.md), [architecture](architecture/EXPERIMENT_001_ARCHITECTURE.md), [18 invariants](SECURITY_INVARIANTS.md), [coverage](experiments/EXPERIMENT_001_ESCROW_COVERAGE.md), [security review](experiments/EXPERIMENT_001_SECURITY_REVIEW.md), [report](../research/reports/EXPERIMENT_001_REPORT.md), [ADR 0001](adr/0001-experiment-001-architecture.md), [dependency pins](../DEPENDENCIES.md).
+- [Experiment 002 research comparison](../research/experiments/EXPERIMENT_002_FAIR_EXCHANGE_COMPARISON.md), [proposal](experiments/EXPERIMENT_002.md), [architecture](architecture/EXPERIMENT_002_ARCHITECTURE.md), [threat model](experiments/EXPERIMENT_002_THREAT_MODEL.md), [test plan](experiments/EXPERIMENT_002_TEST_PLAN.md), [proposed ADR 0002](adr/0002-experiment-002-fair-exchange.md).
+- [Original brainstorm](../research/history/ORIGINAL_BRAINSTORM.md) remains a reconstruction, not a transcript or approved design; [context recovery](../research/history/CONTEXT_RECOVERY.md).
 
 ## Reusable handoff template
 
