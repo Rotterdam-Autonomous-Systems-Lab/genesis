@@ -59,7 +59,7 @@ def check_trace(path, golden=True):
     corpus=json.loads((root/'research/fixtures/native_l1/v1/corpus.json').read_text())
     core={v['id']:v for v in corpus['vectors']}
     stress={v['id']:v for v in json.loads((root/'research/native_l1/evidence/stress-input-v1.json').read_text())['cases']}
-    golden_steps=0;final_hashes={} 
+    golden_steps=0;final_hashes={}
     with gzip.open(path,'rt') as stream:
         for line in stream:
             row=json.loads(line); key=(row['model'],row['case'])

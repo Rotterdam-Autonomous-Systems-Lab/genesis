@@ -1,20 +1,20 @@
 {
   "models": {
-    "databaseId": null,
-    "headSha": null,
     "conclusion": "failure",
+    "createdAt": "2026-10-18T23:41:13Z",
+    "databaseId": 39177558074,
+    "headSha": "6872f4b2a208f70074b67bbd47e9095043e0dc18",
     "status": "completed",
-    "url": "https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39177558074",
-    "createdAt": null,
-    "updatedAt": null
+    "updatedAt": "2026-10-19T00:15:23Z",
+    "url": "https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39177558074"
   },
   "regressions": {
-    "databaseId": null,
-    "headSha": null,
     "conclusion": "success",
+    "createdAt": "2026-10-18T23:41:13Z",
+    "databaseId": 39177558069,
+    "headSha": "6872f4b2a208f70074b67bbd47e9095043e0dc18",
     "status": "completed",
-    "url": "https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39177558069",
-    "createdAt": null,
-    "updatedAt": null
+    "updatedAt": "2026-10-18T23:46:06Z",
+    "url": "https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39177558069"
   }
 }
