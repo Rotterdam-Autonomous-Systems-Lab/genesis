@@ -1,0 +1,16 @@
+{
+  "scope": "two-payment append-only control; not full comparison",
+  "claims": {
+    "pay12": {
+      "owner": "S",
+      "amount": 12
+    },
+    "pay8": {
+      "owner": "S",
+      "amount": 8
+    }
+  },
+  "independent_recipient_claims": 2,
+  "recipient_inputs_on_topup": 0,
+  "unauthorized_spend_rejected": true
+}

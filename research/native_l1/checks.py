@@ -61,3 +61,39 @@ def compare(result,state,client,expected,manifest):
     require(result==expected['result'],f"outcome {result} != {expected['result']}")
     require(canonical(state,manifest)==canonical(expected['ledger'],manifest),'ledger projection mismatch')
     require(client==expected['client'],'client projection mismatch')
+
+
+def audit_pool_transactions(native, manifest):
+    """Independent arithmetic check; never imports the model covenant."""
+    by_id={i['intent_id']:i for i in manifest['intents'].values()}
+    names={a['id']:n for n,a in manifest['actors'].items()}
+    outputs=native['outputs']
+    for tx in native['transactions']:
+        require(tx['id'] in by_id,'unknown native authorization')
+        u=by_id[tx['id']]['unsigned']; actor=names[u[2]['bytes']]; op,args=u[7:]
+        ins=[outputs[i] for i in tx['inputs']]; outs=[outputs[i] for i in tx['outputs']]
+        old={o['key']:o for o in ins if o['table']=='balances'}
+        new={o['key']:o for o in outs if o['table']=='balances'}
+        require(len(old)==sum(o['table']=='balances' for o in ins),'duplicate pool input owner')
+        require(len(new)==sum(o['table']=='balances' for o in outs),'duplicate pool successor owner')
+        delegated=op in (1,5) and args[0]['bytes']!='00'*32
+        expected={}
+        def add(owner,amount): expected[owner]=expected.get(owner,0)+amount
+        if not delegated: add(actor,-1)
+        if tx['outcome']=='success':
+            if op==1:
+                if not delegated:add(actor,-args[-2])
+                add(names[args[-3]['bytes']],args[-2])
+            elif op==2:add(actor,-args[4]-args[5])
+            elif op==5 and not delegated:add(actor,-args[2][7])
+            elif op==8:
+                credit=next(o['datum'] for o in ins if o['table']=='credits')
+                require(credit['owner']==actor,'collection signer/owner');add(actor,credit['amount'])
+            elif op==9:
+                grant=next(o['datum'] for o in ins if o['table']=='grants')
+                require(grant['owner']==actor,'return signer/root');add(actor,grant['principal_pool']+grant['fee_pool'])
+        require(set(old)==set(new)==set(expected),'pool authorization input/successor set')
+        for owner in old:
+            require(new[owner]['value']-old[owner]['value']==expected[owner],'unauthorized native pool debit/topup')
+            for o in (old[owner],new[owner]):
+                require(o['lock']=='script:balance-pool-v1:'+owner and o['datum']==o['value'],'native pool covenant continuity')

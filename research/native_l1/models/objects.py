@@ -39,7 +39,7 @@ class Objects:
         if op==5:
             aid,_=self.ctx.terms_record(a[2]); targets.append(('agreements',aid))
         if op in (6,7):
-            cid=self.ctx.alias('credits',bytes.fromhex(digest([a[0],2 if op==6 else 3])))
+            cid=self.ctx.alias('credits',bytes.fromhex(self.ctx.digest([a[0],2 if op==6 else 3])))
             targets.append(('credits',cid))
         if op in (1,5) and a[0]!=bytes(32):
             g=self.read('grants',self.ctx.alias('grants',a[0]))
@@ -74,7 +74,7 @@ class Objects:
                 if op==1: add(self.ctx.actor(a[-3]),value)
                 else: put('agreements',agreement_id,agreement)
         elif op==2:
-            key=self.ctx.alias('grants',a[0]); identity=digest([DOMAIN,2,p['u'][1],p['u'][2],p['sequence']])
+            key=self.ctx.alias('grants',a[0]); identity=self.ctx.digest([DOMAIN,2,p['u'][1],p['u'][2],p['sequence']])
             if get('grants',key) or identity!=a[0].hex(): result='revert:grant_identity'
             elif get('balances',actor)<a[4]+a[5]+p['ceiling']: result='revert:balance'
             else:
@@ -104,7 +104,7 @@ class Objects:
                 if op==6 and int.from_bytes(a[1],'big')!=answer: result='revert:result'
                 else:
                     agreement.update(state='Settled' if op==6 else 'Refunded',result=answer if op==6 else 0)
-                    credit=self.ctx.alias('credits',bytes.fromhex(digest([a[0],2 if op==6 else 3])))
+                    credit=self.ctx.alias('credits',bytes.fromhex(self.ctx.digest([a[0],2 if op==6 else 3])))
                     put('agreements',key,agreement)
                     put('credits',credit,dict(agreement=key,owner=actor,amount=agreement['price'],status='outstanding'))
         elif op==8:

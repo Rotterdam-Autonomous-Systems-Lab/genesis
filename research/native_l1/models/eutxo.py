@@ -4,6 +4,8 @@ An actor replay-registry UTXO and grant-state UTXO serialize shared authority.
 This is an illustrative script profile, not Bitcoin Script or a deployed EUTXO VM.
 """
 import copy
+import base64
+from ..balance_policy import lock as pool_lock, validate as validate_pools, authorized_deltas
 from ..common import Context, Reject, DOMAIN, digest, packed
 
 
@@ -34,9 +36,9 @@ class EUTXO:
         return 0
 
     def create(self,tx,table,key,data):
-        outid=__import__('hashlib').sha256(packed([tx,table,key])).hexdigest()
+        outid=self.ctx.hash_bytes(packed([tx,table,key]))
         if outid in self.outputs: raise AssertionError('output identity reuse')
-        lock=key if table in ('balances','epochs','registry') else data.get('owner') if table=='credits' else 'script:'+table
+        lock=pool_lock(key) if table=='balances' else key if table in ('epochs','registry') else data.get('owner') if table=='credits' else 'script:'+table
         self.outputs[outid]=dict(table=table,key=key,value=self.amount(table,data),datum=copy.deepcopy(data),lock=lock)
         self.live[table+':'+key]=outid
         return outid
@@ -52,7 +54,9 @@ class EUTXO:
 
     def build(self,intent):
         p=self.ctx.parse(intent); op,a=p['op'],p['args']; actor=p['actor']
-        keys=[('epochs',actor),('registry',actor),('balances',actor)]
+        keys=[('epochs',actor),('registry',actor)]
+        # A delegated payment uses grant reserves, never the delegate's own coins.
+        if op not in (1,5) or a[0]==bytes(32): keys.append(('balances',actor))
         if op in (1,3,4,5,9) and a[0]!=bytes(32): keys.append(('grants',self.ctx.alias('grants',a[0])))
         if op==1: keys.append(('balances',self.ctx.actor(a[-3])))
         if op in (6,7): keys.append(('agreements',self.ctx.alias('agreements',a[0])))
@@ -61,12 +65,14 @@ class EUTXO:
         if op==5:
             aid,_=self.ctx.terms_record(a[2]); keys.append(('agreements',aid))
         if op in (6,7):
-            cid=self.ctx.alias('credits',bytes.fromhex(digest([a[0],2 if op==6 else 3])))
+            cid=self.ctx.alias('credits',bytes.fromhex(self.ctx.digest([a[0],2 if op==6 else 3])))
             keys.append(('credits',cid))
         if op in (1,5) and a[0]!=bytes(32):
             g=self.read('grants',self.ctx.alias('grants',a[0]))
             if g: keys.append(('epochs',g['owner']))
-        return dict(kind=self.kind,intent_id=p['id'],references={t+':'+k:self.live.get(t+':'+k) for t,k in keys})
+        # Ordered dependencies are implicit in the signed operation; full hashes, no truncation.
+        refs=[self.live.get(t+':'+k) for t,k in sorted(set(keys))]
+        return dict(kind=self.kind,intent_id=p['id'],references=[base64.urlsafe_b64encode(bytes.fromhex(i)).decode().rstrip('=') if i else None for i in refs])
 
     def include(self,intent,wrapper,tick):
         try:
@@ -96,7 +102,7 @@ class EUTXO:
                 else: successor('agreements',aid,escrow)
         elif op==2:
             gid=self.ctx.alias('grants',a[0])
-            if a[0].hex()!=digest([DOMAIN,2,p['u'][1],p['u'][2],p['sequence']]) or datum('grants',gid) is not None:
+            if a[0].hex()!=self.ctx.digest([DOMAIN,2,p['u'][1],p['u'][2],p['sequence']]) or datum('grants',gid) is not None:
                 outcome='revert:grant_identity'
             elif datum('balances',actor)-p['ceiling']<a[4]+a[5]: outcome='revert:balance'
             else:
@@ -127,7 +133,7 @@ class EUTXO:
                 if op==6 and int.from_bytes(a[1],'big')!=answer: outcome='revert:result'
                 else:
                     escrow['state']='Settled' if op==6 else 'Refunded'; escrow['result']=answer if op==6 else 0
-                    cid=self.ctx.alias('credits',bytes.fromhex(digest([a[0],2 if op==6 else 3])))
+                    cid=self.ctx.alias('credits',bytes.fromhex(self.ctx.digest([a[0],2 if op==6 else 3])))
                     successor('agreements',aid,escrow)
                     successor('credits',cid,dict(agreement=aid,owner=actor,amount=escrow['price'],status='outstanding'))
         elif op==8:
@@ -148,6 +154,15 @@ class EUTXO:
         if input_value!=output_value: raise AssertionError('script conservation')
         for (table,key),data in successors.items():
             if not 0<=self.amount(table,data)<=2**64-1: raise ArithmeticError('output value range')
+        # Validate arbitrary proposed balance successors before changing any index.
+        policy=dict(p)
+        if op==1: policy['recipient']=self.ctx.actor(a[-3])
+        if op==8: policy['credit']=self.ctx.alias('credits',a[0])
+        if op==9: policy['return_grant']=self.ctx.alias('grants',a[0])
+        deltas=authorized_deltas(policy,outcome,self.read)
+        before={k:self.outputs[self.live['balances:'+k]] for t,k in successors if t=='balances'}
+        after={k:dict(table='balances',key=k,lock=pool_lock(k),value=d,datum=d) for (t,k),d in successors.items() if t=='balances'}
+        validate_pools(before,after,deltas)
         # Atomic validate/consume/create. Read references may be retained; write inputs cannot.
         tx=p['id']; created=[]
         for outid in inputs:
@@ -155,7 +170,7 @@ class EUTXO:
             old=self.outputs[outid]; del self.live[old['table']+':'+old['key']]
         for (table,key),data in successors.items(): created.append(self.create(tx,table,key,data))
         created.append(self.create(tx,'fee',tx,1))
-        self.transactions.append(dict(id=tx,inputs=inputs,outputs=created))
+        self.transactions.append(dict(id=tx,inputs=inputs,outputs=created,outcome=outcome,tick=tick))
         self.ctx.metrics['scripts']+=len(inputs)
         self.ctx.metrics['consumed_outputs']+=len(inputs); self.ctx.metrics['created_outputs']+=len(created)
         self.ctx.metrics['writes']+=len(inputs)+len(created)

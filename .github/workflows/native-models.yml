@@ -19,7 +19,13 @@ permissions:
   contents: read
 jobs:
   native-models:
-    name: Frozen native L1 model comparison
+    name: Native L1 comparison environment ${{ matrix.replica }}
+    strategy:
+      fail-fast: false
+      matrix:
+        replica: [1, 2]
+    env:
+      GENESIS_REPLICA: ${{ matrix.replica }}
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     steps:
@@ -53,7 +59,35 @@ jobs:
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: native-l1-task019-evidence
+          name: native-l1-task020-env-${{ matrix.replica }}
           path: internal/native-model-results/
           if-no-files-found: error
+          retention-days: 30
+  reproduction:
+    name: Independent offline evidence comparison
+    needs: native-models
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout checker source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Download both isolated environment artifacts
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # immutable v4
+        with:
+          pattern: native-l1-task020-env-*
+          path: internal/reproduction
+      - name: Verify plans, traces, ceilings and deterministic reproduction
+        run: |
+          python3 -m research.reports.task020.verify_evidence internal/reproduction/native-l1-task020-env-1/results.json --second internal/reproduction/native-l1-task020-env-2/results.json --trace internal/reproduction/native-l1-task020-env-1/traces.jsonl.gz --output internal/reproduction/check-1.json
+          python3 -m research.reports.task020.verify_evidence internal/reproduction/native-l1-task020-env-2/results.json --trace internal/reproduction/native-l1-task020-env-2/traces.jsonl.gz --output internal/reproduction/check-2.json
+      - name: Retain offline evidence checks
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: native-l1-task020-offline-checks
+          path: internal/reproduction/check-*.json
+          if-no-files-found: warn
           retention-days: 30

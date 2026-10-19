@@ -14,10 +14,14 @@ from Crypto.Signature import eddsa
 class Client:
     def __init__(self,initial,path,actors=None):
         self.path=Path(path); self.state=copy.deepcopy(initial)
-        self.actors=actors or {}; self.verifications=0
+        self.actors=actors or {}; self.verifications=0; self.hash_calls=0; self.hashed_bytes=0
         self.journal=dict(state=self.state,intents={},wrappers=[],fenced_epochs=[])
         self.flushes=0; self.journal_bytes=0
         self.persist()
+
+    def hash_bytes(self,raw):
+        self.hash_calls+=1;self.hashed_bytes+=len(raw)
+        return hashlib.sha256(raw)
 
     def persist(self):
         raw=packed(self.journal)
@@ -36,11 +40,11 @@ class Client:
         if typ=='prepare':
             if s['status']=='halted' or s['unresolved']: return 'client_blocked'
             label=event['intent']; i=intents[label]; u=codec.unpack(i['unsigned'])
-            if hashlib.sha256(bytes.fromhex(i['preimage_hex'])).hexdigest()!=i['intent_id'] or codec.decode(bytes.fromhex(i['preimage_hex']))[1]!=u:
+            if self.hash_bytes(bytes.fromhex(i['preimage_hex'])).hexdigest()!=i['intent_id'] or codec.decode(bytes.fromhex(i['preimage_hex']))[1]!=u:
                 raise RuntimeError('client intent bytes mismatch')
             if self.actors:
                 actor=next(a for a in self.actors.values() if a['id']==u[2].hex())
-                h=hashlib.sha256(bytes.fromhex(i['preimage_hex'])).digest()
+                h=self.hash_bytes(bytes.fromhex(i['preimage_hex'])).digest()
                 eddsa.new(eddsa.import_public_key(bytes.fromhex(actor['public_key'])),'rfc8032').verify(h,bytes.fromhex(i['signature']))
                 self.verifications+=1
             s['queries']=0; s['submissions']=0
@@ -54,7 +58,7 @@ class Client:
             if not wrapper or wrapper.get('intent_id')!=self.journal['intents'][s['unresolved'][0]]['id']:
                 raise RuntimeError('client wrapper intent mismatch')
             # Durable identity before broadcast. Do not publish raw transport wrappers.
-            self.journal['wrappers'].append(dict(id=hashlib.sha256(packed(wrapper)).hexdigest(),epoch=len(self.journal['fenced_epochs'])))
+            self.journal['wrappers'].append(dict(id=self.hash_bytes(packed(wrapper)).hexdigest(),epoch=len(self.journal['fenced_epochs'])))
             s['submissions']+=1; s['status']='unknown'; self.persist()
             return 'structural_reject' if typ=='attempt' else 'unknown'
         if typ=='crash':

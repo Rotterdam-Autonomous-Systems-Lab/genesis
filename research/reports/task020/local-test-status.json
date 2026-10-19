@@ -1,0 +1,7 @@
+{
+  "model_and_negative_controls": 13,
+  "result": "PASS",
+  "python": "3.12.1",
+  "pycryptodome": "3.24.1",
+  "scope": "local controls, not scored reproduction"
+}

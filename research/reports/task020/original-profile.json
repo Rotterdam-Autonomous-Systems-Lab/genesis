@@ -1,0 +1,31 @@
+{
+  "profile": "original-memory-only; excludes fsync, subprocess, client and harness",
+  "elapsed_seconds": 27.324803367024288,
+  "checkpoints": [
+    {
+      "actions": 10,
+      "wire_bytes": 23864,
+      "link_lower_bound_seconds": 2.33046875,
+      "native_bytes": 45303
+    },
+    {
+      "actions": 100,
+      "wire_bytes": 225280,
+      "link_lower_bound_seconds": 22.0,
+      "native_bytes": 262251
+    },
+    {
+      "actions": 500,
+      "wire_bytes": 1121676,
+      "link_lower_bound_seconds": 109.538671875,
+      "native_bytes": 1551553
+    },
+    {
+      "actions": 1000,
+      "wire_bytes": 2242702,
+      "link_lower_bound_seconds": 219.0138671875,
+      "native_bytes": 3907966
+    }
+  ],
+  "cprofile": "         17433951 function calls (16273692 primitive calls) in 27.279 seconds\n\n   Ordered by: cumulative time\n   List reduced from 274 to 18 due to restriction <18>\n\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n     1000    0.072    0.000   26.140    0.026 /Users/m080819a/rotterdam-autonomy-lab/genesis/research/native_l1/models/eutxo.py:71(include)\n     1000    0.086    0.000   22.630    0.023 /Users/m080819a/rotterdam-autonomy-lab/genesis/research/native_l1/common.py:101(authenticate)\n     1998    0.020    0.000   21.761    0.011 /Users/m080819a/rotterdam-autonomy-lab/genesis/research/native_l1/common.py:47(verify)\n     1998    0.017    0.000   16.788    0.008 /Users/m080819a/rotterdam-autonomy-lab/genesis/internal/task019-clean-venv/lib/python3.12/site-packages/Crypto/Signature/eddsa.py:209(verify)\n     1998    0.076    0.000   16.757    0.008 /Users/m080819a/rotterdam-autonomy-lab/genesis/internal/task019-clean-venv/lib/python3.12/site-packages/Crypto/Signature/eddsa.py:244(_verify_ed25519)\n    29972    0.711    0.000   10.234    0.000 /Users/m080819a/rotterdam-autonomy-lab/genesis/internal/task019-clean-venv/lib/python3.12/site-packages/Crypto/Util/number.py:406(long_to_bytes)\n     5994    0.006    0.000   10.039    0.002 /Users/m080819a/rotterdam-autonomy-lab/genesis/internal/task019-clean-venv/lib/python3.12/site-packages/Crypto/PublicKey/_point.py:339(__rmul__)\n     5994    0.026    0.000   10.032    0.002 /Users/m080819a/rotterdam-autonomy-lab/genesis/internal/task019-clean-venv/lib/python3.12/site-packages/Crypto/PublicKey/_point.py:332(__mul__)\n    11989    0.308    0.000    9.071    0.001 /Users/m080819a/rotterdam-autonomy-lab/genesis/internal/task019-clean-venv/lib/python3.12/site-packages/Crypto/PublicKey/_point.py:155(__init__)\n     3996    0.035    0.000    8.227    0.002 /Users/m080819a/rotterdam-autonomy-lab/genesis/internal/task019-clean-venv/lib/python3.12/site-packages/Crypto/Signature/eddsa.py:41(import_public_key)\n   801896    5.505    0.000    7.879    0.000 /Users/m080819a/rotterdam-autonomy-lab/genesis/internal/task019-clean-venv/lib/python3.12/site-packages/Crypto/Math/_IntegerGMP.py:163(__init__)\n     7992    0.031    0.000    7.702    0.001 /Users/m080819a/rotterdam-autonomy-lab/genesis/internal/task019-clean-venv/lib/python3.12/site-packages/Crypto/PublicKey/_point.py:229(copy)\n     3996    0.141    0.000    4.871    0.001 /Users/m080819a/rotterdam-autonomy-lab/genesis/internal/task019-clean-venv/lib/python3.12/site-packages/Crypto/PublicKey/ECC.py:1057(_import_ed25519_public_key)\n     5994    2.248    0.000    4.203    0.001 /Users/m080819a/rotterdam-autonomy-lab/genesis/internal/task019-clean-venv/lib/python3.12/site-packages/Crypto/PublicKey/_point.py:313(__imul__)\n   125882    0.450    0.000    3.852    0.000 /Users/m080819a/rotterdam-autonomy-lab/genesis/internal/task019-clean-venv/lib/python3.12/site-packages/Crypto/Math/_IntegerGMP.py:579(__and__)\n   121886    0.216    0.000    3.504    0.000 {built-in method _struct.pack}\n   113894    0.172    0.000    3.337    0.000 /Users/m080819a/rotterdam-autonomy-lab/genesis/internal/task019-clean-venv/lib/python3.12/site-packages/Crypto/Math/_IntegerGMP.py:235(__index__)\n     3996    0.073    0.000    3.297    0.001 /Users/m080819a/rotterdam-autonomy-lab/genesis/internal/task019-clean-venv/lib/python3.12/site-packages/Crypto/PublicKey/ECC.py:624(construct)\n\n\n"
+}

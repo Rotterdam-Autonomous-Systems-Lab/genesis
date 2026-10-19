@@ -1,0 +1,529 @@
+{
+  "decision": "INCOMPLETE DEVELOPMENT RUN; NOT COMPARATIVE ACCEPTANCE",
+  "elapsed_seconds": 172.54011093091685,
+  "environment": {
+    "affinity": null,
+    "cache_policy": "one fresh-process warm-up; OS page cache uncontrolled and disclosed",
+    "command": [
+      "/Users/m080819a/rotterdam-autonomy-lab/genesis/research/native_l1/runner.py",
+      "--output",
+      "internal/task020-development",
+      "--models",
+      "eutxo",
+      "--cases",
+      "V01",
+      "S09",
+      "--repetitions",
+      "1"
+    ],
+    "cpu_count": 8,
+    "instrumentation": "Task020; external20ms aggregate CPU/wall watchdog; separate harness RSS upper bound",
+    "machine": "x86_64",
+    "platform": "macOS-12.7.6-x86_64-i386-64bit",
+    "processor": "i386",
+    "pycryptodome": "3.24.1",
+    "python": "3.12.1"
+  },
+  "runs": [
+    {
+      "aggregate_process_cpu_seconds": 0.257502,
+      "case": "V01",
+      "checked_barriers": 3,
+      "client_components": {
+        "client": {
+          "calls": 3,
+          "cpu_seconds": 3.100000000000325e-05,
+          "wall_seconds": 2.95909121632576e-05
+        },
+        "finish": {
+          "calls": 1,
+          "cpu_seconds": 5.0000000000050004e-06,
+          "wall_seconds": 4.79002483189106e-06
+        },
+        "init": {
+          "calls": 1,
+          "cpu_seconds": 0.0006869999999999932,
+          "wall_seconds": 0.0007535209879279137
+        },
+        "ipc_decode": {
+          "calls": 5,
+          "cpu_seconds": 0.00013799999999998536,
+          "wall_seconds": 0.0001343489857390523
+        },
+        "ipc_encode": {
+          "calls": 4,
+          "cpu_seconds": 0.0002709999999999796,
+          "wall_seconds": 0.0002877201186493039
+        },
+        "observation_projection": {
+          "calls": 5,
+          "cpu_seconds": 9.900000000000186e-05,
+          "wall_seconds": 9.67150554060936e-05
+        }
+      },
+      "client_cpu_seconds": 0.0009370000000000211,
+      "client_harness_ipc_bytes": 6222,
+      "client_hash_calls": 0,
+      "client_hashed_bytes": 0,
+      "client_network_bytes": {
+        "D1": 1434,
+        "D2": 2884
+      },
+      "client_peak_rss_bytes": 16273408,
+      "client_process_cpu_seconds": 0.116769,
+      "client_signature_verifications": 0,
+      "client_wall_seconds": 0.0010164700215682387,
+      "counters": {
+        "delivered_actions": 3,
+        "native_structural_rejects": 0,
+        "revert:principal_budget": 1,
+        "success": 2
+      },
+      "final_projection_sha256": "1426eccd5eb40ac7ca4f284af80c1025e32fbf0126c1a79a653accdb5b297eab",
+      "hard_memory_affinity_enforced": false,
+      "harness_cpu_seconds": 0.0125390000000003,
+      "harness_peak_rss_bytes": 50343936,
+      "harness_rss_scope": "process-lifetime upper bound, includes instrument/harness state",
+      "journal_bytes": 157,
+      "journal_flushes": 1,
+      "logical_rows_written": 11,
+      "logical_signed_bytes": 786,
+      "max_transport_bytes": 602,
+      "max_wire_envelope_bytes": 909,
+      "max_wrapper_bytes": 340,
+      "model": "eutxo",
+      "native_state_bytes": 10538,
+      "operations": {
+        "consumed_outputs": 8,
+        "created_outputs": 11,
+        "decodes": 9,
+        "hash_calls": 39,
+        "hashed_bytes": 3352,
+        "parsed_bytes": 1782,
+        "reads": 29,
+        "scripts": 8,
+        "signatures": 3,
+        "writes": 19
+      },
+      "registry_bytes": 4967,
+      "resource_sampler_seconds": 0.02,
+      "status": "PASS",
+      "total_state_bytes": 15505,
+      "transition_wall_seconds": 0.02265173103660345,
+      "transport_bytes": 1806,
+      "verification_timings": {
+        "input_parse": {
+          "calls": 9,
+          "cpu_seconds": 0.0007699999999999929,
+          "wall_seconds": 0.000798997818492353
+        },
+        "signature_verification": {
+          "calls": 3,
+          "cpu_seconds": 0.013602000000000003,
+          "wall_seconds": 0.013932676985859871
+        }
+      },
+      "warmup": true,
+      "wire_wall_seconds": 0.19191674992907792,
+      "worker_components": {
+        "build": {
+          "calls": 3,
+          "cpu_seconds": 0.0006589999999999929,
+          "wall_seconds": 0.0008536200039088726
+        },
+        "finish": {
+          "calls": 1,
+          "cpu_seconds": 5.0000000000050004e-06,
+          "wall_seconds": 4.451023414731026e-06
+        },
+        "include": {
+          "calls": 3,
+          "cpu_seconds": 0.015069000000000013,
+          "wall_seconds": 0.01543097896501422
+        },
+        "init": {
+          "calls": 1,
+          "cpu_seconds": 0.00273000000000001,
+          "wall_seconds": 0.0029038279317319393
+        },
+        "ipc_decode": {
+          "calls": 8,
+          "cpu_seconds": 0.0004810000000000231,
+          "wall_seconds": 0.0005030290922150016
+        },
+        "ipc_encode": {
+          "calls": 7,
+          "cpu_seconds": 0.0006229999999999986,
+          "wall_seconds": 0.0008791070431470871
+        },
+        "native_persistence": {
+          "calls": 4,
+          "cpu_seconds": 0.0022430000000000366,
+          "wall_seconds": 0.0027951159281656146
+        },
+        "observation_projection": {
+          "calls": 8,
+          "cpu_seconds": 0.0005189999999999501,
+          "wall_seconds": 0.0005159450229257345
+        }
+      },
+      "worker_cpu_seconds": 0.021325000000000024,
+      "worker_harness_ipc_bytes": 71224,
+      "worker_peak_rss_bytes": 16572416,
+      "worker_process_cpu_seconds": 0.140733
+    },
+    {
+      "aggregate_process_cpu_seconds": 0.21938,
+      "case": "V01",
+      "checked_barriers": 3,
+      "client_components": {
+        "client": {
+          "calls": 3,
+          "cpu_seconds": 2.3999999999996247e-05,
+          "wall_seconds": 2.2749765776097775e-05
+        },
+        "finish": {
+          "calls": 1,
+          "cpu_seconds": 5.0000000000050004e-06,
+          "wall_seconds": 4.59898728877306e-06
+        },
+        "init": {
+          "calls": 1,
+          "cpu_seconds": 0.000677999999999998,
+          "wall_seconds": 0.0007551249582320452
+        },
+        "ipc_decode": {
+          "calls": 5,
+          "cpu_seconds": 0.0001260000000000011,
+          "wall_seconds": 0.00012329500168561935
+        },
+        "ipc_encode": {
+          "calls": 4,
+          "cpu_seconds": 0.0002349999999999991,
+          "wall_seconds": 0.000235071056522429
+        },
+        "observation_projection": {
+          "calls": 5,
+          "cpu_seconds": 9.199999999999486e-05,
+          "wall_seconds": 9.056820999830961e-05
+        }
+      },
+      "client_cpu_seconds": 0.0008880000000000138,
+      "client_harness_ipc_bytes": 6216,
+      "client_hash_calls": 0,
+      "client_hashed_bytes": 0,
+      "client_network_bytes": {
+        "D1": 1434,
+        "D2": 2884
+      },
+      "client_peak_rss_bytes": 14565376,
+      "client_process_cpu_seconds": 0.099158,
+      "client_signature_verifications": 0,
+      "client_wall_seconds": 0.0009680789662525058,
+      "counters": {
+        "delivered_actions": 3,
+        "native_structural_rejects": 0,
+        "revert:principal_budget": 1,
+        "success": 2
+      },
+      "final_projection_sha256": "1426eccd5eb40ac7ca4f284af80c1025e32fbf0126c1a79a653accdb5b297eab",
+      "hard_memory_affinity_enforced": false,
+      "harness_cpu_seconds": 0.010567999999999245,
+      "harness_peak_rss_bytes": 50360320,
+      "harness_rss_scope": "process-lifetime upper bound, includes instrument/harness state",
+      "journal_bytes": 157,
+      "journal_flushes": 1,
+      "logical_rows_written": 11,
+      "logical_signed_bytes": 786,
+      "max_transport_bytes": 602,
+      "max_wire_envelope_bytes": 909,
+      "max_wrapper_bytes": 340,
+      "model": "eutxo",
+      "native_state_bytes": 10538,
+      "operations": {
+        "consumed_outputs": 8,
+        "created_outputs": 11,
+        "decodes": 9,
+        "hash_calls": 39,
+        "hashed_bytes": 3352,
+        "parsed_bytes": 1782,
+        "reads": 29,
+        "scripts": 8,
+        "signatures": 3,
+        "writes": 19
+      },
+      "registry_bytes": 4967,
+      "repetition": 0,
+      "resource_sampler_seconds": 0.02,
+      "status": "PASS",
+      "total_state_bytes": 15505,
+      "transition_wall_seconds": 0.02067923394497484,
+      "transport_bytes": 1806,
+      "verification_timings": {
+        "input_parse": {
+          "calls": 9,
+          "cpu_seconds": 0.0007459999999999828,
+          "wall_seconds": 0.0007585117127746344
+        },
+        "signature_verification": {
+          "calls": 3,
+          "cpu_seconds": 0.014221000000000011,
+          "wall_seconds": 0.014472953975200653
+        }
+      },
+      "wire_wall_seconds": 0.1345397790428251,
+      "worker_components": {
+        "build": {
+          "calls": 3,
+          "cpu_seconds": 0.0005200000000000066,
+          "wall_seconds": 0.0005221411120146513
+        },
+        "finish": {
+          "calls": 1,
+          "cpu_seconds": 4.999999999991123e-06,
+          "wall_seconds": 5.016918294131756e-06
+        },
+        "include": {
+          "calls": 3,
+          "cpu_seconds": 0.015645000000000006,
+          "wall_seconds": 0.01591312582604587
+        },
+        "init": {
+          "calls": 1,
+          "cpu_seconds": 0.0011769999999999975,
+          "wall_seconds": 0.0012948460644111037
+        },
+        "ipc_decode": {
+          "calls": 8,
+          "cpu_seconds": 0.0004150000000000126,
+          "wall_seconds": 0.000421673059463501
+        },
+        "ipc_encode": {
+          "calls": 7,
+          "cpu_seconds": 0.0006099999999999994,
+          "wall_seconds": 0.0006086210487410426
+        },
+        "native_persistence": {
+          "calls": 4,
+          "cpu_seconds": 0.0018350000000000033,
+          "wall_seconds": 0.0023612460354343057
+        },
+        "observation_projection": {
+          "calls": 8,
+          "cpu_seconds": 0.0006290000000000323,
+          "wall_seconds": 0.0006615213351324201
+        }
+      },
+      "worker_cpu_seconds": 0.019741000000000022,
+      "worker_harness_ipc_bytes": 71230,
+      "worker_peak_rss_bytes": 14938112,
+      "worker_process_cpu_seconds": 0.120222
+    },
+    {
+      "aggregate_process_cpu_seconds": 68.096976,
+      "case": "S09",
+      "checked_barriers": 1000,
+      "client_components": {
+        "client": {
+          "calls": 4000,
+          "cpu_seconds": 12.547417999999997,
+          "wall_seconds": 16.473814193508588
+        },
+        "finish": {
+          "calls": 1,
+          "cpu_seconds": 4.099999999951365e-05,
+          "wall_seconds": 3.961008042097092e-05
+        },
+        "init": {
+          "calls": 1,
+          "cpu_seconds": 0.000678999999999999,
+          "wall_seconds": 0.0008575100218877196
+        },
+        "ipc_decode": {
+          "calls": 4002,
+          "cpu_seconds": 0.15874499999998237,
+          "wall_seconds": 0.17326594330370426
+        },
+        "ipc_encode": {
+          "calls": 4001,
+          "cpu_seconds": 0.2712350000000022,
+          "wall_seconds": 0.3057764415862039
+        },
+        "observation_projection": {
+          "calls": 4002,
+          "cpu_seconds": 0.10339200000002055,
+          "wall_seconds": 0.11188372760079801
+        }
+      },
+      "client_cpu_seconds": 12.78753099999998,
+      "client_harness_ipc_bytes": 7971900,
+      "client_hash_calls": 3000,
+      "client_hashed_bytes": 956830,
+      "client_network_bytes": {
+        "D00": 60553,
+        "D01": 60553,
+        "D02": 48277,
+        "D03": 48277,
+        "D04": 49834,
+        "D05": 48277,
+        "D06": 48277,
+        "D07": 49832,
+        "D08": 62506,
+        "D09": 48277,
+        "D10": 60553,
+        "D11": 60553,
+        "D12": 48277,
+        "D13": 48277,
+        "D14": 48277,
+        "D15": 62504,
+        "D16": 60553,
+        "D17": 60553,
+        "D18": 48275,
+        "D19": 48277,
+        "D20": 48277,
+        "D21": 48277,
+        "D22": 60553,
+        "D23": 60553,
+        "D24": 49834,
+        "D25": 62504,
+        "D26": 60553,
+        "D27": 60553,
+        "D28": 49832,
+        "D29": 60551,
+        "D30": 60551,
+        "D31": 60553,
+        "H": 3705
+      },
+      "client_peak_rss_bytes": 15486976,
+      "client_process_cpu_seconds": 13.608563,
+      "client_signature_verifications": 1000,
+      "client_wall_seconds": 16.749762329738587,
+      "counters": {
+        "delivered_actions": 1000,
+        "native_structural_rejects": 0,
+        "success": 1000
+      },
+      "final_projection_sha256": "998c5210757695a8c04c1bdf407b2ef8708c3ca162615b6e0ca4b5da1220ca23",
+      "hard_memory_affinity_enforced": false,
+      "harness_cpu_seconds": 11.376345000000004,
+      "harness_peak_rss_bytes": 74817536,
+      "harness_rss_scope": "process-lifetime upper bound, includes instrument/harness state",
+      "journal_bytes": 112998,
+      "journal_flushes": 4001,
+      "logical_rows_written": 4000,
+      "logical_signed_bytes": 382688,
+      "max_transport_bytes": 1679,
+      "max_wire_envelope_bytes": 3150,
+      "max_wrapper_bytes": 340,
+      "model": "eutxo",
+      "native_state_bytes": 3949294,
+      "operations": {
+        "consumed_outputs": 2500,
+        "created_outputs": 4000,
+        "decodes": 3000,
+        "hash_calls": 10599,
+        "hashed_bytes": 2030083,
+        "parsed_bytes": 956064,
+        "reads": 9998,
+        "scripts": 2500,
+        "signatures": 1998,
+        "writes": 6500
+      },
+      "registry_bytes": 559708,
+      "repetition": 0,
+      "resource_sampler_seconds": 0.02,
+      "status": "PASS",
+      "total_state_bytes": 4509002,
+      "transition_wall_seconds": 48.142224305542186,
+      "transport_bytes": 702142,
+      "verification_timings": {
+        "input_parse": {
+          "calls": 3000,
+          "cpu_seconds": 0.37190799999994417,
+          "wall_seconds": 0.4106677604140714
+        },
+        "signature_verification": {
+          "calls": 1998,
+          "cpu_seconds": 8.66568599999993,
+          "wall_seconds": 9.657900408376008
+        }
+      },
+      "wire_wall_seconds": 172.1297227089526,
+      "worker_components": {
+        "build": {
+          "calls": 1000,
+          "cpu_seconds": 0.29101700000002745,
+          "wall_seconds": 0.3287458202103153
+        },
+        "finish": {
+          "calls": 1,
+          "cpu_seconds": 8.000000001118224e-06,
+          "wall_seconds": 7.890048436820507e-06
+        },
+        "include": {
+          "calls": 1000,
+          "cpu_seconds": 9.679835999999995,
+          "wall_seconds": 10.75801541423425
+        },
+        "init": {
+          "calls": 1,
+          "cpu_seconds": 0.030854000000000006,
+          "wall_seconds": 0.03227723098825663
+        },
+        "ipc_decode": {
+          "calls": 2002,
+          "cpu_seconds": 0.10797899999998907,
+          "wall_seconds": 0.12024011800531298
+        },
+        "ipc_encode": {
+          "calls": 2001,
+          "cpu_seconds": 2.3391419999998657,
+          "wall_seconds": 2.6410523449303582
+        },
+        "native_persistence": {
+          "calls": 1001,
+          "cpu_seconds": 30.74143600000003,
+          "wall_seconds": 36.83657109586056
+        },
+        "observation_projection": {
+          "calls": 2002,
+          "cpu_seconds": 10.484031999999928,
+          "wall_seconds": 11.786504512419924
+        }
+      },
+      "worker_cpu_seconds": 40.904190000000014,
+      "worker_harness_ipc_bytes": 130058079,
+      "worker_peak_rss_bytes": 61874176,
+      "worker_process_cpu_seconds": 54.488413
+    }
+  ],
+  "source_lock": {
+    "corpus_sha256": "c19ce3cc08dac736a34b42bd6fac53e3c9732cefb23fc8153b059d26432198a4",
+    "pycryptodome": "3.24.1",
+    "python": "3.12.1",
+    "requirements_sha256": "e2450075b5170c2e4f08d12f6ea1244b89445c0b68d70f1b7dbfca404168e380",
+    "sources": {
+      "research/native_l1/__init__.py": "7ea26b7dfc2cdcc9c874c0793877a3716b2bee1e552349fa6391fd2dc4ac385c",
+      "research/native_l1/balance_policy.py": "19901bac1d51165ad26c84d047582e4aa5fcb9c35a9ef57b9f480d286f6bf7b2",
+      "research/native_l1/checks.py": "b65f4de12ffefd35ffeacfaa71999b5bb23586a86559c8e8ae66c2d8b57a5e40",
+      "research/native_l1/client.py": "f46d0d543aae3151087c77cfb751f8cacf1f91307cc3c9ad88e99833a56e54af",
+      "research/native_l1/common.py": "bdde48ae48605d899af5b3e49bb5bee22cf14f6dd6774f71d006a2d133e4bf20",
+      "research/native_l1/devcheck.py": "ad750987f010a793860350f75af6136246e18102c4718915b1a44243304af46f",
+      "research/native_l1/models/__init__.py": "d0841d18db5f1bc24c2ba88fb3d077c47faa9cdd2df36ac6647f4ff4b39b01b8",
+      "research/native_l1/models/accounts.py": "dc545a11091104f22c5e3a1ea8c2bef28825d55b3277b30f7b4d0a8d052f22ac",
+      "research/native_l1/models/eutxo.py": "b98276057d6e052b7e59fa5dae43a00848935a3850595330aa9563812500a5da",
+      "research/native_l1/models/objects.py": "028f782dbc6041224b5fc8ec1a34765bcc020ca0595a331a4370648b66aeeed8",
+      "research/native_l1/resources.py": "c20c85b67780f0ae0863e79ca4108d252437aaf6c8ae742a7dd1a7116992146d",
+      "research/native_l1/runner.py": "5dcf1eb723b60448ca91b3a9a298657f170fb3e72301a2530e2250e080f65244",
+      "research/native_l1/stress.py": "e0f6cfb6d21f6fbeca9316b753a23b2286670448647776c5df48c0710cdc037c",
+      "research/native_l1/summary.py": "d30088ff5206d66f3cf98ba65bc80c1492c5eba4a3d94fb6d2406733ccf0415c",
+      "research/native_l1/verify_stress.py": "a44d475bad6f6048ad3d8bcbb1aa1d6a4b06e766962d51e1a5096e65c507ee3a",
+      "research/native_l1/worker.py": "df286f693bf9f2de31f8e8751f11d09b98de705c313318834ad14ff9848dfd53",
+      "tests/native_l1/test_models.py": "214cc5acd1db134d37bd0c1b7b922beac4ba623e02d7d99a9ae45395ca89bb89",
+      "tests/native_l1/test_policy.py": "4b8fe1edc6c2a6dc9ef565d26595405d7872df5dec9071d7b24200f21fb0d6e9"
+    },
+    "stress_sha256": "514eca77040f322749b458450818a4ae2b52958355e81211bf2fc99de2396b7b",
+    "version": 2
+  },
+  "version": 2
+}

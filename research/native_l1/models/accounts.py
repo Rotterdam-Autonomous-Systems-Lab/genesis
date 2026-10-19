@@ -56,7 +56,7 @@ class Accounts:
                     next_state['agreements'][name]=agreement
         elif op==2:
             name=self.ctx.alias('grants',a[0])
-            correct=digest([DOMAIN,2,p['u'][1],p['u'][2],p['sequence']])
+            correct=self.ctx.digest([DOMAIN,2,p['u'][1],p['u'][2],p['sequence']])
             if a[0].hex()!=correct or name in next_state['grants']:
                 result='revert:grant_identity'
             elif next_state['balances'][actor] < a[4]+a[5]+p['ceiling']:
@@ -92,7 +92,7 @@ class Accounts:
                 else:
                     target['state']='Settled' if op==6 else 'Refunded'
                     target['result']=expected if op==6 else 0
-                    raw_credit=bytes.fromhex(digest([a[0],2 if op==6 else 3]))
+                    raw_credit=bytes.fromhex(self.ctx.digest([a[0],2 if op==6 else 3]))
                     credit=self.ctx.alias('credits',raw_credit)
                     next_state['credits'][credit]=dict(agreement=name,owner=actor,amount=target['price'],status='outstanding')
         elif op==8:

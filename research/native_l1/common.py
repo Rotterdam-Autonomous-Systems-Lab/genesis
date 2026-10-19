@@ -3,6 +3,8 @@ import copy
 import hashlib
 import importlib.util
 import json
+import time
+from functools import wraps
 from collections import Counter
 from pathlib import Path
 from Crypto.Signature import eddsa
@@ -23,6 +25,19 @@ def digest(value):
     return hashlib.sha256(codec.encode(value)).hexdigest()
 
 
+def timed(label):
+    def decorate(method):
+        @wraps(method)
+        def call(self,*args,**kwargs):
+            wall=time.perf_counter();cpu=time.process_time()
+            try:return method(self,*args,**kwargs)
+            finally:
+                t=self.timings.setdefault(label,dict(calls=0,wall_seconds=0,cpu_seconds=0))
+                t['calls']+=1;t['wall_seconds']+=time.perf_counter()-wall;t['cpu_seconds']+=time.process_time()-cpu
+        return call
+    return decorate
+
+
 class Reject(Exception):
     pass
 
@@ -35,6 +50,14 @@ class Context:
         self.aliases = {kind: {bytes.fromhex(v): n for n,v in table.items()} for kind,table in self.manifest['aliases'].items()}
         self.term_names={v['agreement_id']:k for k,v in self.manifest['terms'].items()}
         self.metrics = Counter()
+        self.timings = {}
+
+    def hash_bytes(self,raw):
+        self.metrics['hash_calls']+=1;self.metrics['hashed_bytes']+=len(raw)
+        return hashlib.sha256(raw).hexdigest()
+
+    def digest(self,value):
+        return self.hash_bytes(codec.encode(value))
 
     def actor(self, raw):
         if raw not in self.actors:
@@ -44,6 +67,7 @@ class Context:
     def alias(self, kind, raw):
         return self.aliases[kind].get(raw, raw.hex())
 
+    @timed('signature_verification')
     def verify(self, actor, signature, raw_digest):
         self.metrics['signatures'] += 1
         try:
@@ -52,10 +76,10 @@ class Context:
         except (ValueError, TypeError):
             raise Reject('reject:signature') from None
 
+    @timed('input_parse')
     def parse(self, intent):
         raw = bytes.fromhex(intent['preimage_hex'])
         self.metrics['parsed_bytes'] += len(raw)
-        self.metrics['hashed_bytes'] += len(raw)
         try:
             domain, u = codec.decode(raw)
             if domain != DOMAIN or len(u) != 9 or u[0] != 1:
@@ -94,7 +118,7 @@ class Context:
                 if not set(args[2]) <= {1,5} or any(type(x) is not int for x in args[4:]):
                     raise ValueError('scope/budget')
             self.metrics['decodes'] += 1
-            return dict(u=u,actor=self.actor(actor_id),epoch=epoch,sequence=sequence,expiry=expiry,ceiling=ceiling,op=op,args=args,id=hashlib.sha256(raw).hexdigest())
+            return dict(u=u,actor=self.actor(actor_id),epoch=epoch,sequence=sequence,expiry=expiry,ceiling=ceiling,op=op,args=args,id=self.hash_bytes(raw))
         except (ValueError,TypeError,IndexError):
             raise Reject('reject:encoding') from None
 
@@ -149,7 +173,7 @@ class Context:
             requester,provider=self.actor(t[1]),self.actor(t[2])
             if requester==provider or t[7]<=0 or t[8]>=t[9] or (g and g['owner']!=requester) or (not g and actor!=requester):
                 raise Reject('reject:authority')
-            h=bytes.fromhex(digest([DOMAIN,5,t])); self.metrics['hashed_bytes'] += len(codec.encode([DOMAIN,5,t]))
+            h=bytes.fromhex(self.digest([DOMAIN,5,t]))
             self.verify(requester,a[3],h); self.verify(provider,a[4],h)
         reserve = g['fee_pool'] if g else read('balances',actor)
         if p['ceiling'] < 1 or reserve < p['ceiling']:
@@ -157,6 +181,6 @@ class Context:
 
     def terms_record(self, t):
         # Stateless conversion, no mutation or computed state deltas.
-        name=self.alias('agreements',bytes.fromhex(digest([DOMAIN,5,t])))
-        term_name=self.term_names.get(digest([DOMAIN,5,t]),name)
+        name=self.alias('agreements',bytes.fromhex(self.digest([DOMAIN,5,t])))
+        term_name=self.term_names.get(self.digest([DOMAIN,5,t]),name)
         return name, dict(requester=self.actor(t[1]),provider=self.actor(t[2]),price=t[7],fund_before=t[8],claim_before=t[9],state='Funded',result=0,terms=term_name)

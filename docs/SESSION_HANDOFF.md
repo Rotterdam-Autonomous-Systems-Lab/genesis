@@ -2,7 +2,11 @@
 
 Use this document to carry concise project context between Codex sessions and contributors. Update the current handoff after significant work; preserve prior handoffs in Git history where useful. Do not put secrets, credentials, or local-only notes here.
 
-## Current handoff — Task 019 completed comparison, G1 HOLD
+## Current handoff — Task 020 source freeze, measured outcome pending
+
+[Task020 report](architecture/NATIVE_L1_TASK020_RESULTS.md), [spending policy](architecture/NATIVE_L1_SPENDING_POLICY.md) and [measurement contract](architecture/NATIVE_L1_MEASUREMENT_CLOSURE.md) define revised bounded models. Original S09 timeout reproduced before change; original2,242,702 proxy bytes imply219seconds at10KiB/s. Full-width compact references and removal of an unused delegate-balance dependency allow a single local development S09 to finish in172.1seconds without raising caps. Thirteen security/control tests pass; full two-environment scored evidence is pending. No final G1 pass/architecture decision yet. MASTER_PLAN, prior experiments, frozen corpus and signed stress inputs unchanged. Final evidence must retain failures and exact source identities. Earlier handoffs below are historical.
+
+## Previous handoff — Task 019 completed comparison, G1 HOLD
 
 [Results](architecture/NATIVE_L1_COMPARISON_RESULTS.md): **CONTINUE COMPARISON — G1 HOLD**, no candidate eliminated/prioritized. Source checkpoint `6872f4b2a208f70074b67bbd47e9095043e0dc18` is pushed. Both clean local and independent Ubuntu environments completed 273 planned slots; accounts/objects pass90 measured runs each, UTXO passes87 with three S09 watchdog HOLDs per environment. All21 core cases pass;89 complete configurations reproduce deterministically. [Permanent raw evidence/checks](../research/reports/task019/README.md) retain failures and compressed traces. Seven model tests and twelve supplemental local controls pass. Legacy CI passes; model CI intentionally fails on resource HOLD. Final publication regression CI must be checked at the evidence commit.
 

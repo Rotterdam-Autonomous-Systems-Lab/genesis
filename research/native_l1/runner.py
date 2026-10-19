@@ -2,6 +2,7 @@
 import argparse
 import copy
 import gzip
+import gc
 import hashlib
 import json
 import os
@@ -15,8 +16,9 @@ import time
 from collections import Counter
 from pathlib import Path
 from .common import ROOT,codec,packed
-from .checks import require,invariants,compare,canonical
+from .checks import require,invariants,compare,canonical,audit_pool_transactions
 from .verify_stress import verify as verify_stress
+from .resources import RunMonitor,rss_bytes
 
 EVIDENCE=ROOT/'research/native_l1/evidence'
 CORE=ROOT/'research/fixtures/native_l1/v1/corpus.json'
@@ -36,17 +38,21 @@ class Process:
         line=self.p.stdout.readline(); self.ipc+=len(line.encode())
         if not line: raise RuntimeError('worker exited: '+self.p.stderr.read()[:1000])
         reply=json.loads(line); require(reply.get('ok'),str(reply))
+        if command=='finish':
+            meter_line=self.p.stdout.readline();self.ipc+=len(meter_line.encode())
+            meter=json.loads(meter_line);require(meter.pop('final_meter',False),'missing final resource meter')
+            reply.update(meter)
         self.metrics['seconds']+=reply['seconds']; self.metrics['cpu_seconds']+=reply['cpu_seconds']
         self.last=reply; return reply
-    def close(self):
+    def close(self,deadline=None):
         if self.p.poll() is None:
             self.p.stdin.close()
-            try: self.p.wait(timeout=15)
+            try: self.p.wait(timeout=max(0,deadline-time.monotonic()) if deadline is not None else 15)
             except subprocess.TimeoutExpired: self.p.kill(); self.p.wait(); raise RuntimeError('cleanup timeout')
         self.p.stdout.close(); self.p.stderr.close()
 
 
-def native_audit(kind,native,initial_supply):
+def native_audit(kind,native,initial_supply,manifest=None):
     if kind=='objects':
         for obj in native['objects'].values():
             expected=obj['key'] if obj['table'] in ('balances','epochs') else obj['data'].get('owner') if obj['table']=='credits' else 'shared'
@@ -57,17 +63,18 @@ def native_audit(kind,native,initial_supply):
         require(sum(outputs[i]['value'] for i in live.values())==initial_supply,'native output supply')
         seen=set()
         for tx in native['transactions']:
-            require(not seen.intersection(tx['inputs']),'double consumed output')
+            require(len(set(tx['inputs']))==len(tx['inputs']) and not seen.intersection(tx['inputs']),'double consumed output')
             seen.update(tx['inputs'])
             require(sum(outputs[i]['value'] for i in tx['inputs'])==sum(outputs[i]['value'] for i in tx['outputs']),'native transaction conservation')
             for i in tx['inputs']: require(spent.get(i)==tx['id'],'spent attribution')
         require(seen==set(spent),'hidden consumed output')
         for out in outputs.values():
             t,d=out['table'],out['datum']
-            expected=out['key'] if t in ('balances','epochs','registry') else d.get('owner') if t=='credits' else 'script:'+t
+            expected='script:balance-pool-v1:'+out['key'] if t=='balances' else out['key'] if t in ('epochs','registry') else d.get('owner') if t=='credits' else 'script:'+t
             require(out['lock']==expected,'native output lock')
             value=d if t in ('balances','fee') else d['principal_pool']+d['fee_pool'] if t=='grants' else d['price'] if t=='agreements' and d['state']=='Funded' else d['amount'] if t=='credits' and d['status']=='outstanding' else 0
             require(out['value']==value,'datum/value binding')
+        if manifest is not None: audit_pool_transactions(native,manifest)
 
 
 def known_outcome(state,manifest,label):
@@ -93,11 +100,15 @@ def state_delta(previous,current):
 
 
 def run_case(kind,case,manifest,folder,trace,stress=False):
+    harness_cpu_start=time.process_time()
     worker=Process(kind,folder/'worker'); client=Process('client',folder/'client')
+    monitor=RunMonitor([worker,client]);checked=0;logical_rows=0;max_transport=0;max_wrapper=0;logical_bytes=0;max_envelope=0
     counters=Counter(); network=Counter(); wrapper_bytes=0; rate=10240 if case['id'] in ('V10','V16','S09') else None
     link_start=time.monotonic(); wire=0; peak_pending=0
     def traffic(actor,request,reply):
-        nonlocal wire
+        nonlocal wire,max_envelope
+        max_envelope=max(max_envelope,len(packed(request)),len(packed(reply)))
+        require(max_envelope<=65536,'transport envelope cap')
         count=len(packed(request))+len(packed(reply)); network[actor]+=count; wire+=count
         require(network[actor]<=16*1024**2,'client bandwidth cap')
         if time.monotonic()-link_start>180: raise RuntimeError('180-second run watchdog cap')
@@ -106,6 +117,7 @@ def run_case(kind,case,manifest,folder,trace,stress=False):
             if target>time.monotonic(): time.sleep(target-time.monotonic())
     try:
         state=worker.call('init',manifest={k:manifest[k] for k in ('actors','aliases','terms','intents','network_id','service_id')},initial=case['initial_state'])['projection']
+        initial_native_bytes=worker.last['state_bytes'];previous_operations=worker.last.get('operations',{})
         initial_client=case.get('initial_client',dict(status='idle',principal_reserved=0,fee_reserved=0,queries=0,submissions=0,unresolved=[]))
         c=client.call('init',initial=initial_client,actors=manifest['actors'])['projection']
         invariants(state,case['initial_supply'],manifest)
@@ -121,7 +133,9 @@ def run_case(kind,case,manifest,folder,trace,stress=False):
                 wrapper=worker.call('build',intent=intent)['wrapper']
                 actor=next(n for n,a in manifest['actors'].items() if a['id']==intent['unsigned'][2]['bytes'])
                 traffic(actor,dict(build=intent['intent_id']),dict(wrapper=wrapper))
-                size=len(packed(wrapper))+len(bytes.fromhex(intent['preimage_hex']))+64
+                logical_size=len(bytes.fromhex(intent['preimage_hex']))+64
+                size=len(packed(wrapper))+logical_size
+                max_transport=max(max_transport,size);max_wrapper=max(max_wrapper,len(packed(wrapper)));logical_bytes+=logical_size
                 require(size<=65536,'transport ceiling'); wrapper_bytes+=size
                 if stress:
                     client.call('client',event=dict(type='prepare',intent=label),intents={label:intent})
@@ -160,15 +174,25 @@ def run_case(kind,case,manifest,folder,trace,stress=False):
                 stress_oracle(expected_stress,manifest,event['intent'])
                 require(canonical(state,manifest)==canonical(expected_stress,manifest),'stress independent projection mismatch')
             else: compare(result,state,c,step['expect'],manifest)
-            trace.write(json.dumps(dict(model=kind,case=case['id'],step=index,event=event,result=result,ledger_delta=state_delta(previous,state),client=c),separators=(',',':'))+'\n')
-            previous=state
+            trace.write(json.dumps(dict(model=kind,case=case['id'],step=index,event=event,result=result,ledger_delta=state_delta(previous,state),client=c,verification_delta={k:v-previous_operations.get(k,0) for k,v in worker.last.get('operations',{}).items()},client_meter={k:client.last.get(k) for k in ('flushes','signature_verifications','hash_calls','hashed_bytes','journal_bytes')}),separators=(',',':'))+'\n')
+            logical_rows+=sum(len(v) if isinstance(v,dict) else 1 for v in state_delta(previous,state)['put'].values())
+            checked+=1;previous=state;previous_operations=worker.last.get('operations',{})
         final=worker.call('finish'); final_client=client.call('finish')
-        native_audit(kind,final['native'],case['initial_supply'])
+        native_audit(kind,final['native'],case['initial_supply'],manifest)
         trace.write(json.dumps(dict(model=kind,case=case['id'],native_final=final['native']),separators=(',',':'))+'\n')
         counters['native_structural_rejects']+=counters['structural_reject']
-        return dict(case=case['id'],model=kind,status='PASS',counters=dict(counters),operations=final['operations'],transition_wall_seconds=worker.metrics['seconds'],worker_cpu_seconds=worker.metrics['cpu_seconds'],client_cpu_seconds=client.metrics['cpu_seconds'],client_wall_seconds=client.metrics['seconds'],worker_peak_rss_bytes=final['peak_rss_bytes'],client_peak_rss_bytes=final_client['peak_rss_bytes'],native_state_bytes=final['state_bytes'],journal_bytes=final_client['journal_bytes'],journal_flushes=final_client['flushes'],client_signature_verifications=final_client['signature_verifications'],client_network_bytes=dict(network),wire_wall_seconds=time.monotonic()-link_start,transport_bytes=wrapper_bytes,worker_harness_ipc_bytes=worker.ipc,client_harness_ipc_bytes=client.ipc,hard_memory_affinity_enforced=final['memory_limit_enforced'],final_projection_sha256=hashlib.sha256(packed(canonical(state,manifest))).hexdigest())
+        monitor.sample()
+        require(monitor.aggregate_cpu<=120,'aggregate CPU cap')
+        return dict(initial_native_state_bytes=initial_native_bytes,end_to_end_wall_seconds=time.monotonic()-monitor.start,checked_barriers=checked,logical_rows_written=logical_rows,worker_components=final['components'],client_components=final_client['components'],verification_timings=final['verification_timings'],worker_process_cpu_seconds=final['process_cpu_seconds'],client_process_cpu_seconds=final_client['process_cpu_seconds'],aggregate_process_cpu_seconds=monitor.aggregate_cpu,harness_cpu_seconds=time.process_time()-harness_cpu_start,harness_peak_rss_bytes=rss_bytes(),harness_rss_scope='process-lifetime upper bound, includes instrument/harness state',registry_bytes=final['registry_bytes'],total_state_bytes=final['total_state_bytes'],max_wire_envelope_bytes=max_envelope,max_transport_bytes=max_transport,max_wrapper_bytes=max_wrapper,logical_signed_bytes=logical_bytes,client_hash_calls=final_client['hash_calls'],client_hashed_bytes=final_client['hashed_bytes'],resource_sampler_seconds=.02,case=case['id'],model=kind,status='PASS',counters=dict(counters),operations=final['operations'],transition_wall_seconds=worker.metrics['seconds'],worker_cpu_seconds=worker.metrics['cpu_seconds'],client_cpu_seconds=client.metrics['cpu_seconds'],client_wall_seconds=client.metrics['seconds'],worker_peak_rss_bytes=final['peak_rss_bytes'],client_peak_rss_bytes=final_client['peak_rss_bytes'],native_state_bytes=final['state_bytes'],journal_bytes=final_client['journal_bytes'],journal_flushes=final_client['flushes'],client_signature_verifications=final_client['signature_verifications'],client_network_bytes=dict(network),wire_wall_seconds=time.monotonic()-link_start,transport_bytes=wrapper_bytes,worker_harness_ipc_bytes=worker.ipc,client_harness_ipc_bytes=client.ipc,hard_memory_affinity_enforced=final['memory_limit_enforced'],final_projection_sha256=hashlib.sha256(packed(canonical(state,manifest))).hexdigest())
+    except Exception as error:
+        trace.write(json.dumps(dict(model=kind,case=case['id'],boundary_failure=dict(error=str(error),checked_barriers=checked,network_bytes=dict(network),wire_bytes=wire,aggregate_cpu_seconds=monitor.aggregate_cpu,last_worker_cpu=worker.last.get('process_cpu_seconds'),last_client=client.last.get('projection'),interpretation='last attempted transition may be unobserved; no non-inclusion inference')))+'\n')
+        raise
     finally:
-        worker.close(); client.close()
+        try:monitor.close()
+        finally:
+            deadline=time.monotonic()+15
+            worker.close(deadline); client.close(deadline)
+            require(time.monotonic()<=deadline,'cleanup cap')
 
 
 def stress_oracle(state,manifest,label):
@@ -201,6 +225,7 @@ def source_identity():
 
 def main():
     parser=argparse.ArgumentParser(); parser.add_argument('--output',required=True); parser.add_argument('--repetitions',type=int,default=3); parser.add_argument('--models',nargs='+',default=['accounts','objects','eutxo']); parser.add_argument('--cases',nargs='*'); a=parser.parse_args()
+    require(sys.flags.optimize==0,'optimized Python disables offline assertion controls')
     require(a.repetitions in (1,3),'bounded repetition count')
     out=Path(a.output); out.mkdir(parents=True,exist_ok=False)
     corpus=json.loads(CORE.read_text()); codec.validate()
@@ -213,7 +238,7 @@ def main():
     require(hashlib.sha256(CORE.read_bytes()).hexdigest()==lock['corpus_sha256'],'corpus freeze mismatch')
     require(hashlib.sha256((ROOT/'sdk/python/requirements.lock').read_bytes()).hexdigest()==lock['requirements_sha256'],'dependency lock changed')
     require(hashlib.sha256((EVIDENCE/'stress-input-v1.json').read_bytes()).hexdigest()==lock['stress_sha256'],'stress artifact changed')
-    summary=dict(version=1,source_lock=lock,environment=dict(platform=platform.platform(),machine=platform.machine(),python=platform.python_version(),pycryptodome=Crypto.__version__,cpu_count=os.cpu_count(),command=sys.argv,cache_policy='one fresh-process warm-up; OS page cache uncontrolled and disclosed'),runs=[],decision='HOLD until complete validated evidence and independent environment reproduction')
+    summary=dict(version=2,source_lock=lock,environment=dict(platform=platform.platform(),isolation=dict(ci_run_id=os.getenv('GITHUB_RUN_ID'),replica=os.getenv('GENESIS_REPLICA'),host_sha256=hashlib.sha256(platform.node().encode()).hexdigest()),machine=platform.machine(),python=platform.python_version(),pycryptodome=Crypto.__version__,cpu_count=os.cpu_count(),processor=platform.processor(),affinity=sorted(os.sched_getaffinity(0)) if hasattr(os,'sched_getaffinity') else None,gc=dict(enabled=gc.isenabled(),thresholds=gc.get_threshold()),instrumentation='Task020; external20ms aggregate CPU/wall watchdog; separate harness RSS upper bound',command=sys.argv,cache_policy='one fresh-process warm-up; OS page cache uncontrolled and disclosed'),runs=[],decision='HOLD until complete validated evidence and independent environment reproduction')
     all_cases=[(v,corpus,False) for v in corpus['vectors']]+[(v,v['manifest'],True) for v in stress['cases']]
     if a.cases: all_cases=[entry for entry in all_cases if entry[0]['id'] in a.cases]
     start=time.monotonic()
@@ -238,7 +263,7 @@ def main():
                                 trace.write(json.dumps(dict(model=kind,case=case['id'],failure=r))+'\n')
                         r['repetition']=repetition; summary['runs'].append(r)
                         (out/'results.json').write_bytes(packed(summary)+b'\n')
-                        print(kind,case['id'],repetition,'PASS',flush=True)
+                        print(kind,case['id'],repetition,r['status'],flush=True)
         grouped={}
         for r in summary['runs']:
             if not r.get('warmup') and r['status']=='PASS':
