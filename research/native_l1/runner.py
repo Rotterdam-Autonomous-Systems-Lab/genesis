@@ -45,8 +45,8 @@ class Process:
         self.metrics['seconds']+=reply['seconds']; self.metrics['cpu_seconds']+=reply['cpu_seconds']
         self.last=reply; return reply
     def close(self,deadline=None):
+        self.p.stdin.close()
         if self.p.poll() is None:
-            self.p.stdin.close()
             try: self.p.wait(timeout=max(0,deadline-time.monotonic()) if deadline is not None else 15)
             except subprocess.TimeoutExpired: self.p.kill(); self.p.wait(); raise RuntimeError('cleanup timeout')
         self.p.stdout.close(); self.p.stderr.close()
