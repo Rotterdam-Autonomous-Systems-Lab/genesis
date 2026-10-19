@@ -1,0 +1,14 @@
+test_arbitrary_pool_successors_reject_debit_theft_merge_and_overcredit (test_policy.Policy.test_arbitrary_pool_successors_reject_debit_theft_merge_and_overcredit) ... ok
+test_external_timeout_remains_resource_error_after_cleanup (test_policy.Policy.test_external_timeout_remains_resource_error_after_cleanup) ... ok
+test_external_watchdog_aggregate_cpu_threshold (test_policy.Policy.test_external_watchdog_aggregate_cpu_threshold) ... ok
+test_external_watchdog_kills_at_wall_boundary (test_policy.Policy.test_external_watchdog_kills_at_wall_boundary) ... ok
+test_full_width_references_and_stale_input_rejection (test_policy.Policy.test_full_width_references_and_stale_input_rejection) ... ok
+test_independent_audit_catches_conserving_theft (test_policy.Policy.test_independent_audit_catches_conserving_theft) ... ok
+test_killed_worker_cleanup_does_not_mask_watchdog (test_policy.Policy.test_killed_worker_cleanup_does_not_mask_watchdog) ... ok
+test_proxy_charges_actual_build_preimage (test_policy.Policy.test_proxy_charges_actual_build_preimage) ... ok
+test_topup_preserves_claim_and_duplicates_never_merge (test_policy.Policy.test_topup_preserves_claim_and_duplicates_never_merge) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.328s
+
+OK

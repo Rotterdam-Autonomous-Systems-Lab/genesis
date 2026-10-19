@@ -1,0 +1,45 @@
+{
+  "scope": "unscored wire-footprint diagnostic; all input operations executed but no persistence/IPC/client timing benchmark",
+  "source_lock_sha256": "510e6c95f817a1699d4aa04803a6947130583257c32e9984ea065429917fe849",
+  "models": [
+    {
+      "model": "accounts",
+      "actions": 1000,
+      "proxy_bytes": 1952522,
+      "minimum_link_seconds": 190.6759765625,
+      "component_bytes": {
+        "build_requests": 666376,
+        "wrapper_replies": 133998,
+        "signed_submissions": 932374,
+        "receipts": 97000,
+        "recovery": 122774
+      }
+    },
+    {
+      "model": "objects",
+      "actions": 1000,
+      "proxy_bytes": 2169096,
+      "minimum_link_seconds": 211.82578125,
+      "component_bytes": {
+        "build_requests": 666376,
+        "wrapper_replies": 242285,
+        "signed_submissions": 1040661,
+        "receipts": 97000,
+        "recovery": 122774
+      }
+    },
+    {
+      "model": "eutxo",
+      "actions": 1000,
+      "proxy_bytes": 2347434,
+      "minimum_link_seconds": 229.2416015625,
+      "component_bytes": {
+        "build_requests": 666376,
+        "wrapper_replies": 331454,
+        "signed_submissions": 1129830,
+        "receipts": 97000,
+        "recovery": 122774
+      }
+    }
+  ]
+}

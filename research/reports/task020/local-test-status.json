@@ -1,8 +1,9 @@
 {
-  "model_and_negative_controls": 14,
+  "model_and_negative_controls": 16,
   "result": "PASS",
   "python": "3.12.1",
   "pycryptodome": "3.24.1",
   "scope": "local controls, not scored reproduction",
-  "supplemental_atomicity_cases": 8
+  "supplemental_atomicity_cases": 8,
+  "cleanup_regression": "reproduced failure before fix; killed-worker cleanup and forced-watchdog propagation pass after fix"
 }

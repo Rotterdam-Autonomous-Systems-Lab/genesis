@@ -4,6 +4,8 @@ from pathlib import Path
 from research.reports.task019.verify_evidence import check_results,check_trace
 
 def resources(data):
+    expected=json.loads((Path(__file__).resolve().parents[3]/'research/native_l1/evidence/source-lock.json').read_text())
+    assert data['source_lock']==expected,'recorded source/input identity differs from frozen repository'
     stable,holds=check_results(data)
     for r in data['runs']:
         if r['status']!='PASS':continue

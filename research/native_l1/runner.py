@@ -45,7 +45,8 @@ class Process:
         self.metrics['seconds']+=reply['seconds']; self.metrics['cpu_seconds']+=reply['cpu_seconds']
         self.last=reply; return reply
     def close(self,deadline=None):
-        self.p.stdin.close()
+        try:self.p.stdin.close()
+        except BrokenPipeError:pass # killed worker: preserve the original watchdog/admission error
         if self.p.poll() is None:
             try: self.p.wait(timeout=max(0,deadline-time.monotonic()) if deadline is not None else 15)
             except subprocess.TimeoutExpired: self.p.kill(); self.p.wait(); raise RuntimeError('cleanup timeout')

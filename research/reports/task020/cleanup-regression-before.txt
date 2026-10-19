@@ -1,0 +1,20 @@
+test_killed_worker_cleanup_does_not_mask_watchdog (test_policy.Policy.test_killed_worker_cleanup_does_not_mask_watchdog) ... ERROR
+
+======================================================================
+ERROR: test_killed_worker_cleanup_does_not_mask_watchdog (test_policy.Policy.test_killed_worker_cleanup_does_not_mask_watchdog)
+----------------------------------------------------------------------
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/m080819a/rotterdam-autonomy-lab/genesis/tests/native_l1/test_policy.py", line 119, in test_killed_worker_cleanup_does_not_mask_watchdog
+    process.close()
+  File "/Users/m080819a/rotterdam-autonomy-lab/genesis/research/native_l1/runner.py", line 48, in close
+    self.p.stdin.close()
+BrokenPipeError: [Errno 32] Broken pipe
+
+----------------------------------------------------------------------
+Ran 1 test in 0.009s
+
+FAILED (errors=1)

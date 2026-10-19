@@ -108,4 +108,33 @@ class Policy(unittest.TestCase):
         self.assertEqual(sum(result['client_network_bytes'].values()),expected)
         self.assertLess(old_shortcut,expected)
 
+    def test_killed_worker_cleanup_does_not_mask_watchdog(self):
+        import tempfile
+        from research.native_l1.runner import Process
+        with tempfile.TemporaryDirectory() as directory:
+            process=Process('client',Path(directory))
+            process.p.kill();process.p.wait()
+            process.p.stdin.write('buffered request without newline')
+            try:
+                process.close()
+                self.assertTrue(process.p.stdin.closed and process.p.stdout.closed and process.p.stderr.closed)
+            finally:
+                for stream in (process.p.stdin,process.p.stdout,process.p.stderr):
+                    try:stream.close()
+                    except BrokenPipeError:pass
+
+    def test_external_timeout_remains_resource_error_after_cleanup(self):
+        import tempfile,gzip
+        from unittest.mock import patch
+        from research.native_l1.resources import RunMonitor
+        from research.native_l1.runner import run_case
+        original=RunMonitor.__init__
+        def expired(monitor,processes):
+            original(monitor,processes);monitor.start-=181
+        with tempfile.TemporaryDirectory() as directory:
+            folder=Path(directory)
+            with gzip.open(folder/'trace.gz','wt') as trace,patch.object(RunMonitor,'__init__',expired):
+                with self.assertRaisesRegex(RuntimeError,'180-second run watchdog'):
+                    run_case('eutxo',self.data['vectors'][0],self.data,folder/'case',trace)
+
 if __name__=='__main__':unittest.main()
