@@ -1,0 +1,277 @@
+{
+  "conclusion": "cancelled",
+  "createdAt": "2026-10-19T09:58:24Z",
+  "databaseId": 39234029786,
+  "headSha": "dc589ba660e374e3f775790dd4be82fc24c4e2bf",
+  "jobs": [
+    {
+      "completedAt": "2026-10-19T10:09:58Z",
+      "conclusion": "cancelled",
+      "databaseId": 117998643325,
+      "name": "Native L1 comparison environment 1",
+      "startedAt": "2026-10-19T09:58:27Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-19T09:58:28Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-19T09:58:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T09:58:29Z",
+          "conclusion": "success",
+          "name": "Checkout exact publication source",
+          "number": 2,
+          "startedAt": "2026-10-19T09:58:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T09:58:38Z",
+          "conclusion": "success",
+          "name": "Install pinned Python",
+          "number": 3,
+          "startedAt": "2026-10-19T09:58:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T09:58:58Z",
+          "conclusion": "success",
+          "name": "Clean hash-locked environment",
+          "number": 4,
+          "startedAt": "2026-10-19T09:58:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T09:59:17Z",
+          "conclusion": "success",
+          "name": "Frozen fixtures and model negative controls",
+          "number": 5,
+          "startedAt": "2026-10-19T09:58:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:09:55Z",
+          "conclusion": "cancelled",
+          "name": "Full comparative model batch",
+          "number": 6,
+          "startedAt": "2026-10-19T09:59:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:09:55Z",
+          "conclusion": "success",
+          "name": "Render retained comparison result",
+          "number": 7,
+          "startedAt": "2026-10-19T10:09:55Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:09:56Z",
+          "conclusion": "success",
+          "name": "Preserve full comparison evidence including failures",
+          "number": 8,
+          "startedAt": "2026-10-19T10:09:55Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:09:56Z",
+          "conclusion": "skipped",
+          "name": "Post Install pinned Python",
+          "number": 15,
+          "startedAt": "2026-10-19T10:09:56Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:09:56Z",
+          "conclusion": "success",
+          "name": "Post Checkout exact publication source",
+          "number": 16,
+          "startedAt": "2026-10-19T10:09:56Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:09:56Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 17,
+          "startedAt": "2026-10-19T10:09:56Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39234029786/job/117998643325"
+    },
+    {
+      "completedAt": "2026-10-19T10:10:01Z",
+      "conclusion": "cancelled",
+      "databaseId": 117998643670,
+      "name": "Native L1 comparison environment 2",
+      "startedAt": "2026-10-19T09:58:27Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-19T09:58:29Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-19T09:58:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T09:58:31Z",
+          "conclusion": "success",
+          "name": "Checkout exact publication source",
+          "number": 2,
+          "startedAt": "2026-10-19T09:58:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T09:58:40Z",
+          "conclusion": "success",
+          "name": "Install pinned Python",
+          "number": 3,
+          "startedAt": "2026-10-19T09:58:31Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T09:58:57Z",
+          "conclusion": "success",
+          "name": "Clean hash-locked environment",
+          "number": 4,
+          "startedAt": "2026-10-19T09:58:40Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T09:59:13Z",
+          "conclusion": "success",
+          "name": "Frozen fixtures and model negative controls",
+          "number": 5,
+          "startedAt": "2026-10-19T09:58:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:09:55Z",
+          "conclusion": "cancelled",
+          "name": "Full comparative model batch",
+          "number": 6,
+          "startedAt": "2026-10-19T09:59:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:09:55Z",
+          "conclusion": "success",
+          "name": "Render retained comparison result",
+          "number": 7,
+          "startedAt": "2026-10-19T10:09:55Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:09:57Z",
+          "conclusion": "success",
+          "name": "Preserve full comparison evidence including failures",
+          "number": 8,
+          "startedAt": "2026-10-19T10:09:55Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:09:57Z",
+          "conclusion": "skipped",
+          "name": "Post Install pinned Python",
+          "number": 15,
+          "startedAt": "2026-10-19T10:09:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:09:57Z",
+          "conclusion": "success",
+          "name": "Post Checkout exact publication source",
+          "number": 16,
+          "startedAt": "2026-10-19T10:09:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:09:57Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 17,
+          "startedAt": "2026-10-19T10:09:57Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39234029786/job/117998643670"
+    },
+    {
+      "completedAt": "2026-10-19T10:10:10Z",
+      "conclusion": "failure",
+      "databaseId": 118003352568,
+      "name": "Independent offline evidence comparison",
+      "startedAt": "2026-10-19T10:10:03Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-19T10:10:05Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-19T10:10:03Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:10:06Z",
+          "conclusion": "success",
+          "name": "Checkout checker source",
+          "number": 2,
+          "startedAt": "2026-10-19T10:10:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:10:07Z",
+          "conclusion": "success",
+          "name": "Download both isolated environment artifacts",
+          "number": 3,
+          "startedAt": "2026-10-19T10:10:06Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:10:07Z",
+          "conclusion": "failure",
+          "name": "Verify plans, traces, ceilings and deterministic reproduction",
+          "number": 4,
+          "startedAt": "2026-10-19T10:10:07Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:10:07Z",
+          "conclusion": "success",
+          "name": "Retain offline evidence checks",
+          "number": 5,
+          "startedAt": "2026-10-19T10:10:07Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:10:07Z",
+          "conclusion": "success",
+          "name": "Post Checkout checker source",
+          "number": 10,
+          "startedAt": "2026-10-19T10:10:07Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T10:10:08Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 11,
+          "startedAt": "2026-10-19T10:10:07Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39234029786/job/118003352568"
+    }
+  ],
+  "status": "completed",
+  "updatedAt": "2026-10-19T10:10:11Z",
+  "url": "https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39234029786",
+  "disposition": "cancelled: build preimage traffic undercharged; partial diagnostics only; not comparative acceptance"
+}

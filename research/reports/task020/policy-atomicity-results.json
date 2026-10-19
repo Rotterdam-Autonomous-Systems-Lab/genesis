@@ -1,0 +1,54 @@
+{
+  "scope": "local fault injection, not scored comparison",
+  "source": "dc589ba660e374e3f775790dd4be82fc24c4e2bf",
+  "cases": [
+    {
+      "field": "value",
+      "value": -1,
+      "rejected": true,
+      "native_state_unchanged": true
+    },
+    {
+      "field": "value",
+      "value": 18446744073709551616,
+      "rejected": true,
+      "native_state_unchanged": true
+    },
+    {
+      "field": "value",
+      "value": true,
+      "rejected": true,
+      "native_state_unchanged": true
+    },
+    {
+      "field": "datum",
+      "value": true,
+      "rejected": true,
+      "native_state_unchanged": true
+    },
+    {
+      "field": "value",
+      "value": 11,
+      "rejected": true,
+      "native_state_unchanged": true
+    },
+    {
+      "field": "value",
+      "value": 13,
+      "rejected": true,
+      "native_state_unchanged": true
+    },
+    {
+      "field": "key",
+      "value": "D2",
+      "rejected": true,
+      "native_state_unchanged": true
+    },
+    {
+      "field": "lock",
+      "value": "D2",
+      "rejected": true,
+      "native_state_unchanged": true
+    }
+  ]
+}

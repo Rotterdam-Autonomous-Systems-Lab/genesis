@@ -130,9 +130,10 @@ def run_case(kind,case,manifest,folder,trace,stress=False):
             event=step['event']; typ=event['type']; wrapper=None
             if typ=='include':
                 label=event['intent']; intent=manifest['intents'][label]
-                wrapper=worker.call('build',intent=intent)['wrapper']
+                build_input=dict(preimage_hex=intent['preimage_hex'])
+                wrapper=worker.call('build',intent=build_input)['wrapper']
                 actor=next(n for n,a in manifest['actors'].items() if a['id']==intent['unsigned'][2]['bytes'])
-                traffic(actor,dict(build=intent['intent_id']),dict(wrapper=wrapper))
+                traffic(actor,dict(build=build_input),dict(wrapper=wrapper))
                 logical_size=len(bytes.fromhex(intent['preimage_hex']))+64
                 size=len(packed(wrapper))+logical_size
                 max_transport=max(max_transport,size);max_wrapper=max(max_wrapper,len(packed(wrapper)));logical_bytes+=logical_size
@@ -160,7 +161,9 @@ def run_case(kind,case,manifest,folder,trace,stress=False):
                 obs=manifest['observations'].get(event.get('observation'))
                 known=known_outcome(state,manifest,obs['intent']) if obs and 'intent' in obs else None
                 if typ in ('submit','attempt'):
-                    wrapper=worker.call('build',intent=manifest['intents'][event['intent']])['wrapper']
+                    build_input=dict(preimage_hex=manifest['intents'][event['intent']]['preimage_hex'])
+                    wrapper=worker.call('build',intent=build_input)['wrapper']
+                    traffic(case['client_actor'],dict(build=build_input),dict(wrapper=wrapper))
                 intents={event['intent']:manifest['intents'][event['intent']]} if 'intent' in event else {}
                 reply=client.call('client',event=event,intents=intents,observation=obs,known=known,wrapper=wrapper)
                 result=reply['result']; c=reply['projection']

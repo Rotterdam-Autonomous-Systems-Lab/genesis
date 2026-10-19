@@ -1,7 +1,8 @@
 {
-  "model_and_negative_controls": 13,
+  "model_and_negative_controls": 14,
   "result": "PASS",
   "python": "3.12.1",
   "pycryptodome": "3.24.1",
-  "scope": "local controls, not scored reproduction"
+  "scope": "local controls, not scored reproduction",
+  "supplemental_atomicity_cases": 8
 }

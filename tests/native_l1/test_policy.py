@@ -81,4 +81,31 @@ class Policy(unittest.TestCase):
         finally:
             if p.poll() is None:p.kill();p.wait()
 
+    def test_proxy_charges_actual_build_preimage(self):
+        import tempfile,gzip
+        from unittest.mock import patch
+        from research.native_l1.runner import Process,run_case
+        calls=[];original=Process.call
+        def capture(process,command,**fields):
+            reply=original(process,command,**fields)
+            if command in ('build','include'):calls.append((command,fields,reply))
+            return reply
+        with tempfile.TemporaryDirectory() as directory:
+            folder=Path(directory)
+            with gzip.open(folder/'trace.gz','wt') as trace,patch.object(Process,'call',capture):
+                result=run_case('eutxo',self.data['vectors'][0],self.data,folder/'case',trace)
+        size=lambda value:len(json.dumps(value,sort_keys=True,separators=(',',':')).encode())
+        expected=0;old_shortcut=0
+        for command,fields,reply in calls:
+            if command=='build':
+                self.assertEqual(set(fields['intent']),{'preimage_hex'})
+                actual=size({'build':fields['intent']})+size({'wrapper':reply['wrapper']})
+                expected+=actual;old_shortcut+=size({'build':reply['wrapper']['intent_id']})+size({'wrapper':reply['wrapper']})
+            else:
+                i=fields['intent'];w=fields['wrapper']
+                amount=size({'preimage_hex':i['preimage_hex'],'signature':i['signature'],'wrapper':w})+size({'outcome':reply['result'],'intent':i['intent_id']})
+                expected+=amount;old_shortcut+=amount
+        self.assertEqual(sum(result['client_network_bytes'].values()),expected)
+        self.assertLess(old_shortcut,expected)
+
 if __name__=='__main__':unittest.main()
