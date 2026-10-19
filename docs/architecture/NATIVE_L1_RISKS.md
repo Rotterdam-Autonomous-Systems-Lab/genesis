@@ -1,5 +1,7 @@
 # Native architecture unresolved-risk register — Task 016
 
+Current evidence: [Task019 comparison](NATIVE_L1_COMPARISON_RESULTS.md) is **G1 HOLD**, with no candidate selected or eliminated. Earlier proposed gates/statuses below retain their historical context.
+
 **Task 017 follow-up:** [W01–W08 workloads](NATIVE_L1_WORKLOADS.md), [common authority/recovery semantics](NATIVE_L1_AUTHORITY_SETTLEMENT_RECOVERY.md), [consensus assumptions](NATIVE_L1_CONSENSUS_ASSUMPTIONS.md), [experimental budgets](NATIVE_L1_RESOURCE_BUDGETS.md) and [next gate](NATIVE_L1_NEXT_EXPERIMENT.md) supply comparative specifications. G0 review/vector/adapter freeze remains pending; G1 is not run. No final architecture or candidate elimination follows. Earlier next-task language below is historical.
 
 **All open.** This registers dependencies, not newly discovered exploits or approved design decisions. IDs support the [decision gate](NATIVE_L1_DECISION_GATE.md); requirement/source context is in the [report](NATIVE_L1_RESEARCH.md).

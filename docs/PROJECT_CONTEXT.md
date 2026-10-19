@@ -1,5 +1,9 @@
 # Genesis Project Context
 
+## Task 019 current status — executable comparison, G1 HOLD
+
+[Comparative evidence](architecture/NATIVE_L1_COMPARISON_RESULTS.md) records three distinct models and two isolated environments. All21 core vectors pass; accounts/objects complete all30 configurations, UTXO29 with S09 watchdog HOLDs. Recipient-pool spending-policy and measurement limitations remain unresolved. No architecture eliminated/prioritized; recommend bounded Task020 adapter/metering remediation. Prior statuses below are historical; no native consensus or production-security claim follows.
+
 ## Task 018 current status — adversarial review and fixture freeze
 
 [Review/readiness](architecture/NATIVE_L1_SPEC_REVIEW.md): **READY FOR COMPARATIVE MODELS**, no candidate selected/eliminated. [V1 fixtures](../research/fixtures/native_l1/README.md) freeze 21 signed core vectors plus nine stress configurations; [adapter](architecture/NATIVE_L1_ADAPTER.md) and [measurements](architecture/NATIVE_L1_MEASUREMENTS.md) define Task 019. Authority-before-fee, atomic solvency, structural-versus-logical conflicts, fenced recovery and sum-only service semantics are clarified. Nine integrity tests pass; no candidate transitions executed. Native permissionless security and authenticated finality remain open. Earlier statuses below are historical.

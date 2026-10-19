@@ -2,9 +2,11 @@
 
 Use this document to carry concise project context between Codex sessions and contributors. Update the current handoff after significant work; preserve prior handoffs in Git history where useful. Do not put secrets, credentials, or local-only notes here.
 
-## Current handoff — Task 019 implementation publication
+## Current handoff — Task 019 completed comparison, G1 HOLD
 
-Three bounded research models and independent comparison harness are implemented; [comparison report](architecture/NATIVE_L1_COMPARISON_RESULTS.md) is pending full measured evidence. Frozen v1 and all prior implementation/security caps remain unchanged. [Reproduction/source boundary](../research/native_l1/README.md), public signed stress expansion and source lock define the run. Seven bounded unit methods cover canonical cases and negative controls. Full clean local and fresh Ubuntu CI batches must complete before a final disposition; no candidate selected/eliminated or BOUNDED MODEL PASS claimed. Docker daemon is unavailable; CI is the independent host. Earlier handoffs are historical.
+[Results](architecture/NATIVE_L1_COMPARISON_RESULTS.md): **CONTINUE COMPARISON — G1 HOLD**, no candidate eliminated/prioritized. Source checkpoint `6872f4b2a208f70074b67bbd47e9095043e0dc18` is pushed. Both clean local and independent Ubuntu environments completed 273 planned slots; accounts/objects pass90 measured runs each, UTXO passes87 with three S09 watchdog HOLDs per environment. All21 core cases pass;89 complete configurations reproduce deterministically. [Permanent raw evidence/checks](../research/reports/task019/README.md) retain failures and compressed traces. Seven model tests and twelve supplemental local controls pass. Legacy CI passes; model CI intentionally fails on resource HOLD. Final publication regression CI must be checked at the evidence commit.
+
+Recipient-output coalescing consumes a recipient output without its signature; owner/value remain intact, but an independently validated top-up covenant is missing. Resource instrumentation/control gaps prevent full G1 acceptance; no frozen semantics or measured model was changed to conceal them. Next Task020: review spending-policy and metering remediation, then bounded rerun under unchanged logical requirements/caps. Native finality/recovery proofs and permissionless bootstrap remain open. MASTER_PLAN and Experiments001/002 preserved. Earlier handoffs below are historical.
 
 ## Current handoff — 2026-10-19 (Task 018)
 

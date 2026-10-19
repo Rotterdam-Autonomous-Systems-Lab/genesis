@@ -1,0 +1,27 @@
+{
+  "source_commit": "6872f4b2a208f70074b67bbd47e9095043e0dc18",
+  "signed_inputs": [
+    "pay12",
+    "pay8"
+  ],
+  "second_intent_actor": "D2",
+  "recipient": "S",
+  "recipient_input": {
+    "id": "cd986c403391f39bd16d36ef8b89f1c9a69dbc0d165c387c92525e1c48a9f76a",
+    "table": "balances",
+    "key": "S",
+    "value": 12,
+    "datum": 12,
+    "lock": "S"
+  },
+  "recipient_successor": {
+    "id": "bc82af28787f409a96c1b2d245f8024cb7cbab268a3c0cfd0d457ee816dd91de",
+    "table": "balances",
+    "key": "S",
+    "value": 20,
+    "datum": 20,
+    "lock": "S"
+  },
+  "recipient_signature_supplied": false,
+  "interpretation": "The typed adapter consumes a recipient balance-pool output on top-up. Value/owner are preserved, but this is not a conventional recipient-signature coin spend. A public top-up covenant would need explicit specification and independent output-condition validation; do not credit ordinary owner-locked UTXO behavior from this result."
+}

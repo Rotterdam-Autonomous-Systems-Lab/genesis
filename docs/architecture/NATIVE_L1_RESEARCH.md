@@ -1,5 +1,7 @@
 # Native Layer 1 architecture foundations — Task 016
 
+Current evidence: [Task019 comparison](NATIVE_L1_COMPARISON_RESULTS.md) is **G1 HOLD**, with no candidate selected or eliminated. Earlier proposed gates/statuses below retain their historical context.
+
 **Task 017 follow-up:** [W01–W08 workloads](NATIVE_L1_WORKLOADS.md), [common authority/recovery semantics](NATIVE_L1_AUTHORITY_SETTLEMENT_RECOVERY.md), [consensus assumptions](NATIVE_L1_CONSENSUS_ASSUMPTIONS.md), [experimental budgets](NATIVE_L1_RESOURCE_BUDGETS.md) and [next gate](NATIVE_L1_NEXT_EXPERIMENT.md) supply comparative specifications. G0 review/vector/adapter freeze remains pending; G1 is not run. No final architecture or candidate elimination follows. Earlier next-task language below is historical.
 
 **2026-10-18; baseline `ce657ccf244f9b94168518934aae4f61b361fcff`. Research only; no final architecture selected.** Genesis targets an independent permissionless economy for humans, AI agents, vehicles, robots, drones, satellites and future systems. AI may choose actions within authority; protocol validity must not depend on trusting those choices. The evidence supports comparative research, not native-chain implementation or asset issuance.

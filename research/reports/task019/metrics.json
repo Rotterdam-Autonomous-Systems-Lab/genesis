@@ -1,0 +1,178 @@
+{
+  "local": {
+    "platform": "macOS-12.7.6-x86_64-i386-64bit",
+    "models": [
+      {
+        "model": "accounts",
+        "passed_runs": 90,
+        "holds": [],
+        "successful_configurations": 30,
+        "executed_ledger_actions": 10140,
+        "native_structural_rejects": 0,
+        "injected_structural_rejects": 3,
+        "worker_cpu_seconds_range": [
+          0.0009300000000000003,
+          22.728203000000075
+        ],
+        "peak_worker_rss_bytes": 27750400,
+        "peak_client_rss_bytes": 16347136,
+        "max_native_serialized_bytes": 278102,
+        "max_native_plus_common_registry_serialized_bytes": 831403,
+        "all_hard_controls_supported": false
+      },
+      {
+        "model": "objects",
+        "passed_runs": 90,
+        "holds": [],
+        "successful_configurations": 30,
+        "executed_ledger_actions": 10140,
+        "native_structural_rejects": 0,
+        "injected_structural_rejects": 3,
+        "worker_cpu_seconds_range": [
+          0.0011430000000000051,
+          19.558753999999933
+        ],
+        "peak_worker_rss_bytes": 29798400,
+        "peak_client_rss_bytes": 16343040,
+        "max_native_serialized_bytes": 461026,
+        "max_native_plus_common_registry_serialized_bytes": 1012789,
+        "all_hard_controls_supported": false
+      },
+      {
+        "model": "eutxo",
+        "passed_runs": 87,
+        "holds": [
+          {
+            "case": "S09",
+            "error": "RuntimeError: 180-second run watchdog",
+            "model": "eutxo",
+            "repetition": 0,
+            "status": "HOLD"
+          },
+          {
+            "case": "S09",
+            "error": "RuntimeError: 180-second run watchdog",
+            "model": "eutxo",
+            "repetition": 1,
+            "status": "HOLD"
+          },
+          {
+            "case": "S09",
+            "error": "RuntimeError: 180-second run watchdog",
+            "model": "eutxo",
+            "repetition": 2,
+            "status": "HOLD"
+          }
+        ],
+        "successful_configurations": 29,
+        "executed_ledger_actions": 7140,
+        "native_structural_rejects": 0,
+        "injected_structural_rejects": 3,
+        "worker_cpu_seconds_range": [
+          0.0013959999999999806,
+          36.93407900000005
+        ],
+        "peak_worker_rss_bytes": 64126976,
+        "peak_client_rss_bytes": 16367616,
+        "max_native_serialized_bytes": 3721046,
+        "max_native_plus_common_registry_serialized_bytes": 4274270,
+        "all_hard_controls_supported": false
+      }
+    ],
+    "metric_notes": [
+      "Added common registry size is a derived compact serialization, not an observed filesystem high-water mark.",
+      "Native storage includes different archival detail; no state-model family ranking follows.",
+      "Executed actions exclude partial resource-HOLD traces; trace index records those separately.",
+      "Worker/client timed CPU excludes debug projection encoding; hard per-process limits are not a measured aggregate CPU-group limit.",
+      "Harness peak RSS is unavailable in the frozen instrumentation."
+    ]
+  },
+  "ci": {
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "models": [
+      {
+        "model": "accounts",
+        "passed_runs": 90,
+        "holds": [],
+        "successful_configurations": 30,
+        "executed_ledger_actions": 10140,
+        "native_structural_rejects": 0,
+        "injected_structural_rejects": 3,
+        "worker_cpu_seconds_range": [
+          0.0004284710000000032,
+          6.684730683999976
+        ],
+        "peak_worker_rss_bytes": 49963008,
+        "peak_client_rss_bytes": 49963008,
+        "max_native_serialized_bytes": 278102,
+        "max_native_plus_common_registry_serialized_bytes": 831403,
+        "all_hard_controls_supported": true
+      },
+      {
+        "model": "objects",
+        "passed_runs": 90,
+        "holds": [],
+        "successful_configurations": 30,
+        "executed_ledger_actions": 10140,
+        "native_structural_rejects": 0,
+        "injected_structural_rejects": 3,
+        "worker_cpu_seconds_range": [
+          0.00047822699999999774,
+          6.601208855000011
+        ],
+        "peak_worker_rss_bytes": 51535872,
+        "peak_client_rss_bytes": 51535872,
+        "max_native_serialized_bytes": 461026,
+        "max_native_plus_common_registry_serialized_bytes": 1012789,
+        "all_hard_controls_supported": true
+      },
+      {
+        "model": "eutxo",
+        "passed_runs": 87,
+        "holds": [
+          {
+            "case": "S09",
+            "error": "RuntimeError: 180-second run watchdog",
+            "model": "eutxo",
+            "repetition": 0,
+            "status": "HOLD"
+          },
+          {
+            "case": "S09",
+            "error": "RuntimeError: 180-second run watchdog",
+            "model": "eutxo",
+            "repetition": 1,
+            "status": "HOLD"
+          },
+          {
+            "case": "S09",
+            "error": "RuntimeError: 180-second run watchdog",
+            "model": "eutxo",
+            "repetition": 2,
+            "status": "HOLD"
+          }
+        ],
+        "successful_configurations": 29,
+        "executed_ledger_actions": 7140,
+        "native_structural_rejects": 0,
+        "injected_structural_rejects": 3,
+        "worker_cpu_seconds_range": [
+          0.0005502750000000028,
+          15.77382590800002
+        ],
+        "peak_worker_rss_bytes": 72269824,
+        "peak_client_rss_bytes": 72269824,
+        "max_native_serialized_bytes": 3721046,
+        "max_native_plus_common_registry_serialized_bytes": 4274270,
+        "all_hard_controls_supported": true
+      }
+    ],
+    "metric_notes": [
+      "Added common registry size is a derived compact serialization, not an observed filesystem high-water mark.",
+      "Native storage includes different archival detail; no state-model family ranking follows.",
+      "Executed actions exclude partial resource-HOLD traces; trace index records those separately.",
+      "Worker/client timed CPU excludes debug projection encoding; hard per-process limits are not a measured aggregate CPU-group limit.",
+      "Harness peak RSS is unavailable in the frozen instrumentation."
+    ]
+  }
+}

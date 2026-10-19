@@ -1,0 +1,65 @@
+{
+  "scope": "local supplemental controls, not timed comparative runs or extra frozen configurations",
+  "results": [
+    {
+      "model": "accounts",
+      "control": "rotation_after_nonzero_spend",
+      "status": "PASS"
+    },
+    {
+      "model": "accounts",
+      "control": "duplicate_after_revoke_and_expiry",
+      "status": "PASS"
+    },
+    {
+      "model": "accounts",
+      "control": "unused_fee_ceiling_released",
+      "status": "PASS"
+    },
+    {
+      "model": "accounts",
+      "control": "collected_credit_new_sequence_and_duplicate",
+      "status": "PASS"
+    },
+    {
+      "model": "objects",
+      "control": "rotation_after_nonzero_spend",
+      "status": "PASS"
+    },
+    {
+      "model": "objects",
+      "control": "duplicate_after_revoke_and_expiry",
+      "status": "PASS"
+    },
+    {
+      "model": "objects",
+      "control": "unused_fee_ceiling_released",
+      "status": "PASS"
+    },
+    {
+      "model": "objects",
+      "control": "collected_credit_new_sequence_and_duplicate",
+      "status": "PASS"
+    },
+    {
+      "model": "eutxo",
+      "control": "rotation_after_nonzero_spend",
+      "status": "PASS"
+    },
+    {
+      "model": "eutxo",
+      "control": "duplicate_after_revoke_and_expiry",
+      "status": "PASS"
+    },
+    {
+      "model": "eutxo",
+      "control": "unused_fee_ceiling_released",
+      "status": "PASS"
+    },
+    {
+      "model": "eutxo",
+      "control": "collected_credit_new_sequence_and_duplicate",
+      "status": "PASS"
+    }
+  ]
+}

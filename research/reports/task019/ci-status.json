@@ -1,0 +1,20 @@
+{
+  "models": {
+    "databaseId": null,
+    "headSha": null,
+    "conclusion": "failure",
+    "status": "completed",
+    "url": "https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39177558074",
+    "createdAt": null,
+    "updatedAt": null
+  },
+  "regressions": {
+    "databaseId": null,
+    "headSha": null,
+    "conclusion": "success",
+    "status": "completed",
+    "url": "https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis/actions/runs/39177558069",
+    "createdAt": null,
+    "updatedAt": null
+  }
+}

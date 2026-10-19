@@ -1,5 +1,7 @@
 # Proposed next experiment and decision gate — Task 017
 
+Current evidence: [Task019 comparison](NATIVE_L1_COMPARISON_RESULTS.md) is **G1 HOLD**, with no candidate selected or eliminated. Earlier proposed gates/statuses below retain their historical context.
+
 **Task 018 completed review/freeze; proposed Task 019: bounded comparative authority and crash-recovery models. No models implemented yet.**
 
 The [Task 018 review](NATIVE_L1_SPEC_REVIEW.md), [adapter](NATIVE_L1_ADAPTER.md), [measurement plan](NATIVE_L1_MEASUREMENTS.md) and [v1 corpus](../../research/fixtures/native_l1/README.md) freeze the minimal authorized comparison scope: 21 core plus nine stress configurations. Original broader coverage below is retained as proposed follow-up, not a claim of frozen or executed coverage. Explicit fixture balances override illustrative defaults. Continue the [Task 016 G0/G1 framework](NATIVE_L1_DECISION_GATE.md) with [W01–W08](NATIVE_L1_WORKLOADS.md), [ASR semantics](NATIVE_L1_AUTHORITY_SETTLEMENT_RECOVERY.md), [consensus premises](NATIVE_L1_CONSENSUS_ASSUMPTIONS.md) and [B1–B9 controls](NATIVE_L1_RESOURCE_BUDGETS.md).
